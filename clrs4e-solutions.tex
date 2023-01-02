@@ -1,9 +1,46 @@
 \documentclass[10pt,twoside,openany,titlepage]{book}
 
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[head=13pt,foot=13pt]{geometry}
+\usepackage{url}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage[shortlabels]{enumitem}
+
 \RequirePackage[screen]{clrscode4e}
+
+\usepackage[font=small,format=plain,labelfont=sf,bf,up]{caption}
+\usepackage[pdfborder={0 0 0},
+    pdftex,
+    pdfauthor={Krzysztof Wojtas},
+    pdftitle={clrs4e-solutions},
+    pdfsubject={Introduction to Algorithms, 4th ed. -- solutions to exercises and problems},
+    bookmarks=true,
+    hypertexnames=false,
+    unicode=true]{hyperref}
 
 \begin{document}
 
+    \frontmatter
+
+    \include{title}
+
+    \ifpdf
+    \addtocontents{toc}{\protect\pdfbookmark{Contents}{toc}}
+    \fi
+
+    \tableofcontents
+
+    \mainmatter
+
     Hello, World!
+
+    \backmatter
+
+    \bibliographystyle{plain}
+    \bibliography{clrs4e-solutions}
+    \nocite{*}
 
 \end{document}
