@@ -56,3 +56,4 @@ to reduce the size of a pseudocode, where `XX` is the reduction rate.
 
 ### Pictures and tables
 * Try to be as close to the style in the textbook, as possible.
+* For pictures and tables use the same numbering format as for exercises/problems they belong to. Avoid referencing to the pictures in the solution text if not necessary, instead put all the picture or table details in their caption.
