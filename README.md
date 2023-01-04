@@ -63,7 +63,10 @@ Below is the project's roadmap:
 ### Building
 
 To compile the project locally, you need a LaTeX distribution, preferably TeXLive 2021 or newer.
-The document depends on a number of packages, including `tikz`, `amsmath`, `euler`, so make sure you have installed necessary TeXLive modules.
+The document depends on a number of standard LaTeX packages, including `tikz`, `amsmath`, so make sure you have installed necessary TeXLive modules.
+To make fonts consistent with the textbook, I used the Times font with mathematics typeset using the MathTime Professional II Lite.
+This font set is not available in the standard TeXLive distribution, so you will need to download it from [CTAN](https://ctan.org/tex-archive/fonts/mtp2lite) and install manually.
+Alternatively, you can remove the appropriate packages from the document's preamble and uncomment the packages that will enable AMS Euler fonts.
 Once your environment is prepared, compile the document to a PDF by running the following command from the project's directory:
 ```
 latexmk -pdf clrs4e-solutions.tex

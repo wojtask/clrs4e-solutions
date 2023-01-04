@@ -1,18 +1,31 @@
-\documentclass[10pt,twoside,openany,titlepage]{book}
+\documentclass[12pt,openany,titlepage]{book}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
-\usepackage[head=13pt,foot=13pt]{geometry}
-\usepackage{url}
 \usepackage{tocloft}
 \usepackage{titlesec}
+\usepackage{fancyhdr}
 \usepackage[shortlabels]{enumitem}
 
-\RequirePackage[screen]{clrscode4e}
+% Enables Times Roman font for the main text to make it consistent with the textbook
+\usepackage{newtxtext,newtxmath}
 
-\usepackage[font=small,format=plain,labelfont=sf,bf,up]{caption}
-\usepackage[pdfborder={0 0 0},
+% To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version, and change below options:
+% remove lite
+% change eucal to mtpcal
+% change amsbb to mtphrb
+\usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
+
+% Alternatively, use Palatino and AMS Euler fonts:
+%\usepackage{amssymb}
+%\usepackage{newpxtext}
+%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+
+\usepackage[screen]{clrscode4e}
+
+\usepackage[
+    pdfborder={0 0 0},
     pdftex,
     pdfauthor={Krzysztof Wojtas},
     pdftitle={clrs4e-solutions},
@@ -20,6 +33,64 @@
     bookmarks=true,
     hypertexnames=false,
     unicode=true]{hyperref}
+
+\usepackage{tikz}
+\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
+
+\definecolor{accentcolor}{cmyk}{0.71, 0.2, 0, 0.29}
+
+\setlength{\textheight}{.75\paperheight}
+\setlength{\leftmargin}{.2\paperwidth}
+\setlength{\rightmargin}{.1\paperwidth}
+
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+
+\pagestyle{fancy}
+%\fancyheadoffset[LE]{\marginparwidth}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename\ \thechapter\quad#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
+\fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
+\fancyhead[RE]{\nouppercase{\small\textit{\leftmark}}}
+\fancyhead[LE,RO]{\small\textit{\thepage}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{plain}{\fancyhf{}}
+
+\titleformat{\chapter}[display]
+{\normalfont\color{accentcolor}\Large\filright\bfseries}
+{\titlerule[5pt]\vspace{1pc}\thechapter}
+{1em}
+{}
+
+\titleformat{\section}[hang]{\large\bfseries\filright}{\thesection}{.5em}{}
+\titleformat{\subsection}[hang]{\bfseries\itshape\filright}{\thesubsection}{.5em}{}
+\titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
+
+\newcommand{\exercise}{\subsection{}\label{sol:\thesubsection}}
+\newcommand{\subexercise}{\subsubsection{}}
+\newcommand{\problems}{%
+    \section*{Problems}
+    \phantomsection\addcontentsline{toc}{section}{Problems}
+    \setcounter{subsection}{0}
+    \renewcommand{\thesection}{\thechapter}
+    \fancyhead[LO]{\small\textit{Problems for \chaptername\ \thechapter}}
+}
+\newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
+\newcommand{\subproblem}{\subsubsection{}\label{sub:\thesubsection\thesubsubsection}}
+
+\let\originalchapter=\chapter
+\renewcommand{\chapter}[1]{%
+	\originalchapter{#1}
+	\setcounter{section}{0}
+	\renewcommand{\thesection}{\thechapter.\arabic{section}}
+	\fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
+}
+
+\setcounter{tocdepth}{1}
 
 \begin{document}
 
@@ -39,6 +110,7 @@
 
     \backmatter
 
+    \let\chapter=\originalchapter
     \bibliographystyle{plain}
     \bibliography{clrs4e-solutions}
     \nocite{*}
