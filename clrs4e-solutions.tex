@@ -8,19 +8,21 @@
 \usepackage{fancyhdr}
 \usepackage[shortlabels]{enumitem}
 
-% Enables Times Roman font for the main text to make it consistent with the textbook
-\usepackage{newtxtext,newtxmath}
-
-% To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version, and change below options:
-% remove lite
-% change eucal to mtpcal
-% change amsbb to mtphrb
-\usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
-
-% Alternatively, use Palatino and AMS Euler fonts:
-%\usepackage{amssymb}
-%\usepackage{newpxtext}
-%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+\IfFileExists{mtpro2.sty}{
+    % Enable Times Roman font for the main text to make it consistent with the textbook:
+    \usepackage{newtxtext,newtxmath}
+    % Use mtpro2 math font set.
+    % To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version, and change below options:
+    % - remove lite
+    % - change eucal to mtpcal
+    % - change amsbb to mtphrb
+    \usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
+}{
+    % Alternatively, in case mtpro2 isn't available, use Palatino and AMS Euler fonts:
+    \usepackage{amssymb}
+    \usepackage{newpxtext}
+    \usepackage[euler-digits,euler-hat-accent]{eulervm}
+}
 
 \usepackage[screen]{clrscode4e}
 
@@ -84,10 +86,10 @@
 
 \let\originalchapter=\chapter
 \renewcommand{\chapter}[1]{%
-	\originalchapter{#1}
-	\setcounter{section}{0}
-	\renewcommand{\thesection}{\thechapter.\arabic{section}}
-	\fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
+    \originalchapter{#1}
+    \setcounter{section}{0}
+    \renewcommand{\thesection}{\thechapter.\arabic{section}}
+    \fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
 }
 
 \setcounter{tocdepth}{1}
