@@ -7,6 +7,7 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage[shortlabels]{enumitem}
+\usepackage{lipsum}
 
 \IfFileExists{mtpro2.sty}{
     % Enable Times Roman font for the main text to make it consistent with the textbook:
@@ -44,6 +45,8 @@
 \setlength{\textheight}{.75\paperheight}
 \setlength{\leftmargin}{.2\paperwidth}
 \setlength{\rightmargin}{.1\paperwidth}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{3}
 
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
@@ -64,13 +67,16 @@
 
 \titleformat{\chapter}[display]
 {\normalfont\color{accentcolor}\Large\filright\bfseries}
-{\titlerule[5pt]\vspace{1pc}\thechapter}
-{1em}
 {}
+{0pt}
+{\titlerule[5pt]\vspace{8pt}\thechapter\quad}
 
-\titleformat{\section}[hang]{\large\bfseries\filright}{\thesection}{.5em}{}
-\titleformat{\subsection}[hang]{\bfseries\itshape\filright}{\thesubsection}{.5em}{}
+\titleformat{\section}[hang]{\large\bfseries\filright}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{2em}{0.4em}
+\titleformat{\subsection}[hang]{\bfseries\itshape\filright}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{1em}{0pt}
 \titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{*1.5}{1ex}
 
 \newcommand{\exercise}{\subsection{}\label{sol:\thesubsection}}
 \newcommand{\subexercise}{\subsubsection{}}
@@ -91,8 +97,6 @@
     \renewcommand{\thesection}{\thechapter.\arabic{section}}
     \fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
 }
-
-\setcounter{tocdepth}{1}
 
 \begin{document}
 
