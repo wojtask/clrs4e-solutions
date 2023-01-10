@@ -1,13 +1,17 @@
-\documentclass[12pt,openany,titlepage]{book}
+\documentclass[11pt,openany,titlepage]{book}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
+\usepackage[lines=40,includehead,marginparwidth=0.1\paperwidth]{geometry}
 \usepackage{tocloft}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
 \usepackage[shortlabels]{enumitem}
-\usepackage{lipsum}
+\usepackage[screen]{clrscode4e}
+\usepackage{tikz}
+\usepackage{calc}
 
 \IfFileExists{mtpro2.sty}{
     % Enable Times Roman font for the main text to make it consistent with the textbook:
@@ -37,14 +41,9 @@
     hypertexnames=false,
     unicode=true]{hyperref}
 
-\usepackage{tikz}
-\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
 
 \definecolor{accentcolor}{cmyk}{0.71, 0.2, 0, 0.29}
 
-\setlength{\textheight}{.75\paperheight}
-\setlength{\leftmargin}{.2\paperwidth}
-\setlength{\rightmargin}{.1\paperwidth}
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{3}
 
@@ -55,21 +54,29 @@
 
 \pagestyle{fancy}
 %\fancyheadoffset[LE]{\marginparwidth}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename\ \thechapter\quad#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\quad#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
-\fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
-\fancyhead[RE]{\nouppercase{\small\textit{\leftmark}}}
-\fancyhead[LE,RO]{\small\textit{\thepage}}
+\fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
+\fancyhead[RE]{\nouppercase{\footnotesize\textit{\leftmark}}}
+\fancyhead[LE,RO]{\footnotesize\textit{\thepage}}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
 \fancypagestyle{plain}{\fancyhf{}}
 
+\titleformat{\part}[display]
+  {\normalfont\color{accentcolor}\Large\bfseries\itshape}
+  {}
+  {0pt}
+  {\titlerule[5pt]\vspace{2in}\titlerule[.5pt]\vspace{1pt}\partname~\thepart\quad\vspace{-\baselineskip}}
+\titlespacing*{\part}{0pt}{-\baselineskip-\topskip-14pt}{40pt}
+
 \titleformat{\chapter}[display]
-{\normalfont\color{accentcolor}\Large\filright\bfseries}
-{}
-{0pt}
-{\titlerule[5pt]\vspace{8pt}\thechapter\quad}
+  {\normalfont\color{accentcolor}\Large\bfseries\filright}
+  {}
+  {0pt}
+  {\titlerule[5pt]\vspace{8pt}\thechapter\quad}
+\titlespacing*{\chapter}{0pt}{-\baselineskip-\topskip-14pt}{1.5in}
 
 \titleformat{\section}[hang]{\large\bfseries\filright}{\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{2em}{0.4em}
@@ -85,7 +92,7 @@
     \phantomsection\addcontentsline{toc}{section}{Problems}
     \setcounter{subsection}{0}
     \renewcommand{\thesection}{\thechapter}
-    \fancyhead[LO]{\small\textit{Problems for \chaptername\ \thechapter}}
+    \fancyhead[LO]{\footnotesize\textit{Problems for \chaptertitlename~\thechapter}}
 }
 \newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
 \newcommand{\subproblem}{\subsubsection{}\label{sub:\thesubsection\thesubsubsection}}
@@ -95,7 +102,7 @@
     \originalchapter{#1}
     \setcounter{section}{0}
     \renewcommand{\thesection}{\thechapter.\arabic{section}}
-    \fancyhead[LO]{\nouppercase{\small\textit{\rightmark}}}
+    \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 }
 
 \begin{document}
