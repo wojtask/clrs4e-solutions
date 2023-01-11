@@ -3,33 +3,37 @@
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
-\usepackage[lines=40,includehead,marginparwidth=0.1\paperwidth]{geometry}
+\usepackage[
+    lines=40,
+    includehead,
+    marginparwidth=0.1\paperwidth]{geometry}
 \usepackage{tocloft}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
-\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
+\usepackage[
+    font=footnotesize,
+    labelfont=bf,
+    labelsep=quad]{caption}
 \usepackage[shortlabels]{enumitem}
 \usepackage[screen]{clrscode4e}
 \usepackage{tikz}
 \usepackage{calc}
+\usepackage{import}
 
-\IfFileExists{mtpro2.sty}{
-    % Enable Times Roman font for the main text to make it consistent with the textbook:
+\IfFileExists{mtpro2.sty}{% Enable Times Roman font for the main text to make it consistent with the textbook:
     \usepackage{newtxtext,newtxmath}
     % Use mtpro2 math font set.
-    % To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version, and change below options:
-    % - remove lite
-    % - change eucal to mtpcal
-    % - change amsbb to mtphrb
+    % TODO: To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version,
+    %   and change below options:
+    %   - remove lite
+    %   - change eucal to mtpcal
+    %   - change amsbb to mtphrb
     \usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
-}{
-    % Alternatively, in case mtpro2 isn't available, use Palatino and AMS Euler fonts:
+}{% Alternatively, in case mtpro2 isn't available, use Palatino and AMS Euler fonts:
     \usepackage{amssymb}
     \usepackage{newpxtext}
     \usepackage[euler-digits,euler-hat-accent]{eulervm}
 }
-
-\usepackage[screen]{clrscode4e}
 
 \usepackage[
     pdfborder={0 0 0},
@@ -44,16 +48,12 @@
 
 \definecolor{accentcolor}{cmyk}{0.71, 0.2, 0, 0.29}
 
-\setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{3}
-
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}.}
 
 \pagestyle{fancy}
-%\fancyheadoffset[LE]{\marginparwidth}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\quad#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
 \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
@@ -69,18 +69,18 @@
   {}
   {0pt}
   {\titlerule[5pt]\vspace{2in}\titlerule[.5pt]\vspace{1pt}\partname~\thepart\quad\vspace{-\baselineskip}}
-\titlespacing*{\part}{0pt}{-\baselineskip-\topskip-14pt}{40pt}
+\titlespacing*{\part}{0pt}{-\baselineskip-\topskip}{40pt}
 
 \titleformat{\chapter}[display]
-  {\normalfont\color{accentcolor}\Large\bfseries\filright}
+  {\normalfont\color{accentcolor}\Large\bfseries}
   {}
   {0pt}
   {\titlerule[5pt]\vspace{8pt}\thechapter\quad}
-\titlespacing*{\chapter}{0pt}{-\baselineskip-\topskip-14pt}{1.5in}
+\titlespacing*{\chapter}{0pt}{-\baselineskip-\topskip}{1.5in}
 
-\titleformat{\section}[hang]{\large\bfseries\filright}{\thesection}{1em}{}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{2em}{0.4em}
-\titleformat{\subsection}[hang]{\bfseries\itshape\filright}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\bfseries\itshape}{\thesubsection}{1em}{}
 \titlespacing*{\subsection}{0pt}{1em}{0pt}
 \titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
 \titlespacing*{\subsubsection}{0pt}{*1.5}{1ex}
@@ -105,14 +105,22 @@
     \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 }
 
+\renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{1.5in}
+\renewcommand{\cftdotsep}{\cftnodots}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{3}
+
+
 \begin{document}
 
     \frontmatter
 
-    \include{title}
+    \import{./}{title}
 
     \ifpdf
-    \addtocontents{toc}{\protect\pdfbookmark{Contents}{toc}}
+        \addtocontents{toc}{\protect\pdfbookmark{Contents}{toc}}
     \fi
 
     \tableofcontents
@@ -124,8 +132,10 @@
     \backmatter
 
     \let\chapter=\originalchapter
+    \titleformat{\chapter}{\normalfont\color{accentcolor}\Large}{}{0pt}{}
+    \titlespacing*{\chapter}{0pt}{0pt}{1.5in}
     \bibliographystyle{plain}
-    \bibliography{clrs4e-solutions}
+    {\footnotesize\bibliography{clrs4e-solutions}}
     \nocite{*}
 
 \end{document}
