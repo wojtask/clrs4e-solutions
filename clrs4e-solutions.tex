@@ -1,15 +1,22 @@
-\documentclass[11pt,openany,titlepage]{book}
+\documentclass[oneside,11pt,openany,titlepage]{book}
+
+% project-wide constants
+\newcommand{\lmarginparwidth}{1in}
+\newcommand{\thinrulethickness}{.5pt}
+\newcommand{\thickrulethickness}{5pt}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
+\usepackage{calc}
 \usepackage[
     lines=40,
-    includehead,
-    marginparwidth=0.1\paperwidth]{geometry}
+    reversemp,
+    lmargin=1in+\lmarginparwidth,
+    includehead]{geometry}
 \usepackage{tocloft}
 \usepackage{titlesec}
-\usepackage{fancyhdr}
+\usepackage[twoside]{fancyhdr}
 \usepackage[
     font=footnotesize,
     labelfont=bf,
@@ -17,7 +24,6 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[screen]{clrscode4e}
 \usepackage{tikz}
-\usepackage{calc}
 \usepackage{import}
 
 \IfFileExists{mtpro2.sty}{% Enable Times Roman font for the main text to make it consistent with the textbook:
@@ -59,6 +65,7 @@
 \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 \fancyhead[RE]{\nouppercase{\footnotesize\textit{\leftmark}}}
 \fancyhead[LE,RO]{\footnotesize\textit{\thepage}}
+\fancyheadoffset[LE]{\lmarginparwidth}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -68,42 +75,47 @@
   {\normalfont\color{accentcolor}\Large\bfseries\itshape}
   {}
   {0pt}
-  {\titlerule[5pt]\vspace{2in}\titlerule[.5pt]\vspace{1pt}\partname~\thepart\quad\vspace{-\baselineskip}}
-\titlespacing*{\part}{0pt}{-\baselineskip-\topskip}{40pt}
+  {\titlerule[\thickrulethickness]\vspace{2in}\titlerule[\thinrulethickness]\vspace{1pt}%
+    \partname~\thepart\hspace{\lmarginparwidth-\widthof{\partname~\thepart}}\vspace{-\baselineskip}}
+\titlespacing*{\part}{-\lmarginparwidth}{-\baselineskip-\topskip}{0pt}
 
 \titleformat{\chapter}[display]
   {\normalfont\color{accentcolor}\Large\bfseries}
   {}
   {0pt}
-  {\titlerule[5pt]\vspace{8pt}\thechapter\quad}
-\titlespacing*{\chapter}{0pt}{-\baselineskip-\topskip}{1.5in}
+  {\titlerule[\thickrulethickness]\vspace{8pt}%
+    \thechapter\hspace{\lmarginparwidth-\widthof{\thechapter}}}
+\titlespacing*{\chapter}{-\lmarginparwidth}{-\baselineskip-\topskip}{1.5in}
 
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-\titlespacing*{\section}{0pt}{2em}{0.4em}
-\titleformat{\subsection}{\bfseries\itshape}{\thesubsection}{1em}{}
-\titlespacing*{\subsection}{0pt}{1em}{0pt}
-\titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
-\titlespacing*{\subsubsection}{0pt}{*1.5}{1ex}
+\let\originalchapter=\chapter
+\renewcommand{\chapter}[1]{%
+    \originalchapter{#1}
+    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\thesection\quad}
+    \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{0pt}
+    \renewcommand{\thesection}{\thechapter.\arabic{section}}
+    \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
+}
 
-\newcommand{\exercise}{\subsection{}\label{sol:\thesubsection}}
-\newcommand{\subexercise}{\subsubsection{}}
 \newcommand{\problems}{%
+    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}}
+    \titleformat{\subsection}[hang]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{*2}
     \section*{Problems}
     \phantomsection\addcontentsline{toc}{section}{Problems}
     \setcounter{subsection}{0}
     \renewcommand{\thesection}{\thechapter}
     \fancyhead[LO]{\footnotesize\textit{Problems for \chaptertitlename~\thechapter}}
 }
-\newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
-\newcommand{\subproblem}{\subsubsection{}\label{sub:\thesubsection\thesubsubsection}}
 
-\let\originalchapter=\chapter
-\renewcommand{\chapter}[1]{%
-    \originalchapter{#1}
-    \setcounter{section}{0}
-    \renewcommand{\thesection}{\thechapter.\arabic{section}}
-    \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
-}
+\titlespacing*{\section}{-\lmarginparwidth}{*5}{*2}
+\titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{*3}{*2}
+
+\newcommand{\exercise}{\subsection{}\label{sol:\thesubsection}}
+\newcommand{\subexercise}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
+\newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
+\newcommand{\subproblem}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
 
 \renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
 \renewcommand{\cftbeforetoctitleskip}{0pt}
