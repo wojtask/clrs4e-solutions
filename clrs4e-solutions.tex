@@ -127,6 +127,9 @@
 
 \begin{document}
 
+    \setlength{\mathindent}{0pt}
+    \setlength{\abovedisplayskip}{1ex}
+
     \frontmatter
 
     \import{./}{title}
@@ -139,7 +142,11 @@
 
     \mainmatter
 
-    Hello, World!
+    \setcounter{part}{7}
+    \part{Appendix: Mathematical Background}
+
+    \appendix
+    \import{appendixa/}{main}
 
     \backmatter
 
