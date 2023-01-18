@@ -1,0 +1,18 @@
+\exercise
+For the upper bound, we bound $k$ by $n$:
+\begin{align*}
+    \sum_{k=1}^n k^c &\le \sum_{k=1}^n n^c \\
+    &= n\cdot n^c \\
+    &= O(n^{c+1}).
+\end{align*}
+To get the lower bound, we drop around half of the smallest terms and bound the remaining ones:
+\begin{align*}
+    \sum_{k=1}^n k^c &\ge \sum_{k=\lceil n/2\rceil}^{n} k^c \\
+    &\ge \sum_{k=\lceil n/2\rceil}^{n} \lceil n/2\rceil^c \\
+    &= (n-\lceil n/2\rceil+1)\lceil n/2\rceil^c \\
+    &= (\lfloor n/2\rfloor+1)\lceil n/2\rceil^c \\
+    &\ge \lceil n/2\rceil^{c+1} \\
+    &\ge n^{c+1}\!/2^{c+1} \\
+    &= \Omega(n^{c+1}) && \text{(since $1/2^{c+1}$ is a constant)}.
+\end{align*}
+By applying Theorem 3.1 we obtain the tight bound.
