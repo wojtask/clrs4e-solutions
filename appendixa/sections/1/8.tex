@@ -1,0 +1,9 @@
+\exercise
+By the upper bound on $H_n$ (A.9), we have:
+\begin{align*}
+    \sum_{k=1}^n\frac{1}{2k-1} &< 1+\sum_{k=2}^{n+1}\frac{1}{2k-2} \\
+    &= 1+\sum_{k=1}^n\frac{1}{2k} \\
+    &= 1+\frac{H_n}{2} \\
+    &= 1+\frac{\ln n+O(1)}{2} \\
+    &= \ln\sqrt{n}+O(1).
+\end{align*}
