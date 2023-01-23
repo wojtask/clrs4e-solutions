@@ -1,0 +1,9 @@
+\exercise
+Applying inequality (A.19) to $\sum_{k=1}^n 1/k$ leads to an improper integral:
+\begin{align*}
+    \sum_{k=1}^n \frac{1}{k} &\le \int_0^n \frac{dx}{x} \\
+    &= \lim_{a\to0^+} \int_a^n \frac{dx}{x} \\
+    &= \infty.
+\end{align*}
+As a result, we don't get any useful information about the upper bound on the summation.
+By rewriting it as $1+\sum_{k=2}^n 1/k$, we can apply formula (A.19) to the second term and upper-bound the initial summation by $\ln n+1$.
