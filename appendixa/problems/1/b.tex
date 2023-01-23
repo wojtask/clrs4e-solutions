@@ -1,0 +1,18 @@
+\subproblem
+Asymptotic upper bound:
+\begin{align*}
+    \sum_{k=1}^n \lg^s k &\le \sum_{k=1}^n \lg^s n \\
+    &= n\cdot \lg^s n \\
+    &= O(n\lg^s n).
+\end{align*}
+Asymptotic lower bound:
+\begin{align*}
+    \sum_{k=1}^n \lg^s k &\ge \sum_{k=n/2+1}^n \lg^s k \\
+    &\ge \sum_{k=n/2+1}^n \lg^s (n/2) \\
+    &= (n/2)\cdot \lg^s (n/2) \\
+    &= \Omega(n\lg^s n).
+\end{align*}
+Asymptotic tight bound:
+\[
+    \sum_{k=1}^n \lg^s k = \Theta(n\lg^s n).
+\]
