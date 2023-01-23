@@ -1,0 +1,19 @@
+\subproblem
+Asymptotic upper bound:
+\begin{align*}
+    \sum_{k=1}^n k^r \lg^s k &\le \sum_{k=1}^n n^r \lg^s n \\
+    &= n\cdot n^r \lg^s n \\
+    &= O(n^{r+1} \lg^s n).
+\end{align*}
+Asymptotic lower bound:
+\begin{align*}
+    \sum_{k=1}^n k^r \lg^s k &\ge \sum_{k=n/2+1}^n k^r \lg^s k \\
+    &\ge \sum_{k=n/2+1}^n (n/2)^r \lg^s (n/2) \\
+    &= (n/2)\cdot (n/2)^r \lg^s (n/2) \\
+    &= \Omega(n^{r+1} \lg^s n).
+\end{align*}
+Asymptotic tight bound:
+\[
+    \sum_{k=1}^n k^r \lg^s k = \Theta(n^{r+1} \lg^s n).
+\]
+Assuming $s=0$ and $r=0$ in the bound above, respectively, we get the summations and their asymptotic tight bounds from parts (a) and (b).
