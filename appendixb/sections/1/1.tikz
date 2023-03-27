@@ -1,0 +1,75 @@
+\begin{tikzpicture}[
+	outer/.append style = {node distance=5mm},
+	set label/.style = {circle, inner sep=2mm},
+]
+
+\def\circleA{(0:0) circle (7mm) node[set label, above left] {$A$}}
+\def\circleB{(0:5mm) circle (7mm) node[set label, above right] {$B$}}
+\def\circleC{(-60:5mm) circle (7mm) node[set label, below] {$C$}}
+
+\node[outer] (set 1) {
+\begin{tikzpicture}
+   	\draw[light blue] \circleA;
+    \draw \circleB;
+    \draw \circleC;
+\end{tikzpicture}
+};
+
+\node[outer, right=of set 1] (set 2) {
+\begin{tikzpicture}
+    \draw[light blue] \circleB \circleC;
+    \draw \circleA;
+\end{tikzpicture}
+};
+
+\node[outer, right=of set 2] (set 3) {
+\begin{tikzpicture}
+	\begin{scope}
+       	\clip \circleB;
+       	\draw[light blue] \circleA;
+   	\end{scope}
+    \begin{scope}
+       	\clip \circleC;
+       	\draw[light blue] \circleA;
+   	\end{scope}
+	\draw \circleA \circleB \circleC;
+\end{tikzpicture}
+};
+
+\node[outer, right=of set 3] (set 4) {
+\begin{tikzpicture}
+	\begin{scope}
+       	\clip \circleB;
+       	\draw[light blue] \circleA;
+   	\end{scope}
+	\draw \circleA \circleB \circleC;
+\end{tikzpicture}
+};
+
+\node[outer, right=of set 4] (set 5) {
+\begin{tikzpicture}
+	\begin{scope}
+       	\clip \circleC;
+       	\draw[light blue] \circleA;
+    \end{scope}
+	\draw \circleA \circleB \circleC;
+\end{tikzpicture}
+};
+
+\node[below=0mm of set 1] (label 1) {$A$};
+\node[below=0mm of set 2] (label 2) {$(B\cup C)$};
+\node[below=0mm of set 3] (label 3) {$A\cap(B\cup C)$};
+\node[below=0mm of set 4] (label 4) {$(A\cap B)$};
+\node[below=0mm of set 5] (label 5) {$(A\cap C)$};
+
+\path (set 1) -- (set 2) node[midway] (midlabel 1) {$\cap$}
+      (set 2) -- (set 3) node[midway] (midlabel 2) {$=$}
+      (set 3) -- (set 4) node[midway] (midlabel 3) {$=$}
+      (set 4) -- (set 5) node[midway] (midlabel 4) {$\cup$};
+
+\path (label 1) -| (midlabel 1) node[midway] {$\cap$}
+      (label 2) -| (midlabel 2) node[midway] {$=$}
+      (label 3) -| (midlabel 3) node[midway] {$=$}
+      (label 4) -| (midlabel 4) node[midway] {$\cup$};
+
+\end{tikzpicture}
