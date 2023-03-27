@@ -13,6 +13,7 @@ Here is a list of conventions followed in the project.
 ### Mathematics
 * Use `align*` or `gather*` environments to vertically align formulas.
 * Use `\tag` whenever necessary to better reference and explain transitions in formulas.
+* In proofs by induction, we generally aim to prove a theorem for `n`, using inductive hypothesis for `n-1`.
 
 ### Pseudocodes
 * Use predefined `\attrib` commands family in `clrscode4e` instead of custom defined ones.

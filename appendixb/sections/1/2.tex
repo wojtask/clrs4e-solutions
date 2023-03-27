@@ -1,0 +1,14 @@
+\exercise
+We prove the first formula by induction on $n$.
+For $n=1$ the proof is trivial, and for $n=2$ the formula is the first of DeMorgan's laws.
+Let's assume that $n>2$, and that the formula holds for a family of $n-1$ sets.
+We have:
+\begin{align*}
+    \overline{A_1\cap A_2\cap\dots\cap A_{n-1}\cap A_n} &= \overline{(A_1\cap A_2\cap\dots\cap A_{n-1})\cap A_n} \\
+    &= \overline{A_1\cap A_2\cap\dots\cap A_{n-1}}\cup\overline{A_n} \\
+    &= \overline{A_1}\cup\overline{A_2}\cup\dots\cup\overline{A_{n-1}}\cup\overline{A_n}.
+\end{align*}
+The second equality follows from the first of DeMorgan's laws, and the third equality follows from the inductive hypothesis.
+
+The proof of the second formula is similar.
+If $n=2$, then the formula is DeMorgan's second law, and if $n>2$, then it is enough to apply the above reasoning with the symbols $\cup$ and $\cap$ swapped, and use DeMorgan's second law.
