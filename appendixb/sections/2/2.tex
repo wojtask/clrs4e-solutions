@@ -1,0 +1,14 @@
+\exercise
+Let us denote the relation ``equivalent modulo $n$'', for $n\in\mathbb{N}\setminus\{0\}$, by
+\[
+    R_n = \{(a,b)\in\mathbb{Z}\times\mathbb{Z}: a=b\!\!\!\pmod{n}\}.
+\]
+For any $a\in\mathbb{Z}$ we have $a=a\pmod{n}$, because $a-a=0\cdot n$, so the relation $R_n$ is reflexive.
+For any $a$, $b\in\mathbb{Z}$, if there exists $q\in\mathbb{Z}$ that $a-b=qn$, then $b-a=-qn$, and therefore the fact that $a=b\pmod{n}$ implies $b=a\pmod{n}$.
+Therefore, $R_n$ is symmetric.
+For transitivity let's choose any $a$, $b$, $c\in\mathbb{Z}$ such that $a=b\pmod{n}$ and $b=c\pmod{n}$.
+This means that there exist $q$, $r\in\mathbb{Z}$ such that $a-b=qn$ and $b-c=rn$.
+Hence $a-c=a-b+b-c=qn+rn=(q+r)n$, and therefore $a=c\pmod{n}$.
+
+Based on the proof above $R_n$ is an equivalence relation that partitions the set $\mathbb{Z}$ into $n$ abstraction classes;
+the $i$th class, where $i=1$, 2, \dots, $n$, is the set of integers that leave remainder $i-1$ when divided by $n$.
