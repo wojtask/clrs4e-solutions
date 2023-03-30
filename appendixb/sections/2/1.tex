@@ -1,0 +1,10 @@
+\exercise
+To show that the relation ``$\subseteq$'' on the power set $2^\mathbb{Z}$ is a partial order, we will show that ``$\subseteq$'' is reflexive, antisymmetric and transitive.
+Let $A$, $B$, $C\in2^\mathbb{Z}$.
+Of course, $x\in A$ implies $x\in A$, so reflexivity trivially holds.
+If $A\subseteq B$ and $B\subseteq A$, then $x\in A$ implies $x\in B$, and $x\in B$ implies $x\in A$.
+By the law of transitivity of implication, $x\in A$ if and only if $x\in B$, and therefore $A=B$.
+The combination of $A\subseteq B$ and $B\subseteq C$ means that $x\in A$ implies $x\in B$, and $x\in B$ implies $x\in C$.
+Referring again to the law of transitivity of implication, we have that $x\in A$ implies $x\in C$, that is, $A\subseteq C$.
+
+The relation ``$\subseteq$'' on $2^\mathbb{Z}$ is not a total order, because, for example, $\{0,1\}\nsubseteq\{1,2\}$ and $\{1,2\}\nsubseteq\{0,1\}$.
