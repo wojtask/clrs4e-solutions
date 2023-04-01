@@ -1,0 +1,30 @@
+\begin{tikzpicture}[
+    every node/.style = {draw=none, fill=none, minimum size=3mm, inner sep=0pt},
+    axis/.style = {very thick, arrow}
+]
+    \pgfkeys{/pgf/number format/.cd,fixed}
+    \foreach \x in {-4, ..., 4} {
+        \foreach \y in {-4, ..., 4} {
+            \pgfmathsetmacro\absx{abs(\x)}
+            \pgfmathsetmacro\absy{abs(\y)}
+            \pgfmathsetmacro\d{max(\absx,\absy)}
+            \pgfmathsetmacro\D{(2 * \d - 1)^2 - 1}
+            \pgfmathsetmacro\g{(\d == \x && \x != \absy ? \D + \d + \y :
+                               (\d == \y && \y != 0 ? \D + 3 * \d - \x :
+                               (\d == -\x && \x != \absy ? \D + 5 * \d - \y :
+                               (\d == -\y && \y != 0 ? \D + 7 * \d + \x : 0))))}
+            \pgfmathsetmacro\nodevalue{int(\g)}
+            \node[inner sep=1pt] at (7*\x mm, 7*\y mm) (node \nodevalue) {\nodevalue};
+        }
+    }
+    
+    \node[right=3mm of node 80, inner sep=1pt] (node 81) {$\dots$};
+    \foreach [count=\i] \j in {0, ..., 80} {
+        \draw (node \i) -- (node \j);
+    }
+    
+    \draw[axis, ->] (node 52.east) + (1mm,0mm) -- +(10mm, 0mm) node [above left=2mm] {$x$};
+    \draw[axis, ->] (node 60.north) + (0mm, 1mm) -- +(0mm, 10mm) node [below left=2mm] {$y$};
+    \draw[axis, -] (node 68.west) + (-1mm, 0mm) -- +(-7mm, 0mm);
+    \draw[axis, -] (node 76.south) + (0mm, -1mm) -- +(0mm, -7mm);
+\end{tikzpicture}

@@ -1,0 +1,30 @@
+\exercise
+Let $h:\mathbb{Z}\to\mathbb{Z}\times\mathbb{Z}$ be the function we are looking for.
+Since the inverse of a bijection is also a bijection, we will focus on finding the inverse $h^{-1}:\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$, which is equivalent to finding a way to sequentially number each ordered pair with integer elements, so that each integer is used as the number of some pair.
+We will now describe the construction of one of such mappings.
+
+Let us make some simplification\dash instead of numbering pairs by integers, we will restrict ourselves to natural numbers.
+Let $g:\mathbb{Z}\times\mathbb{Z}\to\mathbb{N}$ and $f:\mathbb{N}\to\mathbb{Z}$ be such bijections that $h^{-1}=f\circ g$.
+It was already noted on page 1162 that $f(n)=(-1)^n\lceil n/2\rceil$ is bijective, so all that remains is to find the function $g$.
+
+Consider the numbering of ordered pairs with integer elements shown in \refFigure{B.3-4} in the form of a spiral.
+Since each such pair $(x,y)$ is assigned a unique natural number, we can treat this spiral as a description of the function $g$.
+\begin{figure}[htb]
+    \subimport{./}{4.tikz}
+    \caption{A bijection from $\mathbb{Z}\times\mathbb{Z}$ to $\mathbb{Z}$.
+    Individual natural numbers denote the values of this bijection for points with integer coordinates in the Cartesian coordinate system.
+    } \label{fig:B.3-4}
+\end{figure}
+Let $d=\max(|x|,|y|)$ and $D=(2d-1)^2-1$.
+Informally, $d$ and $D$ denote, respectively, the number of the ``lap'' around the origin covered by the spiral at the time of passing through $(x,y)$, and the largest number on the spiral during the previous ``lap''.
+Then we can define the function $g$ as follows:
+\[
+    g(x,y) =
+    \ccases{
+        0 & \text{if $d=|x|=|y|=0$}, \\
+        D+\phantom{1}d+y & \text{if $d=x\ne|y|$}, \\
+        D+3d-x & \text{if $d=y\ne0$}, \\
+        D+5d-y & \text{if $d=-x\ne|y|$}, \\
+        D+7d+x & \text{if $d=-y\ne0$}.
+    }
+\]

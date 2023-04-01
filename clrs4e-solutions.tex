@@ -137,11 +137,15 @@
 \newcommand{\refProblem}[1]{Problem~\mbox{\ref{sol:#1}}}
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
 
-\usetikzlibrary{positioning}
+\usetikzlibrary{
+    arrows.meta,
+    bending,
+    positioning}
 
 \tikzset{
     every node/.style = {font=\footnotesize},
 	light blue/.style = {fill=cyan!25},
+    arrow/.style = {->, >={Stealth[bend]}, draw},
 }
 
 
