@@ -20,11 +20,11 @@ Informally, $d$ and $D$ denote, respectively, the number of the ``lap'' around t
 Then we can define the function $g$ as follows:
 \[
     g(x,y) =
-    \ccases{
+    \begin{Cases}
         0 & \text{if $d=|x|=|y|=0$}, \\
         D+\phantom{1}d+y & \text{if $d=x\ne|y|$}, \\
         D+3d-x & \text{if $d=y\ne0$}, \\
         D+5d-y & \text{if $d=-x\ne|y|$}, \\
         D+7d+x & \text{if $d=-y\ne0$}.
-    }
+    \end{Cases}
 \]

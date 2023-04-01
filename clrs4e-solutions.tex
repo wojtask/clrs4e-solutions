@@ -31,6 +31,9 @@
 \usepackage{latexcolors}
 \usepackage{import}
 
+% TODO: Remove when #1566 is fixed
+\usepackage{environ}
+
 \IfFileExists{mtpro2.sty}{% Enable Times Roman font for the main text to make it consistent with the textbook:
     \usepackage{txfonts}
     % Use mtpro2 math font set.
@@ -40,10 +43,14 @@
     %   - change eucal to mtpcal
     %   - change amsbb to mtphrb
     \usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
+    % TODO: Remove when #1566 is fixed
+    \NewEnviron{Cases}{\ccases{\BODY}}
 }{% Alternatively, in case mtpro2 isn't available, use Palatino and AMS Euler fonts:
     \usepackage{amssymb}
     \usepackage{newpxtext}
     \usepackage[euler-digits,euler-hat-accent]{eulervm}
+    % TODO: Remove when #1566 is fixed
+    \NewEnviron{Cases}{\begin{cases}\BODY\end{cases}}
 }
 
 \usepackage[
