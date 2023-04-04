@@ -1,0 +1,10 @@
+\exercise
+Every vertex of a directed or undirected graph is reachable from itself because there is a path of length 1 containing only that vertex, therefore the ``is reachable from'' relation is reflexive.
+
+Let $u$, $v$, $w$ be vertices of a directed or undirected graph such that $u\overset{p}{\leadsto}v$ and $v\overset{q}{\leadsto}w$.
+Then there is a path from $u$ to $w$ which is a concatenation of the sequences $p$ and $q$ (with the extra $v$ between them eliminated), which proves transitivity.
+
+The relation is symmetric only in an undirected graph, because for its any vertices $u$, $v$, if $u\overset{p}{\leadsto}v$ then we can mirror the sequence $p$ to obtain $p'$ such that $v\overset{p'}{\leadsto}u$.
+The sequence $p'$ is a valid path, because if $(x,y)$ is an edge, so is $(y,x)$.
+In a directed graph the edges are ordered pairs, so if $(x,y)$ is an edge, $(y,x)$ may not be.
+Thus mirroring may not produce a valid path and so symmetry does not hold in general for directed graphs.
