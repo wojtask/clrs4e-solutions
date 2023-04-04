@@ -3,7 +3,7 @@ We proceed by induction on the number of vertices in the graph $G=(V,E)$.
 When $|V|=1$, the graph has no edges and the inequality trivially holds.
 For the inductive step, pick a vertex $v\in V$.
 $G$ is connected so there must be at least one edge incident on $v$ and another vertex from $V$.
-Let $G'=(V',E')$ be the subgraph of $G$ induced by $V'=V\setminus\{v\}$ (i.e., the graph $G$ with vertex $v$ and all edges incident on $v$ removed).
+Let $G'=(V',E')$ be the subgraph of $G$ induced by $V'=V-\{v\}$ (i.e., the graph $G$ with vertex $v$ and all edges incident on $v$ removed).
 We have $|V'|=|V|-1$ and $|E'|\le |E|-1$, so:
 \begin{align*}
     |E| &\ge |E'|+1 \\
