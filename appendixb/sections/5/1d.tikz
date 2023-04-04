@@ -1,0 +1,99 @@
+\begin{tikzpicture}[
+    container/.style = {draw=none, fill=none, node distance=1mm, every node/.style=tree node},
+    level/.append style = {sibling distance=30mm/2^#1}
+]
+    \node[container] (tree 1) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child[missing]
+            child {node {$y$}
+            child[missing]
+            child {node {$z$}}
+            };
+        \end{tikzpicture}
+    };
+    \node[container, right=of tree 1] (tree 2) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child[missing]
+            child {node {$y$}
+            child {node {$z$}}
+            child[missing]
+            };
+        \end{tikzpicture}
+    };
+    \node[container, right=5mm of tree 2.north east, anchor=north west] (tree 3) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$y$}}
+            child {node {$z$}};
+        \end{tikzpicture}
+    };
+    \node[container, right=5mm of tree 3.north east, anchor=north west] (tree 4) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$y$}
+            child[missing]
+            child {node {$z$}}
+            }
+            child[missing];
+        \end{tikzpicture}
+    };
+    \node[container, right=of tree 4] (tree 5) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$y$}
+            child {node {$z$}}
+            child[missing]
+            }
+            child[missing];
+        \end{tikzpicture}
+    };
+    \node[container, below=of tree 1] (tree 6) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child[missing]
+            child {node {$z$}
+            child[missing]
+            child {node {$y$}}
+            };
+        \end{tikzpicture}
+    };
+    \node[container, right=of tree 6] (tree 7) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child[missing]
+            child {node {$z$}
+            child {node {$y$}}
+            child[missing]
+            };
+        \end{tikzpicture}
+    };
+    \node[container, right=5mm of tree 7.north east, anchor=north west] (tree 8) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$z$}}
+            child {node {$y$}};
+        \end{tikzpicture}
+    };
+    \node[container, right=5mm of tree 8.north east, anchor=north west] (tree 9) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$z$}
+            child[missing]
+            child {node {$y$}}
+            }
+            child[missing];
+        \end{tikzpicture}
+    };
+    \node[container, right=of tree 9] (tree 10) {
+        \begin{tikzpicture}[anchor=center]
+            \node {$x$}
+            child {node {$z$}
+            child {node {$y$}}
+            child[missing]
+            }
+            child[missing];
+        \end{tikzpicture}
+    };
+\end{tikzpicture}
