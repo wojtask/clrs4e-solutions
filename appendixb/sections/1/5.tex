@@ -5,7 +5,7 @@ When $|S|=0$, it holds that $|2^S|=2^{|S|}=1$, because $S$ has exactly one subse
 Now let $|S|>0$ and assume that $|2^S|=2^{|S|}$.
 Choose $p\notin S$ and consider the set $S'=S\cup\{p\}$.
 We can divide the subsets of $S'$ into those that contain $p$ and those that do not contain $p$.
-From the induction hypothesis, there are $|2^S|=\bigl|2^{S'\setminus\{p\}}\bigr|=2^{|S'\setminus\{p\}|}$ of the latter.
+By the inductive hypothesis there are $|2^S|=\bigl|2^{S'\setminus\{p\}}\bigr|=2^{|S'\setminus\{p\}|}$ of the latter.
 In fact there are as many subsets containing $p$, because each is formed as a union of the singleton $\{p\}$ with some subset not containing $p$.
 Thus we have:
 \begin{align*}
