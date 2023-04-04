@@ -25,6 +25,11 @@
     labelfont=bf,
     labelsep=quad,
     singlelinecheck=false]{caption}
+\usepackage[
+    font=footnotesize,
+    labelfont=rm,
+    singlelinecheck=true,
+    labelformat=simple]{subcaption}
 \usepackage[shortlabels]{enumitem}
 \usepackage[screen]{clrscode4e}
 \usepackage{tikz}
@@ -65,6 +70,8 @@
 
 
 \colorlet{accentcolor}{blue(ncs)}
+\definecolor{orange}{cmyk}{0,0.47,0.87,0.04}
+\definecolor{tan}{cmyk}{0,0.1,0.3,0}
 
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
@@ -72,6 +79,7 @@
 \renewcommand{\thesubsubsection}{\alph{subsubsection}.}
 
 \renewcommand{\thefigure}{\thesubsection}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\quad#1}{}}
@@ -153,6 +161,7 @@
     every node/.style = {font=\footnotesize},
 	light blue/.style = {fill=cyan!25},
     arrow/.style = {->, >={Stealth[bend]}, draw},
+    tree node/.style = {align=center, inner sep=-1pt, minimum size=5mm, text height=1.5ex, text depth=.1ex, circle, draw=orange, fill=tan},
 }
 
 

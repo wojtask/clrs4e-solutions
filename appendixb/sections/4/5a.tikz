@@ -1,0 +1,14 @@
+\begin{tikzpicture}[
+    every node/.style = {tree node},
+    every edge/.style = {arrow},
+]
+    \node (1) {1};
+    \node[right=15mm of 1] (2) {2};
+    \node[right=5mm of 2] (3) {3};
+    \node[below=15mm of 1] (4) {4};
+    \node[right=15mm of 4] (5) {5};
+    \node[right=5mm of 5] (6) {6};
+    \path (2) edge (1) edge (4) edge (5);
+    \path (4) edge (1) edge (5);
+    \path (3) edge (6);
+\end{tikzpicture}
