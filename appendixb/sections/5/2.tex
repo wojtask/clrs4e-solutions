@@ -1,0 +1,10 @@
+\exercise
+Let $G'=(V,E')$ be the undirected version of the graph $G$.
+Note that $G'$ is connected, since every vertex $v\in V$ is reachable from vertex $v_0$ in $G'$.
+
+Now suppose that $G'$ does not form a tree.
+This means it has a cycle of length $k\ge3$, in particular a simple cycle of such a length (after \refExercise{B.4-2}), say $\langle v_1$, $v_2$, \dots, $v_{k+1}\rangle$, where $v_{k+1}=v_1$.
+For simplicity, let $v_{k+2}=v_2$.
+The graph $G$ is acyclic, so for some integer $1\le l\le k$ there must be edges $(v_l,v_{l+1})$, $(v_{l+2},v_{l+1})\in E$.
+By assumption, both $v_l$ and $v_{l+2}$ are reachable from $v_0$, so there are two different paths from $v_0$ to $v_{l+1}$: $v_0\leadsto v_l\to v_{l+1}$ and $v_0\leadsto v_{l+2}\to v_{l+1}$.
+The obtained contradiction leads to the conclusion that $G'$ is acyclic and so it is a tree.
