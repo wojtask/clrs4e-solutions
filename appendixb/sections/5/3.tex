@@ -1,0 +1,23 @@
+\exercise
+The proof is by induction on the number $n$ of nodes in the tree.
+The base case is when $n=1$.
+A binary tree with only one node has one leaf and no degree-2 nodes, thus the statement holds.
+
+For the inductive step, suppose that $n\ge1$ and assume that the statement is true for all binary trees with $n$ nodes.
+Let $T$ be a binary tree with $n+1$ nodes.
+We can remove the root node and obtain two subtrees, each of which has less than $n+1$ nodes.
+If any of the subtrees is empty, the statement follows immediately from the inductive hypothesis applied to the other (nonempty) subtree, since the root of $T$ is neither a leaf nor a degree-2 node.
+
+Now suppose that both the left subtree and the right subtree are nonempty.
+Let $L$ and $D$ be, respectively, the number of leaves and the number of degree-2 nodes in $T$.
+Similarly, let $L_1$ and $D_1$ be the analogous numbers for the left subtree, and let $L_2$ and $D_2$ be the analogous numbers for the right subtree.
+It holds that $L=L_1+L_2$ and $D=D_1+D_2+1$.
+Then:
+\begin{align*}
+    D &= D_1+D_2+1 \\
+    &= L_1-1+L_2-1+1 \tag{by the inductive hypothesis} \\
+    &= L_1+L_2-1 \\
+    &= L-1.
+\end{align*}
+
+In a full binary tree each internal node is a degree-2 node, so based on the above result, such a tree has one fewer internal nodes than leaves.
