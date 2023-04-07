@@ -1,0 +1,9 @@
+\exercise
+Let $T$ be a binary tree with $L\ge2$ leaves.
+Suppose that $T$ does not contain a subtree having between $L/3$ and $2L/3$ leaves, inclusive.
+Since $L\ge2$, the root of $T$ is not a leaf.
+We will follow a path $p$ from the root to a leaf, at each level traversing from a node to its child whose subtree has more leaves.
+The numbers of leaves in subtrees rooted at the visited nodes decrease from $L$ to 1 as we move on the path $p$.
+By assumption, there is a node $x$ on path $p$ such that the subtree rooted at $x$ has more than $2L/3$ leaves, and that the subtree $T_y$ rooted at its child $y$ has less than $L/3$ leaves.
+The subtree rooted at the other child of $x$ has fewer leaves than $T_y$ (0 if $x$ has only one child).
+This leads to a contradiction because the total number of leaves in both subtrees is less than $2L/3$.
