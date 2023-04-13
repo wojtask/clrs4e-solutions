@@ -1,0 +1,26 @@
+\exercise
+The proof is by induction on the height $h$ of the binary tree.
+
+The only nonempty binary tree with $h=0$ is the one with a single node, so $n=1$ and the statement $h\ge\lfloor\lg n\rfloor$ holds.
+Now let $h>0$ and suppose that the statement holds for all binary trees with heights at most $h-1$.
+Consider a binary tree $T$ with height $h$.
+One of its subtrees must have height $h'=h-1$, and the other subtree must have height $h''\le h-1$.
+Let $n'$ and $n''$ be the numbers of nodes in these subtrees, respectively.
+By the inductive hypothesis, $h'\ge\lfloor\lg n'\rfloor$ and $h''\ge\lfloor\lg n''\rfloor$.
+Observe that for any integer $k\ge0$ it is true that $\lfloor\lg2^{k+1}\rfloor=k+1$ but $\lfloor\lg(2^{k+1}-1)\rfloor=k$.
+Therefore we have
+\begin{align*}
+    n' &\le 2^{h'+1}-1
+\end{align*}
+and
+\begin{align*}
+    n'' &\le 2^{h''+1}-1.
+\end{align*}
+The tree $T$ has $n=n'+n''+1$ nodes, so
+\begin{align*}
+    n &= n'+n''+1 \\
+    &\le 2^{h'+1}-1+2^{h''+1}-1+1 \\
+    &\le 2^h+2^h-1 \\
+    &= 2^{h+1}-1.
+\end{align*}
+Using the above observation again, we conclude that $\lfloor\lg n\rfloor\le h$.
