@@ -1,10 +1,29 @@
 \exercise
-The proof is by induction on the number $n$ of nodes of the tree.
-In the empty tree (where $n=0$) the sum of the leaf weights is 0, which obviously satisfies the inequality.
-When $n=1$, then the tree consists of a single leaf with a depth of 0, so the sum of the leaf weights is $2^{-0}=1$.
+We proceed by induction on $n$.
+The base case is when $n=0$.
+The only full binary tree that has no internal nodes is a one-node tree, for which we have $e=i=0$ and the statement holds.
 
-Now suppose that $n>1$ and that the inequality holds for trees with less than $n$ nodes.
-Let $T$ be a binary tree with $n$ nodes, and let $T_L$, $T_R$ be its left and right subtrees, respectively.
-By the inductive hypothesis, we have that the inequality is satisfied separately for trees $T_L$ and $T_R$.
-The depth of a leaf in tree $T$ is 1 greater than the depth of the same leaf in either $T_L$ or $T_R$, hence the weights of the leaves of $T$ are half as compared to the weights of the same leaves in its subtrees.
-Thus, in tree $T$ both the sum of the leaf weights from $T_L$, as well as the sum of the leaf weights from $T_R$ do not exceed $1/2$, and so the total sum of the leaf weights in $T$ does not exceed 1.
+Now let $n\ge1$ and suppose that the statement holds for all full binary trees with less than $n$ internal nodes.
+We can construct an arbitrary full binary tree $T$ with $n$ internal nodes by choosing any pair of full binary trees, whose numbers of internal nodes sum up to $n-1$, for its left subtree $T_L$ and its right subtree $T_R$.
+For $k\ge0$, if $T_L$ has $k$ internal nodes, $T_R$ has $n-k-1$ internal nodes.
+By the conclusion made in \refExercise{B.5-3}, $T_L$ and $T_R$ have $k+1$ and $n-k$ leaves, respectively.
+
+Let $i_L$ and $i_R$ be the internal path lengths of $T_L$ and $T_R$, respectively, and similarly, let $e_L$ and $e_R$ be their external path lengths.
+The depth of each node in $T$\dash other than the root, for which the depth is 0\dash is 1 more than the depth of this node in either $T_L$ or $T_R$.
+Hence,
+\begin{align*}
+    i &= 0+(i_L+k)+(i_R+n-k-1) \\
+    &= i_L+i_R+n-1
+\end{align*}
+and
+\begin{align*}
+    e &= (e_L+k+1)+(e_R+n-k) \\
+    &= e_L+e_R+n+1.
+\end{align*}
+By the inductive hypothesis, $e_L=i_L+2k$ and $e_R=i_R+2(n-k-1)$, so
+\begin{align*}
+    e-i &= e_L+e_R+n+1-i_L-i_R-n+1 \\
+    &= i_L+2k+i_R+2(n-k-1)-i_L-i_R+2 \\
+    &= 2n.
+\end{align*}
+Therefore, the statement holds for all full binary trees.

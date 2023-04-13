@@ -1,9 +1,10 @@
 \exercise
-Let $T$ be a binary tree with $L\ge2$ leaves.
-Suppose that $T$ does not contain a subtree having between $L/3$ and $2L/3$ leaves, inclusive.
-Since $L\ge2$, the root of $T$ is not a leaf.
-We will follow a path $p$ from the root to a leaf, at each level traversing from a node to its child whose subtree has more leaves.
-The numbers of leaves in subtrees rooted at the visited nodes decrease from $L$ to 1 as we move on the path $p$.
-By assumption, there is a node $x$ on path $p$ such that the subtree rooted at $x$ has more than $2L/3$ leaves, and that the subtree $T_y$ rooted at its child $y$ has less than $L/3$ leaves.
-The subtree rooted at the other child of $x$ has fewer leaves than $T_y$ (0 if $x$ has only one child).
-This leads to a contradiction because the total number of leaves in both subtrees is less than $2L/3$.
+The proof is by induction on the number $n$ of nodes of the tree.
+In the empty tree (where $n=0$) the sum of the leaf weights is 0, which obviously satisfies the inequality.
+When $n=1$, then the tree consists of a single leaf with a depth of 0, so the sum of the leaf weights is $2^{-0}=1$.
+
+Now suppose that $n>1$ and that the inequality holds for trees with less than $n$ nodes.
+Let $T$ be a binary tree with $n$ nodes, and let $T_L$, $T_R$ be its left and right subtrees, respectively.
+By the inductive hypothesis, we have that the inequality is satisfied separately for trees $T_L$ and $T_R$.
+The depth of a leaf in tree $T$ is 1 greater than the depth of the same leaf in either $T_L$ or $T_R$, hence the weights of the leaves of $T$ are half as compared to the weights of the same leaves in its subtrees.
+Thus, in tree $T$ both the sum of the leaf weights from $T_L$, as well as the sum of the leaf weights from $T_R$ do not exceed $1/2$, and so the total sum of the leaf weights in $T$ does not exceed 1.
