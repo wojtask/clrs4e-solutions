@@ -1,0 +1,18 @@
+\subproblem
+$(1)\Rightarrow(2)$: Since $G=(V,E)$ is a bipartite graph, the vertex set $V$ can be partitioned into two sets $V_1$ and $V_2$, such that vertices from one set aren't adjacent to vertices from the other set.
+Thanks to this property it is possible to assign one color to each vertex from $V_1$ and a different color to each vertex from $V_2$, obtaining a 2-coloring of graph $G$.
+
+$(2)\Rightarrow(3)$: Suppose that graph $G$ has a cycle $p=\langle v_0$, $v_1$, \dots, $v_{2k+1}\rangle$ for some $k\ge1$.
+Let $c$ be a 2-coloring of $G$ and without loss of generality suppose that $c(v_0)=1$.
+Then it must be $c(v_{2i})=1$ and $c(v_{2i+1})=2$ for all $i=0$, 1, \dots, $k$.
+But since $p$ is a cycle, $v_{2k+1}=v_0$, which yields the contradiction.
+Therefore, graph $G$ must not contain a cycle of odd length.
+
+$(3)\Rightarrow(1)$: Suppose that graph $G$ is connected.
+Otherwise, apply the following proof separately to each connected component of $G$.
+
+Choose any $v_0\in V$.
+Let $V_1$ be the set of all vertices $v\in V$ for which there exists a path from $v_0$ to $v$ of even length, and let $V_2=V-V_1$.
+If there were vertices $u$, $w\in V_1$, such that there is a path from $u$ to $w$ of odd length, then $v_0\leadsto u\leadsto w\leadsto v_0$ would be a cycle of an odd length.
+Therefore, no two vertices from $V_1$ are adjacent, and we can prove a similar fact for vertices in $V_2$.
+This means that $G=(V_1\cup V_2,E)$ is bipartite.
