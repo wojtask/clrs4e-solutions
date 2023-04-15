@@ -1,0 +1,11 @@
+\subproblem
+We carry out the proof by induction on the number of vertices in graph $G=(V,E)$.
+If the graph has only one vertex (with degree 0), then of course one color is enough.
+
+Now suppose that $|V|>1$.
+Let us choose an arbitrary vertex $v\in V$ and denote by $G'$ the subgraph of $G$ induced by the set $V-\{v\}$.
+By the inductive hypothesis, $G'$ can be colored with $d'+1$ colors, where $d'$ is the maximum degree of any vertex in $G'$.
+It is true that $d'\le d$, so $G'$ can also be colored with $d+1$ colors.
+Since vertex $v$ has at most $d$ neighbors in $G$, among the colors used in a
+$(d+1)$-coloring of $G'$ there is one that is not assigned to any neighbor of $v$ in graph $G$.
+By assigning that color to $v$, we obtain a $(d+1)$-coloring of $G$.
