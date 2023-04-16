@@ -146,6 +146,12 @@
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{3}
 
+\newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{}
+\theoremstyle{clrs}
+\newtheorem*{theorem}{Theorem}
+\renewcommand{\qedsymbol}{\hfill\ensuremath{\blacksquare}{\parfillskip=0pt\par}}
+\renewenvironment{proof}{{\noindent\bfseries\itshape Proof\quad}}{\hfill\qedsymbol}
+
 \newcommand{\dash}{\,---\,}
 \newcommand{\concept}[1]{\textcolor{accentcolor}{\textbf{\itshape{#1}}}}
 \newcommand{\refExercise}[1]{Exercise~\mbox{\ref{sol:#1}}}
