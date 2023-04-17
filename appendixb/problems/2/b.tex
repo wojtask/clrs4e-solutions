@@ -1,0 +1,17 @@
+\subproblem
+\begin{theorem}
+    An undirected graph $G=(V,E)$ of 6 vertices, or its complement\footnote{See page 1085 in the book.} $\overline{G}$, contain a clique\footnote{See page 1081 in the book.} of size 3.
+\end{theorem}
+
+\begin{proof}
+    Let's pick any $v\in V$.
+    Since $|V|=6$, there is a set $U\subseteq V-\{v\}$ of three vertices, for which exactly one of the following cases holds:
+    \begin{enumerate}
+        \item each vertex in $U$ is adjacent to $v$,
+        \item no vertex in $U$ is adjacent to $v$.
+    \end{enumerate}
+    Since case 1 in $G$ is equivalent to case 2 in $\overline{G}$, and vice versa, let us focus on case 1 only.
+    If there is a pair of adjacent vertices among those in $U$, then the vertices of this pair together with $v$ form a clique in $G$.
+    Now suppose there is no such pair.
+    Then, however, the vertices in $U$ form a clique in $\overline{G}$.
+\end{proof}

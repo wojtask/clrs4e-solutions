@@ -146,6 +146,15 @@
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{3}
 
+\setlist[itemize]{left=0pt}
+\setlist[enumerate]{left=0pt}
+
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth
+  \kern 2pt
+}
+
 \newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{}
 \theoremstyle{clrs}
 \newtheorem*{theorem}{Theorem}
