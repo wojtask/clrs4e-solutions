@@ -1,0 +1,16 @@
+\subproblem
+\begin{theorem}
+    For any undirected graph $G=(V,E)$ the set $V$ can be partitioned into two subsets such that for any vertex $v\in V$ at least half of its neighbors do not belong to the subset that $v$ belongs to.
+\end{theorem}
+
+\begin{proof}
+    Let us divide the vertices of $G$ arbitrarily into two disjoint subsets $V_1$ and $V_2$.
+    Let
+    \[
+        S = \{(v_1,v_2)\in E:v_1\in V_1,\,v_2\in V_2\}.
+    \]
+    If more than half of the neighbors of some vertex $v\in V_1$ are also in $V_1$, then moving $v$ to $V_2$ increases the size of set $S$.
+    Similarly, for vertices $v\in V_2$ with this property\dash by moving them to set $V_1$, we increase set $S$.
+    This process must terminate after a finite number of steps, because $S$ cannot grow indefinitely.
+    The obtained partition $V=V_1\cup V_2$ satisfies the desired property.
+\end{proof}
