@@ -1,0 +1,51 @@
+\subproblem
+Before we formulate the main theorem, we will need the following lemma.
+\begin{lemma}
+    Let $G=(V,E)$ be an undirected graph, where $|V|\ge3$ and
+    \begin{equation} \label{eq:degrees-sum}
+        \degree(u)+\degree(v) \ge |V| \tag{$*$}
+    \end{equation}
+    for every pair of non-adjacent vertices $u$, $v\in V$.
+    Then $G$ is hamiltonian\footnote{See page 1056 in the book.}.
+\end{lemma}
+
+\begin{proof}
+    Suppose the lemma does not hold, that is there is a graph $G=(V,E)$ with at least 3 vertices, that satisfies the property (\ref{eq:degrees-sum}), but is not hamiltonian.
+    Among all such graphs let us consider that of the greatest number of edges $|E|$.
+    Let $n=|V|$.
+    Then $G$ must have a hamiltonian path\footnote{See Exercise 34.2-6.} $\langle v_1$, $v_2$, \dots, $v_n\rangle$\dash otherwise we could add the missing edges without violating (\ref{eq:degrees-sum}) and get a graph with more than $|E|$ edges.
+    Since $G$ does not have a hamiltonian cycle, $(v_1,v_n)\notin E$.
+    By assumption, we have that $\degree(v_1)+\degree(v_n)\ge n$.
+
+    Now let us define the following sets:
+    \begin{gather*}
+        S_1 = \{i: 2\le i\le n \text{ and } (v_1,v_i)\in E\}, \\
+        S_n = \{i: 2\le i\le n \text{ and } (v_{i-1},v_n)\in E\}.
+    \end{gather*}
+    Then $|S_1|=\degree(v_1)$ and $|S_n|=\degree(v_n)$.
+    Since $|S_1|+|S_n|\ge n$ and the set $S_1\cup S_n$ has at most $n-1$ elements, the set $S_1\cap S_n$ must be non-empty.
+    So there exists $i$ for which $(v_1,v_i)$, $(v_{i-1},v_n)\in E$.
+    Hence, the path
+    \begin{align*}
+        v_1\leadsto v_{i-1}\to v_n\to v_{n-1}\leadsto v_i\to v_1
+    \end{align*}
+    is a hamiltonian cycle in graph $G$, which is a contradiction.
+\end{proof}
+
+\begin{theorem}
+    Let $G=(V,E)$ be an undirected graph, where $|V|\ge3$ and
+    \[
+        \degree(v) \ge |V|/2
+    \]
+    for every vertex $v\in V$.
+    Then $G$ is hamiltonian.
+\end{theorem}
+
+\begin{proof}
+    If the property holds for every $v\in V$, then
+    \[
+        \degree(u)+\degree(v) \ge |V|
+    \]
+    for every $u$, $v\in V$ whether they are adjacent or not.
+    So $G$ satisfies the assumptions of the lemma, and thus it is hamiltonian.
+\end{proof}

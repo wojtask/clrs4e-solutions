@@ -158,6 +158,7 @@
 \newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{}
 \theoremstyle{clrs}
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
 \renewcommand{\qedsymbol}{\hfill\ensuremath{\blacksquare}{\parfillskip=0pt\par}}
 \renewenvironment{proof}{{\noindent\bfseries\itshape Proof\quad}}{\hfill\qedsymbol}
 
@@ -166,6 +167,8 @@
 \newcommand{\refExercise}[1]{Exercise~\mbox{\ref{sol:#1}}}
 \newcommand{\refProblem}[1]{Problem~\mbox{\ref{sol:#1}}}
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
+
+\DeclareMathOperator{\degree}{degree}
 
 \usetikzlibrary{
     arrows.meta,
