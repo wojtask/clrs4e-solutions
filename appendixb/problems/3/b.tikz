@@ -1,0 +1,11 @@
+\begin{tikzpicture}[
+    every node/.style = {tree node},
+    level/.append style = {sibling distance=30mm/2^#1}
+]
+\node {}
+    child {node {}
+        child {node {}}
+        child {node {}}
+    }
+    child[missing];
+\end{tikzpicture}
