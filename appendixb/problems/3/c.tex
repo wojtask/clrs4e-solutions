@@ -1,0 +1,18 @@
+\subproblem
+Assume that $n\ge6$.
+We'll remove one edge from the original tree to cut off a subtree of at most $\lfloor n/2\rfloor$ vertices.
+Consider any of the tree's branches $\langle x_0$, $x_1$, \dots, $x_k\rangle$, as well as the function $s$, both defined in the solution to part (a).
+There is an edge $(x_j,x_{j+1})$, such that $s(x_j)>\lfloor n/2\rfloor$ and $s(x_{j+1})\le\lfloor n/2\rfloor$.
+From inequality \eqref{eq:subtree-sizes-on-branch} we have
+\begin{align*}
+    s(x_{j+1}) &\ge (s(x_j)-1)/2 \\
+    &> (\lfloor n/2\rfloor-1)/2 \\
+    &\ge \lfloor n/2\rfloor/3.
+\end{align*}
+We cut off the subtree rooted at $x_{j+1}$ and continue partitioning the remaining tree, with at most
+\[
+    \lfloor n/2\rfloor-s(x_{j+1}) < (2/3)\lfloor n/2\rfloor
+\]
+vertices still to remove from it.
+In each subsequent step the number of nodes remaining to be cut is reduced by a factor of $2/3$.
+Therefore, we'll need to remove $O(\log_{3/2}n)=O(\lg n)$ edges.

@@ -81,6 +81,8 @@
 \renewcommand{\thefigure}{\thesubsection}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 
+\counterwithout{equation}{chapter}
+
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\quad#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
