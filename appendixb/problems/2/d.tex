@@ -2,18 +2,18 @@
 Before we formulate the main theorem, we will need the following lemma.
 \begin{lemma}
     Let $G=(V,E)$ be an undirected graph, where $|V|\ge3$ and
-    \begin{equation} \label{eq:degrees-sum}
-        \degree(u)+\degree(v) \ge |V| \tag{$*$}
+    \begin{equation} \label{eq:non-adjacent-vertices-degrees-sum}
+        \degree(u)+\degree(v) \ge |V|
     \end{equation}
     for every pair of non-adjacent vertices $u$, $v\in V$.
     Then $G$ is hamiltonian\footnote{See page 1056 in the book.}.
 \end{lemma}
 
 \begin{proof}
-    Suppose the lemma does not hold, that is there is a graph $G=(V,E)$ with at least 3 vertices, that satisfies the property (\ref{eq:degrees-sum}), but is not hamiltonian.
+    Suppose the lemma does not hold, that is there is a graph $G=(V,E)$ with at least 3 vertices, that satisfies the property \eqref{eq:non-adjacent-vertices-degrees-sum}, but is not hamiltonian.
     Among all such graphs let us consider that of the greatest number of edges $|E|$.
     Let $n=|V|$.
-    Then $G$ must have a hamiltonian path\footnote{See Exercise 34.2-6.} $\langle v_1$, $v_2$, \dots, $v_n\rangle$\dash otherwise we could add the missing edges without violating (\ref{eq:degrees-sum}) and get a graph with more than $|E|$ edges.
+    Then $G$ must have a hamiltonian path\footnote{See Exercise 34.2-6.} $\langle v_1$, $v_2$, \dots, $v_n\rangle$\dash otherwise we could add the missing edges without violating \eqref{eq:non-adjacent-vertices-degrees-sum} and get a graph with more than $|E|$ edges.
     Since $G$ does not have a hamiltonian cycle, $(v_1,v_n)\notin E$.
     By assumption, we have that $\degree(v_1)+\degree(v_n)\ge n$.
 
