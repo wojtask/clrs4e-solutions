@@ -1,4 +1,3 @@
-\exercise
 Let $h:\mathbb{Z}\to\mathbb{Z}\times\mathbb{Z}$ be the function we are looking for.
 Since the inverse of a bijection is also a bijection, we will focus on finding the inverse $h^{-1}:\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$, which is equivalent to finding a way to sequentially number each ordered pair with integer elements, so that each integer is used as the number of some pair.
 We will now describe the construction of one of such mappings.
@@ -10,7 +9,7 @@ It was already noted on page 1162 that $f(n)=(-1)^n\lceil n/2\rceil$ is bijectiv
 Consider the numbering of ordered pairs with integer elements shown in \refFigure{B.3-4} in the form of a spiral.
 Since each such pair $(x,y)$ is assigned a unique natural number, we can treat this spiral as a description of the function $g$.
 \begin{figure}[htb]
-    \subimport{./}{4.tikz}
+    \input{4.tikz}
     \caption{A bijection from $\mathbb{Z}\times\mathbb{Z}$ to $\mathbb{Z}$.
     Individual natural numbers denote the values of this bijection for points with integer coordinates in the Cartesian coordinate system.
     } \label{fig:B.3-4}

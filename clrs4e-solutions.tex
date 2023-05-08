@@ -172,6 +172,32 @@
 
 \DeclareMathOperator{\degree}{degree}
 
+\newcommand{\MakeChapter}[4]{%
+    \chapter{#1}%
+    \foreach \Title [count=\Section] in {#2}{%
+        \section{\Title}
+        \foreach \Exercise in {1,...,16}{%
+            \IfFileExists{#4/sections/\Section/\Exercise}{%
+                \exercise
+                \import{#4/sections/\Section/}{\Exercise}
+            }{}%
+        }%
+    }%
+    \problems
+    \foreach \Title [count=\Problem] in {#3}{%
+        \problem{\Title}
+        \IfFileExists{#4/problems/\Problem/main}{%
+            \import{#4/problems/\Problem/}{main}
+        }{}%
+        \foreach \SubProblem in {a,...,j}{%
+            \IfFileExists{#4/problems/\Problem/\SubProblem}{%
+                \subproblem
+                \import{#4/problems/\Problem/}{\SubProblem}
+            }{}%
+        }%
+    }%
+}
+
 \usetikzlibrary{
     arrows.meta,
     bending,
@@ -207,8 +233,20 @@
     \part{Appendix: Mathematical Background}
 
     \appendix
-    \import{appendixa/}{main}
-    \import{appendixb/}{main}
+    \MakeChapter{Summations}{
+        Summation formulas and properties,
+        Bounding summations}{
+        Bounding summations}{appendixa}
+
+    \MakeChapter{Sets, Etc.}{
+        Sets,
+        Relations,
+        Functions,
+        Graphs,
+        Trees}{
+        Graph coloring,
+        Friendly graphs,
+        Bisecting trees}{appendixb}
 
     \backmatter
 
