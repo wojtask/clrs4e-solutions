@@ -1,0 +1,29 @@
+Let's fix $n$.
+We'll view the expression $\binom{n}{k}$ as a function $b_n(k)$ for $k=0$, 1, \dots, $n$ and will find $k$ for which the value $b_n(k)$ is the greatest.
+Consider the ratio:
+\begin{align*}
+    \frac{b_n(k+1)}{b_n(k)} &= \frac{\binom{n}{k+1}}{\binom{n}{k}} \\
+    &= \frac{n!}{(k+1)!\,(n-k-1)!}\cdot\frac{k!\,(n-k)!}{n!} \\[1mm]
+    &= \frac{n-k}{k+1}.
+\end{align*}
+If $n-k\ge k+1$, or $k\le(n-1)/2$, then function $b_n$ is monotonically increasing.
+Conversely, when $k\ge(n-1)/2$, then function $b_n$ is monotonically decreasing.
+So when $n$ is odd, $b_n$ reaches its maximum for $k=(n-1)/2=\lfloor n/2\rfloor$.
+Moreover:
+\begin{align*}
+    b_n((n-1)/2) &= \binom{n}{(n-1)/2} \\
+    &= \binom{n}{n-(n-1)/2} \tag{by equation (C.3)} \\
+    &= \binom{n}{(n+1)/2} \\
+    &= b_n((n+1)/2),
+\end{align*}
+so the maximum value is also reached when $k=(n+1)/2=\lceil n/2\rceil$.
+
+In case $n$ is an even number, $b_n$ achieves the maximum value for either $k=n/2$ or $k=n/2-1$.
+Let's see which value is bigger:
+\begin{align*}
+    \frac{b_n(n/2)}{b_n(n/2-1)} &= \frac{\binom{n}{n/2}}{\binom{n}{n/2-1}} \\
+    &= \frac{n!}{(n/2)!\,(n/2)!}\cdot\frac{(n/2-1)!\,(n/2+1)!}{n!} \\[2mm]
+    &= \frac{n/2+1}{n/2} \\
+    &> 1.
+\end{align*}
+So we have that $b_n$ reaches its maximum for $k=n/2=\lfloor n/2\rfloor=\lceil n/2\rceil$.
