@@ -1,0 +1,19 @@
+First, let's observe that
+\begin{align*}
+    (j+k)! &= j!\,(j+1)(j+2)\cdots k \\
+    &\ge j!\,1\cdot2\cdots k \\
+    &= j!\,k!,
+\end{align*}
+where equality holds only if $j=0$ or $k=0$.
+Then
+\begin{align*}
+    \binom{n}{j+k} &= \frac{n!}{(j+k)!\,(n-j-k)!} \\
+    &\le \frac{n!}{j!\,k!\,(n-j-k)!} \\[1mm]
+    &= \frac{n!}{j!\,(n-j)!}\cdot\frac{(n-j)!}{k!\,(n-j-k)!} \\[1mm]
+    &= \binom{n}{j}\binom{n-j}{k}.
+\end{align*}
+
+We can interpret the expression $\binom{n}{j+k}$ as the number of possible ways to choose $j+k$ items out of $n$, and the expression $\binom{n}{j}\binom{n-j}{k}$ as the number of ways to choose $j$ items out of $n$, and then $k$ items out of $n-j$ left after the first choice.
+In each strategy we come up with a set of the $j+k$ selected items.
+There is exactly one way to construct a given set of $j+k$ items using the first strategy, and at least one if we follow the second strategy.
+It is so, because we can arbitrarily partition the set into the set of $j$ items that will be selected in the first step and the set of $k$ items that will be selected in the second step.
