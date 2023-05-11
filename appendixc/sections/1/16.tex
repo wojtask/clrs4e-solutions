@@ -1,0 +1,30 @@
+We can enumerate the cases with $n=0$, 1, 2, 3 and $k=0$, 1, and confirm that the identity holds for all of them.
+
+Now let $n\ge4$.
+We have
+\begin{align*}
+    \binom{n}{k} &= \frac{n(n-1)\cdots(n-(k-1))}{k!} \\
+    &= \frac{n^k}{k!}\left(1-\frac{1}{n}\right)\cdots\left(1-\frac{k-1}{n}\right) \\
+    &\ge \frac{n^k}{k!}\left(1-\frac{k-1}{n}\right)^{k-1}.
+\end{align*}
+Now consider the function
+\[
+    f(x,y) = \left(1-\frac{x}{n}\right)^y,
+\]
+where $0\le x\le n$ and $y\ge0$.
+Observe that the function $f$ monotonically decreases, when $x$ increases for a fixed $y$, or when $y$ increases for a fixed $x$.
+Therefore, since $k-1<\!\sqrt{n}$,
+\begin{align*}
+    \left(1-\frac{k-1}{n}\right)^{k-1} &\ge \left(1-\frac{\!\sqrt{n}}{n}\right)^{k-1} \\
+    &\ge \left(1-\frac{1}{\!\sqrt{n}}\right)^{\!\sqrt{n}}.
+\end{align*}
+It is true that
+\[
+    \left(1-\frac{1}{t}\right)^t \ge \frac{1}{4}
+\]
+for all $t\ge2$.
+Therefore, when $n\ge4$,
+\begin{align*}
+    \binom{n}{k} &\ge \frac{n^k}{k!}\left(1-\frac{1}{\!\sqrt{n}}\right)^{\!\sqrt{n}} \\
+    &\ge \frac{n^k}{4k!}.
+\end{align*}
