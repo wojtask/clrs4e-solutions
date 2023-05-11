@@ -1,0 +1,30 @@
+It's easy to check that the inequality holds for $k=0$.
+Now let $k\ge1$ and let's assume that
+\[
+    \binom{n}{k-1} \le \frac{n^n}{(k-1)^{k-1}(n-k+1)^{n-k+1}}.
+\]
+Then
+\begin{align*}
+    \binom{n}{k} &= \frac{n}{k}\binom{n-1}{k-1} \tag{by \refExercise{C.1-5}} \\
+    &= \frac{n}{k}\cdot\frac{n-k+1}{n}\binom{n}{k-1} \tag{by \refExercise{C.1-6}} \\
+    &\le \frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}} \tag{by the inductive hypothesis}.
+\end{align*}
+Now it suffices to show that
+\[
+    \frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}} \le \frac{n^n}{k^k(n-k)^{n-k}}.
+\]
+To prove this, we examine the ratio of both expressions:
+\begin{align*}
+    \frac{\frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}}}{\frac{n^n}{k^k(n-k)^{n-k}}} &= \frac{k^{k-1}(n-k)^{n-k}}{(k-1)^{k-1}(n-k+1)^{n-k}} \\
+    &= \frac{\bigl(\frac{k}{k-1}\bigr)^{k-1}}{\bigl(\frac{n-k+1}{n-k}\bigr)^{n-k}} \\[1mm]
+    &= \frac{\bigl(1+\frac{1}{k-1}\bigr)^{k-1}}{\bigl(1+\frac{1}{n-k}\bigr)^{n-k}}.
+\end{align*}
+The sequence $e_n={(1+1/n)}^n$ is increasing\dash therefore the above ratio does not exceed 1, as long as $k-1\le n-k$ or, equivalently, $k\le(n+1)/2$, and in particular when $k\le n/2$.
+Thus, we have shown that the inequality (C.7) holds for $k\le n/2$.
+
+When $n/2\le k\le n$, then $0\le n-k\le n/2$, so
+\begin{align*}
+    \binom{n}{k} &= \binom{n}{n-k} \tag{by equation (C.3)} \\
+    &\le \frac{n^n}{(n-k)^{n-k}k^k},
+\end{align*}
+where the last inequality holds after substituting $k$ by $n-k$ and applying the result from the first part of the exercise.
