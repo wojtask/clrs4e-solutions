@@ -1,0 +1,22 @@
+Using Stirling's approximation, we obtain
+\begin{align*}
+    \binom{2n}{n} &= \frac{(2n)!}{(n!)^2} \\
+    &= \frac{\sqrt{4\pi n}\,(2n/e)^{2n}(1+\Theta(1/n))}{2\pi n\,(n/e)^{2n}(1+\Theta(1/n))^2} \\[1mm]
+    &= \frac{2^{2n}}{\sqrt{\pi n}}\cdot\frac{1+\Theta(1/n)}{(1+\Theta(1/n))^2}.
+\end{align*}
+
+Now let's examine the last fraction, which we intentionally didn't reduce because the denominator may not be equal to the square of the numerator.
+Let $c$, $d$ be constants such that $c\ge d>0$, the expression $1+c/n$ bounds the numerator from above, and the expression $1+d/n$ bounds the denominator from below.
+Then
+\begin{align*}
+    \frac{1+\Theta(1/n)}{(1+\Theta(1/n))^2} &\le \frac{1+c/n}{(1+d/n)^2} \\[1mm]
+    &< \frac{1+c/n}{1+d/n} \\[1mm]
+    &= \frac{n+c}{n+d} \\
+    &= 1+\frac{c-d}{n+d} \\[1mm]
+    &< 1+\frac{c-d}{n} \\[1mm]
+    &= 1+O(1/n).
+\end{align*}
+Therefore,
+\[
+    \binom{2n}{n} = \frac{2^{2n}}{\sqrt{\pi n}}\,(1+O(1/n)).
+\]
