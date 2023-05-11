@@ -1,0 +1,10 @@
+Let's differentiate the binary entropy function $H$:
+\begin{align*}
+    H'(\lambda) &= -\left(\lg\lambda+\lambda\cdot\frac{1}{\lambda\ln2}\right)-\left(-\lg(1-\lambda)+(1-\lambda)\cdot\frac{-1}{(1-\lambda)\ln2}\right) \\[1mm]
+    &= -\lg\lambda-\lg e+\lg(1-\lambda)+\lg e \\[1mm]
+    &= \lg\frac{1-\lambda}{\lambda}, \\[1mm]
+    H''(\lambda) &= \frac{\lambda}{(1-\lambda)\ln2}\cdot\frac{-\lambda-(1-\lambda)}{\lambda^2} \\[1mm]
+    &= -\frac{\lg e}{\lambda(1-\lambda)}.
+\end{align*}
+The first derivative reaches zero when $\lambda=1/2$.
+For $\lambda=1/2$ the second derivative is negative, so the function $H$ achieves its maximum of $H(1/2)=1$.
