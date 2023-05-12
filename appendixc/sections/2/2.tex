@@ -1,0 +1,12 @@
+Let $C_1$, $C_2$, \dots\ be a finite or countably infinite sequence of events, where
+\[
+    C_i = A_i-\bigcup_{j=1}^{i-1}A_j
+\]
+for every $i=1$, 2, \dots.
+Because $\bigcup_iA_i=\bigcup_iC_i$ and any two events $C_j$, $C_k$, where $j\ne k$, are mutually exclusive, we get
+\begin{align*}
+    \prob{\bigcup_iA_i} &= \prob{\bigcup_iC_i} \\
+    &= \sum_i\prob{C_i} \\
+    &\le \sum_i\prob{A_i}.
+\end{align*}
+The last inequality holds, since $\prob{C_i}\le\prob{A_i}$ for every $i=1$, 2, \dots.
