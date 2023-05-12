@@ -171,6 +171,7 @@
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
 
 \DeclareMathOperator{\degree}{degree}
+\newcommand{\prob}[1]{\Pr\left\{#1\right\}}
 
 \newcommand{\MakeChapter}[4]{%
     \chapter{#1}%
@@ -233,6 +234,7 @@
     \part{Appendix: Mathematical Background}
 
     \appendix
+
     \MakeChapter{Summations}{
         Summation formulas and properties,
         Bounding summations}{
@@ -247,6 +249,10 @@
         Graph coloring,
         Friendly graphs,
         Bisecting trees}{appendixb}
+
+    \MakeChapter{Counting and Probability}{
+        Counting,
+        Probability}{}{appendixc}
 
     \backmatter
 
