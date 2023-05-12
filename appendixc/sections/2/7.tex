@@ -1,0 +1,22 @@
+Suppose we have two coins\dash a fair one and a biased one that always comes up heads.
+We will randomly pick one of the coins and flip it twice.
+Let $A$ be the event, that the first flip resulted in heads, let $B$ be the event that the second flip resulted in heads, and let $C$ be the event that the fair coin was picked.
+Then,
+\begin{align*}
+    \prob{A} &= \prob{B} \\
+    &= (1/2)\cdot(1/2)+(1/2)\cdot1 \\
+    &= 3/4, \\
+    \prob{C} &= 1/2.
+\end{align*}
+The events $A$ and $B$ are not independent, since
+\begin{align*}
+    \prob{A\cap B} &= (1/2)\cdot(1/4)+(1/2)\cdot1 \\
+    &= 5/8,
+\end{align*}
+while $\prob{A}\prob{B}=9/16$.
+But $A$ and $B$ are conditionally independent, given $C$:
+\begin{align*}
+    \prob{A\cap B\mid C} &= 1/4 \\
+    &= (1/2)\cdot(1/2) \\
+    &= \prob{A\mid C}\prob{B\mid C}.
+\end{align*}
