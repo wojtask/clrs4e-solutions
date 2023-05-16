@@ -1,0 +1,14 @@
+Let $f(x)=x^2$ and let $0\le\lambda\le1$.
+Then
+\begin{align*}
+    f(\lambda x+(1-\lambda)y)-{}&(\lambda f(x)+(1-\lambda)f(y)) \\
+    &= \lambda^2x^2+(1-\lambda)^2y^2+2\lambda(1-\lambda)xy-\lambda x^2-(1-\lambda)y^2 \\
+    &= -\lambda(1-\lambda)x^2-\lambda(1-\lambda)y^2+2\lambda(1-\lambda)xy \\
+    &= -\lambda(1-\lambda)(x-y)^2 \\
+    &\le 0,
+\end{align*}
+which means that the function $f(x)$ is convex.
+By applying it to Jensen's inequality, we obtain
+\[
+    \E{X^2} \ge \Esquared{X}.
+\]
