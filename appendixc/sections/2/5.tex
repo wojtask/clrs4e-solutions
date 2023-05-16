@@ -2,7 +2,7 @@ We prove by induction on the number of events $n$.
 For $n=1$ the equality trivially holds, so let's assume $n\ge2$.
 We get
 \begin{align*}
-    \prob{\bigcap_{i=1}^nA_i} &= \prob{A_n\cap\bigcap_{i=1}^{n-1}A_i} \\
-    &= \prob{\bigcap_{i=1}^{n-1}A_i}\prob{A_n\biggm|\bigcap_{i=1}^{n-1}A_i} \tag{by (C.16)} \\
-    &= \prob{A_1}\prob{A_2\mid A_1}\prob{A_3\mid A_1\cap A_2}\cdots\prob{A_n\biggm|\bigcap_{i=1}^{n-1}A_i} \tag{by the inductive hypothesis}.
+    \Pr{\bigcap_{i=1}^nA_i} &= \Pr{A_n\cap\bigcap_{i=1}^{n-1}A_i} \\
+    &= \Pr{\bigcap_{i=1}^{n-1}A_i}\Pr{A_n\biggm|\bigcap_{i=1}^{n-1}A_i} \tag{by (C.16)} \\
+    &= \Pr{A_1}\Pr{A_2\mid A_1}\Pr{A_3\mid A_1\cap A_2}\cdots\Pr{A_n\biggm|\bigcap_{i=1}^{n-1}A_i} \tag{by the inductive hypothesis}.
 \end{align*}

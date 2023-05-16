@@ -1,18 +1,18 @@
 Let $J$, $T$, and $C$ be the events that Jeff, Tim and Carmine will pass the course, respectively.
 Furthermore, let $G$ be the event that Professor Gore pointed out that Jeff is the one who will fail.
-Since the professor can't reveal Carmine's outcome, there must be $\prob{G\mid J}=0$, $\prob{G\mid T}=1$, and $\prob{G\mid C}=1/2$.
-Before talking to the professor, Carmine knows that his probability of passing is $\prob{C}=1/3$.
+Since the professor can't reveal Carmine's outcome, there must be $\Pr{G\mid J}=0$, $\Pr{G\mid T}=1$, and $\Pr{G\mid C}=1/2$.
+Before talking to the professor, Carmine knows that his probability of passing is $\Pr{C}=1/3$.
 His situation after the conversation is described by the event $C\mid G$.
 
 Since $G=(G\cap J)\cup(G\cap T)\cup(G\cap C)$ and since $G\cap J$, $G\cap T$ and $G\cap C$ are mutually exclusive events,
 \begin{align*}
-    \prob{G} &= \prob{G\cap J}+\prob{G\cap T}+\prob{G\cap C} \\
-    &= \prob{J}\prob{G\mid J}+\prob{T}\prob{G\mid T}+\prob{C}\prob{G\mid C}.
+    \Pr{G} &= \Pr{G\cap J}+\Pr{G\cap T}+\Pr{G\cap C} \\
+    &= \Pr{J}\Pr{G\mid J}+\Pr{T}\Pr{G\mid T}+\Pr{C}\Pr{G\mid C}.
 \end{align*}
 Using Bayes's theorem, we obtain
 \begin{align*}
-    \prob{C\mid G} &= \frac{\prob{C}\prob{G\mid C}}{\prob{G}} \\
-    &= \frac{\prob{C}\prob{G\mid C}}{\prob{J}\prob{G\mid J}+\prob{T}\prob{G\mid T}+\prob{C}\prob{G\mid C}} \\[2mm]
+    \Pr{C\mid G} &= \frac{\Pr{C}\Pr{G\mid C}}{\Pr{G}} \\
+    &= \frac{\Pr{C}\Pr{G\mid C}}{\Pr{J}\Pr{G\mid J}+\Pr{T}\Pr{G\mid T}+\Pr{C}\Pr{G\mid C}} \\[2mm]
     &= \frac{(1/3)\cdot(1/2)}{(1/3)\cdot0+(1/3)\cdot1+(1/3)\cdot(1/2)} \\[1mm]
     &= 1/3.
 \end{align*}

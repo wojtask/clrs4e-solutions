@@ -1,9 +1,9 @@
-Let $n\ge3$ and let $S=\{s_{pq}:1\le p,q\le n\}$ be a sample space with the uniform probability distribution (i.e., $\prob{s_{pq}}=1/n^2$ for every $p=1$, 2, \dots, $n$ and $q=1$, 2, \dots, $n$).
+Let $n\ge3$ and let $S=\{s_{pq}:1\le p,q\le n\}$ be a sample space with the uniform probability distribution (i.e., $\Pr{s_{pq}}=1/n^2$ for every $p=1$, 2, \dots, $n$ and $q=1$, 2, \dots, $n$).
 For each $i=1$, 2, \dots, $n$ consider the event
 \[
     A_i = \{s_{pi}\in S:1\le p\le i\}\cup\{s_{iq}\in S:i<q\le n\}.
 \]
-Then $|A_i|=n$, so $\prob{A_i}=1/n$.
+Then $|A_i|=n$, so $\Pr{A_i}=1/n$.
 Also,
 \[
     |A_{i_1}\cap A_{i_2}| = 1
@@ -15,16 +15,16 @@ and
 for every distinct indices $1\le i_1$, $i_2$, $i_3\le n$.
 Therefore,
 \begin{align*}
-    \prob{A_{i_1}\cap A_{i_2}} &= 1/n^2 \\
-    &= \prob{A_{i_1}}\prob{A_{i_2}},
+    \Pr{A_{i_1}\cap A_{i_2}} &= 1/n^2 \\
+    &= \Pr{A_{i_1}}\Pr{A_{i_2}},
 \end{align*}
 and so the events $A_1$, $A_2$, \dots, $A_n$ are pairwise independent.
 On the other hand, for each $k>2$ and distinct indices $1\le i_1$, \dots, $i_k\le n$,
 \[
-    \prob{\bigcap_{j=1}^kA_{i_j}} = 0,
+    \Pr{\bigcap_{j=1}^kA_{i_j}} = 0,
 \]
 while
 \[
-    \prod_{j=1}^k\prob{A_{i_j}} = 1/n^k,
+    \prod_{j=1}^k\Pr{A_{i_j}} = 1/n^k,
 \]
 so no $k$-subset of the events $A_1$, $A_2$, \dots, $A_n$ is mutually independent.

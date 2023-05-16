@@ -2,7 +2,7 @@ Let $n_1$, $n_2$, $n_3$ be the numbers on the selected cards, in order of removi
 Consider the events $A=\{n_1<n_2\}$ and $B=\{n_2<n_3\}$.
 If $A$ occurs, then $n_1$ could have been chosen in $n_2-1$ ways.
 Similarly, if $B$ occurs, then $n_3$ can be chosen in $10-n_2$ ways.
-We need to calculate $\prob{A\cap B}$.
+We need to calculate $\Pr{A\cap B}$.
 The number of outcomes in $A\cap B$ is
 \[
     \sum_{n_2=1}^{10}(n_2-1)(10-n_2) = 120.
@@ -11,6 +11,6 @@ The sample space consists of all possible ordered triples of cards (3-permutatio
 By (C.1), the sample space has the size of $10!/7!=720$.
 Thus,
 \begin{align*}
-    \prob{A\cap B} &= 120/720 \\
+    \Pr{A\cap B} &= 120/720 \\
     &= 1/6.
 \end{align*}

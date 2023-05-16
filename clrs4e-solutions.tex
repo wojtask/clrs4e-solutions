@@ -171,9 +171,12 @@
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
 
 \DeclareMathOperator{\degree}{degree}
-\newcommand{\prob}[1]{\Pr\left\{#1\right\}}
-\newcommand{\mean}[1]{\operatorname{E}\left[#1\right]}
-\newcommand{\variance}[1]{\operatorname{Var}\left[#1\right]}
+\renewcommand{\Pr}[1]{\operatorname{Pr}\left\{#1\right\}}
+\newcommand{\E}[1]{\operatorname{E}\left[#1\right]}
+\newcommand{\Var}[1]{\operatorname{Var}\left[#1\right]}
+\newcommand{\I}[1]{\operatorname{I}\left\{#1\right\}}
+\renewcommand{\min}[1]{\operatorname{min}\left\{#1\right\}}
+\renewcommand{\max}[1]{\operatorname{max}\left\{#1\right\}}
 
 \newcommand{\MakeChapter}[4]{%
     \chapter{#1}%

@@ -2,12 +2,12 @@ Let $X$ be the random variable representing the player's gain (in dollars) from 
 For $k=0$, 1, 2, 3, let $A_k$ be the event that the player's number appeared on exactly $k$ dice.
 Then
 \begin{align*}
-    \prob{A_k} &= \binom{3}{k}\left(\frac{1}{6}\right)^k\left(\frac{5}{6}\right)^{3-k} \\
+    \Pr{A_k} &= \binom{3}{k}\left(\frac{1}{6}\right)^k\left(\frac{5}{6}\right)^{3-k} \\
     &= \binom{3}{k}\frac{5^{3-k}}{6^3}
 \end{align*}
 We have that
 \begin{align*}
-    \mean{X} &= (-1)\cdot\prob{A_0}+1\cdot\prob{A_1}+2\cdot\prob{A_2}+3\cdot\prob{A_3} \\
+    \E{X} &= (-1)\cdot\Pr{A_0}+1\cdot\Pr{A_1}+2\cdot\Pr{A_2}+3\cdot\Pr{A_3} \\
     &= (1/6^3)\cdot((-1)\cdot1\cdot125+1\cdot3\cdot25+2\cdot3\cdot5+3\cdot1\cdot1) \\
     &= -17/216 \\
     &\approx -0.08,
