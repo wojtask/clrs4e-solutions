@@ -50,6 +50,73 @@ In 2012 I started implementing algorithms, first in C++, then Java, before final
 Since initiating the project, the textbook got updated to the third edition in 2009, then to fourth edition in 2022.
 Having solved chapters 1-17 and appendices A-C from the &mdash; now outdated &mdash; second edition, I decided to freeze both **CormenSol** and **CormenPy**, and shift my attention to develop solutions for the fourth edition, while translating them to English.
 
+### Current progress
+
+Here you can track the completion of each chapter/appendix.
+
+#### Part I
+
+![Chapter 1](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?style=flat)
+![Chapter 2](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?style=flat)
+![Chapter 3](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5?style=flat)
+![Chapter 4](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6?style=flat)
+![Chapter 5](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7?style=flat)
+
+#### Part II
+
+![Chapter 6](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?style=flat)
+![Chapter 7](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9?style=flat)
+![Chapter 8](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10?style=flat)
+![Chapter 9](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11?style=flat)
+
+#### Part III
+
+![Chapter 10](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12?style=flat)
+![Chapter 11](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13?style=flat)
+![Chapter 12](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14?style=flat)
+![Chapter 13](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15?style=flat)
+
+#### Part IV
+
+![Chapter 14](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16?style=flat)
+![Chapter 15](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17?style=flat)
+![Chapter 16](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18?style=flat)
+
+#### Part V
+
+![Chapter 17](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19?style=flat)
+![Chapter 18](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20?style=flat)
+![Chapter 19](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21?style=flat)
+
+#### Part VI
+
+![Chapter 20](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22?style=flat)
+![Chapter 21](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23?style=flat)
+![Chapter 22](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24?style=flat)
+![Chapter 23](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25?style=flat)
+![Chapter 24](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26?style=flat)
+![Chapter 25](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27?style=flat)
+
+#### Part VII
+
+![Chapter 26](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28?style=flat)
+![Chapter 27](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29?style=flat)
+![Chapter 28](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30?style=flat)
+![Chapter 29](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31?style=flat)
+![Chapter 30](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32?style=flat)
+![Chapter 31](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33?style=flat)
+![Chapter 32](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34?style=flat)
+![Chapter 33](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35?style=flat)
+![Chapter 34](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36?style=flat)
+![Chapter 35](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37?style=flat)
+
+#### Part VIII
+
+![Appendix A](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?style=flat)
+![Appendix B](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?style=flat)
+![Appendix C](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?style=flat)
+![Appendix D](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?style=flat)
+
 ### Future
 
 The work on the current project started in 2023.
