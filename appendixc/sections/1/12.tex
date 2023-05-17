@@ -5,9 +5,9 @@ Now let $k\ge1$ and let's assume that
 \]
 Then
 \begin{align*}
-    \binom{n}{k} &= \frac{n}{k}\binom{n-1}{k-1} \tag{by \refExercise{C.1-5}} \\
-    &= \frac{n}{k}\cdot\frac{n-k+1}{n}\binom{n}{k-1} \tag{by \refExercise{C.1-6}} \\
-    &\le \frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}} \tag{by the inductive hypothesis}.
+    \binom{n}{k} &= \frac{n}{k}\binom{n-1}{k-1} && \text{(by \refExercise{C.1-5})} \\
+    &= \frac{n}{k}\cdot\frac{n-k+1}{n}\binom{n}{k-1} && \text{(by \refExercise{C.1-6})} \\
+    &\le \frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}} && \text{(by the inductive hypothesis)}.
 \end{align*}
 Now it suffices to show that
 \[
@@ -24,7 +24,7 @@ Thus, we have shown that inequality (C.7) holds for $k\le n/2$.
 
 When $n/2\le k\le n$, then $0\le n-k\le n/2$, so
 \begin{align*}
-    \binom{n}{k} &= \binom{n}{n-k} \tag{by equation (C.3)} \\
+    \binom{n}{k} &= \binom{n}{n-k} && \text{(by equation (C.3))} \\
     &\le \frac{n^n}{(n-k)^{n-k}k^k},
 \end{align*}
 where the last inequality holds after substituting $k$ by $n-k$ and applying the result from the first part of the exercise.

@@ -9,7 +9,7 @@ For every $i=0$, 1, \dots, $k-1$,
 Of course, the sequence $\langle s(x_0)$, $s(x_1)$, \dots, $s(x_k)\rangle$ decreases from $n$ to 1, so there must be $j$, such that $s(x_j)>n/4$ and $s(x_{j+1})\le n/4$.
 Thus, by removing edge $(x_{j-1},x_j)$, we partition the nodes of the tree into two sets of sizes
 \begin{align*}
-    s(x_j) &\le 2s(x_{j+1})+1 \tag{by inequality \eqref{eq:subtree-sizes-on-branch}} \\
+    s(x_j) &\le 2s(x_{j+1})+1 && \text{(by inequality \eqref{eq:subtree-sizes-on-branch})} \\
     &= 2n/4+1 \\
     &\le 3n/4
 \end{align*}
