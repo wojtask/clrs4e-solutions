@@ -1,0 +1,15 @@
+Let $X$ be a random variable having a geometric distribution with the probability $p>0$ of a success and the probability $q=1-p$ of a failure.
+First, let's find the expectation of $X^2$:
+\begin{align*}
+    \E{X^2} &= \sum_{k=1}^\infty k^2\Pr{X=k} \\
+    &= \sum_{k=1}^\infty k^2q^{k-1}p \\
+    &= \frac{p}{q}\sum_{k=0}^\infty k^2q^k \\[1mm]
+    &= \frac{p}{q}\cdot\frac{q(1+q)}{(1-q)^3} && \text{(by \refExercise{A.1-6})} \\[1mm]
+    &= (1+q)/p^2.
+\end{align*}
+From the definition (C.31) of variance and equation (C.36), we have
+\begin{align*}
+    \Var{X} &= \E{X^2}-\Esquared{X} \\
+    &= (1+q)/p^2-1/p^2 \\
+    &= q/p^2.
+\end{align*}
