@@ -1,0 +1,9 @@
+Let $X$ be a random variable representing the number of trials before obtaining a success in a sequence of Bernoulli trials, where a success occurs with probability $p>0$ and a failure with probability $q=1-p$.
+Then,
+\begin{align*}
+    \sum_{k=1}^\infty\Pr{X=k} &= \sum_{k=1}^\infty q^{k-1}p \\
+    &= p\sum_{k=0}^\infty q^k \\
+    &= \frac{p}{1-q} && \text{(by equation (A.7))} \\[1mm]
+    &= 1,
+\end{align*}
+so axiom 2 of the probability axioms holds.
