@@ -56,66 +56,66 @@ Here you can track the completion of each chapter/appendix.
 
 #### Part I
 
-![Chapter 1](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?style=flat)
-![Chapter 2](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?style=flat)
-![Chapter 3](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5?style=flat)
-![Chapter 4](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6?style=flat)
-![Chapter 5](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7?style=flat)
+[![Chapter 1](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/3)
+[![Chapter 2](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/4)
+[![Chapter 3](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/5)
+[![Chapter 4](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/6)
+[![Chapter 5](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/7)
 
 #### Part II
 
-![Chapter 6](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?style=flat)
-![Chapter 7](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9?style=flat)
-![Chapter 8](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10?style=flat)
-![Chapter 9](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11?style=flat)
+[![Chapter 6](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/8)
+[![Chapter 7](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/9)
+[![Chapter 8](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/10)
+[![Chapter 9](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/11)
 
 #### Part III
 
-![Chapter 10](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12?style=flat)
-![Chapter 11](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13?style=flat)
-![Chapter 12](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14?style=flat)
-![Chapter 13](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15?style=flat)
+[![Chapter 10](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/12)
+[![Chapter 11](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/13)
+[![Chapter 12](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/14)
+[![Chapter 13](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/15)
 
 #### Part IV
 
-![Chapter 14](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16?style=flat)
-![Chapter 15](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17?style=flat)
-![Chapter 16](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18?style=flat)
+[![Chapter 14](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/16)
+[![Chapter 15](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/17)
+[![Chapter 16](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/18)
 
 #### Part V
 
-![Chapter 17](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19?style=flat)
-![Chapter 18](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20?style=flat)
-![Chapter 19](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21?style=flat)
+[![Chapter 17](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/19)
+[![Chapter 18](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/20)
+[![Chapter 19](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/21)
 
 #### Part VI
 
-![Chapter 20](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22?style=flat)
-![Chapter 21](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23?style=flat)
-![Chapter 22](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24?style=flat)
-![Chapter 23](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25?style=flat)
-![Chapter 24](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26?style=flat)
-![Chapter 25](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27?style=flat)
+[![Chapter 20](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/22)
+[![Chapter 21](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/23)
+[![Chapter 22](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/24)
+[![Chapter 23](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/25)
+[![Chapter 24](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/26)
+[![Chapter 25](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/27)
 
 #### Part VII
 
-![Chapter 26](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28?style=flat)
-![Chapter 27](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29?style=flat)
-![Chapter 28](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30?style=flat)
-![Chapter 29](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31?style=flat)
-![Chapter 30](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32?style=flat)
-![Chapter 31](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33?style=flat)
-![Chapter 32](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34?style=flat)
-![Chapter 33](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35?style=flat)
-![Chapter 34](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36?style=flat)
-![Chapter 35](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37?style=flat)
+[![Chapter 26](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/28)
+[![Chapter 27](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/29)
+[![Chapter 28](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/30)
+[![Chapter 29](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/31)
+[![Chapter 30](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/32)
+[![Chapter 31](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/33)
+[![Chapter 32](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/34)
+[![Chapter 33](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/35)
+[![Chapter 34](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/36)
+[![Chapter 35](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/37)
 
 #### Part VIII
 
-![Appendix A](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?style=flat)
-![Appendix B](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?style=flat)
-![Appendix C](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?style=flat)
-![Appendix D](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?style=flat)
+[![Appendix A](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/38)
+[![Appendix B](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/39)
+[![Appendix C](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/40)
+[![Appendix D](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?style=flat)](https://github.com/wojtask/clrs4e-solutions/milestone/41)
 
 ### Future
 
