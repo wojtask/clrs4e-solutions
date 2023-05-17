@@ -1,9 +1,9 @@
 Let $g_1$, $g_2$, \dots, $g_n$ be functions, so that $g_k(i)=O(f_k(i))$ for each $k=1$, 2, \dots, $n$.
-From the definition of $O$-notation, there exist positive constants $c_1$, $c_2$, \dots, $c_n$ and $i_0$, such that $g_k(i)\le c_k f_k(i)$ for all $i\ge i_0$.
-Let $c=\max\,\{c_k: 1\le k\le n\}$.
+From the definition of $O$-notation, there exist positive constants $c_1$, $c_2$, \dots, $c_n$ and $i_0$, such that $g_k(i)\le c_kf_k(i)$ for all $i\ge i_0$.
+Let $c=\max{c_k:1\le k\le n}$.
 For $i\ge i_0$ we have
 \begin{align*}
-    \sum_{k=1}^n g_k(i) &\le \sum_{k=1}^n c_k f_k(i) \\
-    &\le c\sum_{k=1}^n f_k(i) \\
-    &= O\left(\,\sum_{k=1}^n f_k(i)\right).
+    \sum_{k=1}^ng_k(i) &\le \sum_{k=1}^nc_kf_k(i) \\
+    &\le c\sum_{k=1}^nf_k(i) \\
+    &= O\left(\,\sum_{k=1}^nf_k(i)\right).
 \end{align*}

@@ -16,11 +16,11 @@ Now it suffices to show that
 To prove this, we examine the ratio of both expressions:
 \begin{align*}
     \frac{\frac{n^n}{k(k-1)^{k-1}(n-k+1)^{n-k}}}{\frac{n^n}{k^k(n-k)^{n-k}}} &= \frac{k^{k-1}(n-k)^{n-k}}{(k-1)^{k-1}(n-k+1)^{n-k}} \\
-    &= \frac{\bigl(\frac{k}{k-1}\bigr)^{k-1}}{\bigl(\frac{n-k+1}{n-k}\bigr)^{n-k}} \\[1mm]
-    &= \frac{\bigl(1+\frac{1}{k-1}\bigr)^{k-1}}{\bigl(1+\frac{1}{n-k}\bigr)^{n-k}}.
+    &= \frac{\left(\frac{k}{k-1}\right)^{k-1}}{\left(\frac{n-k+1}{n-k}\right)^{n-k}} \\
+    &= \frac{\left(1+\frac{1}{k-1}\right)^{k-1}}{\left(1+\frac{1}{n-k}\right)^{n-k}}.
 \end{align*}
 The sequence $e_n={(1+1/n)}^n$ is increasing\dash therefore the above ratio does not exceed 1, as long as $k-1\le n-k$ or, equivalently, $k\le(n+1)/2$, and in particular when $k\le n/2$.
-Thus, we have shown that the inequality (C.7) holds for $k\le n/2$.
+Thus, we have shown that inequality (C.7) holds for $k\le n/2$.
 
 When $n/2\le k\le n$, then $0\le n-k\le n/2$, so
 \begin{align*}

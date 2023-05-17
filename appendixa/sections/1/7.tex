@@ -1,16 +1,16 @@
 The asymptotic upper bound:
 \begin{align*}
-    \sum_{k=1}^n \sqrt{k\lg k} &\le \sum_{k=1}^n \sqrt{n\lg n} \\
-    &= n\cdot \sqrt{n\lg n} \\
+    \sum_{k=1}^n\!\sqrt{k\lg k} &\le \sum_{k=1}^n\!\sqrt{n\lg n} \\
+    &= n\cdot\!\sqrt{n\lg n} \\
     &= O(n^{3/2}\lg^{1/2}n).
 \end{align*}
 For the asymptotic lower bound, assume for convenience that $n$ is even and at least 4.
 Then:
 \begin{align*}
-    \sum_{k=1}^n \sqrt{k\lg k} &> \sum_{k=n/2+1}^n \sqrt{k\lg k} \\
-    &> \sum_{k=n/2+1}^n \sqrt{(n/2)\lg(n/2)} \\
-    &= (n/2)\sqrt{(n/2)(\lg n-1)} \\
-    &\ge (n/2)\sqrt{(n/2)(\lg n)/2} \\
+    \sum_{k=1}^n\!\sqrt{k\lg k} &> \sum_{k=n/2+1}^n\!\sqrt{k\lg k} \\
+    &> \sum_{k=n/2+1}^n\!\sqrt{(n/2)\lg(n/2)} \\
+    &= (n/2)\!\sqrt{(n/2)(\lg n-1)} \\
+    &\ge (n/2)\!\sqrt{(n/2)(\lg n)/2} \\
     &= (n^{3/2}\lg^{1/2}n)/4 \\
     &= \Omega(n^{3/2}\lg^{1/2}n).
 \end{align*}
