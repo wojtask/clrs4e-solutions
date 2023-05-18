@@ -1,0 +1,14 @@
+The binomial distribution achieves a maximum at an integer $k$, such that $np-q\le k\le(n+1)p$, so a good approximation of the maximum is the value for $k=np$.
+Since $np$ may not be integer, we'll sacrifice mathematical rigor in order to simplify our calculations:
+\begin{align*}
+    b(np;n,p) &= \binom{n}{np}p^{np}(1-p)^{n-np} \\
+    &= \frac{n!}{(np)!\,(n-np)!}\,p^{np}(1-p)^{n-np} \\[1mm]
+    &= \frac{n!}{(np)!\,(nq)!}\,p^{np}q^{nq}.
+\end{align*}
+Using Stirling's approximation (3.25), we can simplify the first factor of the last expression above:
+\begin{align*}
+    \frac{n!}{(np)!\,(nq)!} &\approx \frac{\!\sqrt{2\pi n}\left(\frac{n}{e}\right)^n}{\!\sqrt{2\pi np}\left(\frac{np}{e}\right)^{np}\!\sqrt{2\pi nq}\left(\frac{nq}{e}\right)^{nq}} \\[1mm]
+    &= \frac{\left(\frac{n}{e}\right)^n\left(\frac{e}{np}\right)^{np}\left(\frac{e}{nq}\right)^{nq}}{\!\sqrt{2\pi npq}} \\[1mm]
+    &= \frac{1}{p^{np}q^{nq}\!\sqrt{2\pi npq}}.
+\end{align*}
+Hence, the value of the maximum of $b(k;n,p)$ is roughly equal to $1/\!\sqrt{2\pi npq}$.
