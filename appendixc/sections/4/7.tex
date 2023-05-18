@@ -1,0 +1,22 @@
+We'll calculate the probability that the professors get the same number of heads in two ways.
+In the first one, we'll treat the result of each experiment as a $2n$-element sequence of heads and tails, such that its initial $n$ terms are the results obtained by Professor Rosencrantz, and the final $n$ terms are the results obtained by Professor Guildenstern.
+There are $2^{2n}=4^n$ of all such sequences.
+Following the hint, we call a head a success for Professor Rosencrantz and we call a tail a success for Professor Guildenstern.
+Note that both professors obtain the same number of heads if and only if they achieve exactly $n$ successes in total.
+The number of ways this can be done is the number of choices of $n$ items responsible for successes among all $2n$ items in the sequence.
+This number is equal to $\binom{2n}{n}$, so the probability we are looking for is $\binom{2n}{n}/4^n$.
+
+Another approach to determine the desired probability, is to define random variables $R$ and $G$ denoting the number of heads obtained by Professor Rosencrantz and by Professor Guildenstern, respectively.
+Again, defining successes for each professor according to the hint, we get that $R$ has the binomial distribution $b(k;n,1/2)$ and $G$ has the binomial distribution $b(n-k;n,1/2)$.
+The events $R=k$ and $G=k$ are independent, so the probability we are looking for, is
+\begin{align*}
+    \sum_{k=0}^n\Pr{R=k\;\text{and}\;G=k} &= \sum_{k=0}^n\Pr{R=k}\Pr{G=k} \\
+    &= \sum_{k=0}^nb(k;n,1/2)\,b(n-k;n,1/2) \\
+    &= \sum_{k=0}^n\binom{n}{k}\left(\frac{1}{2}\right)^k\left(\frac{1}{2}\right)^{n-k}\binom{n}{n-k}\left(\frac{1}{2}\right)^{n-k}\left(\frac{1}{2}\right)^k \\
+    &= \frac{\sum_{k=0}^n\binom{n}{k}^2}{4^n}.
+\end{align*}
+
+Comparing the results obtained in both ways, we get the identity
+\[
+    \sum_{k=0}^n\binom{n}{k}^2 = \binom{2n}{n}.
+\]
