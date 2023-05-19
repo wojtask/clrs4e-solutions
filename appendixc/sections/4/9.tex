@@ -1,0 +1,15 @@
+Let $X'$ be the random variable denoting the number of successes in a series of Bernoulli trials, each with a probability $p$ of success.
+Using the result from \refExercise{C.4-10}, where $p_i'=p$ for every $i=1$, 2, \dots, $n$, gives
+\[
+    \Pr{X\ge k} \le \Pr{X'\ge k}.
+\]
+The random variable $X'$ has a binomial distribution, so the above inequality can be reformulated as
+\[
+    \Pr{X\ge k} \le \sum_{i=k}^nb(i;n,p).
+\]
+Then,
+\begin{align*}
+    \Pr{X<k} &= 1-\Pr{X\ge k} \\
+    &\ge \sum_{i=0}^nb(i;n,p)-\sum_{i=k}^nb(i;n,p) && \text{(by equation (C.40))} \\
+    &= \sum_{i=0}^{k-1}b(i;n,p).
+\end{align*}
