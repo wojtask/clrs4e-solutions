@@ -1,0 +1,13 @@
+Let $p=a/(a+1)$ and $q=1-p=1/(a+1)$, so that $a=p/q$.
+Then,
+\begin{align*}
+    \sum_{i=0}^{k-1}\binom{n}{i}a^i &= \sum_{i=0}^{k-1}\binom{n}{i}\left(\frac{p}{q}\right)^i \\[1mm]
+    &= \frac{\sum_{i=0}^{k-1}\binom{n}{i}p^iq^{n-i}}{q^n} \\[1mm]
+    &= \frac{\sum_{i=0}^{k-1}b(i;n,p)}{q^n},
+\end{align*}
+so by applying Theorem C.4 to the last sum, we obtain
+\begin{align*}
+    \sum_{i=0}^{k-1}\binom{n}{i}a^i &< \frac{kq}{q^n(np-k)}\,b(k;n,p) \\
+    &= \frac{k/(a+1)}{(1/(a+1))^n(na/(a+1)-k)}\,b(k;n,a/(a+1)) \\[1mm]
+    &= (a+1)^n\,\frac{k}{na-k(a+1)}\,b(k;n,a/(a+1)).
+\end{align*}
