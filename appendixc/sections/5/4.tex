@@ -1,0 +1,7 @@
+Using the fact that $\binom{n}{i}\ge1$ for all $i=0$, 1, \dots, $n$, we have
+\begin{align*}
+    \sum_{i=0}^{k-1}p^iq^{n-i} &\le \sum_{i=0}^{k-1}\binom{n}{i}p^iq^{n-i} \\
+    &= \sum_{i=0}^{k-1}b(i;n,p) \\
+    &< \frac{kq}{np-k}\,b(k;n,p) && \text{(by Theorem C.4)} \\
+    &\le \frac{kq}{np-k}\left(\frac{np}{k}\right)^k\left(\frac{nq}{n-k}\right)^{n-k} && \text{(by Lemma C.1)}.
+\end{align*}
