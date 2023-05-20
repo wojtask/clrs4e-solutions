@@ -1,0 +1,22 @@
+Let $S$ be the sample space containing all possible sequences of outcomes during $n$ Bernoulli trials.
+A set $A$ corresponds to a sequence $s\in S$, and $X(s)$ is the number of successes in $s$.
+
+We'll show how to obtain a set $A'$ of Bernoulli trials by performing experiments on the trials of $A$.
+Let $A_i$ denote the event that the $i$th trial of $A$ is a success, and let $A_i'$ be the event that the $i$th trial of $A'$ is a success.
+If $A_i$ occurs, we'll make $A_i'$ to also occur.
+Otherwise, a success in the $i$th trial of $A'$ will be generated with some probability $r_i$.
+Then,
+\begin{align*}
+    p_i' &= \Pr{A_i'} \\
+    &= \Pr{A_i'\cap A_i}+\Pr{A_i'\cap\overline{A_i}} \\
+    &= p_i+(1-p_i)\cdot r_i,
+\end{align*}
+and so,
+\[
+    r_i = \frac{p_i'-p_i}{1-p_i}.
+\]
+
+Reusing the sample space $S$, we'll denote by $X'(s)$ the number of successes in a series of the $n$ trials obtained by following the above procedure, based on the outcomes in $s$.
+For any $s\in S$ and its corresponding set $A$, it's clear that after constructing the set $A'$ this way, it's impossible that there are fewer successes in $A'$ than in the original set $A$.
+In other words, $X'(s)\ge X(s)$ holds.
+Using \refExercise{C.3-7}, we get the desired result.
