@@ -162,7 +162,7 @@
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{lemma}{Lemma}
 \renewcommand{\qedsymbol}{\hfill\ensuremath{\blacksquare}{\parfillskip=0pt\par}}
-\renewenvironment{proof}{{\noindent\bfseries\itshape Proof\quad}}{\hfill\qedsymbol}
+\renewenvironment{proof}[1][Proof]{{\noindent\bfseries\itshape #1\quad}}{\hfill\qedsymbol}
 
 \newcommand{\dash}{\,---\,}
 \newcommand{\concept}[1]{\textcolor{accentcolor}{\textbf{\itshape{#1}}}}
