@@ -84,8 +84,8 @@
 \counterwithout{equation}{chapter}
 
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\quad#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\thechapter\hspace\labelsep#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\hspace\labelsep#1}}
 \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 \fancyhead[RE]{\nouppercase{\footnotesize\textit{\leftmark}}}
 \fancyhead[LE,RO]{\footnotesize\textit{\thepage}}
@@ -114,7 +114,7 @@
 \let\originalchapter=\chapter
 \renewcommand{\chapter}[1]{%
     \originalchapter{#1}
-    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\thesection\quad}
+    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\thesection\hspace\labelsep}
     \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
     \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{0pt}
     \renewcommand{\thesection}{\thechapter.\arabic{section}}
@@ -162,7 +162,19 @@
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{lemma}{Lemma}
 \renewcommand{\qedsymbol}{\hfill\ensuremath{\blacksquare}{\parfillskip=0pt\par}}
-\renewenvironment{proof}[1][Proof]{{\noindent\bfseries\itshape #1\quad}}{\hfill\qedsymbol}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax
+{\bfseries\itshape
+#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
 
 \newcommand{\dash}{\,---\,}
 \newcommand{\concept}[1]{\textcolor{accentcolor}{\textbf{\itshape{#1}}}}
@@ -223,6 +235,7 @@
 
     \setlength{\mathindent}{0pt}
     \setlength{\abovedisplayskip}{1ex}
+    \setlength{\labelsep}{1em}
 
     \frontmatter
 
