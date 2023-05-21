@@ -1,0 +1,17 @@
+Let $Y=n-X$ and let $\nu=\E{Y}$.
+By linearity of expectation, $\nu=n-\E{X}=n-\mu$.
+Since $r>\nu$, we can use Theorem C.8 to obtain
+\begin{align*}
+    \Pr{\mu-X\ge r} &= \Pr{n-\nu-X\ge r} \\
+    &= \Pr{Y-\nu\ge r} \\
+    &\le \left(\frac{\nu e}{r}\right)^r \\
+    &= \left(\frac{(n-\mu)e}{r}\right)^r.
+\end{align*}
+
+Similarly, in the second part, if we let $Y=n-X$, then $\E{Y}=n-\E{X}=n-np=nq$.
+Since $r>nq$, we use Corollary C.9 to get
+\begin{align*}
+    \Pr{np-X\ge r} &= \Pr{n-nq-X\ge r} \\
+    &= \Pr{Y-nq\ge r} \\
+    &\le \left(\frac{nqe}{r}\right)^r.
+\end{align*}
