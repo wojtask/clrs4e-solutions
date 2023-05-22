@@ -1,0 +1,82 @@
+\begin{lemma}
+    Let $\alpha$, $p$, and $q$ be nonnegative reals, such that $p+q=1$.
+    Then,
+    \begin{equation} \label{eq:alpha}
+        pe^{\alpha q}+qe^{-\alpha p} \le e^{\alpha^2\!/2}.
+    \end{equation}
+\end{lemma}
+
+\begin{proof}
+    Consider the function $f(\alpha)=e^{\alpha^2\!/2}-(pe^{\alpha q}+qe^{-\alpha p})$ for $\alpha\ge0$, and examine its derivatives:
+    \begin{align*}
+        f'(\alpha) &= \alpha e^{\alpha^2\!/2}-pq(e^{\alpha q}-e^{-\alpha p}), \\
+        f''(\alpha) &= \alpha^2e^{\alpha^2\!/2}+e^{\alpha^2\!/2}-pq(qe^{\alpha q}+pe^{-\alpha p}).
+    \end{align*}
+    It's true that $f''(0)=1-pq\ge0$ and we'll show that $f''(\alpha)>0$ for all $\alpha>0$.
+    Since
+    \begin{align*}
+        pq-1/4 &= p(1-p)-1/4 \\
+        &= -p^2+p-1/4 \\
+        &= -(p-1/2)^2 \\
+        &\le 0
+    \end{align*}
+    or, equivalently, since $pq\le1/4$,
+    \begin{align*}
+        pq(qe^{\alpha q}+pe^{-\alpha p}) &\le (qe^{\alpha q}+pe^{-\alpha p})/4 \\
+        &\le (e^{\alpha q}+e^{-\alpha p})/4 \\
+        &= e^{-\alpha p}(e^{\alpha q+\alpha p}+1)/4 \\
+        &= e^{-\alpha p}(e^\alpha+1)/4 \\
+        &\le (e^\alpha+1)/4.
+    \end{align*}
+    Combining this inequality with $\alpha^2e^{\alpha^2\!/2}>0$, that holds for all $\alpha>0$, we get
+    \[
+        f''(\alpha) > e^{\alpha^2\!/2}-(e^\alpha+1)/4.
+    \]
+    Now it suffices to show that $4e^{\alpha^2\!/2}\ge e^\alpha+1$ or, since $e^{\alpha^2\!/2}>1$, that
+    \[
+        3e^{\alpha^2\!/2} \ge e^\alpha.
+    \]
+    This is equivalent to $3e^{\alpha^2\!/2}\!/e^\alpha=3e^{\alpha^2\!/2-\alpha}\ge1$, which holds when
+    \[
+        \alpha^2\!/2-\alpha+\ln3 \ge 0.
+    \]
+    The left-hand side expression attains the minimum at $\alpha=1$, equal to $\ln3-1/2>0$, which concludes the proof that $f''(\alpha)\ge0$ for $\alpha\ge0$.
+
+    The fact we've just shown implies that the function $f'(\alpha)$ is monotonically increasing for all $\alpha\ge0$.
+    Since $f'(0)=0$, it must be $f'(\alpha)\ge0$ for all $\alpha\ge0$, which in turn implies that the function $f(\alpha)$ is monotonically increasing.
+    And since $f(0)=0$, it holds that $f(\alpha)\ge0$ for all $\alpha\ge0$, which completes the proof.
+\end{proof}
+
+The beginning of the main reasoning is based on the proof of Theorem C.8:
+\begin{align*}
+    \Pr{X-\mu\ge r} &= \Pr{e^{\alpha(X-\mu)}\ge e^{\alpha r}} \\
+    &\le \E{e^{\alpha(X-\mu)}}e^{-\alpha r}.
+\end{align*}
+Then, with the same notations as in the original proof, it follows that
+\[
+    \E{e^{\alpha(X-\mu)}} = \prod_{i=1}^n\E{e^{\alpha(X_i-p_i)}}.
+\]
+Using inequality \eqref{eq:alpha} for $p=p_i$ and $q=q_i$, we get
+\begin{align*}
+    \E{e^{\alpha(X_i-p_i)}} &= e^{\alpha(1-p_i)}p_i+e^{\alpha(0-p_i)}q_i \\
+    &= p_ie^{\alpha q_i}+q_ie^{-\alpha p_i} \\
+    &\le e^{\alpha^2\!/2},
+\end{align*}
+and so
+\begin{align*}
+    \E{e^{\alpha(X-\mu)}} &= \prod_{i=1}^n\E{e^{\alpha(X_i-p_i)}} \\
+    &\le \prod_{i=1}^ne^{\alpha^2\!/2} \\
+    &= \exp(\alpha^2n/2).
+\end{align*}
+Therefore,
+\begin{align*}
+    \Pr{X-\mu\ge r} &\le \E{e^{\alpha(X-\mu)}}e^{-\alpha r} \\
+    &\le \exp(\alpha^2n/2-\alpha r).
+\end{align*}
+Now we need to choose the value of $\alpha$ that minimizes the last expression.
+The argument of the exponential function in that expression is a quadratic function with respect to $\alpha$, so it's easy to show that it attains a minimum at $\alpha=r/n$.
+We finally get
+\begin{align*}
+    \Pr{X-\mu\ge r} &\le \exp\left((r/n)^2n/2-(r/n)r\right) \\
+    &= e^{-r^2\!/{2n}}.
+\end{align*}
