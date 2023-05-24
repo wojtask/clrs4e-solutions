@@ -1,0 +1,13 @@
+Let $A$ be the event that the door we chose at first is the one with the automobile, and let $W$ be the event of winning the automobile.
+Then $\Pr{A}=1/3$ and
+\begin{align*}
+    \Pr{W} &= \Pr{W\cap A}+\Pr{W\cap\overline{A}} \\
+    &= \Pr{A}\Pr{W\mid A}+\Pr{\overline{A}}\Pr{W\mid\overline{A}} && \text{(by equation (C.16))} \\
+    &= (1/3)\cdot\Pr{W\mid A}+(2/3)\cdot\Pr{W\mid\overline{A}}.
+\end{align*}
+
+Let's calculate the value of the above probability depending on the decision we made after Carol has revealed the first goat.
+If we decided to stick to our current choice, $\Pr{W\mid A}=1$ and $\Pr{W\mid\overline{A}}=0$, so we win with probability $\Pr{W}=1/3$.
+Otherwise, we switched, and then $\Pr{W\mid A}=0$ and $\Pr{W\mid\overline{A}}=1$.
+In this case the probability of winning is $\Pr{W}=2/3$.
+Thus, by choosing to switch, we double the chances of winning the prize.
