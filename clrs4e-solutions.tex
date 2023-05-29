@@ -31,6 +31,7 @@
     singlelinecheck=true,
     labelformat=simple]{subcaption}
 \usepackage[shortlabels]{enumitem}
+\PassOptionsToPackage{table}{xcolor}
 \usepackage[screen]{clrscode4e}
 \usepackage{tikz}
 \usepackage{latexcolors}
@@ -189,6 +190,8 @@
 \newcommand{\I}[1]{\operatorname{I}\left\{#1\right\}}
 \renewcommand{\min}[1]{\operatorname{min}\left\{#1\right\}}
 \renewcommand{\max}[1]{\operatorname{max}\left\{#1\right\}}
+
+\newcommand{\labelledVariable}[2]{\ensuremath{#1_\mathrm{#2}}}
 
 \newcommand{\MakeChapter}[4]{%
     \chapter{#1}%

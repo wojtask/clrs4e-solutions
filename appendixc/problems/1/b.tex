@@ -1,0 +1,19 @@
+In this game we make two decisions\dash first we choose one of the three doors, and then, after one of the doors have been opened, whether to stick or switch.
+There are therefore six outcomes, of which three correspond to winning the game.
+The results are detailed in \refFigure{C-1b}.
+\begin{figure}[htb]
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{r|r|r|}
+        & stick & switch \\
+        \hline
+        the right door & \cellcolor{cyan!25}$(1-\pright\pswitch)/3$ & $\pright\pswitch/3$ \\
+        \hline
+        the first wrong door & $(1-\pwrong\pswitch)/3$ & \cellcolor{cyan!25}$\pwrong\pswitch/3$ \\
+        \hline
+        the second wrong door & $(1-\pwrong\pswitch)/3$ & \cellcolor{cyan!25}$\pwrong\pswitch/3$ \\
+        \hline
+    \end{tabular}
+    \caption{The probability distribution in the Monty Hall's game.
+    Rows represent our first choice and columns represent our second choice, and each cell contains the probability of the corresponding outcome.
+    The cells shaded blue correspond to the winning outcomes.} \label{fig:C-1b}
+\end{figure}
