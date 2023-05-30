@@ -1,0 +1,4 @@
+We can view this problem as counting all possible arrangements of $n$ distinguishable balls and $b-1$ indistinguishable sticks.
+Informally speaking, the sticks in such arrangements partition the balls into subsequences of balls that end up in different bins.
+
+There are $(b+n-1)!$ of all such arrangements, but since we do not distinguish sticks, we divide this number by the number of permutations of the sticks, $(b-1)!$, to obtain the number $\frac{(b+n-1)!}{(b-1)!}$ of ways to place the balls in the bins in this variant.
