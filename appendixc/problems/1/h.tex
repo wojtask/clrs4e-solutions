@@ -1,0 +1,23 @@
+Let $M$ be the event that Monty gives us an opportunity to switch, and let $A$ and $W$ be the events of the same meaning as in the solution to part (a).
+Then, $\Pr{M\mid A}=\pright$ and $\Pr{M\mid\overline{A}}=\pwrong$, and so
+\begin{align*}
+    \Pr{M} &= \Pr{A}\Pr{M\mid A}+\Pr{\overline{A}}\Pr{M\mid\overline{A}} \\
+    &= (1/3)\pright+(2/3)\pwrong.
+\end{align*}
+
+Now let $S$ be the event that we switched.
+Then,
+\begin{align*}
+    W\cap M &= \left((A\cap\overline{S})\cup(\overline{A}\cap S)\right)\cap M \\
+    &= \left((A\cap M)\cap\overline{S}\right)\cup\left((\overline{A}\cap M)\cap S\right),
+\end{align*}
+and the events $A\cap M$ and $\overline{S}$ are independent, and so are the events $\overline{A}\cap M$ and $S$.
+Thus, by the definition (C.16) of conditional probability,
+\begin{align*}
+    \Pr{W\mid M} &= \frac{\Pr{W\cap M}}{\Pr{M}} \\[1mm]
+    &= \frac{\Pr{(A\cap M)\cap\overline{S}}+\Pr{(\overline{A}\cap M)\cap S}}{\Pr{M}} \\[1mm]
+    &= \frac{\Pr{A}\Pr{M\mid A}\Pr{\overline{S}}+\Pr{\overline{A}}\Pr{M\mid\overline{A}}\Pr{S}}{\Pr{M}} \\[1mm]
+    &= \frac{(1/3)\pright(1-\pswitch)+(2/3)\pwrong\pswitch}{(1/3)\pright+(2/3)\pwrong} \\[1mm]
+    &= \frac{\pright-\pright\pswitch+2\pwrong\pswitch}{\pright+2\pwrong}.
+\end{align*}
+The conditional probability $\Pr{W\mid M}$ is defined whenever $\Pr{M}\ne0$, which holds when $\pright+2\pwrong\ne0$ or, equivalently, when $\pright\ne0$ or $\pwrong\ne0$.
