@@ -1,0 +1,18 @@
+The value of the expression for $\pswitch=1/2$ is
+\begin{align*}
+    \Pr{W\mid M} &= \frac{\pright/2+\pwrong}{\pright+2\pwrong} \\[1mm]
+    &= 1/2.
+\end{align*}
+
+When $\pswitch<1/2$, Monty can select $\pright=0$ and any $\pwrong>0$, so that
+\begin{align*}
+    \Pr{W\mid M} &= \frac{2\pwrong\pswitch}{2\pwrong} \\
+    &= \pswitch \\
+    &< 1/2.
+\end{align*}
+Similarly, when $\pswitch>1/2$, Monty's best strategy is to choose any $\pright>0$ and $\pwrong=0$, in which case
+\begin{align*}
+    \Pr{W\mid M} &= \frac{\pright-\pright\pswitch}{\pright} \\
+    &= 1-\pswitch \\
+    &< 1/2.
+\end{align*}
