@@ -9,16 +9,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install mtp2lite fonts and compile document
+      - name: Setup TeXLive and compile document
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
             apk add file sudo coreutils
-            wget https://mirrors.ctan.org/fonts/mtp2lite.zip
-            wget https://raw.githubusercontent.com/jamespfennell/mathtime-installer/master/mtpro2-texlive.sh
-            sed -i 's%${TEMPDIR}/texmf%${TEMPDIR}/mtp2lite/texmf%g' mtpro2-texlive.sh
-            chmod +x ./mtpro2-texlive.sh
-            ./mtpro2-texlive.sh -i mtp2lite.zip
+            chmod +x setup.sh
+            ./setup.sh
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 
       - name: Release
