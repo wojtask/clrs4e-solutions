@@ -4,34 +4,52 @@
 
 ### Overview
 
-The goal of this project is to provide solutions to all exercises and problems from *Introduction to Algorithms, Fourth Edition* by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
-My intention is to ensure, first and foremost, the rock solid correctness and completeness of the provided content, its technical elegance, as well as its consistency with the textbook material.
-In order to achieve such reliability, I spend a lot of time evolving and revising the solutions, not only in terms of content, but also in terms of terminology, wording, and typography.
-I pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate operations and examples with accurate pictures, consistent with the style of the textbook.
+The goal of this project is to provide solutions to all exercises and problems from *Introduction to Algorithms, Fourth
+Edition* by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
+My intention is to ensure, first and foremost, the rock solid correctness and completeness of the provided content, its
+technical elegance, as well as its consistency with the textbook material.
+In order to achieve such reliability, I spend a lot of time evolving and revising the solutions, not only in terms of
+content, but also in terms of terminology, wording, and typography.
+I pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
+operations and examples with accurate pictures, consistent with the style of the textbook.
 
-It should be noted that the textbook's authors also provide selected solutions &mdash; they can be downloaded from the [textbook's website](http://mitpress.mit.edu/algorithms4).
-Also, other authors publicly host their solutions on the web, though majority of those that I found are for the third edition of the textbook:
+It should be noted that the textbook's authors also provide selected solutions &mdash; they can be downloaded from the
+[textbook's website](http://mitpress.mit.edu/algorithms4).
+Also, other authors publicly host their solutions on the web, though majority of those that I found are for the third
+edition of the textbook:
+
 * [solutions by Michelle Bodnar and Andrew Lohr](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html),
 * [solutions by Stefan Kanev](https://ita.skanev.com),
 * [solutions by Don R. Walsh](https://donrwalsh.github.io/CLRS),
 * [crowdsourced solutions coordinated by Peng-Yu Chen](https://walkccc.github.io/CLRS),
 * [the textbook's page on Quizlet](https://quizlet.com/explanations/textbook-solutions/introduction-to-algorithms-4th-edition-9780262046305).
 
-However, none of the above sources cover all exercises, especially when compared to the fourth edition that adds significant number of new exercises.
-Also, I noticed that certain solutions are not of the highest quality, e.g., some of them are incorrect, incomplete, or just far from elegance.
+However, none of the above sources cover all exercises, especially when compared to the fourth edition that adds
+significant number of new exercises.
+Also, I noticed that certain solutions are not of the highest quality, e.g., some of them are incorrect, incomplete, or
+just far from elegance.
 Nevertheless, these pieces of work were sources of inspiration for me, presented different approaches and perspectives.
-When relying on the ideas from them, I always aimed to rework the solutions by introducing necessary fixes and improvements, or just polishing them.
+When relying on the ideas from them, I always aimed to rework the solutions by introducing necessary fixes and
+improvements, or just polishing them.
 
-The solutions here often refer to the material presented in the textbook, so familiarity on at least a current chapter is required.
-In many solutions, you will also find references to other tasks, especially when a given task uses the result of another in its own solution.
+The solutions here often refer to the material presented in the textbook, so familiarity on at least a current chapter
+is required.
+In many solutions, you will also find references to other tasks, especially when a given task uses the result of another
+in its own solution.
 In general, later solutions sometimes rely on the earlier ones by referencing the relevant exercises.
-Thus, in early chapters one can observe a somewhat greater focus on details, and in later chapters more cross-references to exercises where those details have already been discussed.
+Thus, in early chapters one can observe a somewhat greater focus on details, and in later chapters more cross-references
+to exercises where those details have already been discussed.
 
-I keep an eye on errors or inaccuracies in exercises and problems or the material they directly rely on, and highlight them in short notes before the solution of the affected exercise.
-On the other hand, I refer to the textbook's [errata](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/e4-bugs.html) &mdash; if it includes a certain correction, I assume that the bug has already been fixed.
+I keep an eye on errors or inaccuracies in exercises and problems or the material they directly rely on, and highlight
+them in short notes before the solution of the affected exercise.
+On the other hand, I refer to the
+textbook's [errata](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/e4-bugs.html) &mdash;
+if it includes a certain correction, I assume that the bug has already been fixed.
 
-As I stressed earlier, I pay special attention to ensuring the correctness of the algorithms and data structures operations.
-To maximize my confidence, I implement and test each pseudocode or algorithm description that I provide in the solutions, as well as those that are provided in the textbook.
+As I stressed earlier, I pay special attention to ensuring the correctness of the algorithms and data structures
+operations.
+To maximize my confidence, I implement and test each pseudocode or algorithm description that I provide in the
+solutions, as well as those that are provided in the textbook.
 I chose Python as a programming language, because of its popularity and its syntax similar to that used in pseudocodes.
 The counterpart project with implementations is available on [here](https://github.com/wojtask/clrs4e-implementations).
 
@@ -41,14 +59,20 @@ The counterpart project with implementations is available on [here](https://gith
 
 ### History
 
-The origins of the project date back to 2005, when I started solving exercises by pen and paper, during studying algorithms as a preparation for participating in the Polish Olympiad in Informatics.
-I was relying on the Polish translation of the textbook's second edition, titled *Wprowadzenie do algorytmów*, and my solutions were in Polish as well.
+The origins of the project date back to 2005, when I started solving exercises by pen and paper, during studying
+algorithms as a preparation for participating in the Polish Olympiad in Informatics.
+I was relying on the Polish translation of the textbook's second edition, titled *Wprowadzenie do algorytmów*, and my
+solutions were in Polish as well.
 In 2009 I started rewriting them in LaTeX.
-The document has evolved since then, with changes involving numerous fixes, improved page layout and styling, as well as open sourcing it on GitHub as [**CormenSol**](https://github.com/wojtask/CormenSol).
+The document has evolved since then, with changes involving numerous fixes, improved page layout and styling, as well as
+open sourcing it on GitHub as [**CormenSol**](https://github.com/wojtask/CormenSol).
 At the beginning the pictures were drawn in MetaPost, before having been rewritten to PGF/TikZ in 2016.
-In 2012 I started implementing algorithms, first in C++, then Java, before finally settling on Python in 2017, and open sourced it as [**CormenPy**](https://github.com/wojtask/CormenPy).
+In 2012 I started implementing algorithms, first in C++, then in Java, before finally settling on Python in 2017, and I
+open sourced the implementations as [**CormenPy**](https://github.com/wojtask/CormenPy).
 Since initiating the project, the textbook got updated to the third edition in 2009, then to fourth edition in 2022.
-Having solved Chapters 1-17 and Appendices A-C from the &mdash; now outdated &mdash; second edition, I decided to freeze both **CormenSol** and **CormenPy**, and shift my attention to develop solutions for the fourth edition, while translating them to English.
+Having solved Chapters 1-17 and Appendices A-C from the &mdash; now outdated &mdash; second edition, I decided to freeze
+both **CormenSol** and **CormenPy**, and shift my attention to adapt the solutions for the fourth edition, while
+translating them to English &mdash; the process I refer to as **migration**.
 
 The work on the current project started on January 1, 2023.
 
@@ -60,28 +84,45 @@ The work on the current project started on January 1, 2023.
 
 ### Roadmap
 
-- [x] Add project's documentation (you are reading it now), create issues and milestones, setup document's stub, suggest page layout and styling.
-- [x] Migrate the existing solutions from Appendices A-C. Add solutions to the modified and new exercises and problems along the way.
+- [x] Add project's documentation (you are reading it now), create issues and milestones, setup document's stub, suggest
+  page layout and styling.
+- [x] Migrate the CormenSol solutions from Appendices A-C. Add solutions to the modified and new exercises and problems
+  along the way.
 - [ ] Add solutions to Appendix D, previously missing in the second edition.
-- [ ] Migrate the existing solutions from Chapters 1-17, including implementations. Add solutions and implementations to modified and new exercises and problems along the way (deadline: **Dec 31, 2023**).
+- [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
+  Add solutions and implementations to modified and new exercises and problems along the way (deadline: **Dec 31,
+  2023**).
 - [ ] Add solutions and implementations to Chapters 18-35 (deadline: **TBD**).
 
 ### Building
 
-To compile the project locally, you need a LaTeX distribution, preferably TeXLive 2021 or newer.
-The document depends on several CTAN packages, so make sure you have installed necessary TeXLive modules.
-Additionally, to make fonts consistent with the textbook, I used the Times font with mathematics typeset using the MathTime Professional II Lite.
-This font set is not available in the standard TeXLive distribution, so you will need to download it from [CTAN](https://ctan.org/tex-archive/fonts/mtp2lite) and install manually.
-In case the fonts are not found in the build environment, the resulting document will be typeset with Palatino font and AMS Euler fonts for math.
-Once your environment is prepared, compile the project to a PDF by running the following command from the project's directory:
+To compile the project locally you need TeXLive 2021 or newer.
+On Ubuntu the minimal required set of packages can be installed with:
+
+```shell
+sudo apt install texlive texlive-latex-extra latexmk
 ```
-latexmk -pdf clrs4e-solutions.tex
+
+Additionally, you need to install the MathTime Professional II Lite fonts.
+Since the fonts are not available in the standard TeXLive distribution, you will need to install them using the provided
+setup script:
+
+```shell
+chmod +x setup.sh && sudo ./setup.sh
+```
+
+Once the environment is prepared, you can compile the document to PDF by running the following command from the
+project's directory:
+
+```shell
+latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 ```
 
 ### Contributions
 
 Again, significant effort has been made to ensure that each solution is thoroughly checked.
-However, if you have found an error of any kind, or you can improve an existing solution in any way, I will be grateful for your help.
+However, if you have found an error of any kind, or you can improve an existing solution in any way, I will be grateful
+for your help.
 Each exercise and each subproblem has its own issue on GitHub, named and labelled appropriately.
 Please avoid duplicating these issues, rather search for the right one, and leave a comment.
 Alternatively, you are welcomed to create a pull request with your suggestions.
