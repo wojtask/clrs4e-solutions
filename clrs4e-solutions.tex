@@ -168,6 +168,12 @@
 \newcommand{\refProblem}[1]{Problem~\mbox{\ref{sol:#1}}}
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
 
+\makeatletter
+\newcommand{\labelledVariable@unstarred}[2]{\ensuremath{#1_\mathrm{#2}}}
+\newcommand{\labelledVariable@starred}[2]{\ensuremath{#1^\mathrm{#2}}}
+\newcommand{\labelledVariable}{\@ifstar{\labelledVariable@starred}{\labelledVariable@unstarred}}
+\makeatother
+
 \DeclareMathOperator{\degree}{degree}
 \renewcommand{\Pr}[1]{\operatorname{Pr}\left\{#1\right\}}
 \newcommand{\E}[1]{\operatorname{E}\left[#1\right]}
@@ -176,8 +182,7 @@
 \newcommand{\I}[1]{\operatorname{I}\left\{#1\right\}}
 \renewcommand{\min}[1]{\operatorname{min}\left\{#1\right\}}
 \renewcommand{\max}[1]{\operatorname{max}\left\{#1\right\}}
-
-\newcommand{\labelledVariable}[2]{\ensuremath{#1_\mathrm{#2}}}
+\newcommand{\transpose}[1]{\labelledVariable*{#1}{T}}
 
 \newcommand{\MakeChapter}[4]{%
     \chapter{#1}%
@@ -265,6 +270,9 @@
         The tails of the binomial distribution}{
         The Monty Hall problem,
         Balls and bins}{appendixc}
+
+    \MakeChapter{Matrices}{
+        Matrices and matrix operations}{}{appendixd}
 
     \backmatter
 
