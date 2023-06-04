@@ -1,0 +1,16 @@
+Suppose that $A$ is a $p\times q$ matrix and $B$ is a $q\times r$ matrix.
+We'll denote $\transpose{A}=(\transpose{a_{ij}})=(a_{ji})$ and $\transpose{B}=(\transpose{b_{ij}})=(b_{ji})$.
+Let $C=\transpose{(AB)}$.
+Then, $C$ is an $r\times p$ matrix, such that for $i=1$, 2, \dots, $p$ and $j=1$, 2, \dots, $r$,
+\begin{align*}
+    c_{ji} &= \sum_{k=1}^qa_{ik}b_{kj} \\
+    &= \sum_{k=1}^q\transpose{b_{jk}}\transpose{a_{ki}},
+\end{align*}
+so $C=\transpose{B}\transpose{A}$.
+
+This fact implicates that
+\begin{align*}
+    \transpose{\left(\transpose{A}A\right)} &= \transpose{A}\transpose{(\transpose{A})} \\
+    &= \transpose{A}A,
+\end{align*}
+and so the matrix $\transpose{A}A$ is symmetric.
