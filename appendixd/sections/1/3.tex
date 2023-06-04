@@ -1,0 +1,10 @@
+Let $L'=(l_{ij}')$ and $L''=(l_{ij}'')$ be $n\times n$ lower-triangular matrices.
+Let $L=L'L''$.
+For $1\le i<j\le n$,
+\begin{align*}
+    l_{ij} &= \sum_{k=1}^nl_{ik}'l_{kj}'' \\
+    &= \sum_{k=1}^{j-1}l_{ik}'l_{kj}''+\sum_{k=j}^nl_{ik}'l_{kj}'' \\
+    &= \sum_{k=1}^{j-1}l_{ik}'\cdot0+\sum_{k=j}^n0\cdot l_{kj}'' \\
+    &= 0,
+\end{align*}
+so $L$ is lower-triangular.
