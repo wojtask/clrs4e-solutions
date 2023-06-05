@@ -1,0 +1,17 @@
+Suppose that $P$ is an $n\times n$ matrix.
+We'll prove that $P$ is invertible by showing that $\transpose{P}=(\transpose{p_{ij}})$ is its inverse.
+Suppose that for $i=1$, 2, \dots, $n$, $c_i$ is the number of column, such that $p_{ic_i}=1$.
+Then $\transpose{p_{c_ii}}=1$ is the only nonzero element in column $i$ of $\transpose{P}$.
+
+If we let $A=P\transpose{P}$, then for every $1\le i\le n$ and $1\le j\le n$, we have that
+\begin{align*}
+    a_{ij} &= \sum_{k=1}^np_{ik}\transpose{p_{kj}} \\
+    &= \sum_{k=1}^np_{ik}p_{jk} \\
+    &= p_{ic_i}p_{jc_i} \\
+    &= p_{jc_i}.
+\end{align*}
+By the fact that $P$ is a permutation matrix, we have that if $i=j$, then $a_{ij}=1$, otherwise $a_{ij}=0$.
+That is, $A=I_n$, and so $\transpose{P}=P^{-1}$.
+
+In a permutation matrix $P$ each row and each column has exactly one 1, and 0s elsewhere.
+The rows of $P$ are the columns of $\transpose{P}$, and the columns of $P$ are the rows of $\transpose{P}$, so the permutation matrix property is preserved in $\transpose{P}$.
