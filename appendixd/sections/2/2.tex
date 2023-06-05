@@ -1,0 +1,33 @@
+Let $L$ be an $n\times n$ lower-triangular matrix.
+We'll prove by induction on $n$ that the determinant of $L$ is the product of its diagonal elements.
+The base case is when $n=1$, and from the definition of determinant we have $\det(L)=l_{11}$.
+Now suppose that $n\ge2$.
+The minor $L_{[11]}$ is a lower-triangular matrix, so let's assume as an inductive hypothesis, that $\det(L_{[11]})=\prod_{i=2}^nl_{ii}$.
+Then we have
+\begin{align} \label{eq:determinant-of-lower-triangular-matrix}
+    \det(L) &= \sum_{j=1}^n(-1)^{1+j}l_{1j}\det(L_{[1j]}) \nonumber \\
+    &= (-1)^{1+1}l_{11}\det(L_{[11]}) \nonumber \\
+    &= l_{11}\prod_{i=2}^nl_{ii} \nonumber \\
+    &= \prod_{i=1}^nl_{ii},
+\end{align}
+which concludes the inductive proof.
+
+Now let $U$ be an $n\times n$ upper-triangular matrix.
+There exists a lower-triangular matrix $L$, such that $U=\transpose{L}$.
+Then $U$ and $L$ have the same diagonal elements, and so
+\begin{align*}
+    \det(U) &= \det(\transpose{L}) \\
+    &= \det(L) && \text{(by Theorem D.4)} \\
+    &= \prod_{i=1}^nl_{ii} && \text{(by \eqref{eq:determinant-of-lower-triangular-matrix})} \\
+    &= \prod_{i=1}^nu_{ii}.
+\end{align*}
+
+Now let $L$ be a nonsingular $n\times n$ lower-triangular matrix and let $L'=(l_{ij}')$ be the inverse of $L$.
+We use induction to show that $L'$ is a lower-triangular matrix.
+When $n=1$, $L'$ is a $1\times1$ matrix, which is trivially lower-triangular.
+For the inductive step, let $n\ge2$ and assume that the minor $L_{[11]}'$ itself is lower-triangular.
+For $j=1$, 2, \dots, $n$, the element in the first row and the $j$th column of $I_n$ is equal to $\sum_{k=1}^nl_{1k}l_{kj}'=l_{11}l_{1j}'$.
+If $j=1$, then $l_{11}l_{11}'=1$, so $l_{11}'=1/l_{11}\ne0$.
+Note that the existence of the inverse of $L$ implies $l_{11}\ne0$.
+If $j>1$, $l_{11}l_{1j}'=0$, so $l_{1j}'$ has to be 0.
+Combining these results with the inductive hypothesis, we have that $L'$ is lower-triangular.
