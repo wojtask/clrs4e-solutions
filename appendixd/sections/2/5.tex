@@ -1,0 +1,20 @@
+We need only prove the forward direction, since the inverse of $A^{-1}$ is $(A^{-1})^{-1}=A$ and the backward direction is symmetric.
+Suppose that every entry of $A^{-1}=(a_{ij}^{-1})$ is real.
+We'll use induction to show that every entry of $A$ is real.
+
+If $n=1$, $A^{-1}$ has a single real entry $a_{11}^{-1}$, and the only entry of $A$ is $a_{11}=1/a_{11}^{-1}$, so it is real.
+Now let $n\ge2$ and assume that every entry of $A_{[11]}$ is real.
+Suppose that there exists $2\le i\le n$, such that $a_{i1}$ is complex but not real.
+Since $AA^{-1}=I_n$, we have
+\begin{align*}
+    1 &= \sum_{k=1}^na_{ik}a_{ki}^{-1} \\
+    &= a_{i1}a_{1i}^{-1}+\sum_{k=2}^na_{ik}a_{ki}^{-1}.
+\end{align*}
+The term $a_{i1}a_{1i}^{-1}$ is not real, and so can't be the last summation, in order to cancel out the imaginary components on the right-hand side and sum up to 1.
+This means that some other element from the $i$th row of $A$ can't be real, which contradicts our assumption.
+Using the identity $A^{-1}A=I_n$ and a similar reasoning we can show that all elements $a_{1j}$, where $2\le j\le n$, are real.
+This fact implies, that in the following equation
+\[
+    1 = a_{11}a_{11}^{-1}+\sum_{k=2}^na_{1k}a_{k1}^{-1}
+\]
+the last summation is a real number, so $a_{11}$ has to be real as well.
