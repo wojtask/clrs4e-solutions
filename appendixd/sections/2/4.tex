@@ -1,0 +1,41 @@
+Let $C$ be the $n\times n$ matrix with $c_{ij}=1$, and 0s elsewhere.
+Observe that $CA$ is the matrix, in which the $i$th row is the $j$th row of $A$, while other rows consist of 0s.
+Similarly, $BC$ is the matrix, in which the $j$th column is the $i$th column of $B$, while other columns consist of 0s.
+Let $D=I+C$ and $D'=I-C$.
+Then, $A'=DA$ and $B'=BD'$.
+
+We'll now show that $D'=D^{-1}$.
+By letting $X=DD'$, for $1\le p$, $q\le n$ we have
+\[
+    x_{pq} = \sum_{k=1}^nd_{pk}d_{kq}'.
+\]
+The term $d_{pk}$ is nonzero, whenever $k=p$ or both $p=i$ and $k=j$, while the term $d_{kq}'$ is nonzero, whenever $k=q$ or both $q=j$ and $k=i$.
+Therefore, both terms are nonzero in each of the following cases:
+\begin{enumerate}
+    \item $k=p=q$,
+    \item $k=p=i$ and $q=j$, or
+    \item $k=q=j$ and $p=i$.
+\end{enumerate}
+Thus, for $p=1$, 2, \dots, $n$,
+\begin{align*}
+    x_{pp} &= d_{pp}d_{pp}' \\
+    &= 1.
+\end{align*}
+and, since $i\ne j$,
+\begin{align*}
+    x_{ij} &= d_{ii}d_{ij}'+d_{ij}d_{jj}' \\
+    &= -1+1 \\
+    &= 0.
+\end{align*}
+All other entries $x_{pq}$ are zero.
+Therefore, $X=I$, so $D'=D^{-1}$.
+
+Finally, we get
+\begin{align*}
+    A'B' &= DABD' \\
+    &= D(AB)D^{-1} \\
+    &= (DI)D^{-1} \\
+    &= DD^{-1} \\
+    &= I,
+\end{align*}
+hence $B'=(A')^{-1}$.
