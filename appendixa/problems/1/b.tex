@@ -1,17 +1,17 @@
-Asymptotic upper bound:
+An asymptotic upper bound:
 \begin{align*}
     \sum_{k=1}^n\lg^sk &\le \sum_{k=1}^n\lg^sn \\
     &= n\cdot\lg^sn \\
     &= O(n\lg^sn).
 \end{align*}
-Asymptotic lower bound:
+An asymptotic lower bound:
 \begin{align*}
     \sum_{k=1}^n\lg^sk &\ge \sum_{k=n/2+1}^n\lg^sk \\
     &\ge \sum_{k=n/2+1}^n\lg^s(n/2) \\
     &= (n/2)\cdot\lg^s(n/2) \\
     &= \Omega(n\lg^sn).
 \end{align*}
-Asymptotic tight bound:
+The asymptotic tight bound:
 \[
     \sum_{k=1}^n\lg^sk = \Theta(n\lg^sn).
 \]
