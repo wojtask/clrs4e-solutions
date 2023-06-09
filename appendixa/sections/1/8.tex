@@ -1,8 +1,8 @@
-By the upper bound on $H_n$ (A.9), we have:
+\setlength{\abovedisplayskip}{-\baselineskip}
 \begin{align*}
     \sum_{k=1}^n\frac{1}{2k-1} &< 1+\sum_{k=2}^{n+1}\frac{1}{2k-2} \\
     &= 1+\sum_{k=1}^n\frac{1}{2k} \\[1mm]
     &= 1+\frac{H_n}{2} \\[1mm]
-    &= 1+\frac{\ln n+O(1)}{2} \\[1mm]
-    &= \ln\!\sqrt{n}+O(1).
+    &= 1+\frac{\ln n+O(1)}{2} && \text{(by equation (A.9))} \\[1mm]
+    &= \ln\!\sqrt{n}+O(1)
 \end{align*}
