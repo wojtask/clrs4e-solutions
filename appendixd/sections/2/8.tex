@@ -1,0 +1,18 @@
+Let $A$ be an $m\times p$ matrix and let $B$ be $p\times n$ matrix.
+From the alternate definition of the rank, $r=\rank(AB)$ is the smallest number such that $AB=CD$ for some matrices $C$ and $D$ of respective sizes $m\times r$ and $r\times n$.
+Let $r'=\rank(A)$ and $r''=\rank(B)$ and let $C'$, $D'$, $C''$, $D''$ be matrices of respective sizes $m\times r'$, $r'\times p$, $p\times r''$, $r''\times n$ such that $A=C'D'$ and $B=C''D''$.
+Since $AB=(C'D'C'')D''$ and $C'D'C''$ is an $m\times p$ matrix, we have that $r\le r'$.
+Similarly, if we represent the product as $AB=C'(D'C''D'')$, we conclude that $r\le r''$.
+Therefore, $r\le\min{r',r''}$.
+
+Now consider a special case, where $p=m$ and $A$ is nonsingular.
+Let $r$, $r'$, $r''$, $C$ and $D$ have the same meaning as before.
+Of course, $r''\le\min{m,n}\le m$ and, by Theorem D.1, $r'=m$.
+Also,
+\begin{align*}
+    B &= A^{-1}AB \\
+    &= (A^{-1}C)D,
+\end{align*}
+and since $A^{-1}C$ is an $m\times r$ matrix, we have that $r''\le r$.
+Combining this with the inequality $r\le r''$ shown in the proof for a general case, we obtain $r=r''=\min{r',r''}$.
+The proof for the case in which $p=n$ and $B$ is nonsingular, is symmetric.
