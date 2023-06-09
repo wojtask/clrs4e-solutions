@@ -4,33 +4,18 @@ Similarly, $BC$ is the matrix, in which the $j$th column is the $i$th column of 
 Let $D=I+C$ and $D'=I-C$.
 Then, $A'=DA$ and $B'=BD'$.
 
-We'll now show that $D'=D^{-1}$.
-By letting $X=DD'$, for $1\le p$, $q\le n$ we have
-\[
-    x_{pq} = \sum_{k=1}^nd_{pk}d_{kq}'.
-\]
-The term $d_{pk}$ is nonzero, whenever $k=p$ or both $p=i$ and $k=j$, while the term $d_{kq}'$ is nonzero, whenever $k=q$ or both $q=j$ and $k=i$.
-Therefore, both terms are nonzero in each of the following cases:
-\begin{enumerate}
-    \item $k=p=q$,
-    \item $k=p=i$ and $q=j$, or
-    \item $k=q=j$ and $p=i$.
-\end{enumerate}
-Thus, for $p=1$, 2, \dots, $n$,
+Observe, that since $i\ne j$, for any $1\le p$, $q\le n$ the terms $c_{pk}$ and $c_{kq}$ can't be both nonzero.
+Thus, $\sum_{k=1}^nc_{pk}c_{kq}=0$, and so $CC$ is a zero matrix.
+Then,
 \begin{align*}
-    x_{pp} &= d_{pp}d_{pp}' \\
-    &= 1.
+    DD' &= (I+C)(I-C) \\
+    &= II+CI-IC-CC \\
+    &= I+C-C-CC \\
+    &= I,
 \end{align*}
-and, since $i\ne j$,
-\begin{align*}
-    x_{ij} &= d_{ii}d_{ij}'+d_{ij}d_{jj}' \\
-    &= -1+1 \\
-    &= 0.
-\end{align*}
-All other entries $x_{pq}$ are zero.
-Therefore, $X=I$, so $D'=D^{-1}$.
+which means that $D'=D^{-1}$.
 
-Finally, we get
+Returning to the matrices $A'$ and $B'$, we get
 \begin{align*}
     A'B' &= DABD' \\
     &= D(AB)D^{-1} \\
