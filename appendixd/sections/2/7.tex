@@ -1,0 +1,11 @@
+Let $A$ be an $m\times n$ matrix that has full column rank and let $x$ be an $n$-vector such that $Ax=0$.
+If we denote the columns of $A$ by $a_1$, $a_2$, \dots, $a_n$, then the product $Ax$ can be expressed as the linear combination $\sum_{j=1}^na_jx_j$.
+Because the column rank of the matrix $A$ is $n$, all the column vectors are linearly independent, so $x_j$\dash viewed as coefficients from the definition of linear dependency\dash are all 0.
+Therefore, $x=0$.
+
+For the other direction, assume that for an $m\times n$ matrix $A$, the condition $Ax=0$ implies $x=0$, and that the matrix $A$ has the rank less than $n$.
+This means that there is some set of column vectors of $A$ which are linearly dependent.
+Note that we can extend this set to include all column vectors of $A$, $a_1$, $a_2$, \dots, $a_n$, and they all will remain linearly dependent.
+Let $c_1$, $c_2$, \dots, $c_n$ be coefficients, not all of which are 0, such that $\sum_{j=1}^na_jc_j=0$.
+If we consider the $n$-vector $c=(c_j)$, then the equation can be viewed as $Ac=0$.
+But $c\ne0$, so we have a contradiction.
