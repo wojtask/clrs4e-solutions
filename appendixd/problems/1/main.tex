@@ -1,0 +1,29 @@
+The proof is by induction on $n$ and is based on the fact that if we add to a column of a matrix the product by a scalar of another column, then the determinant remains unchanged.
+This fact can be devised from Theorem D.4\dash first multiply a column by a scalar, then add this column to another column, then divide the original column by the scalar.
+
+For the base case of the induction, let $n=1$.
+Then the single entry of $V(x_0)$ is~1.
+Clearly, $\det(V(x_0))=1$, that matches the empty product $\prod_{0\le j<k\le0}(x_k-x_j)$, by convention equal to 1.
+
+For the inductive step, let $n\ge2$.
+As the hint suggests, for $i=n-1$, $n-2$, \dots, 1, we will multiply column $i$ by $-x_0$ and add it to column $i+1$, to obtain the matrix $W$ shown below:
+\[
+    \PARENS{
+        \begin{matrix}
+            1 & 0 & 0 & 0 & \cdots & 0 \\[2mm]
+            1 & x_1-x_0 & x_1(x_1-x_0) & x_1^2(x_1-x_0) & \cdots & x_1^{n-2}(x_1-x_0) \\[2mm]
+            1 & x_2-x_0 & x_2(x_2-x_0) & x_2^2(x_2-x_0) & \cdots & x_2^{n-2}(x_2-x_0) \\[2mm]
+            \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\[2mm]
+            1 & x_{n-1}-x_0 & x_{n-1}(x_{n-1}-x_0) & x_{n-1}^2(x_{n-1}-x_0) & \cdots & x_{n-1}^{n-2}(x_{n-1}-x_0)
+        \end{matrix}
+    }.
+\]
+By the definition of determinant, $\det(W)=\det(W_{[11]})$.
+As all the entries in the $i$th row of $W_{[11]}$ have a factor of $x_i-x_0$, using Theorem D.4 we can take these factors out and obtain
+\begin{align*}
+    \det(V(x_1,x_2,\dots,x_{n-1})) &= \det(W) \\
+    &= \det(W_{[11]}) \\
+    &= \prod_{i=1}^{n-1}(x_i-x_0)\cdot\det(V(x_1,x_2,\dots,x_{n-1})) \\
+    &= \prod_{i=1}^{n-1}(x_i-x_0)\!\!\!\!\!\prod_{1\le j<k\le n-1}\!\!\!\!\!\!(x_k-x_j) \\
+    &= \!\!\!\!\!\prod_{0\le j<k\le n-1}\!\!\!\!\!\!(x_k-x_j).
+\end{align*}
