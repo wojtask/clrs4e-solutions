@@ -1,0 +1,12 @@
+First observe that $B(S',m)$ consists of size-$2^m$ blocks which contain a value produced by any $x\in S$.
+Since the first $m$ rows of $A$ only affect the first $m$ entries of $Ax$, they can affect the value of $Ax$ by at most $2^m-1$.
+The block where $Ax$ ends up is therefore determined by the last $n-m$ rows of $A$.
+What is more, the numbers in block~$i$ differ from the numbers in block~0 by $i2^m$, therefore the produced values are also shifted by a constant offset.
+Thus, without loss of generality, we may assume that $S$ is block~0, so that only the first $m$ columns of $A$ are relevant during multiplication.
+
+By similar reasoning as in part (a), only the linearly independent rows of the lower left $(n-m)\times m$ submatrix of $A$ can determine the block where $Ax$ will end up, since the entries of $Ax$ on the positions that correspond to the other rows are linear combinations of the other entries of $Ax$.
+Thus, $Ax$ spans $2^r$ blocks, so $|B(S',m)|=2^r$.
+
+Similarly, we could identify the $r$ linearly independent columns of the submatrix that decide on the block for $Ax$.
+A given block is uniquely chosen by a combination of the $r$ entries of $x$ that are multiplied by the elements of these columns, while the remaining $m-r$ entries (besides zeros at positions $m$, $m+1$, \dots, $n-1$) can be arbitrary.
+Thus, each block must be hit by the same number of times, equal to $2^{m-r}$.
