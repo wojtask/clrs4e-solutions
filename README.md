@@ -88,20 +88,20 @@ The work on the current project started on January 1, 2023.
   page layout and styling.
 - [x] Migrate the CormenSol solutions from Appendices A-C. Add solutions to the modified and new exercises and problems
   along the way.
-- [x] Add solutions to Appendix D, previously missing in the second edition, completing Part VIII (release **0.1**).
+- [x] Add solutions to Appendix D, previously missing in the second edition, completing Part VIII ([release 0.1](https://github.com/wojtask/clrs4e-solutions/releases/download/0.1/clrs4e-solutions.pdf)).
 - [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
-  Add solutions and implementations to modified and new exercises and problems along the way (deadline: **Q1'24**).
-  - [ ] Complete Part I (release **0.2**).
-  - [ ] Complete Part II (release **0.3**).
-  - [ ] Complete Part III (release **0.4**).
-  - [ ] Complete Part IV (release **0.5**).
+  Add solutions and implementations to modified and new exercises and problems along the way.
+  - [ ] Complete Part I (release 0.2).
+  - [ ] Complete Part II (release 0.3).
+  - [ ] Complete Part III (release 0.4).
+  - [ ] Complete Part IV (release 0.5).
   - [ ] Complete Chapter 17 from Part V.
 - [ ] Add solutions and implementations to Chapters 18-35.
-  - [ ] Complete Part V (release **0.6**).
-  - [ ] Complete Part VI (release **0.7**).
-  - [ ] Complete selected chapters from Part VII (release **0.8**).
-  - [ ] Complete Part VII (release **0.9**).
-- [ ] Finalize the document (release **1.0**).
+  - [ ] Complete Part V (release 0.6).
+  - [ ] Complete Part VI (release 0.7).
+  - [ ] Complete selected chapters from Part VII (release 0.8).
+  - [ ] Complete Part VII (release 0.9).
+- [ ] Finalize the document (release 1.0).
 
 ### Building
 
@@ -120,8 +120,7 @@ setup script:
 chmod +x setup.sh && sudo ./setup.sh
 ```
 
-Once the environment is prepared, you can compile the document to PDF by running the following command from the
-project's directory:
+Once the environment is prepared, you can compile the document to PDF by running the following command:
 
 ```shell
 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
@@ -131,9 +130,11 @@ latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-sol
 
 Again, significant effort has been made to ensure that each solution is thoroughly checked.
 However, if you have found an error of any kind, or you can improve an existing solution in any way, I will be grateful
-for your help.
-Each exercise and each subproblem has its own issue on GitHub, named and labelled appropriately.
-Please avoid duplicating these issues, rather search for the right one, and leave a comment.
-Alternatively, you are welcomed to create a pull request with your suggestions.
+for your feedback or help.
+Each exercise and each subproblem has its own issue in this repository, named and categorized appropriately.
+Please avoid duplicating these issues, rather search for the right one, and leave a comment, or even better &mdash; create a pull request with your suggestions.
+Authors of significant contributions will be credited in the document.
+
+**Together let's make this the most complete, reliable and consistent set of solutions to the iconic CLRS.**
 
 &mdash; Krzysztof Wojtas
