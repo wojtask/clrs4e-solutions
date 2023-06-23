@@ -1,9 +1,9 @@
-Let $J$ be the set of indices of all linearly independent columns of $A$.
-Consider vectors $x$, $x'\in S_n$, such that there exists $j\in J$ for which $x_j\ne x_j'$, and that for all $j\in\{1$, 2, \dots, $n\}-J$, $x_j=x_j'=0$.
+Let $a_0$, $a_1$, \dots, $a_{n-1}$ be the columns of $A$ and let $J\subseteq\{0$, 1, \dots, $n-1\}$ be the set of indices of all linearly independent columns of $A$.
+Consider vectors $x$, $x'\in S_n$, such that there exists $j\in J$ for which $x_j\ne x_j'$, and that for all $j\in\{0$, 1, \dots, $n-1\}-J$, $x_j=x_j'=0$.
 Then,
 \begin{align*}
     Ax-Ax' &= A(x-x') \\
-    &= \sum_{j=1}^na_j(x_j-x_j') \\
+    &= \sum_{j=0}^{n-1}a_j(x_j-x_j') \\
     &= \sum_{j\in J}a_i(x_j-x_j') \\
     & \ne 0,
 \end{align*}
@@ -14,11 +14,11 @@ Therefore, $|R(A)|\ge2^r$.
 To get the upper bound, observe that any column $a_j$, where $j\notin J$, is in fact a linear combination of the $r$ linearly independent columns of $A$.
 Thus, for any vector $x$,
 \begin{align*}
-    Ax &= \sum_{j=1}^na_jx_j \\
+    Ax &= \sum_{j=0}^{n-1}a_jx_j \\
     &= \sum_{j\in J}a_jx_j'
 \end{align*}
 for some coefficients $x_j'$.
-In other words, for any $x$ there exists a vector $x'$, with zeroes on positions $j\notin J$, mapped to the same value as $x$.
+In other words, for any $x$ there exists a vector $x'$, with zeros on positions $j\notin J$, mapped to the same value as $x$.
 There are $2^r$ ways of choosing such $x'$, so $|R(A)|\le2^r$.
 
 If $\rank(A)<n$, then $|R(A)|<2^n=|S_n|$, so $A$ can't define a permutation on $S_n$.
