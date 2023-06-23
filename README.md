@@ -88,10 +88,20 @@ The work on the current project started on January 1, 2023.
   page layout and styling.
 - [x] Migrate the CormenSol solutions from Appendices A-C. Add solutions to the modified and new exercises and problems
   along the way.
-- [x] Add solutions to Appendix D, previously missing in the second edition.
+- [x] Add solutions to Appendix D, previously missing in the second edition, completing Part VIII (release **0.1**).
 - [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
   Add solutions and implementations to modified and new exercises and problems along the way (deadline: **Q1'24**).
-- [ ] Add solutions and implementations to Chapters 18-35 (deadline: **TBD**).
+  - [ ] Complete Part I (release **0.2**).
+  - [ ] Complete Part II (release **0.3**).
+  - [ ] Complete Part III (release **0.4**).
+  - [ ] Complete Part IV (release **0.5**).
+  - [ ] Complete Chapter 17 from Part V.
+- [ ] Add solutions and implementations to Chapters 18-35.
+  - [ ] Complete Part V (release **0.6**).
+  - [ ] Complete Part VI (release **0.7**).
+  - [ ] Complete selected chapters from Part VII (release **0.8**).
+  - [ ] Complete Part VII (release **0.9**).
+- [ ] Finalize the document (release **1.0**).
 
 ### Building
 
