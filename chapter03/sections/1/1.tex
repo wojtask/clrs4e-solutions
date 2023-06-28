@@ -1,0 +1,10 @@
+Suppose that the $\lfloor n/3\rfloor$ largest values of the input array $A$ occupy the first $\lfloor n/3\rfloor$ positions $A[1\subarr\lfloor n/3\rfloor]$.
+When the array is sorted, each of these values must pass through the middle $n-2\lfloor n/3\rfloor$ positions $A[\lfloor n/3\rfloor+1\subarr 2\lfloor n/3\rfloor]$, one position at a time, by at least $n-2\lfloor n/3\rfloor$ executions of line 6.
+So the time taken by \proc{Insertion-Sort} in the worst case is at least proportional to
+\begin{align*}
+    \lfloor n/3\rfloor(n-2\lfloor n/3\rfloor) &\ge \lfloor n/3\rfloor(n-2n/3) && \text{(by inequality $\lfloor x\rfloor\le x$ (3.2))} \\
+    &\ge ((n-2)/3)(n/3) && \text{(by inequality (3.8))} \\
+    &\ge (n/6)(n/3) && \text{(as long as $n\ge4$)} \\
+    &= n^2\!/18,
+\end{align*}
+which is $\Omega(n^2)$.
