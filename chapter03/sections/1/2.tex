@@ -1,0 +1,14 @@
+In \proc{Selection-Sort} the outer loop runs $n-1$ times, and the inner loop runs at most $n-1$ times, spending a constant time per iteration.
+This situation is analogous to that we've seen in \proc{Insertion-Sort}, so the upper bound on the running times of both algorithms must the same: $O(n^2)$.
+
+Now observe that during those iterations of the outer loop, in which $j=1$, 2, \dots, $\lfloor n/2\rfloor$, $A[\id{min}]$ is compared with all elements of $A[\lfloor n/2\rfloor+1\subarr n]$ in line 4.
+So in each of these $\lfloor n/2\rfloor$ iterations of the outer loop, the inner loop iterates at least $n-\lfloor n/2\rfloor$ times.
+The body of the inner loop takes a constant time per iteration, so the total running time of \proc{Selection-Sort} in the worst case is proportional to the total number of iterations of the inner loop, which is at least
+\begin{align*}
+    \lfloor n/2\rfloor(n-\lfloor n/2\rfloor) &\ge ((n-1)/2)(n/2) && \text{(by inequalities (3.2) and (3.8))} \\
+    &\ge (n/4)(n/2) && \text{(as long as $n\ge2$)} \\
+    &= n^2\!/8,
+\end{align*}
+or $\Omega(n^2)$.
+
+Because we've shown that in all cases \proc{Selection-Sort} runs in $O(n^2)$ time and in $\Omega(n^2)$ time, we can conclude that the running time of \proc{Selection-Sort} is $\Theta(n^2)$.
