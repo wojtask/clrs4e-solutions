@@ -1,0 +1,5 @@
+If we assume that the $\alpha n$ largest values of the input array occupy the first $\alpha n$ positions, those values will need to pass through the $(1-2\alpha)n$ middle positions, before the array is sorted.
+Those middle array positions must exist, so we'll require that $1-2\alpha>0$, or $\alpha<1/2$.
+The number of such moves is $\alpha n(1-2\alpha)n$.
+We can find the value of $\alpha$ that maximizes this number for a given $n$, by analysing the quadratic function $f(\alpha)=\alpha(1-2\alpha)$.
+Its vertex form is $f(\alpha)=-2(\alpha-1/4)+1/8$, so the vertex of the parabola is $(1/4,1/8)$, and so the function is maximized at $\alpha=1/4$.
