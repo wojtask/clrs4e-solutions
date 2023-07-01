@@ -1,0 +1,13 @@
+Let $n\le m$.
+Then, $f(n)\le f(m)$ and $g(n)\le g(m)$.
+If we combine these inequalities by adding one to the other, we obtain
+\[
+    f(n)+g(n) \le f(m)+g(m),
+\]
+which means that the function $f(n)+g(n)$ is monotonically increasing.
+By plugging the values of $g(n)$ into the function $f(n)$, we have that $g(n)\le g(m)$ implies $f(g(n))\le f(g(m))$, and so $f(g(n))$ is monotonically increasing.
+If we additionally assume that $f(n)$ and $g(n)$ are nonnegative, we can combine the inequalities $f(n)\le f(m)$ and $g(n)\le g(m)$ by multiplying one with the other:
+\[
+    f(n)\cdot g(n)\le f(m)\cdot g(m).
+\]
+Thus, $f(n)\cdot g(n)$ is monotonically increasing.
