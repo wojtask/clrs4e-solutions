@@ -1,4 +1,4 @@
-\setlength{\abovedisplayskip}{-\baselineskip}
+\liftdisplaystyle
 \begin{align*}
 	\sum_{k=0}^{\lfloor\lg n\rfloor}\left\lceil\frac{n}{2^k}\right\rceil &< \sum_{k=0}^{\lfloor\lg n\rfloor}\left(\frac{n}{2^k}+1\right) && \text{(by inequality (3.2))} \\
     &\le \lg n+1+\sum_{k=0}^{\lfloor\lg n\rfloor}\frac{n}{2^k} \\
