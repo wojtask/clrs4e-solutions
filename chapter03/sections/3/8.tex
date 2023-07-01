@@ -1,0 +1,29 @@
+We have
+\begin{align*}
+    \frac{\phi^0-\widehat\phi^0}{\sqrt{5}} &= 0 \\
+    &= F_0
+\end{align*}
+and
+\begin{align*}
+    \frac{\phi^1-\widehat\phi^1}{\sqrt{5}} &= \frac{1+\!\sqrt{5}-\bigl(1-\!\sqrt{5}\bigr)}{2\!\sqrt{5}} \\
+    &= 1 \\
+    &= F_1,
+\end{align*}
+so the base case holds.
+Now suppose that $i\ge2$.
+The inductive hypothesis is that
+\[
+    F_{i-2} = \frac{\phi^{i-2}-\widehat\phi^{i-2}}{\sqrt{5}}
+\]
+and
+\[
+    F_{i-1} = \frac{\phi^{i-1}-\widehat\phi^{i-1}}{\sqrt{5}}.
+\]
+Then, we have
+\begin{align*}
+    F_i &= F_{i-2}+F_{i-1} \\[1mm]
+    &= \frac{\phi^{i-2}-\widehat\phi^{i-2}}{\sqrt{5}}+\frac{\phi^{i-1}-\widehat\phi^{i-1}}{\sqrt{5}} \\[1mm]
+    &= \frac{\phi^{i-2}(1+\phi)-\widehat\phi^{i-2}\bigl(1+\widehat\phi\bigr)}{\sqrt{5}} \\
+    &= \frac{\phi^i-\widehat\phi^i}{\sqrt{5}} && \text{(by the definition of $\phi$ and $\widehat\phi$)},
+\end{align*}
+so the formula for $F_i$ holds for all $i\ge0$.
