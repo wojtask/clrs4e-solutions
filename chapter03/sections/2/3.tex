@@ -1,0 +1,8 @@
+Let's determine positive constants $c$ and $n_0$ such that $0\le2^{n+1}\le c2^n$ for all $n\ge n_0$.
+Since $2^{n+1}=2\cdot2^n$, we can pick $c=2$ and $n_0=1$.
+So $2^{n+1}=O(2^n)$.
+
+Now let's assume that $c$ and $n_0$ are positive constants satisfying $0\le2^{2n}\le c2^n$ for all $n\ge n_0$.
+Then $2^{2n}=2^n\cdot2^n\le c2^n$, which implies that $c\ge2^n$.
+The last inequality, however, does not hold regardless of a value we would choose for $c$, because $2^n$ becomes arbitrarily large as $n$ gets large.
+Hence, $2^{2n}\ne O(2^n)$.
