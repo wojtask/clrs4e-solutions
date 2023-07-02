@@ -1,0 +1,16 @@
+As stated in the text on page 67, any positive polynomial function grows faster than any polylogarithmic function, in particular $m-1=\omega(\lg m)$.
+So for any positive constant $c$ there is a positive constant $m_0$ such that $0\le c\lg m<m-1$ for all $m\ge m_0$.
+Let
+\[
+    n_0 = \underbrace{2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}}_{m_0}.
+\]
+Notice that $\lg^*n_0=m_0$ and since the function $\lg^*n$ is monotonically increasing, for $n\ge n_0$ it takes all integer values greater than or equal to $m_0$.
+We can therefore substitute $\lg^*n$ for $m$ in the previous inequalities.
+More precisely, it is true that for any positive constant $c$ there is a positive constant $n_0$ such that
+\begin{align*}
+    0 &\le c\lg(\lg^*n) \\
+    &< \lg^*n-1 \\
+    &= \lg^*(\lg n)
+\end{align*}
+for all $n\ge n_0$.
+Therefore, $\lg^*(\lg n)=\omega(\lg(\lg^*n))$.
