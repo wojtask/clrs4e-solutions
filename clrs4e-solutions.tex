@@ -121,10 +121,17 @@
 
 \titlespacing*{\section}{-\lmarginparwidth}{*5}{*2}
 \titleformat{\subsubsection}[runin]{\bfseries\itshape}{\thesubsubsection}{1em}{}
-\titlespacing*{\subsubsection}{0pt}{*3}{*2}
 
 \newcommand{\exercise}{\subsection{}\label{sol:\thesubsection}}
-\newcommand{\subexercise}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
+\newcommand{\subexercise}{%
+    \ifnum\value{subsubsection}=0%
+        % this is needed to remove the vertical skip before the first subexercise of an exercise
+        \titlespacing*{\subsubsection}{0pt}{-\baselineskip}{*2}%
+    \else
+        \titlespacing*{\subsubsection}{0pt}{*3}{*2}%
+    \fi
+    \subsubsection{}\label{sol:\thesubsection\thesubsubsection}
+}
 \newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
 \newcommand{\subproblem}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
 
