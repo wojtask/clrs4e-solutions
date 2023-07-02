@@ -1,0 +1,35 @@
+Let a function $f(n)$ be polynomially bounded.
+Then $f(n)=O(n^k)$ for some constant $k$.
+As we show in \refProblem{3-4}(c), this fact implies that $\lg f(n)=O(\lg n^k)=O(\lg n)$.
+Now suppose that $\lg f(n)=O(\lg n)$.
+Then there exist positive constants $c$ and $n_0$ such that $0\le\lg f(n)\le c\lg n$ for all $n\ge n_0$.
+Then, we have
+\begin{align*}
+    0 &\le f(n) \\
+    &= 2^{\lg f(n)} \\
+    &\le 2^{c\lg n} \\
+    &= (2^{\lg n})^c \\
+    &= n^c
+\end{align*}
+for all $n\ge n_0$, so that $f(n)$ is polynomially bounded.
+
+In the following proofs we use equation (3.28) proved in \refExercise{3.3-4} and equation $\lceil n\rceil=\Theta(n)$ proved in \refExercise{3.3-3}, after substituting different functions for $n$ in those equations.
+We also rely on the observations and proofs from the solution to \refProblem{3-3}.
+
+We have
+\begin{align*}
+    \lg(\lceil\lg n\rceil!) &= \Theta(\lceil\lg n\rceil\lg\lceil\lg n\rceil) \\
+    &= \Theta(\lg n\lg\lg n) \\
+    &= \omega(\lg n).
+\end{align*}
+We've shown that $\lg(\lceil\lg n\rceil!)\ne O(\lg n)$, which means that the function $\lceil\lg n\rceil!$ is not polynomially bounded.
+
+On the other hand,
+\begin{align*}
+    \lg(\lceil\lg\lg n\rceil!) &= \Theta(\lceil\lg\lg n\rceil\lg\lceil\lg\lg n\rceil) \\
+    &= \Theta(\lg\lg n\lg\lg\lg n) \\
+    &= o((\lg\lg n)^2) \\
+    &= o(\lg n),
+\end{align*}
+where the last step results from equation (3.24) for $a=1$ and $b=2$ and after substituting $\lg n$ for $n$.
+The obtained result implies in particular that $\lg(\lceil\lg\lg n\rceil!)=O(\lg n)$, so the function $\lceil\lg\lg n\rceil!$ is polynomially bounded.
