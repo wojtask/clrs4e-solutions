@@ -13,10 +13,10 @@ content, but also in terms of terminology, wording, and typography.
 I pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
 operations and examples with accurate pictures, consistent with the style of the textbook.
 
-It should be noted that the textbook's authors also provide selected solutions &mdash; they can be downloaded from the
-[textbook's website](http://mitpress.mit.edu/algorithms4).
-Also, other authors publicly host their solutions on the web, though majority of those that I found are for the third
-edition of the textbook:
+It should be noted that the textbook's authors also provide selected solutions &mdash; the document can be downloaded
+from the [textbook's website](http://mitpress.mit.edu/algorithms4).
+Additionally, other authors publicly host their solutions on the web, though majority of those that I found are for the
+third edition of the textbook:
 
 * [solutions by Michelle Bodnar and Andrew Lohr](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html),
 * [solutions by Stefan Kanev](https://ita.skanev.com),
@@ -28,7 +28,7 @@ However, none of the above sources cover all exercises, especially when compared
 significant number of new exercises.
 Also, I noticed that certain solutions are not of the highest quality, e.g., some of them are incorrect, incomplete, or
 just far from elegance.
-Nevertheless, these pieces of work were sources of inspiration for me, presented different approaches and perspectives.
+Nevertheless, these pieces of work were sources of inspiration for me, and showed different approaches and perspectives.
 When relying on the ideas from them, I always aimed to rework the solutions by introducing necessary fixes and
 improvements, or just polishing them.
 
@@ -51,7 +51,7 @@ operations.
 To maximize my confidence, I implement and test each pseudocode or algorithm description that I provide in the
 solutions, as well as those that are provided in the textbook.
 I chose Python as a programming language, because of its popularity and its syntax similar to that used in pseudocodes.
-The counterpart project with implementations is available on [here](https://github.com/wojtask/clrs4e-implementations).
+The counterpart project with implementations is available [here](https://github.com/wojtask/clrs4e-implementations).
 
 [The list of provided algorithms.](ALGORITHMS.md)
 
@@ -74,7 +74,7 @@ Having solved Chapters 1-17 and Appendices A-C from the &mdash; now outdated &md
 both **CormenSol** and **CormenPy**, and shift my attention to adapt the solutions for the fourth edition, while
 translating them to English &mdash; the process I refer to as **migration**.
 
-The work on the current project started on January 1, 2023.
+The work on the current project began on January 1, 2023.
 
 ### Progress
 
@@ -88,7 +88,7 @@ The work on the current project started on January 1, 2023.
   page layout and styling.
 - [x] Migrate the CormenSol solutions from Appendices A-C. Add solutions to the modified and new exercises and problems
   along the way.
-- [x] Add solutions to Appendix D, previously missing in the second edition, completing Part VIII ([release 0.1](https://github.com/wojtask/clrs4e-solutions/releases/download/0.1/clrs4e-solutions.pdf)).
+- [x] Add solutions to Appendix D, previously missing in the second edition, completing Part VIII ([release 0.1](https://github.com/wojtask/clrs4e-solutions/releases/tag/0.1)).
 - [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
   Add solutions and implementations to modified and new exercises and problems along the way.
   - [ ] Complete Part I (release 0.2).
@@ -128,7 +128,7 @@ latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-sol
 
 ### Contributions
 
-Again, significant effort has been made to ensure that each solution is thoroughly checked.
+Again, a significant effort has been made to ensure that each solution is thoroughly checked.
 However, if you have found an error of any kind, or you can improve an existing solution in any way, I will be grateful
 for your feedback or help.
 Each exercise and each subproblem has its own issue in this repository, named and categorized appropriately.
