@@ -219,6 +219,9 @@
                 \import{#4/problems/\Problem/}{\SubProblem}
             }{}%
         }%
+        \IfFileExists{#4/problems/\Problem/main_end}{%
+            \par\bigskip\import{#4/problems/\Problem/}{main_end}
+        }{}%
     }%
 }
 
