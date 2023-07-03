@@ -1,0 +1,17 @@
+\newcommand{\Tworst}{\labelledVariable{T}{worst}(n)}
+\newcommand{\Tbest}{\labelledVariable{T}{best}(n)}
+For the input size $n$ let $T(n)$ be the running time of an algorithm, and let $\Tworst$ and $\Tbest$ be its worst-case running time and its best-case running time, respectively.
+
+Suppose that $T(n)=\Theta(g(n))$.
+Among all inputs of size $n$, there is one that is the worst case and one that is the best case for the algorithm in terms of time required to run on these inputs.
+Since $T(n)$ describes the running time for \emph{all} cases, it also describes the running time for the worst case, and the running time for the best case.
+Thus, $\Tworst=\Theta(g(n))$ and $\Tbest=\Theta(g(n))$, and by Theorem 3.1 we have that $\Tworst=O(g(n))$ and $\Tbest=\Omega(g(n))$.
+
+Now suppose that $\Tbest=\Omega(g(n))$ and $\Tworst=O(g(n))$.
+Let $c_1$ and $n_1$ be positive constants such that $0\le c_1g(n)\le\Tbest$ for all $n\ge n_1$, and let $c_2$ and $n_2$ be positive constants such that $0\le\Tworst\le c_2g(n)$ for all $n\ge n_2$.
+Of course, for any input size $n$, $\Tbest\le T(n)\le\Tworst$.
+Then for all $n\ge\max{n_1,n_2}$,
+\[
+    0 \le c_1g(n) \le \Tbest \le T(n) \le \Tworst \le c_2g(n),
+\]
+so $T(n)=\Theta(g(n))$.
