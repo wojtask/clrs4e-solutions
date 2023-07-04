@@ -1,0 +1,203 @@
+In our justifications we will make use of the following lemmas:
+\begin{numberedlemma} \label{thm:omega-of-product}
+    If a function $f(n)$ is asymptotically positive and if $g(n)=\omega(h(n))$, then $f(n)g(n)=\omega(f(n)h(n))$.
+\end{numberedlemma}
+
+\begin{proof}
+    Pick $n_1$, so that $f(n)>0$ for all $n\ge n_1$.
+    The relation $g(n)=\omega(h(n))$ implies that for any constant $c>0$ there exists a constant $n_2>0$ such that
+    \[
+        0 \le ch(n) < g(n)
+    \]
+    for all $n\ge n_2$.
+    If we let $n\ge\max{n_1,n_2}$ and multiply all parts of the above compound inequality by $f(n)$, we obtain the result.
+\end{proof}
+
+\begin{numberedlemma} \label{thm:omega-of-power}
+    If $f(n)=\omega(g(n))$ and $\lim\limits_{n\to\infty}g(n)=\infty$, then $2^{f(n)}=\omega\bigl(2^{g(n)}\bigr)$.
+\end{numberedlemma}
+
+\begin{proof}
+    By the definition of $\omega$-notation, for any constant $c>0$ there is a constant $n_0>0$ such that $f(n)>cg(n)$ for all $n\ge n_0$.
+    For fixed $c$, let $d$ be a number satisfying the inequality $cg(n)\ge d+g(n)$ for all $n\ge n_0$.
+    Then $d\le(c-1)g(n)$, and because $g(n)$ grows arbitrarily large as $n$ grows, $d$ can take any real value, and so $2^d$ can take any positive value.
+    Thus,
+    \begin{align*}
+        2^{f(n)} &> 2^{cg(n)} \\
+        &\ge 2^{d+g(n)} \\
+        &= 2^d\cdot2^{g(n)} \\
+        &> 0,
+    \end{align*}
+    so $2^{f(n)}=\omega\bigl(2^{g(n)}\bigr)$.
+\end{proof}
+
+\begin{numberedlemma} \label{thm:omega-of-symmetry}
+    For $f(n)=\Theta(g(n))$, $h(n)=\omega(f(n))$ if and only if $h(n)=\omega(g(n))$.
+\end{numberedlemma}
+
+\begin{proof}
+    Let $c$ and $n_0$ be positive constants such that for all $n\ge n_0$,
+    \[
+        0 \le cg(n) \le f(n).
+    \]
+    If $h(n)=\omega(f(n))$, then for any constant $a>0$ there exists a constant $n_a>0$ such that $0\le af(n)<h(n)$ for all $n\ge n_a$.
+    For any $a$ and all $n\ge\max{n_0,n_a}$,
+    \begin{align*}
+        h(n) &> af(n) \\
+        &\ge acg(n) \\
+        &\ge 0,
+    \end{align*}
+    or $h(n)=\omega(g(n))$, because the factor $ac$ can take any positive value.
+
+    By symmetry of $\Theta$-notation, $g(n)=\Theta(f(n))$, so the proof in the backward direction is symmetric, with $f(n)$ and $g(n)$ swapped.
+\end{proof}
+
+The following justifications show that either $f(n)=\omega(g(n))$\dash which implies that $f(n)=\Omega(g_(n))$\dash or $f(n)=\Theta(g(n))$.
+
+\begin{description}[style=nextline]
+    \item[$2^{2^{n+1}}=\omega\bigl(2^{2^n}\bigr)$]
+    By Lemma~\ref{thm:omega-of-product} for $f(n)=g(n)=2^{2^n}$ and $h(n)=1$.
+    \item[$2^{2^n}=\omega((n+1)!)$]
+    By equation (3.13), $2^n=\omega(n^2)$, and by Lemma~\ref{thm:omega-of-product}, $n^2=\omega(n\lg n)$, because $n=\omega(\lg n)$.
+    Then, by transitivity of $\omega$-notation, $2^n=\omega(n\lg n)$.
+    By equation (3.28) and the fact that $0<\lg(n+1)<\lg(n!)$ for $n\ge3$,
+    \begin{align*}
+        \lg((n+1)!) &= \lg(n+1)+\lg(n!) \\
+        &= \Theta(n\lg n),
+    \end{align*}
+    so thanks to Lemma~\ref{thm:omega-of-symmetry} we have $2^n=\omega(\lg(n+1)!)$ and the result follows from Lemma~\ref{thm:omega-of-power}.
+    \item[$(n+1)!=\omega(n!)$]
+    Immediate from Lemma~\ref{thm:omega-of-product} for $f(n)=n!$, $g(n)=n+1$, and $h(n)=1$.
+    \item[$n!=\omega(e^n)$]
+    By equation (3.28) and Lemma~\ref{thm:omega-of-product}, $\lg(n!)=\Theta(n\lg n)=\omega(n)$, while $\lg e^n=\Theta(n)$.
+    Thanks to Lemma~\ref{thm:omega-of-symmetry} we have $\lg(n!)=\omega(\lg e^n)$ and the relation follows from Lemma~\ref{thm:omega-of-power}.
+    \item[$e^n=\omega(n\cdot2^n)$]
+    By equation (3.13), $(e/2)^n=\omega(n)$.
+    Then, the relation follows from Lemma~\ref{thm:omega-of-product} for $f(n)=2^n$, $g(n)=(e/2)^n$, and $h(n)=n$.
+    \item[$n\cdot2^n=\omega(2^n)$]
+    Immediate from Lemma~\ref{thm:omega-of-product} for $f(n)=2^n$, $g(n)=n$, and $h(n)=1$.
+    \item[$2^n=\omega((3/2)^n)$]
+    Immediate from Lemma~\ref{thm:omega-of-product} for $f(n)=(3/2)^n$, $g(n)=(4/3)^n$, and $h(n)=1$.
+    \item[$(3/2)^n=\omega(n^{\lg\lg n})$]
+    $\lg(3/2)^n=n\lg(3/2)$ and
+    \begin{align*}
+        \lg(n^{\lg\lg n}) &= \lg n\lg\lg n \\
+        &< \lg n\lg n \\
+        &= \lg^2n.
+    \end{align*}
+    By equality (3.24), $n\lg(3/2)=\omega(\lg^2n)$, and so $\lg(3/2)^n=\omega(\lg(n^{\lg\lg n}))$.
+    Then, the result follows from Lemma~\ref{thm:omega-of-power}.
+    \item[$n^{\lg\lg n}=\Theta((\lg n)^{\lg n})$]
+    Immediate from equation (3.21).
+    \item[$(\lg n)^{\lg n}=\omega((\lg n)!)$]
+    Using Stirling's approximation, we get
+    \begin{align*}
+        (\lg n)! &= \Theta\left(\sqrt{2\pi\lg n}\,\Bigl(\frac{\lg n}{e}\Bigr)^{\lg n}\right) \\
+        &= \Theta\left((\lg n)^{\lg n}\,\frac{\sqrt{\lg n}}{n^{\lg e}}\right).
+    \end{align*}
+    Let
+    \[
+        f(n) = (\lg n)^{\lg n}\,\frac{\sqrt{\lg n}}{n^{\lg e}}
+    \]
+    and let
+    \[
+        g(n) = \frac{n^{\lg e}}{\sqrt{\lg n}}.
+    \]
+    Then, $g(n)=\omega(1)$, so by Lemma~\ref{thm:omega-of-product}, $f(n)g(n)=(\lg n)^{\lg n}=\omega(f(n))$.
+    Finally, $(\lg n)^{\lg n}=\omega((\lg n)!)$ follows from Lemma~\ref{thm:omega-of-symmetry}.
+    \item[$(\lg n)!=\omega(n^3)$]
+    By equation (3.28) and Lemma~\ref{thm:omega-of-product}, we get $\lg((\lg n)!)=\Theta(\lg n\lg\lg n)=\omega(\lg n)$ and $\lg n^3=3\lg n$, so $\lg((\lg n)!)=\omega(\lg n^3)$ and now it suffices to apply Lemma~\ref{thm:omega-of-power}.
+    \item[$n^3=\omega(n^2)$]
+    Immediate from \refProblem{3-1}(e).
+    \item[$n^2=\Theta(4^{\lg n})$]
+    Immediate from equation (3.21).
+    \item[$4^{\lg n}=\omega(n\lg n)$]
+    By equation (3.21), $4^{\lg n}=n^2$, so we apply Lemma~\ref{thm:omega-of-product} for $f(n)=g(n)=n$ and $h(n)=\lg n$.
+    \item[$n\lg n=\Theta(\lg(n!))$]
+    Immediate from equation (3.28).
+    \item[$\lg(n!)=\omega(n)$]
+    By equation (3.28) and Lemma~\ref{thm:omega-of-product}, $\lg(n!)=\Theta(n\lg n)=\omega(n)$.
+    \item[$n=\Theta(2^{\lg n})$]
+    Immediate from equation (3.21).
+    \item[$2^{\lg n}=\omega\bigl(\bigl(\sqrt{2}\bigr)^{\lg n}\bigr)$]
+    By equation (3.21), $2^{\lg n}=n$, as well as $\bigl(\sqrt{2}\bigr)^{\lg n}=n^{\lg\sqrt{2}}=\sqrt{n}$.
+    Thus, the relation follows from \refProblem{3-1}(e).
+    \item[$\bigl(\sqrt{2}\bigr)^{\lg n}=\omega\bigl(2^{\sqrt{2\lg n}}\bigr)$]
+    It holds that
+    \begin{align*}
+        \lg\bigl(\sqrt{2}\bigr)^{\lg n} &= \lg n\lg\sqrt{2} \\
+        &= \frac{\lg n}{2} \\
+        &= \sqrt{2\lg n}\cdot\frac{\sqrt{\lg n}}{2\sqrt{2}} \\
+        &= \sqrt{2\lg n}\cdot\omega(1),
+    \end{align*}
+    so Lemma~\ref{thm:omega-of-product} implies $\lg\bigl(\sqrt{2}\bigr)^{\lg n}=\omega\bigl(\lg2^{\sqrt{2\lg n}}\bigr)$.
+    Now it suffices to use Lemma~\ref{thm:omega-of-power}.
+    \item[$2^{\sqrt{2\lg n}}=\omega(\lg^2n)$]
+    Consider $\lg\lg2^{\sqrt{2\lg n}}=\Theta(\lg\lg n)$ and $\lg\lg\lg^2n=\Theta(\lg\lg\lg n)$.
+    We can show that $\lg\lg n=\omega(\lg\lg\lg n)$ by substituting $\lg\lg n$ for $n$ in equation (3.24).
+    Then we have $\lg\lg2^{\sqrt{2\lg n}}=\omega(\lg\lg\lg^2n)$, and we apply Lemma~\ref{thm:omega-of-power} twice.
+    \item[$\lg^2n=\omega(\ln n)$]
+    By Lemma~\ref{thm:omega-of-product}, $\lg^2n=\omega(\lg n)$.
+    Also, $\ln n=\Theta(\lg n)$, so the relation follows from Lemma~\ref{thm:omega-of-symmetry}.
+    \item[$\ln n=\omega\bigl(\sqrt{\lg n}\bigr)$]
+    We have
+    \begin{align*}
+        \ln n &= \frac{\lg n}{\lg e} \\
+        &= \sqrt{\lg n}\cdot\frac{\sqrt{\lg n}}{\lg e} \\
+        &= \sqrt{\lg n}\cdot\omega(1),
+    \end{align*}
+    so the relation follows from Lemma~\ref{thm:omega-of-product}.
+    \item[$\sqrt{\lg n}=\omega(\ln\ln n)$]
+    We have $\lg\sqrt{\lg n}=\Theta(\lg\lg n)$ and $\lg\ln\ln n=\Theta(\lg\lg\lg n)$.
+    By equation (3.24), after substituting $\lg\lg n$ for $n$, $\lg\lg n=\omega(\lg\lg\lg n)$, so $\lg\sqrt{\lg n}=\omega(\lg\ln\ln n)$, and the relation follows from Lemma~\ref{thm:omega-of-power}.
+    \item[$\ln\ln n=\omega\bigl(2^{\lg^*n}\bigr)$]
+    $\lg\ln\ln n=\Theta(\lg\lg\lg n)=\omega(\lg^*n)$, so we apply Lemma~\ref{thm:omega-of-power}.
+    \item[$2^{\lg^*n}=\omega(\lg^*n)$]
+    $\lg2^{\lg^*n}=\lg^*n$ and it holds that $\lg^*n=\omega(\lg(\lg^*n))$, which we prove in the following justifications.
+    Then the relation follows from Lemma~\ref{thm:omega-of-power}.
+    \item[$\lg^*n=\Theta(\lg^*(\lg n))$]
+    $\lg^*(\lg n)=\lg^*n-1$ holds for all $n\ge2$.
+    \item[$\lg^*(\lg n)=\omega(\lg(\lg^*n))$]
+    Immediate from \refExercise{3.3-6}.
+    \item[$\lg(\lg^*n)=\omega(n^{1/\!\lg n})$]
+    By equation (3.19), $1/\lg n=\log_n2$, and by (3.21),
+    \begin{align*}
+        n^{1/\lg n} &= n^{\log_n2} \\
+        &= 2^{\log_nn} \\
+        &= 2\\
+        &= \Theta(1).
+    \end{align*}
+    On the other hand, $\lg(\lg^*n)=\omega(1)$, and so the relation follows from Lemma~\ref{thm:omega-of-symmetry}.
+    \item[$n^{1/\lg n}=\Theta(1)$]
+    Immediate from the above justification.
+\end{description}
+
+Below is the list of all examined functions $g_1$, $g_2$, \dots, $g_{30}$ ordered according to relations between them in terms of $\Omega$-notation.
+Different lines on the list represent different equivalence classes of $\Theta$-notation.
+\begin{description}
+    \item[$g_1(n)=2^{2^{n+1}}$]
+    \item[$g_2(n)=2^{2^n}$]
+    \item[$g_3(n)=(n+1)!$]
+    \item[$g_4(n)=n!$]
+    \item[$g_5(n)=e^n$]
+    \item[$g_6(n)=n\cdot2^n$]
+    \item[$g_7(n)=2^n$]
+    \item[$g_8(n)=(3/2)^n$]
+    \item[$g_9(n)=n^{\lg\lg n},\ g_{10}(n)=(\lg n)^{\lg n}$]
+    \item[$g_{11}(n)=(\lg n)!$]
+    \item[$g_{12}(n)=n^3$]
+    \item[$g_{13}(n)=n^2,\ g_{14}(n)=4^{\lg n}$]
+    \item[$g_{15}(n)=n\lg n$]
+    \item[$g_{16}(n)=\lg(n!)$]
+    \item[$g_{17}(n)=n,\ g_{18}(n)=2^{\lg n}$]
+    \item[$g_{19}(n)=\bigl(\sqrt{2}\bigr)^{\lg n}$]
+    \item[$g_{20}(n)=2^{\sqrt{2\lg n}}$]
+    \item[$g_{21}(n)=\lg^2n$]
+    \item[$g_{22}(n)=\ln n$]
+    \item[$g_{23}(n)=\sqrt{\lg n}$]
+    \item[$g_{24}(n)=\ln\ln n$]
+    \item[$g_{25}(n)=2^{\lg^*n}$]
+    \item[$g_{26}(n)=\lg^*n,\ g_{27}(n)=\lg^*(\lg n)$]
+    \item[$g_{28}(n)=\lg(\lg^*n)$]
+    \item[$g_{29}(n)=n^{1/\lg n},\ g_{30}(n)=1$]
+\end{description}
