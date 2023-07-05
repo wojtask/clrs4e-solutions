@@ -1,0 +1,19 @@
+Let $p(n)=\Theta(f(n))$ be the function on the left-hand side of the equation under the outer $\Theta$, and let $c_1$, $c_2$, and $n_p$ be positive constants such that
+\[
+    0 \le c_1f(n) \le p(n) \le c_2f(n)
+\]
+for all $n\ge n_p$.
+Also, let $q(n)=\Theta(p(n))$ and let $d_1$, $d_2$, and $n_q$ be positive constants such that
+\[
+    0 \le d_1p(n) \le q(n) \le d_2q(n)
+\]
+for all $n\ge n_q$.
+Then, for all $n\ge\max{n_p,n_q}$,
+\begin{align*}
+    0 &\le c_1d_1f(n) \\
+    &\le d_1p(n) \\
+    &\le q(n) \\
+    &\le d_2p(n) \\
+    &\le c_2d_2f(n),
+\end{align*}
+which implies that $q(n)=\Theta(f(n))$.
