@@ -1,0 +1,10 @@
+True.
+Suppose that $f(n)=O(g(n))$.
+Let $c$ and $n_0$ be positive constants such that $1\le f(n)\le cg(n)$ and $\lg g(n)\ge1$ for all $n\ge n_0$.
+Then,
+\begin{align*}
+    \lg f(n) &\le \lg c+\lg g(n) \\
+    &\le \lg c\cdot\lg g(n)+\lg g(n) \\
+    &= (\lg c+1)\lg g(n) \\
+    &= O(\lg g(n)).
+\end{align*}
