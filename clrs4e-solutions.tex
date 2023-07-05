@@ -7,6 +7,8 @@
 \setlength{\thinrulethickness}{.5pt}
 \newlength{\thickrulethickness}
 \setlength{\thickrulethickness}{5pt}
+\setlength{\parindent}{1em}
+\setlength{\labelsep}{1em}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
@@ -144,16 +146,14 @@
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{3}
 
-\setlist{left=0pt,labelsep=1em,itemsep=0.5ex}
-\setlist[itemize]{label=\tiny\textbullet}
+\setlist{itemsep=0.5ex}
+\setlist[itemize]{leftmargin=*,labelsep=1em,label=\tiny\textbullet}
+\setlist[enumerate]{leftmargin=*,labelsep=0.5em}
+\setlist[description]{leftmargin=1.5em,labelindent=0pt,labelsep=1em}
 
-\renewcommand{\footnoterule}{%
-  \kern -3pt
-  \hrule width \textwidth
-  \kern 2pt
-}
+\renewcommand{\footnoterule}{\kern-3pt\hrule width\textwidth\kern2pt}
 
-\newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{}
+\newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{\thmname{#1}\thmnumber{\bfseries\itshape{ #2}}\thmnote{ (#3)}}
 \theoremstyle{clrs}
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{lemma}{Lemma}
@@ -245,8 +245,6 @@
     \setlength{\mathindent}{0pt}
     \setlength{\abovedisplayskip}{1.5ex plus 1pt minus 2pt}
     \setlength{\belowdisplayskip}{1.5ex plus 1pt minus 2pt}
-
-    \setlength{\labelsep}{1em}
 
     \frontmatter
 
