@@ -7,8 +7,8 @@ Since $np$ may not be integer, we'll sacrifice mathematical rigor in order to si
 \end{align*}
 Using Stirling's approximation (3.25), we can simplify the first factor of the last expression above:
 \begin{align*}
-    \frac{n!}{(np)!\,(nq)!} &\approx \frac{\!\sqrt{2\pi n}\left(\frac{n}{e}\right)^n}{\!\sqrt{2\pi np}\left(\frac{np}{e}\right)^{np}\!\sqrt{2\pi nq}\left(\frac{nq}{e}\right)^{nq}} \\[1mm]
-    &= \frac{\left(\frac{n}{e}\right)^n\left(\frac{e}{np}\right)^{np}\left(\frac{e}{nq}\right)^{nq}}{\!\sqrt{2\pi npq}} \\[1mm]
-    &= \frac{1}{p^{np}q^{nq}\!\sqrt{2\pi npq}}.
+    \frac{n!}{(np)!\,(nq)!} &\approx \frac{\sqrt{2\pi n}\left(\frac{n}{e}\right)^n}{\sqrt{2\pi np}\left(\frac{np}{e}\right)^{np}\sqrt{2\pi nq}\left(\frac{nq}{e}\right)^{nq}} \\[1mm]
+    &= \frac{\left(\frac{n}{e}\right)^n\left(\frac{e}{np}\right)^{np}\left(\frac{e}{nq}\right)^{nq}}{\sqrt{2\pi npq}} \\[1mm]
+    &= \frac{1}{p^{np}q^{nq}\sqrt{2\pi npq}}.
 \end{align*}
-Hence, the value of the maximum of $b(k;n,p)$ is roughly equal to $1/\!\sqrt{2\pi npq}$.
+Hence, the value of the maximum of $b(k;n,p)$ is roughly equal to $1/\sqrt{2\pi npq}$.

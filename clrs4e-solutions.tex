@@ -184,6 +184,9 @@
 \newcommand{\labelledVariable}{\@ifstar{\labelledVariable@starred}{\labelledVariable@unstarred}}
 \makeatother
 
+\LetLtxMacro{\oldsqrt}{\sqrt}
+\renewcommand{\sqrt}[2][\mkern4mu]{\mkern-4mu\mathop{}\oldsqrt[#1]{#2}}
+
 \DeclareMathOperator{\degree}{degree}
 \renewcommand{\Pr}[1]{\operatorname{Pr}\left\{#1\right\}}
 \newcommand{\E}[1]{\operatorname{E}\left[#1\right]}

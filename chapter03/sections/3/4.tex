@@ -31,13 +31,13 @@ For $n$ large enough the initial factors can be arbitrarily close to 0, so the p
 For the proof of equation (3.28), observe that since $n!\le n^n$, the upper bound on $\lg(n!)$ is $\lg n^n=n\lg n$.
 We'll find an asymptotic lower bound by using Stirling's approximation.
 Let $f(n)=1+\Theta(1/n)=\Theta(1)$ be the last factor on the right-hand side of formula (3.25).
-Because the function $\!\sqrt{2\pi n}$ is strictly increasing, there exists a positive constant $n_0$ such that $\!\sqrt{2\pi n}f(n)\ge1$ for all $n\ge n_0$.
-Also, we'll use the fact that $e<3$, so $e<\!\sqrt{n}$ when $n\ge9$.
+Because the function $\sqrt{2\pi n}$ is strictly increasing, there exists a positive constant $n_0$ such that $\sqrt{2\pi n}f(n)\ge1$ for all $n\ge n_0$.
+Also, we'll use the fact that $e<3$, so $e<\sqrt{n}$ when $n\ge9$.
 For all $n\ge\max{n_0,9}$ we have
 \begin{align*}
-    \lg(n!) &= \lg\left(\!\sqrt{2\pi n}\left(\frac{n}{e}\right)^n\!f(n)\right) \\
+    \lg(n!) &= \lg\left(\sqrt{2\pi n}\left(\frac{n}{e}\right)^n\!f(n)\right) \\
     &\ge \lg\left(\frac{n}{e}\right)^n \\[1mm]
-    &> \lg\left(\!\sqrt{n}\right)^n \\[1mm]
+    &> \lg\left(\sqrt{n}\right)^n \\[1mm]
     &= \frac{n\lg n}{2}.
 \end{align*}
 Combining both upper and lower bounds, we obtain $\lg(n!)=\Theta(n\lg n)$.
@@ -53,8 +53,8 @@ Taking logarithms of each side of the above inequalities yields
 \begin{align*}
     \lg f(n) &\ge \lg(c_1n) \\
     &= \lg c_1+\lg n \\
-    &\ge \lg\left(\frac{1}{\!\sqrt{n}}\right)+\lg n && \text{(as long as $n\ge1/c_1^2$)} \\
-    &= \lg\!\sqrt{n} \\
+    &\ge \lg\left(\frac{1}{\sqrt{n}}\right)+\lg n && \text{(as long as $n\ge1/c_1^2$)} \\
+    &= \lg\sqrt{n} \\
     &= \frac{\lg n}{2}
 \end{align*}
 and
