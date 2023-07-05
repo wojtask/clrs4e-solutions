@@ -1,0 +1,11 @@
+True.
+Let $h(n)=o(f(n))$.
+Then, for any positive constant $c$ there exists a positive constant $n_0$ such that $0\le h(n)<cf(n)$ for all $n\ge n_0$.
+This implies that
+\begin{align*}
+    f(n) &\le f(n)+o(f(n)) \\
+    &= f(n)+h(n) \\
+    &< (c+1)f(n) \\
+    &< 2f(n),
+\end{align*}
+so $f(n)+o(f(n))=\Theta(f(n))$.
