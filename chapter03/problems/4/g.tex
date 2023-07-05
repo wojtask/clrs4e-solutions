@@ -1,0 +1,6 @@
+False.
+Let $f(n)=2^n$, so $f(n/2)=2^{n/2}=\sqrt{2^n}$.
+Suppose that $f(n)=O(f(n/2))$.
+Then for a positive constant $c$ and for sufficiently large $n$, it holds $2^n\le c\sqrt{2^n}$.
+But then $c\ge\sqrt{2^n}$ and $c$ cannot be a constant.
+Therefore, $f(n)\ne O(f(n/2))$, which implies $f(n)\ne\Theta(f(n/2))$.
