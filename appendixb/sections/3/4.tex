@@ -6,7 +6,7 @@ Let us make some simplification\dash instead of numbering pairs by integers, we 
 Let $g:\mathbb{Z}\times\mathbb{Z}\to\mathbb{N}$ and $f:\mathbb{N}\to\mathbb{Z}$ be such bijections that $h^{-1}=f\circ g$.
 It was already noted on page 1162 of the text that $f(n)=(-1)^n\lceil n/2\rceil$ is bijective, so all that remains is to find the function $g$.
 
-Consider the numbering of ordered pairs with integer elements shown in \refFigure{B.3-4} in the form of a spiral.
+Consider the numbering of ordered pairs with integer elements illustrated in \refFigure{B.3-4} in a form of a spiral.
 Since each such pair $(x,y)$ is assigned a unique natural number, we can treat this spiral as a description of the function $g$.
 \begin{figure}[htb]
     \input{4.tikz}
@@ -14,7 +14,7 @@ Since each such pair $(x,y)$ is assigned a unique natural number, we can treat t
     Individual natural numbers denote the values of this bijection for points with integer coordinates in the Cartesian coordinate system.
     } \label{fig:B.3-4}
 \end{figure}
-Let $d=\max{|x|,|y|}$ and $D=(2d-1)^2-1$.
+Let $d=\max{|x|,|y|}$ and let $D=(2d-1)^2-1$.
 Informally, $d$ and $D$ denote, respectively, the number of the ``lap'' around the origin covered by the spiral at the time of passing through $(x,y)$, and the largest number on the spiral during the previous ``lap''.
 Then we can define the function $g$ as follows:
 \[
