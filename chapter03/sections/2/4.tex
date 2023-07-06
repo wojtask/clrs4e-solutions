@@ -1,8 +1,16 @@
-From the definition of $\Theta$-notation, $f(n)=\Theta(g(n))$ whenever there exist positive constants $c_1$, $c_2$, and $n_0$ such that $0\le c_1g(n)\le f(n)\le c_2g(n)$ for all $n\ge n_0$.
-This inequality can be decomposed into the combination of inequalities $0\le c_1g(n)\le f(n)$ and $0\le f(n)\le c_2g(n)$.
-From the former we have that $f(n)=\Omega(g(n))$ and from the latter we have that $f(n)=O(g(n))$.
+By the definition of $\Theta$-notation, $f(n)=\Theta(g(n))$ whenever there exist positive constants $c_1$, $c_2$, and $n_0$ such that
+\[
+    0 \le c_1g(n) \le f(n) \le c_2g(n)
+\]
+for all $n\ge n_0$.
+This condition can be decomposed into the combination of inequalities $0\le c_1g(n)\le f(n)$ and $0\le f(n)\le c_2g(n)$, both holding for all $n\ge n_0$.
+From the former follows $f(n)=\Omega(g(n))$ and from the latter follows $f(n)=O(g(n))$.
 
-For the proof of the opposite direction, let's assume that $f(n)=\Omega(g(n))$ and $f(n)=O(g(n))$.
+For the proof of the opposite direction, suppose that $f(n)=\Omega(g(n))$ and $f(n)=O(g(n))$.
 The former means that there exist positive constants $c_1$ and $n_1$ such that $0\le c_1g(n)\le f(n)$ for all $n\ge n_1$, and the latter means that there exist positive constants $c_2$ and $n_2$ such that $0\le f(n)\le c_2g(n)$ for all $n\ge n_2$.
-Now choosing $n_0=\max{n_1,n_2}$ and merging both inequalities, we get that $0\le c_1g(n)\le f(n)\le c_2g(n)$ for all $n\ge n_0$.
+Then, by letting $n_0=\max{n_1,n_2}$ and merging both conditions, we get that
+\[
+    0 \le c_1g(n) \le f(n) \le c_2g(n)
+\]
+for all $n\ge n_0$.
 Thus, $f(n)=\Theta(g(n))$.
