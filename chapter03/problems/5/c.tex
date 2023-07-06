@@ -1,0 +1,19 @@
+Let $p(n)=\Theta(f(n))$ and $q(n)=\Theta(g(n))$ be the two functions on the left-hand side of the equation.
+There exist positive constants $c_1$, $c_2$, $d_1$, $d_2$, $n_p$, and $n_q$ such that
+\[
+    0 \le c_1f(n) \le p(n) \le c_2f(n)
+\]
+for all $n\ge n_p$, and
+\[
+    0 \le d_1g(n) \le q(n) \le d_2g(n)
+\]
+for all $n\ge n_q$.
+Then, for all $n\ge\max{n_p,n_q}$,
+\begin{align*}
+    0 &\le \min{c_1,d_1}(f(n)+g(n)) \\
+    &\le c_1f(n)+d_1g(n) \\
+    &\le p(n)+q(n) \\
+    &\le c_2f(n)+d_2g(n) \\
+    &\le \max{c_2,d_2}(f(n)+g(n)),
+\end{align*}
+which implies that $p(n)+q(n)=\Theta(f(n)+g(n))$.
