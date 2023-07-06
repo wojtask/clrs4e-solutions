@@ -1,0 +1,19 @@
+Let $p(n)=\Theta(f(n))$ and $q(n)=O(f(n))$ be the two functions on the left-hand side of the equation.
+There exist positive constants $c_1$, $c_2$, $d$, $n_p$, and $n_q$ such that
+\[
+    0 \le c_1f(n) \le p(n) \le c_2f(n)
+\]
+for all $n\ge n_p$, and
+\[
+    0 \le q(n) \le df(n)
+\]
+for all $n\ge n_q$.
+Then, for all $n\ge\max{n_p,n_q}$,
+\begin{align*}
+    0 &\le c_1f(n) \\
+    &\le p(n) \\
+    &\le p(n)+q(n) \\
+    &\le c_2f(n)+df(n) \\
+    &= (c_2+d)f(n),
+\end{align*}
+which implies that $p(n)+q(n)=\Theta(f(n))$.
