@@ -1,0 +1,19 @@
+We show the asymptotic upper bound and the asymptotic lower bound separately.
+For all $n\ge a_2$, $\lg a_2\le\lg n$, so
+\begin{align*}
+    (a_1n)^{k_1}\lg^{k_2}(a_2n) &= a_1^{k_1}n^{k_1}(\lg a_2+\lg n)^{k_2} \\
+    &\le a_1^{k_1}n^{k_1}(2\lg n)^{k_2} \\
+    &= a_1^{k_1}2^{k_2}\cdot n^{k_1}\lg^{k_2}n \\
+    &= O(n^{k_1}\lg^{k_2}n),
+\end{align*}
+because the factor $a_1^{k_1}2^{k_2}$ certainly is a positive constant.
+
+Now, if we let $n\ge1/a_2^2$, then $\lg n\ge-2\lg a_2$, or $\lg a_2\ge-(\lg n)/2$.
+Then,
+\begin{align*}
+    (a_1n)^{k_1}\lg^{k_2}(a_2n) &= a_1^{k_1}n^{k_1}(\lg a_2+\lg n)^{k_2} \\
+    &\ge a_1^{k_1}n^{k_1}((\lg n)/2)^{k_2} \\
+    &= (a_1^{k_1}\!/2^{k_2})\cdot n^{k_1}\lg^{k_2}n \\
+    &= \Omega(n^{k_1}\lg^{k_2}n),
+\end{align*}
+since $a_1^{k_1}\!/2^{k_2}$ is a positive constant.
