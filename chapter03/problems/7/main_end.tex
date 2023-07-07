@@ -1,0 +1,23 @@
+The table in \refFigure{3-7} collects the obtained results.
+\begin{figure}[htb]
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{>{\centering}p{0.08\textwidth}>{\centering}p{0.08\textwidth}|>{\centering\arraybackslash}p{0.2\textwidth}|}
+        $f(n)$ & $c$ & $f_c^*(n)$ \\
+        \hline
+        $n-1$ & 0 & $\Theta(n)$ \\
+        \hline
+        $\lg n$ & 1 & \\
+        \hline
+        $n/2$ & 1 & \\
+        \hline
+        $n/2$ & 2 & \\
+        \hline
+        $\sqrt{n}$ & 2 & \\
+        \hline
+        $\sqrt{n}$ & 1 & \\
+        \hline
+        $n^{1/3}$ & 2 & \\
+        \hline
+    \end{tabular}
+    \caption{Asymptotic bounds of iterated functions.} \label{fig:3-7}
+\end{figure}
