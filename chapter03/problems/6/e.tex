@@ -1,0 +1,34 @@
+We define $\widetilde{\Omega}$ and $\widetilde{\Theta}$ as follows:
+\begin{align*}
+    \widetilde{\Omega}(g(n)) = \{f(n):\,{} & \text{there exist positive constants $c$, $k$, and $n_0$ such that} \\
+    & \text{$0 \le cg(n)\lg^kn \le f(n)$ for all $n \ge n_0$}\}, \\[2mm]
+    \widetilde{\Theta}(g(n)) = \{f(n):\,{} & \text{there exist positive constants $c_1$, $c_2$, $k_1$, $k_2$, and $n_0$ such that} \\
+    & \text{$0 \le c_1g(n)\lg^{k_1}n \le f(n) \le c_2g(n)\lg^{k_2}n$ for all $n \ge n_0$}\}.
+\end{align*}
+
+The proof of Theorem 3.1 for $\widetilde{O}$-, $\widetilde{\Omega}$-, and $\widetilde{\Theta}$-notations is analogous to the proof in \refExercise{3.2-4} to the original theorem.
+
+By definition, $f(n)=\widetilde{\Theta}(g(n))$ whenever there exist positive constants $c_1$, $c_2$, $k_1$, $k_2$, and $n_0$ such that
+\[
+    0 \le c_1g(n)\lg^{k_1}n \le f(n) \le c_2g(n)\lg^{k_2}n
+\]
+for all $n\ge n_0$.
+This condition can be decomposed into the combination of inequalities $0\le c_1g(n)\lg^{k_1}n\le f(n)$ and $0\le f(n)\le c_2g(n)\lg^{k_2}n$, both true for all $n\ge n_0$.
+The former implies $f(n)=\widetilde{\Omega}(g(n))$ and the latter implies $f(n)=\widetilde{O}(g(n))$.
+
+For the proof of the opposite direction, suppose that $f(n)=\widetilde{\Omega}(g(n))$ and $f(n)=\widetilde{O}(g(n))$.
+Then, there exist positive constants $c_1$, $k_1$, and $n_1$ such that
+\[
+    0 \le c_1g(n)\lg^{k_1}n \le f(n)
+\]
+for all $n\ge n_1$, and there exist positive constants $c_2$, $k_2$, and $n_2$ such that
+\[
+    0 \le f(n) \le c_2g(n)\lg^{k_2}n
+\]
+for all $n\ge n_2$.
+Merging both inequalities yields
+\[
+    0 \le c_1g(n)\lg^{k_1}n \le f(n) \le c_2g(n)\lg^{k_2}n
+\]
+for all $n\ge\max{n_1,n_2}$.
+Hence, $f(n)=\widetilde{\Theta}(g(n))$.
