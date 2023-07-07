@@ -1,0 +1,10 @@
+$\sqrt{n}=n^{1/2}$, so $\bigl(\sqrt{n}\bigr)^{(i)}=n^{1/2^i}$.
+For $n>2$, the solution to inequality $n^{1/2^i}\le2$ with respect to $i$ is $i\ge\lg\lg n$, so
+\[
+    f_2^*(n) =
+    \ccases{
+        0 & \text{if $0\le n\le2$}, \\
+        \lceil\lg\lg n\rceil & \text{if $n>2$}.
+    }
+\]
+Hence, $f_2^*(n)=\Theta(\lg\lg n)$.
