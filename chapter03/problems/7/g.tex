@@ -1,0 +1,10 @@
+This case is analogous to the one from part (e).
+Since $(n^{1/3})^{(i)}=n^{1/3^i}$,
+\[
+    f_2^*(n) =
+    \ccases{
+        0 & \text{if $n\le2$}, \\
+        \lceil\log_3\lg n\rceil & \text{if $n>2$}.
+    }
+\]
+Hence, $f_2^*(n)=\Theta(\lg\lg n)$.
