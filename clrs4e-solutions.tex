@@ -13,6 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
+\usepackage{stringstrings}
 \usepackage{calc}
 \usepackage[
     lines=40,
@@ -219,31 +220,32 @@
 
 \newcommand{\liftdisplaystyle}{\setlength{\abovedisplayskip}{-\baselineskip}}
 
-\newcommand{\MakeChapter}[4]{%
+\newcommand{\MakeChapter}[3]{%
     \chapter{#1}%
+    \caselower[q]{\chaptertitlename\thechapter}
     \foreach \Title [count=\Section] in {#2}{%
         \section{\Title}
         \foreach \Exercise in {1,...,16}{%
-            \IfFileExists{#4/sections/\Section/\Exercise}{%
+            \IfFileExists{\thestring/sections/\Section/\Exercise}{%
                 \exercise
-                \import{#4/sections/\Section/}{\Exercise}
+                \import{\thestring/sections/\Section/}{\Exercise}
             }{}%
         }%
     }%
     \problems
     \foreach \Title [count=\Problem] in {#3}{%
         \problem{\Title}
-        \IfFileExists{#4/problems/\Problem/main}{%
-            \import{#4/problems/\Problem/}{main}
+        \IfFileExists{\thestring/problems/\Problem/main}{%
+            \import{\thestring/problems/\Problem/}{main}
         }{}%
         \foreach \SubProblem in {a,...,j}{%
-            \IfFileExists{#4/problems/\Problem/\SubProblem}{%
+            \IfFileExists{\thestring/problems/\Problem/\SubProblem}{%
                 \subproblem
-                \import{#4/problems/\Problem/}{\SubProblem}
+                \import{\thestring/problems/\Problem/}{\SubProblem}
             }{}%
         }%
-        \IfFileExists{#4/problems/\Problem/main_end}{%
-            \par\bigskip\import{#4/problems/\Problem/}{main_end}
+        \IfFileExists{\thestring/problems/\Problem/main_end}{%
+            \par\bigskip\import{\thestring/problems/\Problem/}{main_end}
         }{}%
     }%
 }
@@ -285,7 +287,7 @@
     \MakeChapter{The Role of Algorithms in Computing}{
         Algorithms,
         Algorithms as a technology}{
-        Comparison of running times}{chapter01}
+        Comparison of running times}
 
     \setcounter{chapter}{2}
 
@@ -299,14 +301,14 @@
         Asymptotic notation properties,
         Manipulating asymptotic notation,
         Variations on $O$ and $\Omega$,
-        Iterated functions}{chapter03}
+        Iterated functions}
 
     \appendix
 
     \MakeChapter{Summations}{
         Summation formulas and properties,
         Bounding summations}{
-        Bounding summations}{appendixa}
+        Bounding summations}
 
     \MakeChapter{Sets, Etc.}{
         Sets,
@@ -316,7 +318,7 @@
         Trees}{
         Graph coloring,
         Friendly graphs,
-        Bisecting trees}{appendixb}
+        Bisecting trees}
 
     \MakeChapter{Counting and Probability}{
         Counting,
@@ -325,13 +327,13 @@
         The geometric and binomial distributions,
         The tails of the binomial distribution}{
         The Monty Hall problem,
-        Balls and bins}{appendixc}
+        Balls and bins}
 
     \MakeChapter{Matrices}{
         Matrices and matrix operations,
         Basic matrix properties}{
         Vandermonde matrix,
-        Permutations defined by matrix-vector multiplication over GF(2)}{appendixd}
+        Permutations defined by matrix-vector multiplication over GF(2)}
 
     \backmatter
 
