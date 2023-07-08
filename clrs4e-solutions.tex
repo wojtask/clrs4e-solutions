@@ -9,9 +9,6 @@
 \setlength{\thickrulethickness}{5pt}
 \setlength{\parindent}{1em}
 \setlength{\labelsep}{1em}
-% TODO(#1582) find a way to get rid of this magic constant
-\newlength{\exerciselabelmarginwidth}
-\setlength{\exerciselabelmarginwidth}{.73\lmarginparwidth}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
@@ -108,17 +105,18 @@
 \let\originalchapter=\chapter
 \renewcommand{\chapter}[1]{%
     \originalchapter{#1}
-    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\probablestar\thesection\hspace\labelsep}
-    \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\exerciselabelmarginwidth][l]{\thesubsection}}{0pt}{}
-    \titlespacing*{\subsection}{-\exerciselabelmarginwidth}{*3}{0pt}
+    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{%
+        \titlerule[\thinrulethickness]\vspace{3pt}\probablestar\thesection\hspace\labelsep}
+    \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{0pt}
     \renewcommand{\thesection}{\thechapter.\arabic{section}}
     \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 }
 
 \newcommand{\problems}{%
     \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}}
-    \titleformat{\subsection}[hang]{\bfseries\itshape}{\makebox[\exerciselabelmarginwidth][l]{\thesubsection}}{0pt}{}
-    \titlespacing*{\subsection}{-\exerciselabelmarginwidth}{*3}{*2}
+    \titleformat{\subsection}[hang]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{*2}
     \setcounter{section}{0}
     \section*{Problems}
     \phantomsection\addcontentsline{toc}{section}{Problems}
@@ -145,17 +143,10 @@
 
 \newcommand{\clarification}[1]{\emph{#1}\bigskip}
 \newcommand{\customstar}{{\Large$\star$}}
-\makeatletter
-\newcommand{\st@rred}[1]{\rlap{\protect\makebox[#1][r]{\customstar}\vspace*{-\baselineskip}}}
 \newcommand{\starred}{%
-    % thesection>0 in exercises, thesection=0 is problems
-    % TODO(#1582) find a way to get rid of these magic constants
-    \ifnum\value{section}>0%
-        \st@rred{-.885\lmarginparwidth}%
-    \else%
-        \st@rred{-.155\lmarginparwidth}%
-    \fi}
-\makeatother
+    \rlap{%
+        \protect\makebox[-.1\lmarginparwidth][r]{\customstar}%
+        \vspace*{-\baselineskip}}}
 
 \renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
 \renewcommand{\cftbeforetoctitleskip}{0pt}
@@ -171,7 +162,8 @@
 
 \renewcommand{\footnoterule}{\kern-3pt\hrule width\textwidth\kern2pt}
 
-\newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{\thmname{#1}\thmnumber{\bfseries\itshape{ #2}}\thmnote{ (#3)}}
+\newtheoremstyle{clrs}{}{}{}{}{\bfseries\itshape}{}{\newline}{%
+    \thmname{#1}\thmnumber{\bfseries\itshape{ #2}}\thmnote{ (#3)}}
 \theoremstyle{clrs}
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{lemma}{Lemma}
