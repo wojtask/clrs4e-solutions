@@ -1,0 +1,15 @@
+The relation $f(n)=\Theta(g(n))$ implies that the function $f(n)$ is asymptotically nonnegative, or $f(n)=|f(n)|$ for sufficiently large $n$, so $f(n)=O'(g(n))$ follows from $f(n)=O(g(n))$, and the ,,only if'' direction remains true.
+
+To examine the ,,if'' direction, suppose that $f(n)=O'(g(n))$ and $f(n)=\Omega(g(n))$.
+By definition, if $f(n)=O'(g(n))$ then there exist positive constants $c$ and $n_0$ such that for all $n\ge n_0$,
+\[
+    \ccases{
+        0 \le \phantom{-}f(n) \le cg(n), & \text{if $f(n)\ge0$}, \\
+        0 \le -f(n) \le cg(n), & \text{if $f(n)<0$}.
+    }
+\]
+Suppose there is no $n_1\ge n_0$ such that $f(n)\ge0$ for all $n\ge n_1$.
+But then, for any positive constant $d$ the inequalities $0\le dg(n)\le f(n)$ cannot hold for all sufficiently large $n$, which means that $f(n)\ne\Omega(g(n))$ leading to a contradiction.
+Hence, the function $f(n)$ is asymptotically nonnegative, as so $f(n)=O(g(n))$.
+
+As we can see, by substituting $O'$ for $O$, we aren't invalidating Theorem 3.1.
