@@ -9,6 +9,9 @@
 \setlength{\thickrulethickness}{5pt}
 \setlength{\parindent}{1em}
 \setlength{\labelsep}{1em}
+% TODO(#1582) find a way to get rid of this magic constant
+\newlength{\exerciselabelmarginwidth}
+\setlength{\exerciselabelmarginwidth}{.73\lmarginparwidth}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
@@ -63,6 +66,7 @@
 \definecolor{orange}{cmyk}{0,0.47,0.87,0.04}
 \definecolor{tan}{cmyk}{0,0.1,0.3,0}
 
+\renewcommand{\thepart}{\partname~\Roman{part}}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
@@ -90,7 +94,7 @@
   {}
   {0pt}
   {\titlerule[\thickrulethickness]\vspace{2in}\titlerule[\thinrulethickness]\vspace{1pt}%
-    \partname~\thepart\hspace{\lmarginparwidth-\widthof{\partname~\thepart}}\vspace{-\baselineskip}}
+    \thepart\hspace{\lmarginparwidth-\widthof{\thepart}}\vspace{-\baselineskip}}
 \titlespacing*{\part}{-\lmarginparwidth}{-\baselineskip-\topskip}{0pt}
 
 \titleformat{\chapter}[display]
@@ -104,17 +108,18 @@
 \let\originalchapter=\chapter
 \renewcommand{\chapter}[1]{%
     \originalchapter{#1}
-    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\thesection\hspace\labelsep}
-    \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
-    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{0pt}
+    \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}\probablestar\thesection\hspace\labelsep}
+    \titleformat{\subsection}[runin]{\bfseries\itshape}{\makebox[\exerciselabelmarginwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\exerciselabelmarginwidth}{*3}{0pt}
     \renewcommand{\thesection}{\thechapter.\arabic{section}}
     \fancyhead[LO]{\nouppercase{\footnotesize\textit{\rightmark}}}
 }
 
 \newcommand{\problems}{%
     \titleformat{\section}[display]{\large\bfseries}{}{0pt}{\titlerule[\thinrulethickness]\vspace{3pt}}
-    \titleformat{\subsection}[hang]{\bfseries\itshape}{\makebox[\lmarginparwidth][l]{\thesubsection}}{0pt}{}
-    \titlespacing*{\subsection}{-\lmarginparwidth}{*3}{*2}
+    \titleformat{\subsection}[hang]{\bfseries\itshape}{\makebox[\exerciselabelmarginwidth][l]{\thesubsection}}{0pt}{}
+    \titlespacing*{\subsection}{-\exerciselabelmarginwidth}{*3}{*2}
+    \setcounter{section}{0}
     \section*{Problems}
     \phantomsection\addcontentsline{toc}{section}{Problems}
     \setcounter{subsection}{0}
@@ -139,6 +144,18 @@
 \newcommand{\subproblem}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
 
 \newcommand{\clarification}[1]{\emph{#1}\bigskip}
+\newcommand{\customstar}{{\Large$\star$}}
+\makeatletter
+\newcommand{\st@rred}[1]{\rlap{\protect\makebox[#1][r]{\customstar}\vspace*{-\baselineskip}}}
+\newcommand{\starred}{%
+    % thesection>0 in exercises, thesection=0 is problems
+    % TODO(#1582) find a way to get rid of these magic constants
+    \ifnum\value{section}>0%
+        \st@rred{-.885\lmarginparwidth}%
+    \else%
+        \st@rred{-.155\lmarginparwidth}%
+    \fi}
+\makeatother
 
 \renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
 \renewcommand{\cftbeforetoctitleskip}{0pt}
@@ -220,32 +237,42 @@
 
 \newcommand{\liftdisplaystyle}{\setlength{\abovedisplayskip}{-\baselineskip}}
 
-\newcommand{\MakeChapter}[3]{%
+\newcommand{\Chapter}{}
+\newcommand{\starwithsep}{\customstar\hspace\labelsep}
+\newcommand{\MakeChapter}[4]{%
     \chapter{#1}%
     \caselower[q]{\chaptertitlename\thechapter}
+    \renewcommand{\Chapter}{\thestring}
     \foreach \Title [count=\Section] in {#2}{%
-        \section{\Title}
+        \global\let\probablestar\relax
+        \foreach \SectionToStar in {#3}{%
+            \ifthenelse{\numexpr\value{section}+1=\SectionToStar}{%
+                % it has to be \global\let, becasue \foreach runs iterations in a local scope
+                \global\let\probablestar=\starwithsep
+            }{}%
+        }%
+        \section{\Title}%
         \foreach \Exercise in {1,...,16}{%
-            \IfFileExists{\thestring/sections/\Section/\Exercise}{%
+            \IfFileExists{\Chapter/sections/\Section/\Exercise}{%
                 \exercise
-                \import{\thestring/sections/\Section/}{\Exercise}
+                \import{\Chapter/sections/\Section/}{\Exercise}
             }{}%
         }%
     }%
     \problems
-    \foreach \Title [count=\Problem] in {#3}{%
+    \foreach \Title [count=\Problem] in {#4}{%
         \problem{\Title}
-        \IfFileExists{\thestring/problems/\Problem/main}{%
-            \import{\thestring/problems/\Problem/}{main}
+        \IfFileExists{\Chapter/problems/\Problem/main}{%
+            \import{\Chapter/problems/\Problem/}{main}
         }{}%
         \foreach \SubProblem in {a,...,j}{%
-            \IfFileExists{\thestring/problems/\Problem/\SubProblem}{%
+            \IfFileExists{\Chapter/problems/\Problem/\SubProblem}{%
                 \subproblem
-                \import{\thestring/problems/\Problem/}{\SubProblem}
+                \import{\Chapter/problems/\Problem/}{\SubProblem}
             }{}%
         }%
-        \IfFileExists{\thestring/problems/\Problem/main_end}{%
-            \par\bigskip\import{\thestring/problems/\Problem/}{main_end}
+        \IfFileExists{\Chapter/problems/\Problem/main_end}{%
+            \par\bigskip\import{\Chapter/problems/\Problem/}{main_end}
         }{}%
     }%
 }
@@ -265,7 +292,7 @@
 
 
 \begin{document}
-
+    \let\probablestar\relax
     \setlength{\mathindent}{0pt}
     \setlength{\abovedisplayskip}{1.5ex plus 1pt minus 2pt}
     \setlength{\belowdisplayskip}{1.5ex plus 1pt minus 2pt}
@@ -286,7 +313,7 @@
 
     \MakeChapter{The Role of Algorithms in Computing}{
         Algorithms,
-        Algorithms as a technology}{
+        Algorithms as a technology}{}{
         Comparison of running times}
 
     \setcounter{chapter}{2}
@@ -294,7 +321,7 @@
     \MakeChapter{Characterizing Running Times}{
         {$O$-notation, $\Omega$-notation, and $\Theta$-notation},
         Asymptotic notation: formal definitions,
-        Standard notations and common functions}{
+        Standard notations and common functions}{}{
         Asymptotic behavior of polynomials,
         Relative asymptotic growths,
         Ordering by asymptotic growth rates,
@@ -307,7 +334,7 @@
 
     \MakeChapter{Summations}{
         Summation formulas and properties,
-        Bounding summations}{
+        Bounding summations}{}{
         Bounding summations}
 
     \MakeChapter{Sets, Etc.}{
@@ -315,7 +342,7 @@
         Relations,
         Functions,
         Graphs,
-        Trees}{
+        Trees}{}{
         Graph coloring,
         Friendly graphs,
         Bisecting trees}
@@ -325,13 +352,13 @@
         Probability,
         Discrete random variables,
         The geometric and binomial distributions,
-        The tails of the binomial distribution}{
+        The tails of the binomial distribution}{5}{
         The Monty Hall problem,
         Balls and bins}
 
     \MakeChapter{Matrices}{
         Matrices and matrix operations,
-        Basic matrix properties}{
+        Basic matrix properties}{}{
         Vandermonde matrix,
         Permutations defined by matrix-vector multiplication over GF(2)}
 
