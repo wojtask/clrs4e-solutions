@@ -23,5 +23,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: clrs4e-solutions.pdf
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
