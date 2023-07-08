@@ -1,0 +1,41 @@
+Suppose that $k\lg k=\Theta(n)$.
+By the definition of $\Theta$-notation for functions with two parameters (see \refExercise{3.2-7}), there exist positive constants $c_1$, $c_2$, $k_0$, and $n_0$ such that
+\[
+    c_1n \le k\lg k \le c_2n
+\]
+for all $k\ge k_0$ or $n\ge n_0$.
+By placing the additional restriction of $k\ge2$ and taking logarithms on all parts of the above compound inequality, we get
+\[
+    \lg c_1+\lg n \le \lg k+\lg\lg k \le \lg c_2+\lg n.
+\]
+Then, as long as $n\ge c_2$, $\lg c_2\le\lg n$, and so
+\begin{align*}
+    \lg k &\le \lg c_2+\lg n-\lg\lg k \\
+    &\le \lg n+\lg n \\
+    &= 2\lg n,
+\end{align*}
+or $1\ge\lg k/2\lg n$.
+Therefore,
+\begin{align*}
+    k &\ge \frac{k\lg k}{2\lg n} \\[1mm]
+    &\ge \frac{c_1}{2}\cdot\frac{n}{\lg n}
+\end{align*}
+for all $k\ge\max{k_0,2}$ or $n\ge\max{n_0,c_2}$.
+Hence, $k=\Omega(n/\lg n)$.
+
+Now, let's also assume that $k\ge16$, which implies $\lg k\le\sqrt{k}$, or $\lg\lg k\le(\lg k)/2$.
+As long as $n\ge1/c_1^2$, $\lg c_1\ge-(\lg n)/2$.
+Then,
+\begin{align*}
+    \lg k &\ge \lg c_1+\lg n-\lg\lg k \\
+    &\ge -(\lg n)/2+\lg n-(\lg k)/2 \\
+    &= (\lg n)/2-(\lg k)/2
+\end{align*}
+so $\lg k\ge(\lg n)/3$ or, equivalently, $1/3\le\lg k/\lg n$.
+Then,
+\begin{align*}
+    k &\le \frac{3k\lg k}{\lg n} \\
+    &\le 3c_2\cdot\frac{n}{\lg n}
+\end{align*}
+for all $k\ge\max{k_0,16}$ or $n\ge\max{n_0,1/c_1^2}$.
+Hence, $k=O(n/\lg n)$, and by Theorem 3.1, we obtain $k=\Theta(n/\lg n)$.
