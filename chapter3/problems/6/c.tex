@@ -1,0 +1,7 @@
+The advantage of using $\oset{\infty}{\Omega}$-notation instead of $\Omega$-notation is the fact shown in part (a), that all asymptotically nonnegative functions become asymptotically comparable.
+In practice, if we can prove that a function $f(n)$ is not $O(g(n))$, then we automatically get that $f(n)=\oset{\infty}{\Omega}(g(n))$.
+
+On the other hand, the relation $f(n)=\oset{\infty}{\Omega}(g(n))$ doesn't necessarily say that the function $f(n)$ ,,dominates'' over the function $g(n)$ for sufficiently large $n$, because for any positive constant $c$ there can still be $f(n)<cg(n)$ for infinitely many integers $n$.
+For example, $n^{1+\sin n}=\oset{\infty}{\Omega}(n)$, since for infinitely many $n$ the value of the exponent in $n^{1+\sin n}$ is greater than 1, but at the same time for infinitely many $n$ that exponent can take values less than 1.
+
+Besides, from the practical point of view, the infinitely many integers referred to in the definition of $\oset{\infty}{\Omega}$-notation can be far beyond the maximum input size of the algorithm whose running time we're trying to describe using this notation.
