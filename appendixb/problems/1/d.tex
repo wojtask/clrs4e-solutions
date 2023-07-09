@@ -2,12 +2,13 @@ For any $k\ge2$, if graph $G$ is $k$-colorable, but is not $(k-1)$-colorable, th
 If that weren't true, there would be two different colors that we could not distinguish, and so we could reduce the number of colors required, obtaining a $(k-1)$-coloring of $G$.
 
 Based on the above reasoning, we have $\binom{k}{2}\le|E|$.
-We use the fact that for $k\ge2$ it holds that $k/2\le k-1$, and hence
+We use the fact that for $k\ge2$ it holds that $k/2\le k-1$, and so
 \begin{align*}
-    k^2 &= 4\cdot\frac{k}{2}\cdot\frac{k}{2} \\[2mm]
-    &\le 4\cdot\frac{k(k-1)}{2} \\
+    k^2 &= 4(k/2)(k/2) \\[2mm]
+    &\le 4(k-1)k/2 \\
     &= 4\binom{k}{2} \\[1mm]
     &\le 4|E| \\
     &= O(|V|).
 \end{align*}
-Therefore, $k=O(\sqrt{|V|})$.
+This fact implies that there exist positive constants $c$ and $k_0$ such that $0\le k^2\le c|V|$ for all $k\ge k_0$.
+By applying square roots, we obtain that $0\le k\le\sqrt{c}\sqrt{|V|}$ for all $k\ge k_0$, and since $\sqrt{c}$ is a positive constant, we get $k=O(\sqrt{|V|})$.
