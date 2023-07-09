@@ -1,12 +1,12 @@
 \starred
 \begin{minipage}[t]{\textwidth}
-\begin{lemma}
-    Let $\alpha$, $p$, and $q$ be nonnegative reals, such that $p+q=1$.
+\begin{numberedlemma}
+    Let $\alpha$, $p$, and $q$ be nonnegative reals, such that $p+q=1$. \label{thm:exp-combination-upper-bound}
     Then,
-    \begin{equation} \label{eq:alpha}
+    \[
         pe^{\alpha q}+qe^{-\alpha p} \le e^{\alpha^2\!/2}.
-    \end{equation}
-\end{lemma}
+    \]
+\end{numberedlemma}
 \end{minipage}
 
 \begin{proof}
@@ -15,7 +15,7 @@
         f'(\alpha) &= \alpha e^{\alpha^2\!/2}-pq(e^{\alpha q}-e^{-\alpha p}), \\
         f''(\alpha) &= \alpha^2e^{\alpha^2\!/2}+e^{\alpha^2\!/2}-pq(qe^{\alpha q}+pe^{-\alpha p}).
     \end{align*}
-    It's true that $f''(0)=1-pq\ge0$ and we'll show that $f''(\alpha)>0$ for all $\alpha>0$.
+    It's true that $f''(0)=1-pq\ge0$, and we'll show that $f''(\alpha)>0$ for all $\alpha>0$.
     Since
     \begin{align*}
         pq-1/4 &= p(1-p)-1/4 \\
@@ -50,30 +50,18 @@
     And since $f(0)=0$, it holds that $f(\alpha)\ge0$ for all $\alpha\ge0$, which completes the proof.
 \end{proof}
 
-The beginning of the main reasoning is based on the proof of Theorem C.8:
+Using the same notations as in the proof of Theorem C.8, we have
 \begin{align*}
-    \Pr{X-\mu\ge r} &= \Pr{e^{\alpha(X-\mu)}\ge e^{\alpha r}} \\
-    &\le \E{e^{\alpha(X-\mu)}}e^{-\alpha r}.
-\end{align*}
-Then, with the same notations as in the original proof, it follows that
-\[
-    \E{e^{\alpha(X-\mu)}} = \prod_{i=1}^n\E{e^{\alpha(X_i-p_i)}}.
-\]
-Using inequality \eqref{eq:alpha} for $p=p_i$ and $q=q_i$, we get
-\begin{align*}
-    \E{e^{\alpha(X_i-p_i)}} &= e^{\alpha(1-p_i)}p_i+e^{\alpha(0-p_i)}q_i \\
-    &= p_ie^{\alpha q_i}+q_ie^{-\alpha p_i} \\
-    &\le e^{\alpha^2\!/2},
-\end{align*}
-and so
-\begin{align*}
-    \E{e^{\alpha(X-\mu)}} &= \prod_{i=1}^n\E{e^{\alpha(X_i-p_i)}} \\
-    &\le \prod_{i=1}^ne^{\alpha^2\!/2} \\
+    \E{e^{\alpha(X-\mu)}} &= \prod_{i=1}^n\E{e^{\alpha(X_i-p_i)}} && \hspace{-12pt}\text{(from the proof on page 1207)} \\
+    &= \prod_{i=1}^n\bigl(e^{\alpha(1-p_i)}p_i+e^{\alpha(0-p_i)}q_i\bigr) \\
+    &= \prod_{i=1}^n(p_ie^{\alpha q_i}+q_ie^{-\alpha p_i}) \\
+    &\le \prod_{i=1}^ne^{\alpha^2\!/2} && \hspace{-12pt}\text{(by Lemma \ref{thm:exp-combination-upper-bound} for $p=p_i$ and $q=q_i$)} \\
     &= \exp(\alpha^2n/2).
 \end{align*}
-Therefore,
+Then,
 \begin{align*}
-    \Pr{X-\mu\ge r} &\le \E{e^{\alpha(X-\mu)}}e^{-\alpha r} \\
+    \Pr{X-\mu\ge r} &= \Pr{e^{\alpha(X-\mu)}\ge e^{\alpha r}} && \text{(by equation (C.47))} \\
+    &\le \E{e^{\alpha(X-\mu)}}e^{-\alpha r} && \text{(by inequality (C.48))} \\
     &\le \exp(\alpha^2n/2-\alpha r).
 \end{align*}
 Now we need to choose the value of $\alpha$ that minimizes the last expression.
