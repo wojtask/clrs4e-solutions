@@ -3,15 +3,13 @@
 if [[ $* == "--help" || $* == "-h" ]]; then
   echo "Create a chapter skeleton"
   echo "Usage: $0 C S - P"
-  echo "C - the chapter number (1,2,...,35) or the appendix letter (A,B,C,D)"
-  echo "S - the space delimited numbers (0,1,...) of exercises in subsequent sections of the chapter"
-  echo "P - the space delimited numbers (0,1,...) of subproblems in subsequent problems of the chapter"
+  echo "C - the chapter number (1, 2, ..., 35) or the appendix letter (A, B, C, D)"
+  echo "S - the space delimited numbers (0, 1, ...) of exercises in subsequent sections of the chapter"
+  echo "P - the space delimited numbers (0, 1, ...) of subproblems in subsequent problems of the chapter"
   exit 0
 fi
 
-if [[ $1 =~ ^[1-9]$ ]]; then
-  DIR=chapter0$1
-elif [[ $1 =~ ^[1-2][0-9]|3[0-5]$ ]]; then
+if [[ $1 =~ ^[1-9]|[12][0-9]|3[0-5]$ ]]; then
   DIR=chapter$1
 elif [[ $1 =~ ^[ABCD]$ ]]; then
   DIR=appendix${1,,}
