@@ -43,15 +43,15 @@ for cnt in "$@"; do
 
   mkdir -p "$DIR/$SUBDIR/$SEC_OR_PROB"
   if ((cnt == 0)); then
-    touch "$DIR/$SUBDIR/$SEC_OR_PROB/main.tex"
+    echo "\workinprogress % TODO" > "$DIR/$SUBDIR/$SEC_OR_PROB/main.tex"
   fi
 
   SUBPROB=a
   for ((i = 1; i <= cnt; i++)); do
     if [[ $SUBDIR == "sections" ]]; then
-      touch "$DIR/$SUBDIR/$SEC_OR_PROB/$i.tex"
+      echo "\workinprogress % TODO" > "$DIR/$SUBDIR/$SEC_OR_PROB/$i.tex"
     else
-      touch "$DIR/$SUBDIR/$SEC_OR_PROB/$SUBPROB.tex"
+      echo "\workinprogress % TODO" > "$DIR/$SUBDIR/$SEC_OR_PROB/$SUBPROB.tex"
       j=$(printf "%d" "'$SUBPROB'")
       ((j++))
       SUBPROB=$(printf "\x$(printf %x $j)")

@@ -9,6 +9,7 @@
 \setlength{\thickrulethickness}{5pt}
 \setlength{\parindent}{1em}
 \setlength{\labelsep}{1em}
+\setlength{\marginparsep}{-40pt}
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
@@ -38,6 +39,7 @@
 \usepackage[screen]{clrscode4e}
 \usepackage{tikz}
 \usepackage{latexcolors}
+\usepackage[tikz]{bclogo}
 \usepackage{import}
 
 \usepackage{txfonts}
@@ -147,6 +149,11 @@
     \rlap{%
         \protect\makebox[-.1\lmarginparwidth][r]{\customstar}%
         \vspace*{-\baselineskip}}}
+
+\setlength{\logowidth}{15pt}
+\newcommand{\workinprogress}{%
+    \vspace*{20pt}\marginpar{\bcpanchant}\vspace{-20pt}%
+    \emph{Work in progress.}}
 
 \renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
 \renewcommand{\cftbeforetoctitleskip}{0pt}
