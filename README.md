@@ -118,7 +118,7 @@ Since the fonts are not available in the standard TeXLive distribution, you will
 setup script:
 
 ```shell
-chmod +x setup.sh && sudo ./setup.sh
+chmod +x util/setup.sh && sudo util/setup.sh
 ```
 
 Once the environment is prepared, you can compile the document to PDF by running the following command:
