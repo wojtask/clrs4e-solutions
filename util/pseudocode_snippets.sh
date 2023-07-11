@@ -71,28 +71,34 @@ declare -A instructions=(
 \zi \Until condition'
 )
 
-rm *.png
+rm **/*.png 2>/dev/null
+mkdir light dark 2>/dev/null
 
 for name in "${!instructions[@]}"; do
-  cat <<EOF > "$name".tex
-\documentclass[convert]{standalone}
+  cat <<EOF > "${name}.tex"
+\documentclass[convert={
+    command=\unexpanded{{\convertexe\space -density 300 \infile\space\outfile}}
+  }]{standalone}
 \makeatletter
 \def\input@path{{../}}
 \makeatother
 \usepackage{amsmath}
 \usepackage{txfonts}
 \usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
-\usepackage{varwidth}
 \usepackage{clrscode4e}
 \begin{document}
-\begin{varwidth}{\linewidth}
-\vspace*{-3ex}
-\begin{innercodebox}
+\begin{minipage}{150pt}
+\begin{codebox}
 ${instructions[$name]}
-\end{innercodebox}
-\end{varwidth}
+\end{codebox}
+\vspace*{-10pt}
+\end{minipage}
 \end{document}
 EOF
-  pdflatex -halt-on-error -interaction=batchmode -shell-escape "$name".tex
-  rm "$name".{tex,aux,log,pdf}
+  pdflatex -halt-on-error -interaction=batchmode -shell-escape "${name}.tex"
+  mv "${name}.png" light/
+  sed -i 's/\\infile/-negate \\infile/' "${name}.tex"
+  pdflatex -halt-on-error -interaction=batchmode -shell-escape "${name}.tex"
+  mv "${name}.png" dark/
+  rm "${name}".{tex,aux,log,pdf} 2>/dev/null
 done
