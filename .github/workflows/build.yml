@@ -14,8 +14,8 @@ jobs:
         with:
           run: |
             apk add file sudo coreutils
-            chmod +x setup.sh
-            ./setup.sh
+            chmod +x util/setup.sh
+            util/setup.sh
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 
       - name: Release
