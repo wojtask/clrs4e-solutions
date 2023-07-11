@@ -10,65 +10,57 @@ declare -A instructions=(
 ['false']='\const{false}'
 ['nil']='\nil'
 ['infinity']='$\infty$'
-['constant']='\const{red}'
-['dashed_constant']='\const{no-such-path}'
-['variable']='$k$'
-['decorated_variable']="\$k_2'\$"
+['constant']='\const{no-such-path}'
+['variable']='$x$'
+['decorated_variable']="\$y_2'\$"
 ['dashed_variable']='\id{best-score}'
-['fixed_function']='$\func{out-degree}(v)$'
-['assignment']='$x\gets y$'
-['increment']='$i\gets i+1$'
-['decrement']='$j\gets j-4$'
-['is_equal']='$x\isequal y$'
-['is_not_equal']='$x\ne y$'
-['compound_condition']='$x<y$ or ($x>y$ and not \id{found})'
-['procedure_call']='$\proc{Insertion-Sort}(A,n)$'
 ['attribute']='$\attrib{T}{root}$'
 ['dashed_attribute']='$\attrib{A}{heap-size}$'
 ['indexed_attribute']='$\attrib{x}{\id{key}_i}$'
+['assignment']='$x\gets y$'
+['is_equal']='$x\isequal y$'
+['is_not_equal']='$x\ne y$'
+['less']='$x<y$'
+['greater']='$x>y$'
+['less_equal']='$x\le y$'
+['greater_equal']='$x\ge y$'
+['and']='condition1 and condition2'
+['or']='condition1 or condition2'
+['not']='not condition'
+['increment']='$x\gets x+y$'
+['decrement']='$x\gets x-y$'
+['addition']='$x+y$'
+['subtraction']='$x-y$'
+['multiplication']='$x\cdot y$'
+['floor_division']='$\lfloor x/y\rfloor$'
+['ceiling_division']='$\lceil x/y\rceil$'
+['modulo']='$x\bmod y$'
+['exponent']='$x^y$'
+['square_root']='$\!\sqrt{x}$'
+['floor']='$\lfloor x\rfloor$'
+['ceiling']='$\lceil x\rceil$'
+['minimum']='$\min\{x,y\}$'
+['maximum']='$\max\{x,y\}$'
+['exchange']='exchange $x$ with $y$'
+['swap']='swap $x$ with $y$'
+['print']='print $x$'
+['procedure_definition']='\zi$\proc{Insertion-Sort}(A,n)$\zi\>block'
+['procedure_call']='$\proc{Insertion-Sort}(A,n)$'
 ['return_no_value']='\Return'
 ['return_single_value']='\Return $x$'
 ['return_multiple_values']='\Return $x$ and $y$'
-['exchange']='exchange $x$ with $y$'
-['swap']='swap $x$ with $y$'
-['error']="\Error \`\`overflow''"
-['print']='print $x$'
 ['new_array']='let $A[0\subarr n]$ be a new array'
 ['array_cell']='$A[i]$'
 ['new_set']='$S\gets\emptyset$'
 ['set_union']='$S\cup\{x\}$'
 ['set_cardinality']='$|S|$'
-['floor_division']='$\lfloor a/b\rfloor$'
-['ceiling_division']='$\lceil a/b\rceil$'
-['minimum']='$\min\{x,y\}$'
-['maximum']='$\max\{x,y\}$'
-['if_statement']='
-\zi \If condition1
-\zi     \Then statement1
-\zi \ElseIf condition1
-\zi     \Then statement2
-\zi \ElseNoIf statement3
-        \End'
-['for_to_loop']='
-\zi \For $i=a$ \To $b$
-\zi     \Do body
-        \End'
-['for_downto_loop']='
-\zi \For $i=b$ \Downto $a$
-\zi     \Do body
-        \End'
-['for_each_loop']='
-\zi \For each $v\in V$
-\zi     \Do body
-        \End'
-['while_loop']='
-\zi \While condition
-\zi    \Do body
-       \End'
-['repeat_loop']='
-\zi \Repeat
-\zi     body
-\zi \Until condition'
+['error']="\Error \`\`overflow''"
+['if_statement']='\zi\If condition1\zi\Then block1\zi\ElseIf condition2\zi\Then block2\zi\ElseNoIf block3'
+['for_to_loop']='\zi\For $i=x$ \To $y$\zi\Do block'
+['for_downto_loop']='\zi\For $i=y$ \Downto $x$\zi\Do block'
+['for_each_loop']='\zi\For each $v\in V$\zi\Do block'
+['while_loop']='\zi\While condition\zi\Do block'
+['repeat_loop']='\zi\Repeat\zi block\zi\Until condition'
 )
 
 rm **/*.png 2>/dev/null
