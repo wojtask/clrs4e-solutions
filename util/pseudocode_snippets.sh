@@ -24,9 +24,9 @@ declare -A instructions=(
 ['greater']='$x>y$'
 ['less_equal']='$x\le y$'
 ['greater_equal']='$x\ge y$'
-['and']='condition1 and condition2'
-['or']='condition1 or condition2'
-['not']='not condition'
+['and']='$\langle$condition1$\rangle$ and $\langle$condition2$\rangle$'
+['or']='$\langle$condition1$\rangle$ or $\langle$condition2$\rangle$'
+['not']='not $\langle$condition$\rangle$'
 ['increment']='$x\gets x+y$'
 ['decrement']='$x\gets x-y$'
 ['addition']='$x+y$'
@@ -44,7 +44,7 @@ declare -A instructions=(
 ['exchange']='exchange $x$ with $y$'
 ['swap']='swap $x$ with $y$'
 ['print']='print $x$'
-['procedure_definition']='\zi$\proc{Insertion-Sort}(A,n)$\zi\>block'
+['procedure_definition']='\zi$\proc{Insertion-Sort}(A,n)$\zi\>$\langle$block$\rangle$'
 ['procedure_call']='$\proc{Insertion-Sort}(A,n)$'
 ['return_no_value']='\Return'
 ['return_single_value']='\Return $x$'
@@ -55,12 +55,12 @@ declare -A instructions=(
 ['set_union']='$S\cup\{x\}$'
 ['set_cardinality']='$|S|$'
 ['error']="\Error \`\`overflow''"
-['if_statement']='\zi\If condition1\zi\Then block1\zi\ElseIf condition2\zi\Then block2\zi\ElseNoIf block3'
-['for_to_loop']='\zi\For $i=x$ \To $y$\zi\Do block'
-['for_downto_loop']='\zi\For $i=y$ \Downto $x$\zi\Do block'
-['for_each_loop']='\zi\For each $v\in V$\zi\Do block'
-['while_loop']='\zi\While condition\zi\Do block'
-['repeat_loop']='\zi\Repeat\zi block\zi\Until condition'
+['if_statement']='\zi\If$\langle$condition1$\rangle$\zi\Then$\langle$block1$\rangle$\zi\ElseIf$\langle$condition2$\rangle$\zi\Then$\langle$block2$\rangle$\zi\ElseNoIf$\langle$block3$\rangle$'
+['for_to_loop']='\zi\For $i=x$ \To $y$\zi\Do$\langle$block$\rangle$'
+['for_downto_loop']='\zi\For $i=y$ \Downto $x$\zi\Do$\langle$block$\rangle$'
+['for_each_loop']='\zi\For each $v\in V$\zi\Do$\langle$block$\rangle$'
+['while_loop']='\zi\While$\langle$condition$\rangle$\zi\Do$\langle$block$\rangle$'
+['repeat_loop']='\zi\Repeat\zi$\langle$block$\rangle$\zi\Until$\langle$condition$\rangle$'
 )
 
 rm **/*.png 2>/dev/null
@@ -79,7 +79,8 @@ for name in "${!instructions[@]}"; do
 \usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
 \usepackage{clrscode4e}
 \begin{document}
-\begin{minipage}{150pt}
+\hspace{-15pt}
+\begin{minipage}{140pt}
 \begin{codebox}
 ${instructions[$name]}
 \end{codebox}
