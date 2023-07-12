@@ -14,8 +14,8 @@ jobs:
         with:
           run: |
             apk add file sudo coreutils
-            chmod +x util/setup.sh
-            util/setup.sh
+            chmod +x util/install_fonts.sh
+            util/install_fonts.sh
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 
       - name: Release

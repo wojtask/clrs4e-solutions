@@ -115,10 +115,10 @@ sudo apt install texlive-pstricks texlive-latex-extra latexmk
 
 Additionally, you need to install the MathTime Professional II Lite fonts.
 Since the fonts are not available in the standard TeXLive distribution, you will need to install them using the provided
-setup script:
+script:
 
 ```shell
-chmod +x util/setup.sh && sudo util/setup.sh
+chmod +x util/install_fonts.sh && sudo util/install_fonts.sh
 ```
 
 Once the environment is prepared, you can compile the document to PDF by running the following command:
