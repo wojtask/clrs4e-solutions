@@ -84,7 +84,7 @@ for name in "${!instructions[@]}"; do
 \begin{codebox}
 ${instructions[$name]}
 \end{codebox}
-\vspace*{-10pt}
+\vspace*{-5pt}
 \end{minipage}
 \end{document}
 EOF
