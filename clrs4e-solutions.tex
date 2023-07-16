@@ -37,7 +37,6 @@
 \usepackage[shortlabels]{enumitem}
 \PassOptionsToPackage{table}{xcolor}
 \usepackage[screen]{clrscode4e}
-\usepackage{latexcolors}
 \usepackage[tikz]{bclogo}
 \usepackage{import}
 
@@ -59,10 +58,20 @@
     hypertexnames=false,
     unicode=true]{hyperref}
 
-
-\colorlet{accentcolor}{blue(ncs)}
-\definecolor{orange}{cmyk}{0,0.47,0.87,0.04}
-\definecolor{tan}{cmyk}{0,0.1,0.3,0}
+\selectcolormodel{HTML}
+\definecolor{lightorange}{HTML}{fcba61}
+\definecolor{orange}{HTML}{f5811f}
+\definecolor{darkorange}{HTML}{df771b}
+\definecolor{darktan}{HTML}{c08a78}
+\definecolor{lightblue}{HTML}{aae0f9}
+\definecolor{blue}{HTML}{00adef}
+\definecolor{darkblue}{HTML}{0084b7}
+\definecolor{red}{HTML}{c8232b}
+\definecolor{darkred}{HTML}{a51c1f}
+\definecolor{yellow}{HTML}{fff200}
+\definecolor{darkyellow}{HTML}{e1d200}
+\definecolor{lightgray}{HTML}{f5f4e6}
+\definecolor{gray}{HTML}{c7c9cb}
 
 \renewcommand{\thepart}{\partname~\Roman{part}}
 \renewcommand{\thechapter}{\arabic{chapter}}
@@ -88,7 +97,7 @@
 \fancypagestyle{plain}{\fancyhf{}}
 
 \titleformat{\part}[display]
-  {\normalfont\color{accentcolor}\Large\bfseries\itshape}
+  {\normalfont\color{darkblue}\Large\bfseries\itshape}
   {}
   {0pt}
   {\titlerule[\thickrulethickness]\vspace{2in}\titlerule[\thinrulethickness]\vspace{1pt}%
@@ -96,7 +105,7 @@
 \titlespacing*{\part}{-\lmarginparwidth}{-\baselineskip-\topskip}{0pt}
 
 \titleformat{\chapter}[display]
-  {\normalfont\color{accentcolor}\Large\bfseries}
+  {\normalfont\color{darkblue}\Large\bfseries}
   {}
   {0pt}
   {\titlerule[\thickrulethickness]\vspace{8pt}%
@@ -154,7 +163,7 @@
     \vspace*{20pt}\marginpar{\bcpanchant}\vspace{-20pt}%
     \emph{Work in progress.}}
 
-\renewcommand{\cfttoctitlefont}{\normalfont\color{accentcolor}\Large}
+\renewcommand{\cfttoctitlefont}{\normalfont\color{darkblue}\Large}
 \renewcommand{\cftbeforetoctitleskip}{0pt}
 \renewcommand{\cftaftertoctitleskip}{1.5in}
 \renewcommand{\cftdotsep}{\cftnodots}
@@ -189,7 +198,7 @@
 \makeatother
 
 \newcommand{\dash}{\,---\,}
-\newcommand{\concept}[1]{\textcolor{accentcolor}{\textbf{\itshape{#1}}}}
+\newcommand{\concept}[1]{\textcolor{darkblue}{\textbf{\itshape{#1}}}}
 \newcommand{\refExercise}[1]{Exercise~\mbox{\ref{sol:#1}}}
 \newcommand{\refProblem}[1]{Problem~\mbox{\ref{sol:#1}}}
 \newcommand{\refFigure}[1]{Figure~\mbox{\ref{fig:#1}}}
@@ -370,7 +379,7 @@
     \backmatter
 
     \let\chapter=\originalchapter
-    \titleformat{\chapter}{\normalfont\color{accentcolor}\Large}{}{0pt}{}
+    \titleformat{\chapter}{\normalfont\color{darkblue}\Large}{}{0pt}{}
     \titlespacing*{\chapter}{0pt}{0pt}{1.5in}
     \bibliographystyle{plain}
     {\footnotesize\bibliography{clrs4e-solutions}}
