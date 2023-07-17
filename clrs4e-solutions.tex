@@ -290,11 +290,14 @@
     positioning}
 
 \tikzset{
-    every node/.style = {font=\footnotesize},
-    light blue/.style = {fill=cyan!25},
-    arrow/.style = {->, >={Stealth[bend]}, draw},
+    vertex/.style = {circle, font=\footnotesize, inner sep=1pt, minimum size=5mm, text height=1ex, text depth=.1ex},
+    tan vertex/.style = {vertex, fill=tan, draw=orange},
+    orange vertex/.style = {vertex, fill=orange, draw=darkorange},
+    light blue vertex/.style = {vertex, node, fill=lightblue, draw=blue},
+    red vertex/.style = {vertex, node, fill=red, draw=darkred},
+    index/.style = {font=\scriptsize, inner sep=0pt, minimum size=3mm, text height=1.5ex},
+    arrow/.style = {->, >={Stealth[scale=1.5, bend]}, draw},
     level/.style = {level distance=10mm, sibling distance=60mm/2^#1},
-    tree node/.style = {align=center, inner sep=-1pt, minimum size=5mm, text height=1.5ex, text depth=.1ex, circle, draw=orange, fill=tan},
 }
 
 

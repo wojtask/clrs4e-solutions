@@ -1,35 +1,15 @@
-\begin{tikzpicture}[
-    container/.style = {draw=none, fill=none, node distance=1mm, every node/.style=tree node},
-    level/.append style = {sibling distance=30mm/2^#1}
-]
-    \node[container] (tree 1) {
-        \begin{tikzpicture}[anchor=center]
-            \node {$x$}
-            child {node {$y$}
-            child {node {$z$}}
-            };
-        \end{tikzpicture}
-    };
-    \node[container, right=of tree 1] (tree 2) {
-        \begin{tikzpicture}[anchor=center]
-            \node {$x$}
-            child {node {$z$}
-            child {node {$y$}}
-            };
-        \end{tikzpicture}
-    };
-    \node[container, right=of tree 2.north east, anchor=north west] (tree 3) {
-        \begin{tikzpicture}[anchor=center]
-            \node {$x$}
-            child {node {$y$}}
-            child {node {$z$}};
-        \end{tikzpicture}
-    };
-    \node[container, right=of tree 3.north east, anchor=north west] (tree 4) {
-        \begin{tikzpicture}[anchor=center]
-            \node {$x$}
-            child {node {$z$}}
-            child {node {$y$}};
-        \end{tikzpicture}
-    };
+\input{1.tikz}
+\begin{tikzpicture}
+    \node (root1) {$x$}
+        child {node {$y$}
+            child {node {$z$}}};
+    \node[right=5mm of root1] (root2) {$x$}
+        child {node {$z$}
+            child {node {$y$}}};
+    \node[right=12mm of root2] (root3) {$x$}
+        child {node {$y$}}
+        child {node {$z$}};
+    \node[right=20mm of root3] {$x$}
+        child {node {$z$}}
+        child {node {$y$}};
 \end{tikzpicture}

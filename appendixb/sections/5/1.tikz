@@ -1,0 +1,4 @@
+\tikzset{
+    every node/.style = {tan vertex},
+    level/.append style = {sibling distance=30mm/2^#1}
+}

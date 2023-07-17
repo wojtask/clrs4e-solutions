@@ -1,75 +1,66 @@
-\begin{tikzpicture}[
-	outer/.append style = {node distance=5mm},
-	set label/.style = {circle, inner sep=2mm},
-]
-
-\def\circleA{(0:0) circle (7mm) node[set label, above left] {$A$}}
-\def\circleB{(0:5mm) circle (7mm) node[set label, above right] {$B$}}
-\def\circleC{(-60:5mm) circle (7mm) node[set label, below] {$C$}}
-
-\node[outer] (set 1) {
 \begin{tikzpicture}
-   	\draw[light blue] \circleA;
+
+\def\circleA{(0:0) circle (7mm) node[index, above left=3mm] (A) {$A$}}
+\def\circleB{(0:5mm) circle (7mm) node[index, above right=3mm] (B) {$B$}}
+\def\circleC{(-60:5mm) circle (7mm) node[index, below=3mm] (C) {$C$}}
+
+\begin{scope}
+   	\draw[fill=lightblue] \circleA;
     \draw \circleB;
-    \draw \circleC;
-\end{tikzpicture}
-};
+    \draw \circleC +(0, -12mm) node[index] (label 1) {$A$};
+\end{scope}
 
-\node[outer, right=of set 1] (set 2) {
-\begin{tikzpicture}
-    \draw[light blue] \circleB \circleC;
+\node (center 1) at (barycentric cs:A=1,B=1,C=1) {};
+
+\begin{scope}[xshift=28mm]
+    \draw[fill=lightblue] \circleB \circleC +(0, -12mm) node[index] (label 2) {$(B\cup C)$};
     \draw \circleA;
-\end{tikzpicture}
-};
+\end{scope}
 
-\node[outer, right=of set 2] (set 3) {
-\begin{tikzpicture}
+\node (center 2) at (barycentric cs:A=1,B=1,C=1) {};
+
+\begin{scope}[xshift=56mm]
 	\begin{scope}
        	\clip \circleB;
-       	\draw[light blue] \circleA;
+       	\draw[fill=lightblue] \circleA;
    	\end{scope}
     \begin{scope}
        	\clip \circleC;
-       	\draw[light blue] \circleA;
+       	\draw[fill=lightblue] \circleA;
    	\end{scope}
-	\draw \circleA \circleB \circleC;
-\end{tikzpicture}
-};
+	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 3) {$A\cap(B\cup C)$};
+\end{scope}
 
-\node[outer, right=of set 3] (set 4) {
-\begin{tikzpicture}
+\node (center 3) at (barycentric cs:A=1,B=1,C=1) {};
+
+\begin{scope}[xshift=84mm]
 	\begin{scope}
        	\clip \circleB;
-       	\draw[light blue] \circleA;
+       	\draw[fill=lightblue] \circleA;
    	\end{scope}
-	\draw \circleA \circleB \circleC;
-\end{tikzpicture}
-};
+	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 4) {$(A\cap B)$};
+\end{scope}
 
-\node[outer, right=of set 4] (set 5) {
-\begin{tikzpicture}
+\node (center 4) at (barycentric cs:A=1,B=1,C=1) {};
+
+\begin{scope}[xshift=112mm]
 	\begin{scope}
        	\clip \circleC;
-       	\draw[light blue] \circleA;
+       	\draw[fill=lightblue] \circleA;
     \end{scope}
-	\draw \circleA \circleB \circleC;
-\end{tikzpicture}
-};
+	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 5) {$(A\cap C)$};
+\end{scope}
 
-\node[below=0mm of set 1] (label 1) {$A$};
-\node[below=0mm of set 2] (label 2) {$(B\cup C)$};
-\node[below=0mm of set 3] (label 3) {$A\cap(B\cup C)$};
-\node[below=0mm of set 4] (label 4) {$(A\cap B)$};
-\node[below=0mm of set 5] (label 5) {$(A\cap C)$};
+\node (center 5) at (barycentric cs:A=1,B=1,C=1) {};
 
-\path (set 1) -- (set 2) node[midway] (midlabel 1) {$\cap$}
-      (set 2) -- (set 3) node[midway] (midlabel 2) {$=$}
-      (set 3) -- (set 4) node[midway] (midlabel 3) {$=$}
-      (set 4) -- (set 5) node[midway] (midlabel 4) {$\cup$};
+\path (center 1) -- (center 2) node[index, midway] (midlabel 1) {$\cap$}
+      (center 2) -- (center 3) node[index, midway] (midlabel 2) {$=$}
+      (center 3) -- (center 4) node[index, midway] (midlabel 3) {$=$}
+      (center 4) -- (center 5) node[index, midway] (midlabel 4) {$\cup$};
 
-\path (label 1) -| (midlabel 1) node[midway] {$\cap$}
-      (label 2) -| (midlabel 2) node[midway] {$=$}
-      (label 3) -| (midlabel 3) node[midway] {$=$}
-      (label 4) -| (midlabel 4) node[midway] {$\cup$};
+\path (label 1) -| (midlabel 1) node[index, midway] {$\cap$}
+      (label 2) -| (midlabel 2) node[index, midway] {$=$}
+      (label 3) -| (midlabel 3) node[index, midway] {$=$}
+      (label 4) -| (midlabel 4) node[index, midway] {$\cup$};
 
 \end{tikzpicture}
