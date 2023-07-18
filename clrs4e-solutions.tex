@@ -242,7 +242,13 @@
 }
 \makeatother
 
-\newcommand{\liftdisplaystyle}{\setlength{\abovedisplayskip}{-\baselineskip}}
+\newenvironment{liftalign*}{%
+    \setlength{\abovedisplayskip}{-\baselineskip}%
+    \csname align*\endcsname
+}{%
+    \csname endalign*\endcsname
+    \setlength{\abovedisplayskip}{1.5ex plus 1pt minus 2pt}%
+}
 
 \newcommand{\Chapter}{}
 \newcommand{\starwithsep}{\customstar\hspace\labelsep}
