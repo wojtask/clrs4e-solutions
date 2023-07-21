@@ -1,7 +1,7 @@
 \begin{tikzpicture}
 
-\def\circleA{(0:0) circle (7mm) node[index, above left=3mm] (A) {$A$}}
-\def\circleB{(0:5mm) circle (7mm) node[index, above right=3mm] (B) {$B$}}
+\def\circleA{(0:0) circle (7mm) node[index, above left=1mm and 2mm] (A) {$A$}}
+\def\circleB{(0:5mm) circle (7mm) node[index, above right=1mm and 2mm] (B) {$B$}}
 \def\circleC{(-60:5mm) circle (7mm) node[index, below=3mm] (C) {$C$}}
 
 \begin{scope}

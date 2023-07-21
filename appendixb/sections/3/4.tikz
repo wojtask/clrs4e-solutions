@@ -20,8 +20,8 @@
         \draw (node \i) -- (node \j);
     }
     
-    \draw[arrow, ->] (node 52.east) + (1mm,0mm) -- +(10mm, 0mm) node [above left=1mm] {$x$};
-    \draw[arrow, ->] (node 60.north) + (0mm, 1mm) -- +(0mm, 10mm) node [below left=1mm] {$y$};
-    \draw[arrow, -]  (node 68.west) + (-1mm, 0mm) -- +(-7mm, 0mm);
-    \draw[arrow, -]  (node 76.south) + (0mm, -1mm) -- +(0mm, -7mm);
+    \draw[->] (node 52.east) + (1mm,0mm) -- +(10mm, 0mm) node [above left=1mm] {$x$};
+    \draw[->] (node 60.north) + (0mm, 1mm) -- +(0mm, 10mm) node [below left=1mm] {$y$};
+    \draw[-]  (node 68.west) + (-1mm, 0mm) -- +(-7mm, 0mm);
+    \draw[-]  (node 76.south) + (0mm, -1mm) -- +(0mm, -7mm);
 \end{tikzpicture}

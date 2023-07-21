@@ -1,4 +1,3 @@
 \tikzset{
     every node/.style = {tan vertex},
-    every edge/.style = {arrow},
 }

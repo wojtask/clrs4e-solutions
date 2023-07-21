@@ -295,15 +295,22 @@
     bending,
     positioning}
 
+\newlength{\vertexsize}
+\setlength{\vertexsize}{1.3em}
+\newlength{\cellsize}
+\setlength{\cellsize}{1.3em}
+
 \tikzset{
-    vertex/.style = {circle, font=\footnotesize, inner sep=1pt, minimum size=5mm, text height=1ex, text depth=.1ex},
+    >={Stealth[scale length=1.5, scale width=1.25]},
+    vertex/.style = {circle, font=\footnotesize, minimum size=\vertexsize, text height=1ex, text depth=.1ex, inner sep=1pt},
     tan vertex/.style = {vertex, fill=tan, draw=orange},
     orange vertex/.style = {vertex, fill=orange, draw=darkorange},
     light blue vertex/.style = {vertex, node, fill=lightblue, draw=blue},
     red vertex/.style = {vertex, node, fill=red, draw=darkred},
-    index/.style = {font=\scriptsize, inner sep=0pt, minimum size=3mm, text height=1.5ex},
-    arrow/.style = {->, >={Stealth[scale=1.5, bend]}, draw},
-    level/.style = {level distance=10mm, sibling distance=60mm/2^#1},
+    cell/.style = {draw, font=\footnotesize, minimum size=\cellsize, text height=1ex, text depth=.1ex, inner sep=1pt},
+    index/.style = {font=\scriptsize, text depth=.5ex, inner sep=0pt},
+    array/.style = {matrix of nodes, column sep=-\pgflinewidth, row 1/.style={nodes=index}, row 2/.style={nodes=cell}, nodes in empty cells},
+    level/.style = {level distance=2\vertexsize, sibling distance=12\vertexsize/2^#1},
 }
 
 
