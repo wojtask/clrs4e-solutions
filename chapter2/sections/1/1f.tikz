@@ -1,0 +1,10 @@
+\input{1.tikz}
+\begin{tikzpicture}
+    \path[use as bounding box] (-3\cellsize, -2\cellsize) rectangle +(6\cellsize, 3\cellsize);
+    \matrix[
+        array,
+        shifted cell/.list = {1, 2, 3, 4, 5, 6},
+    ] {
+        1  & 2  & 3  & 4  & 5  & 6 \\
+        26 & 31 & 41 & 41 & 58 & 59 \\};
+\end{tikzpicture}

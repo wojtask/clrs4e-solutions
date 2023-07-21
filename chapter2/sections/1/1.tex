@@ -1,1 +1,14 @@
-\workinprogress % TODO
+See \refFigure{2.1-1}.
+\begin{figure}[htb]
+    \captionsetup[subfigure]{skip=-2\cellsize, margin={-\cellsize, 7\cellsize}}
+    \hfill\subcaptionbox{\label{fig:2.1-1a}}[0.3\textwidth]{\input{1a.tikz}}
+    \hfill\subcaptionbox{\label{fig:2.1-1b}}[0.3\textwidth]{\input{1b.tikz}}
+    \hfill\subcaptionbox{\label{fig:2.1-1c}}[0.3\textwidth]{\input{1c.tikz}}
+    \par\medskip
+    \hfill\subcaptionbox{\label{fig:2.1-1d}}[0.3\textwidth]{\input{1d.tikz}}
+    \hfill\subcaptionbox{\label{fig:2.1-1e}}[0.3\textwidth]{\input{1e.tikz}}
+    \hfill\subcaptionbox{\label{fig:2.1-1f}}[0.3\textwidth]{\input{1f.tikz}}
+    \caption{The operation of $\proc{Insertion-Sort}(A,n)$ where $A$ initially contains the sequence $\langle31$, 41, 59, 26, 41, $58\rangle$ and $n=6$.
+    \textbf{(a)--(e)}\, The iterations of the \kw{for} loop of lines 1--8.\,
+    \textbf{(f)}\, The final sorted array.} \label{fig:2.1-1}
+\end{figure}

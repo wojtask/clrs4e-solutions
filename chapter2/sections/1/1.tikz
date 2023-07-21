@@ -1,0 +1,4 @@
+\tikzset{
+    moved cell/.style = {row 2 column #1/.style={nodes={fill=lightblue}}},
+    shifted cell/.style = {row 2 column #1/.style={nodes={fill=tan}}},
+}
