@@ -1,1 +1,16 @@
-\workinprogress % TODO
+We formulate the loop invariant as follows:
+\begin{quote}
+    At the start of each iteration of the \kw{for} loop of lines 2--3, \id{sum} is the sum of the numbers in the subarray $A[1\subarr i-1]$.
+\end{quote}
+
+\begin{description}
+    \item[Initialization:] Before the first loop iteration, $i=1$.
+    The subarray $A[1\subarr i-1]$ is empty, so the sum of its elements is 0, by definition.
+    It is thus equal to the current value of \id{sum}, just after its initialization in line 1.
+    \item[Maintenance:] Suppose that just before a loop iteration \id{sum} holds the sum of the numbers in the subarray $A[1\subarr i-1]$.
+    The only operation performed in the body of the loop is increasing \id{sum} by the value $A[i]$, so before the next iteration \id{sum} contains the sum of the numbers in the subarray $A[1\subarr i]$.
+    Incrementing $i$ for the next iteration of the loop then preserves the loop invariant.
+    \item[Termination:] The loop terminates once $i$ equals $n+1$.
+    The invariant says that \id{sum} is now equal to the sum of numbers in the subarray $A[1\subarr n]$.
+    Therefore, the procedure is correct, since it immediately returns \id{sum} in line 4.
+\end{description}
