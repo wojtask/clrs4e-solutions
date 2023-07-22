@@ -1,1 +1,15 @@
-\workinprogress % TODO
+\begin{codebox}
+\Procname{$\proc{Add-Binary-Integers}(A,B,n)$}
+\li let $C[0\twodots n]$ be a new array
+\li $\id{carry}\gets0$
+\li \For $i\gets0$ \To $n-1$ \label{li:add-binary-integers-for-begin}
+\li     \Do $C[i]\gets(A[i]+B[i]+\id{carry})\bmod2$
+\li         $\id{carry}\gets\lfloor(A[i]+B[i]+\id{carry})/2\rfloor$
+        \End \label{li:add-binary-integers-for-end}
+\li $C[n]\gets\id{carry}$
+\li \Return $C$
+\end{codebox}
+
+Once the array $C$ has been created, the \kw{for} loop of lines \ref{li:add-binary-integers-for-begin}--\ref{li:add-binary-integers-for-end} keeps adding the individual bits of numbers $a$ and $b$.
+More specifically, it fills array $C$ by summing up the bits in arrays $A$ and $B$ at the same positions, using modular arithmetic and a carry kept in the variable \id{carry}.
+Just before returning array $C$ the final carry is put to its last position.
