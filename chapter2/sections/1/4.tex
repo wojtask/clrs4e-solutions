@@ -1,1 +1,27 @@
-\workinprogress % TODO
+The description leads to the following pseudocode:
+
+\begin{codebox}
+\Procname{$\proc{Linear-Search}(A,n,x)$}
+\li \For $i\gets1$ \To $n$ \label{li:linear-search-for-begin}
+\li     \Do \If $A[i]\isequal x$
+\li         \Then \Return $i$
+            \End
+        \End \label{li:linear-search-for-end}
+\li \Return \nil
+\end{codebox}
+
+We'll prove the loop invariant:
+\begin{quote}
+    At the start of each iteration of the \kw{for} loop of lines \ref{li:linear-search-for-begin}--\ref{li:linear-search-for-end}, the value $x$ does not appear in the subarray $A[1\subarr i-1]$.
+\end{quote}
+
+\begin{description}
+    \item[Initialization:] Prior to the first iteration of the loop, $i=1$.
+    Then, the subarray $A[1\subarr i-1]$ is empty and as such does not contain $x$.
+    \item[Maintenance:] Suppose that just before the $i$th iteration the value $x$ does not appear in the subarray $A[1\subarr i-1]$.
+    The loop will terminate in this iteration, if $A[i]$ equals $x$.
+    Otherwise, we increment $i$ and move on to the next iteration, so the loop invariant remains true.
+    \item[Termination:] The loop terminates as soon as it encounters $i$ such that $A[i]$ equals $x$, or when it reaches $i=n+1$.
+    In the first case the procedure returns the index $i$.
+    In the second case it returns \nil, which is correct, since by the loop invariant, the value $x$ does not appear in the subarray $A[1\subarr n]$.
+\end{description}
