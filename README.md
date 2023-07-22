@@ -110,7 +110,7 @@ To compile the project locally you need TeXLive 2021 or newer.
 On Ubuntu the minimal required set of packages can be installed with:
 
 ```shell
-sudo apt install texlive-pstricks texlive-latex-extra latexmk
+sudo apt install texlive-pstricks texlive-latex-extra texlive-fonts-extra latexmk
 ```
 
 Additionally, you need to install the MathTime Professional II Lite fonts.

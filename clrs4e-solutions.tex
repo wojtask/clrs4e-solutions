@@ -1,19 +1,20 @@
 \documentclass[oneside,11pt,openany,titlepage]{book}
 
 % project-wide constants
-\newlength{\lmarginparwidth}
-\setlength{\lmarginparwidth}{1in}
-\newlength{\thinrulethickness}
-\setlength{\thinrulethickness}{.5pt}
-\newlength{\thickrulethickness}
-\setlength{\thickrulethickness}{5pt}
+\newlength{\lmarginparwidth}\setlength{\lmarginparwidth}{1in}
+\newlength{\thinrulethickness}\setlength{\thinrulethickness}{.5pt}
+\newlength{\thickrulethickness}\setlength{\thickrulethickness}{5pt}
 \setlength{\parindent}{1em}
 \setlength{\labelsep}{1em}
 \setlength{\marginparsep}{-40pt}
+\newlength{\vertexsize}\setlength{\vertexsize}{1.3em}
+\newlength{\cellsize}\setlength{\cellsize}{1.3em}
+%
 
 \usepackage[T1]{fontenc}
 \usepackage[fleqn]{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{stringstrings}
 \usepackage{calc}
 \usepackage[
@@ -40,13 +41,15 @@
 \usepackage[tikz]{bclogo}
 \usepackage{import}
 
-\usepackage{txfonts}
-% TODO: To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version,
-%   and change below options:
-%   - remove lite
-%   - change eucal to mtpcal
-%   - change amsbb to mtphrb
-\usepackage[lite,eucal,amsbb,subscriptcorrection,zswash]{mtpro2}
+\usepackage[largesc]{newtxtext}
+% TODO: To make math fonts even more consistent with the textbook, acquire the mtpro2 complete version, and switch to the below command:
+% \usepackage[mtpcal,mtphrb,subscriptcorrection,zswash]{mtpro2}
+\usepackage[
+    lite,
+    eucal,
+    amsbb,
+    subscriptcorrection,
+    zswash]{mtpro2}
 
 \usepackage[
     pdfborder={0 0 0},
@@ -296,11 +299,6 @@
     matrix,
     positioning,
     topaths}
-
-\newlength{\vertexsize}
-\setlength{\vertexsize}{1.3em}
-\newlength{\cellsize}
-\setlength{\cellsize}{1.3em}
 
 \tikzset{
     >={Stealth[scale length=1.5, scale width=1.25]},
