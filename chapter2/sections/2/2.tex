@@ -1,1 +1,48 @@
-\workinprogress % TODO
+\begin{codebox}
+\Procname{$\proc{Selection-Sort}(A,n)$}
+\li \For $i\gets1$ \To $n-1$ \label{li:selection-sort-for-begin}
+\li     \Do $\id{min}\gets i$ \label{li:selection-sort-min-init}
+\li         \For $j\gets i+1$ \To $n$
+\li             \Do \If $A[j]<A[\id{min}]$
+\li                     \Then $\id{min}\gets j$ \label{li:selection-sort-min-update}
+                        \End
+                \End
+\li         exchange $A[\id{min}]$ with $A[i]$
+        \End \label{li:selection-sort-for-end}
+\end{codebox}
+
+The outer \kw{for} loop maintains the following invariant:
+\begin{quote}
+    Just prior to the $i$th iteration of the \kw{for} loop of lines \ref{li:selection-sort-for-begin}--\ref{li:selection-sort-for-end}, the subarray $A[1\subarr i-1]$ contains the $i-1$ smallest elements of array $A$ in sorted order.
+\end{quote}
+According to the invariant, once the loop terminates after performing the $n-1$ iterations, the subarray $A[1\subarr n-1]$ contains the $n-1$ smallest elements of $A$ in sorted order.
+The last element then must be greater than or equal to each element of the subarray $A[1\subarr n-1]$, which means that the $n-1$ iterations suffice to sort the entire array.
+
+In the $i$th iteration of the outer \kw{for} loop we determine the smallest element of $A[i\subarr n]$.
+After initializing the position of a potential minimum in line \ref{li:selection-sort-min-init}, we need to examine the remaining $n-i$ positions in the inner \kw{for} loop.
+Let's assign statement costs for each line of the algorithm, so that line $k$ has cost $c_k$.
+For each $i=1$, 2, \dots, $n-1$, let $t_i$ denote the number of times line \ref{li:selection-sort-min-update} is executed during the $i$th iteration of the outer \kw{for} loop.
+Then, the running time of the algorithm on an $n$-element array is
+\[
+    T(n) = c_1n+c_2(n-1)+c_3\sum_{i=1}^{n-1}(n-i+1)+c_4\sum_{i=1}^{n-1}(n-i)+c_5\sum_{i=1}^{n-1}t_i+c_6(n-1).
+\]
+In the worst case $t_i=n-i$ for each $i=1$, 2, \dots, $n-1$, and by the fact that
+\begin{align*}
+    \sum_{i=1}^{n-1}(n-i+1) &= \sum_{i=2}^ni \\[1mm]
+    &= \frac{n(n+1)}{2}-1
+\end{align*}
+and
+\begin{align*}
+    \sum_{i=1}^{n-1}(n-i) &= \sum_{i=1}^{n-1}i \\[1mm]
+    &= \frac{n(n-1)}{2},
+\end{align*}
+the running time of \proc{Selection-Sort} is
+\begin{align*}
+    T(n) &= c_1n+c_2(n-1)+c_3\left(\frac{n(n+1)}{2}-1\right)+c_4\left(\frac{n(n-1)}{2}\right) \\
+    &\qquad {}+c_5\left(\frac{n(n-1)}{2}\right)+c_6(n-1) \\[1mm]
+    &= \left(\frac{c_3}{2}+\frac{c_4}{2}+\frac{c_5}{2}\right)n^2\!+\left(c_1+c_2+\frac{c_3}{2}-\frac{c_4}{2}-\frac{c_5}{2}+c_6\right)n-(c_2+c_3+c_6).
+\end{align*}
+Therefore, $T(n)$ can be expressed as $an^2+bn+c$ for constants $a$, $b$, and $c$ that depend on the statement costs $c_k$, and so $T(n)=\Theta(n^2)$.
+
+The best case differs from the worst case in the values $t_i$, which all are 0.
+But this difference only cancels out the terms involving $c_5$ in the above formula, and so it doesn't affect the rate of growth of the running time of the algorithm for the best case.
