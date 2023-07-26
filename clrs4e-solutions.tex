@@ -39,6 +39,7 @@
 \PassOptionsToPackage{table}{xcolor}
 \usepackage[screen]{clrscode4e}
 \usepackage[tikz]{bclogo}
+\usepackage{fmtcount}
 \usepackage{import}
 
 \usepackage[largesc]{newtxtext}
@@ -154,7 +155,13 @@
 \newcommand{\problem}[1]{\subsection{#1}\label{sol:\thesubsection}}
 \newcommand{\subproblem}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
 
-\newcommand{\clarification}[1]{\emph{#1}\bigskip}
+\newcommand{\clarification}[2][0]{%
+    \emph{#2%
+    \ifnum#1>0%
+        \ Corrected in \ordinalstringnum{#1} printing.
+    \fi}%
+    \bigskip%
+}
 \newcommand{\customstar}{{\Large$\star$}}
 \newcommand{\starred}{%
     \rlap{%
