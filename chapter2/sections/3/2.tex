@@ -1,1 +1,12 @@
-\workinprogress % TODO
+\clarification[4]{Instead of $p\ne r$ it should be $p\isequal r$ (in both places).}
+
+\noindent Lines 3--7 of \proc{Merge-Sort} are executed for subarrays $A[p\subarr r]$ of more than one element, i.e., when $p<r$.
+Note that $p\le(p+r)/2\le r$, and since both $p$ and $r$ are integers,
+\[
+    p \le \lfloor(p+r)/2\rfloor \le r.
+\]
+Therefore, the recursive call in line 4 is for a subarray of at least one element.
+Suppose that the procedure is called in line 5 for an empty subarray.
+Then, $\lfloor(p+r)/2\rfloor+1>r$ and by the above inequalities, there must be $\lfloor(p+r)/2\rfloor=r$.
+This equality holds only when $(p+r)/2=r$, which implies $p=r$, contradicting the assumption that $p<r$.
+Therefore, replacing the test in line 1 by ``\kw{if} $p\isequal r$'' guarantees no recursive call works on an empty subarray.
