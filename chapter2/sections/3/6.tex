@@ -7,7 +7,7 @@ It returns an index $q$ such that $x$ equals $A[q]$ or the special value \nil\ i
 \begin{codebox}
 \Procname{$\proc{Binary-Search}(A,x,p,r)$}
 \li \If $p>r$
-\li     \Then \Return \nil
+\li     \Then \Return \nil \label{li:binary-search-not-found}
         \End
 \li $q\gets\lfloor(p+r)/2\rfloor$
 \li \If $x\isequal A[q]$ \label{li:binary-search-midpoint-compare}
