@@ -1,1 +1,11 @@
-\workinprogress % TODO
+Let $n=2^k$ for $k\ge1$.
+We'll do the proof by induction on $k$.
+For $k=1$ we have $n=2$ and $T(n)=2=2\lg2$, so the base case holds.
+For the inductive step, assume that $k>1$, or $n>2$, and that $T(n/2)=(n/2)\lg(n/2)$.
+Then,
+\begin{align*}
+    T(n) &= 2T(n/2)+n \\
+    &= 2(n/2)\lg(n/2)+n \\
+    &= n(\lg n-1)+n \\
+    &= n\lg n.
+\end{align*}
