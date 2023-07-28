@@ -1,1 +1,33 @@
-\workinprogress % TODO
+\clarification[3]{Instead of $v$ there should be $x$.}
+
+\noindent Below is recursive pseudocode implementing binary search.
+The procedure takes as input a sorted array $A[1\subarr n]$ and a value $x$, as well as indices $p$ and $r$, and searches for $x$ in the subarray $A[p\subarr r]$.
+It returns an index $q$ such that $x$ equals $A[q]$ or the special value \nil\ if $x$ does not appear in $A$.
+
+\begin{codebox}
+\Procname{$\proc{Binary-Search}(A,x,p,r)$}
+\li \If $p>r$
+\li     \Then \Return \nil
+        \End
+\li $q\gets\lfloor(p+r)/2\rfloor$
+\li \If $x\isequal A[q]$ \label{li:binary-search-midpoint-compare}
+\li     \Then \Return $q$
+        \End
+\li \If $x<A[q]$
+\li     \Then \Return $\proc{Binary-Search}(A,x,p,q-1)$ \label{li:binary-search-recursive-call-lower}
+\li     \Else \Return $\proc{Binary-Search}(A,x,q+1,r)$ \label{li:binary-search-recursive-call-upper}
+        \End
+\end{codebox}
+
+The procedure finds the midpoint of the subarray $A[p\subarr r]$ and compares $x$ to it in line~\ref{li:binary-search-midpoint-compare}.
+Then it discards approximately half of that subarray, and continues searching for $x$ in the other half in the recursive call of line \ref{li:binary-search-recursive-call-lower} or \ref{li:binary-search-recursive-call-upper}.
+The procedure ends when it finds $x$ or when the search range becomes empty (i.e., $p>r$), which means that $A$ does not contain $x$.
+The recurrence describing the worst-case running time of the algorithm is:
+\[
+    T(n) =
+    \ccases{
+        \Theta(1), & \text{if $n\le1$}, \\
+        T(n/2)+\Theta(1), & \text{if $n>1$}.
+    }
+\]
+In \refExercise{4.3-5} we show that $T(n)=\Theta(\lg n)$.
