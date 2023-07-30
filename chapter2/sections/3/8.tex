@@ -1,1 +1,22 @@
-\workinprogress % TODO
+Let's represent the set $S$ as an array $A[1\subarr n]$.
+First, we'll sort $A$, so we can use a binary search through it (see \refExercise{2.3-6}).
+Then we will be scanning $A$ in the sorted order and for an element $A[i]$ we will search for another element in the subarray $A[i+1\subarr n]$, that added to $A[i]$ gives $x$.
+That subarray is empty for $i=n$, so we can skip searching for the last item.
+We can also terminate this procedure once $A[i]\ge x/2$, since all elements in the subarray $A[i+1\subarr n]$ are then greater than $x/2$, and the search will never succeed.
+Depending on the search result, we return a boolean value (\const{true} or \const{false}).
+
+\begin{codebox}
+\Procname{$\proc{Sum-Search}(A,n,x)$}
+\li $\proc{Merge-Sort}(A,1,n)$ \label{li:sum-search-sort}
+\li $i\gets1$
+\li \While $i<n$ and $A[i]<x/2$
+\li     \Do \If $\proc{Binary-Search}(A,x-A[i],i+1,n)\ne\nil$ \label{li:sum-search-binary-search}
+\li             \Then \Return \const{true}
+                \End
+\li         $i\gets i+1$
+        \End
+\li \Return \const{false}
+\end{codebox}
+
+Sorting the array $A[1\subarr n]$ in line \ref{li:sum-search-sort} takes $\Theta(n\lg n)$ time.
+The procedure \proc{Binary-Search} is called in line \ref{li:sum-search-binary-search} at most $n-1$ times, for subarrays of decreasing sizes\dash from $n-1$ down to 1\dash so the total time spent in all these calls won't exceed $n\cdot\Theta(\lg n)=\Theta(n\lg n)$.
