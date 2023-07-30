@@ -1,1 +1,4 @@
-\workinprogress % TODO
+In the modified merge sort we'll check at each recursion level if $r-p+1\le k$, and if so we'll sort $A[p\subarr r]$ using insertion sort, ending this recursion branch.
+The sorted sublists will then be merged as usual by the \proc{Merge} procedure.
+If we considered a recursion tree for the modified algorithm, it would have approximately $\lg(n/k)$ levels, with each level contributing a cost of $\Theta(n)$.
+The total time spent on merging $n/k$ sublists is therefore $\lg(n/k)\cdot\Theta(n)=\Theta(n\lg(n/k))$.
