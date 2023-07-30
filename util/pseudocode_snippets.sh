@@ -32,6 +32,7 @@ declare -A instructions=(
 ['addition']='$x+y$'
 ['subtraction']='$x-y$'
 ['multiplication']='$x\cdot y$'
+['division']='$x/y$'
 ['floor_division']='$\lfloor x/y\rfloor$'
 ['ceiling_division']='$\lceil x/y\rceil$'
 ['modulo']='$x\bmod y$'
