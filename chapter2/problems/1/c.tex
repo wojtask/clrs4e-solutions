@@ -1,1 +1,10 @@
-\workinprogress % TODO
+For $k=c\lg n$, where $c$ is a positive constant,
+\begin{align*}
+    \Theta(nk+n\lg(n/k)) &= \Theta(cn\lg n+n\lg(n/(c\lg n))) \\
+    &= \Theta((c+1)\cdot n\lg n-n\lg c-n\lg\lg n) \\
+    &= \Theta(n\lg n),
+\end{align*}
+since in $\Theta$-notation we can ignore the lower-order terms and the leading term's constant coefficient.
+Thus, as long as $k$ grows as fast as $c\lg n$ for a constant $c>0$, the running time of the modified merge sort remains the same as the running time of the standard merge sort, in terms of $\Theta$-notation.
+
+On the other hand, if $k$ grows faster than $c\lg n$ for any constant $c>0$, then the total time spent on sorting sublists by insertion sort, as shown in part (a), is larger than $n\lg n$ in terms of $\Theta$-notation, and so the whole modified algorithm runs slower than the original algorithm.
