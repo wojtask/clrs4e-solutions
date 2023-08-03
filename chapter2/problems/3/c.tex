@@ -1,1 +1,25 @@
-\workinprogress % TODO
+We prove the three properties of the loop invariant:
+\begin{description}
+    \item[Initialization:] Prior to the first iteration, $i=n$, so
+    \begin{align*}
+        p &= \sum_{k=0}^{n-(i+1)}A[k+i+1]\cdot x^k \\
+        &= \sum_{k=0}^{-1}A[k+n+1]\cdot x^k \\
+        &= 0,
+    \end{align*}
+    that matches the initial value of $p$.
+    \item[Maintenance:] During each iteration $p$ gets the value of $A[i]+x\cdot p$.
+    Assuming that the invariant holds before the current iteration, we have
+    \begin{align*}
+        p &= A[i]+\sum_{k=0}^{n-(i+1)}A[k+i+1]\cdot x^{k+1} \\
+        &= A[i]\cdot x^0+\sum_{k=1}^{n-i}A[k+i]\cdot x^k \\
+        &= \sum_{k=0}^{n-i}A[k+i]\cdot x^k.
+    \end{align*}
+    After decrementing $i$ for the next iteration, the invariant is preserved.
+    \item[Termination:] The loop terminates, since it performs exactly $n+1$ iterations.
+    At termination, $i=-1$, so
+    \begin{align*}
+        p &= \sum_{k=0}^{n-(i+1)}A[k+i+1]\cdot x^k \\
+        &= \sum_{k=0}^nA[k]\cdot x^k.
+    \end{align*}
+    Therefore, the algorithm correctly evaluates the polynomial $P(x)$ for a given $x$.
+\end{description}
