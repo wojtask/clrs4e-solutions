@@ -1,1 +1,17 @@
-\workinprogress % TODO
+The following procedure takes the same set of parameters as \proc{Horner} and evaluates $P(x)$ using the naive method.
+
+\begin{codebox}
+\Procname{$\proc{Polynomial-Evaluate}(A,n,x)$}
+\li $p\gets0$
+\li \For $i\gets0$ \To $n$
+\li     \Do $s\gets A[i]$
+\li         \For $j\gets1$ \To $i$ \label{li:polynomial-evaluate-inner-for-begin}
+\li             \Do $s\gets s\cdot x$
+                \End \label{li:polynomial-evaluate-inner-for-end}
+\li         $p\gets p+s$
+        \End
+\li \Return $p$
+\end{codebox}
+
+The \kw{for} loop of lines \ref{li:polynomial-evaluate-inner-for-begin}--\ref{li:polynomial-evaluate-inner-for-end} iterates $i$ times for each $i=0$, 1, \dots, $n$, for a total of $\sum_{i=0}^ni=n(n+1)/2$ iterations.
+The running time of \proc{Polynomial-Evaluate} is therefore $\Theta(n^2)$, so the algorithm is less efficient as compared to \proc{Horner}.
