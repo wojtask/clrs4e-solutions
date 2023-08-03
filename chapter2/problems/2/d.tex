@@ -1,1 +1,8 @@
-\workinprogress % TODO
+For any input, the \kw{for} loop of lines 2--4 performs $n-i$ iterations for each $i=1$, 2, \dots, $n-1$, and each iteration of that loop takes constant time.
+The total number of the inner loop iterations is
+\begin{align*}
+    \sum_{i=1}^{n-1}(n-i) &= \sum_{i=1}^{n-1}i \\[1mm]
+    &= \frac{n(n-1)}{2},
+\end{align*}
+so the running time of \proc{Bubblesort} is $\Theta(n^2)$.
+It is the same as the wost-case running time of \proc{Insertion-Sort}, but worse than its best-case running time.
