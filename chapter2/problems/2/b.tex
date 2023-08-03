@@ -1,1 +1,13 @@
-\workinprogress % TODO
+The inner loop invariant:
+\begin{quote}
+    At the start of each iteration of the \kw{for} loop of lines 2--4, $A[j]$ is the smallest element of the subarray $A[j\subarr n]$.
+\end{quote}
+
+\begin{description}
+    \item[Initialization:] Just before the first loop iteration, $j=n$, so the subarray $A[j\subarr n]$ consists of a single element $A[j]$ and the invariant trivially holds.
+    \item[Maintenance:] By the loop invariant, we assume that just before an iteration, $A[j]$ is the smallest element of $A[j\subarr n]$.
+    Then, $A[j-1]$ is the smallest element of $A[j-1\subarr n]$, unless $A[j]<A[j-1]$, in which case the elements $A[j]$ and $A[j-1]$ are exchanged in line 4.
+    Decrementing $j$ for the next iteration preserves the invariant.
+    \item[Termination:] The loop terminates, since it is a \kw{for} loop iterating from $n$ down to $i+1$, and $2\le i+1\le n$.
+    At termination, $j=i$, and $A[i]$ is the smallest element of $A[i\subarr n]$.
+\end{description}
