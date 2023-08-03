@@ -1,1 +1,16 @@
-\workinprogress % TODO
+The outer loop invariant:
+\begin{quote}
+    At the start of each iteration of the \kw{for} loop of lines 1--4, the subarray $A[1\subarr i-1]$ consists of the $i-1$ smallest elements of $A$ in sorted order.
+\end{quote}
+
+\begin{description}
+    \item[Initialization:] Prior to the first iteration, $i=1$, so the subarray $A[1\subarr i-1]$ is empty and therefore trivially sorted.
+    \item[Maintenance:] By the assumption that the subarray $A[1\subarr i-1]$ is sorted, the largest element of that subarray is $A[i-1]$.
+    The inner \kw{for} loop places the smallest element of the subarray $A[i\subarr n]$ at position $i$ (which we proved in part (b)).
+    By the loop invariant holding before the iteration, it follows that in the subarray $A[i\subarr n]$ there are no elements smaller than $A[i-1]$, so in particular $A[i-1]\le A[i]$.
+    Hence, the subarray $A[1\subarr i]$ contains the $i$ smallest elements of $A$ in sorted order.
+    By incrementing $i$ for the next loop iteration, we preserve the invariant.
+    \item[Termination:] The loop makes exactly $n-1$ iterations, and so it terminates.
+    When it does, $i=n$, and the subarray $A[1\subarr i-1]$ consists of the $i-1=n-1$ smallest elements of $A$ in sorted order.
+    Thus, the element at position $n$ must be the largest element of $A$, so the algorithm sorts correctly.
+\end{description}
