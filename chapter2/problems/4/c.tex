@@ -1,1 +1,4 @@
-\workinprogress % TODO
+For an array $A[1\subarr n]$, by $\mathrm{inv}(i)$ let us denote the number of inversions $(j,i)$ of $A$.
+In the \proc{Insertion-Sort} procedure, the \kw{while} loop of lines 5--7 moves the element initially at position $i$ by $\mathrm{inv}(i)$ positions to the left, thus eliminating exactly $\mathrm{inv}(i)$ inversions.
+The \kw{while} loop runs for each $i=2$, 3, \dots, $n$, for a total of $I=\sum_{i=2}^n\mathrm{inv}(i)$ iterations, which is exactly the number of inversions there were in the input array.
+We conclude that the running time of insertion sort is $\Theta(n+I)$.
