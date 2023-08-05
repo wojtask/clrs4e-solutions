@@ -1,11 +1,11 @@
 \clarification[3]{Instead of $v$ there should be $x$.}
 
 \noindent Below is recursive pseudocode implementing binary search.
-The procedure takes as input a sorted array $A[1\subarr n]$ and a value $x$, as well as indices $p$ and $r$, and searches for $x$ in the subarray $A[p\subarr r]$.
+The procedure takes as input a sorted array $A[1\subarr n]$, indices $p$ and $r$, and a value $x$, and searches for $x$ in the subarray $A[p\subarr r]$.
 It returns an index $q$ such that $x$ equals $A[q]$ or the special value \nil\ if $x$ does not appear in $A$.
 
 \begin{codebox}
-\Procname{$\proc{Binary-Search}(A,x,p,r)$}
+\Procname{$\proc{Binary-Search}(A,p,r,x)$}
 \li \If $p>r$
 \li     \Then \Return \nil \label{li:binary-search-not-found}
         \End
@@ -14,8 +14,8 @@ It returns an index $q$ such that $x$ equals $A[q]$ or the special value \nil\ i
 \li     \Then \Return $q$
         \End
 \li \If $x<A[q]$
-\li     \Then \Return $\proc{Binary-Search}(A,x,p,q-1)$ \label{li:binary-search-recursive-call-lower}
-\li     \Else \Return $\proc{Binary-Search}(A,x,q+1,r)$ \label{li:binary-search-recursive-call-upper}
+\li     \Then \Return $\proc{Binary-Search}(A,p,q-1,x)$ \label{li:binary-search-recursive-call-lower}
+\li     \Else \Return $\proc{Binary-Search}(A,q+1,r,x)$ \label{li:binary-search-recursive-call-upper}
         \End
 \end{codebox}
 

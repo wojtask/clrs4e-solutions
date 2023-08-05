@@ -10,7 +10,7 @@ Depending on the search result, we return a boolean value (\const{true} or \cons
 \li $\proc{Merge-Sort}(A,1,n)$ \label{li:sum-search-sort}
 \li $i\gets1$
 \li \While $i<n$ and $A[i]<x/2$
-\li     \Do \If $\proc{Binary-Search}(A,x-A[i],i+1,n)\ne\nil$ \label{li:sum-search-binary-search}
+\li     \Do \If $\proc{Binary-Search}(A,i+1,n,x-A[i])\ne\nil$ \label{li:sum-search-binary-search}
 \li             \Then \Return \const{true}
                 \End
 \li         $i\gets i+1$
