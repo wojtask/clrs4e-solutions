@@ -1,1 +1,10 @@
-\workinprogress % TODO
+We use the following loop invariant:
+\begin{quote}
+    Prior to each iteration of the \kw{while} loop of lines 12--18, the subarray $A[p\subarr k-1]$ contains the elements of $L[0\subarr i-1]$ and the elements of $R[0\subarr j-1]$, all arranged in sorted order.
+\end{quote}
+
+The \kw{while} loop of lines 12--18 terminates once $i=n_L$ or $j=n_R$.
+When it happens, the above invariant says that all elements from at least one array, $L$ or $R$, have been copied into the subarray $A[p\subarr k-1]$, and that the subarray is sorted.
+Since both arrays $L$ and $R$ are sorted, all elements in $L[i\subarr n_L-1]$, as well as all elements in $R[j\subarr n_R-1]$, are greater than or equal to all elements in $A[p\subarr k-1]$.
+To finish merging the arrays $L$ and $R$ into $A[p\subarr r]$, it suffices to copy the subarrays $L[i\subarr n_L-1]$ and $R[j\subarr n_R-1]$ to $A[k\subarr r]$, which is exactly what the \kw{while} loops of lines 20--23 and 24--27 do.
+In total, the three \kw{while} loops copy exactly $n_L+n_R=r-p+1$ elements from $L[0\subarr n_L-1]$ (copied from $A[p\subarr q]$) and $R[0\subarr n_R-1]$ (copied from $A[q+1\subarr r]$) to $A[p\subarr r]$, so the \proc{Merge} procedure works correctly.
