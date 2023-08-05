@@ -1,1 +1,27 @@
-\workinprogress % TODO
+Let $A[1\subarr n]$ be an array representing the input permutation of $n$ elements, and let $a$ and $b$ be two different elements.
+Suppose that during merge sort invoked for the array $A$, at some point in a call to \proc{Merge}, $L[i]=a$ and $R[j]=b$.
+If the test in line 13 of \proc{Merge} holds, then the elements $a$ and $b$ don't make an inversion.
+Otherwise, $a>b$, and since the arrays $L$ and $R$ are sorted, $b$ is less than any so far unprocessed element in $L$ (i.e., not yet placed in a target position of $A$ in line 14).
+These unprocessed elements occupy the subarray $L[i\subarr n_L-1]$, so $b$ makes exactly $n_L-i$ inversions with them.
+Once $b$ is copied back to $A$ in line 16, it will share the same merged subarray with the elements in $L[i\subarr n_L-1]$, so we won't count any inversion twice in subsequent recursive calls to \proc{Merge}.
+
+In this way, by modifying merge sort we can determine the number of inversions of an array $A[1\subarr n]$ of $n$ distinct elements in $\Theta(n\lg n)$ worst-case time.
+The side effect of running the modified procedure is having the input array sorted.
+The only modification to the original \proc{Merge} procedure is adding a new variable for counting inversions in a given recursive call.
+We will initialize the variable to 0 before line 12, and will be incrementing it by $n_L-i$ in the \kw{else} branch of lines 16--17, before returning it as a result of the modified procedure.
+We will use a similar counter in the modified \proc{Merge-Sort} procedure to sum up the number of inversions from the recursive calls, as well as from the call to the modified \proc{Merge} (which we call \proc{Merge-Inversions}).
+The following pseudocode implements the modified \proc{Merge-Sort}.
+
+\begin{codebox}
+\Procname{$\proc{Count-Inversions}(A,p,r)$}
+\li $\id{inversions}\gets0$
+\li \If $p<r$
+\li     \Then $q\gets\lfloor(p+r)/2\rfloor$
+\li         $\id{inversions}\gets\id{inversions}+\proc{Count-Inversions}(A,p,q)$
+\li         $\id{inversions}\gets\id{inversions}+\proc{Count-Inversions}(A,q+1,r)$
+\li         $\id{inversions}\gets\id{inversions}+\proc{Merge-Inversions}(A,p,q,r)$
+        \End
+\li \Return \id{inversions}
+\end{codebox}
+
+The initial call $\proc{Count-Inversions}(A,1,n)$ returns the number of inversions of $A[1\subarr n]$.
