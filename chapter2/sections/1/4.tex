@@ -21,7 +21,7 @@ We'll prove the loop invariant:
     \item[Maintenance:] Suppose that just before the $i$th iteration the value $x$ does not appear in the subarray $A[1\subarr i-1]$.
     The loop will terminate in this iteration, if $A[i]$ equals $x$.
     Otherwise, we increment $i$ and move on to the next iteration, so the loop invariant remains true.
-    \item[Termination:] The loop terminates as soon as it encounters $i$ such that $A[i]$ equals $x$, or when it reaches $i=n+1$.
+    \item[Termination:] The loop terminates once it encounters $i$ such that $A[i]$ equals $x$, or after running for $n$ iterations.
     In the first case the procedure returns the index $i$.
-    In the second case it returns \nil, which is correct, since by the loop invariant, the value $x$ does not appear in the subarray $A[1\subarr n]$.
+    In the second case $i=n+1$ and the procedure returns \nil, which is correct, since by the loop invariant, the value $x$ does not appear in the subarray $A[1\subarr n]$.
 \end{description}
