@@ -78,9 +78,184 @@ The work on the current project began on January 1, 2023.
 
 ### Progress
 
-| Part I                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Part II                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Part III                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Part IV                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Part V                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Part VI                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Part VII                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Part VIII                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Chapter 1](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?color=green)](https://github.com/wojtask/clrs4e-solutions/milestone/3)<br>[![Chapter 2](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4)](https://github.com/wojtask/clrs4e-solutions/milestone/4)<br>[![Chapter 3](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5)](https://github.com/wojtask/clrs4e-solutions/milestone/5)<br>[![Chapter 4](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6)](https://github.com/wojtask/clrs4e-solutions/milestone/6)<br>[![Chapter 5](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7)](https://github.com/wojtask/clrs4e-solutions/milestone/7) | [![Chapter 6](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8)](https://github.com/wojtask/clrs4e-solutions/milestone/8)<br>[![Chapter 7](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9)](https://github.com/wojtask/clrs4e-solutions/milestone/9)<br>[![Chapter 8](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10)](https://github.com/wojtask/clrs4e-solutions/milestone/10)<br>[![Chapter 9](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11)](https://github.com/wojtask/clrs4e-solutions/milestone/11) | [![Chapter 10](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12)](https://github.com/wojtask/clrs4e-solutions/milestone/12)<br>[![Chapter 11](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13)](https://github.com/wojtask/clrs4e-solutions/milestone/13)<br>[![Chapter 12](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14)](https://github.com/wojtask/clrs4e-solutions/milestone/14)<br>[![Chapter 13](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15)](https://github.com/wojtask/clrs4e-solutions/milestone/15) | [![Chapter 14](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16)](https://github.com/wojtask/clrs4e-solutions/milestone/16)<br>[![Chapter 15](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17)](https://github.com/wojtask/clrs4e-solutions/milestone/17)<br>[![Chapter 16](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18)](https://github.com/wojtask/clrs4e-solutions/milestone/18) | [![Chapter 17](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19)](https://github.com/wojtask/clrs4e-solutions/milestone/19)<br>[![Chapter 18](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20)](https://github.com/wojtask/clrs4e-solutions/milestone/20)<br>[![Chapter 19](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21)](https://github.com/wojtask/clrs4e-solutions/milestone/21) | [![Chapter 20](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22)](https://github.com/wojtask/clrs4e-solutions/milestone/22)<br>[![Chapter 21](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23)](https://github.com/wojtask/clrs4e-solutions/milestone/23)<br>[![Chapter 22](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24)](https://github.com/wojtask/clrs4e-solutions/milestone/24)<br>[![Chapter 23](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25)](https://github.com/wojtask/clrs4e-solutions/milestone/25)<br>[![Chapter 24](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26)](https://github.com/wojtask/clrs4e-solutions/milestone/26)<br>[![Chapter 25](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27)](https://github.com/wojtask/clrs4e-solutions/milestone/27) | [![Chapter 26](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28)](https://github.com/wojtask/clrs4e-solutions/milestone/28)<br>[![Chapter 27](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29)](https://github.com/wojtask/clrs4e-solutions/milestone/29)<br>[![Chapter 28](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30)](https://github.com/wojtask/clrs4e-solutions/milestone/30)<br>[![Chapter 29](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31)](https://github.com/wojtask/clrs4e-solutions/milestone/31)<br>[![Chapter 30](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32)](https://github.com/wojtask/clrs4e-solutions/milestone/32)<br>[![Chapter 31](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33)](https://github.com/wojtask/clrs4e-solutions/milestone/33)<br>[![Chapter 32](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34)](https://github.com/wojtask/clrs4e-solutions/milestone/34)<br>[![Chapter 33](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35)](https://github.com/wojtask/clrs4e-solutions/milestone/35)<br>[![Chapter 34](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36)](https://github.com/wojtask/clrs4e-solutions/milestone/36)<br>[![Chapter 35](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37)](https://github.com/wojtask/clrs4e-solutions/milestone/37) | [![Appendix A](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?color=green)](https://github.com/wojtask/clrs4e-solutions/milestone/38)<br>[![Appendix B](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?color=green)](https://github.com/wojtask/clrs4e-solutions/milestone/39)<br>[![Appendix C](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?color=green)](https://github.com/wojtask/clrs4e-solutions/milestone/40)<br>[![Appendix D](https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?color=green)](https://github.com/wojtask/clrs4e-solutions/milestone/41) |
+<table>
+  <tr>
+    <th>Part I</th>
+    <th>Part II</th>
+    <th>Part III</th>
+    <th>Part IV</th>
+    <th>Part V</th>
+    <th>Part VI</th>
+    <th>Part VII</th>
+    <th>Part VIII</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/3">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?color=green" alt="Chapter 1">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/4">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?color=green" alt="Chapter 2">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/5">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5" alt="Chapter 3">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/6">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6" alt="Chapter 4">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/7">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7" alt="Chapter 5">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/8">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8" alt="Chapter 6">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/9">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9" alt="Chapter 7">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/10">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10" alt="Chapter 8">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/11">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11" alt="Chapter 9">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/12">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12" alt="Chapter 10">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/13">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13" alt="Chapter 11">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/14">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14" alt="Chapter 12">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/15">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15" alt="Chapter 13">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/16">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16" alt="Chapter 14">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/17">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17" alt="Chapter 15">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/18">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18" alt="Chapter 16">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/19">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19" alt="Chapter 17">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/20">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20" alt="Chapter 18">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/21">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21" alt="Chapter 19">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/22">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22" alt="Chapter 20">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/23">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23" alt="Chapter 21">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/24">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24" alt="Chapter 22">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/25">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25" alt="Chapter 23">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/26">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26" alt="Chapter 24">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/27">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27" alt="Chapter 25">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/28">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28" alt="Chapter 26">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/29">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29" alt="Chapter 27">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/30">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30" alt="Chapter 28">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/31">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31" alt="Chapter 29">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/32">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32" alt="Chapter 30">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/33">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33" alt="Chapter 31">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/34">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34" alt="Chapter 32">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/35">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35" alt="Chapter 33">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/36">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36" alt="Chapter 34">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/37">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37" alt="Chapter 35">
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/38">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?color=green" alt="Appendix A">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/39">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?color=green" alt="Appendix B">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/40">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?color=green" alt="Appendix C">
+      </a>
+      <br>
+      <a href="https://github.com/wojtask/clrs4e-solutions/milestone/41">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?color=green" alt="Appendix D">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ### Roadmap
 
