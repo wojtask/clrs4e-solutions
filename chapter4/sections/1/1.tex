@@ -1,1 +1,47 @@
-\workinprogress % TODO
+Observe, that for $n\times n$ matrices $A$ and $B$,
+\[
+    \PARENS{
+        \begin{matrix}
+            A & 0 \\
+            0 & 0
+        \end{matrix}
+    \,}\PARENS{
+        \begin{matrix}
+            B & 0 \\
+            0 & 0
+        \end{matrix}
+    \,} = \PARENS{
+        \begin{matrix}
+            AB & 0 \\
+            0 & 0
+        \end{matrix}
+    \,},
+\]
+where 0 denotes zero matrices.
+In other words, when multiplying the square matrices $A$ and $B$, we can pad them with zeros to obtain $m\times m$ matrices $A'=\PARENS{\begin{matrix}A&0\\0&0\end{matrix}\,}$ and $B'=\PARENS{\begin{matrix}B&0\\0&0\end{matrix}\,}$, and multiply $A'$ by $B'$ instead.
+The submatrix formed by taking the intersection of the first $n$ rows and the first $n$ columns of $A'B'$ is $AB$.
+
+We implement this trick in the generalized version of the divide-and-conquer algorithm for multiplying $n\times n$ matrices.
+First we find $m$\dash the least power of 2 greater than of equal to $n$.
+Next we create the $m\times m$ matrices $A'$ and $B'$, by copying the corresponding entries of the matrices $A$ and $B$ to the upper left $n\times n$ submatrices of $A'$ and $B'$, while setting the remaining entries to 0.
+For a given $n\times n$ matrix $C$, where the matrix product $AB$ will be added, we similarly pad it with zeros to create the $m\times m$ matrix $C'$.
+Then we can call $\proc{Matrix-Multiply-Recursive}(A',B',C',m)$ and copy the relevant entries of the matrix $C'$ to $C$.
+
+Creating each matrix $A'$, $B'$, and $C'$ takes $\Theta(m^2)$ time, and copying the result to the matrix $C$ takes $\Theta(n^2)$ time.
+Let $T(n)$ and $T'(n)$ be the worst-case time to multiply two $n\times n$ matrices using the standard \proc{Matrix-Multiply-Recursive} procedure, and its generalized version, respectively.
+Then, omitting the base case, we get
+\[
+    T'(n) = T(m)+\Theta(m^2)+\Theta(n^2).
+\]
+Note that $n\le m<2n$, so
+\begin{align*}
+    T'(n) &\ge T(n)+\Theta(n^2)+\Theta(n^2) \\
+    &= \Omega(n^3)
+\end{align*}
+and
+\begin{align*}
+    T'(n) &\le T(2n)+\Theta((2n)^2)+\Theta(n^2) \\
+    &= O((2n)^3) \\
+    &= O(n^3).
+\end{align*}
+Hence, $T'(n)=\Theta(n^3)$.
