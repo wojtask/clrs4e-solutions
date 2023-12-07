@@ -4,8 +4,8 @@
 
 ### Overview
 
-The goal of this project is to provide solutions to all exercises and problems from *Introduction to Algorithms, Fourth
-Edition* by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
+The goal of this project is to provide solutions to all exercises and problems from [*Introduction to Algorithms, Fourth
+Edition*](http://mitpress.mit.edu/algorithms4) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
 My intention is to ensure, first and foremost, the rock solid correctness and completeness of the provided content, its
 technical elegance, as well as its consistency with the textbook material.
 In order to achieve such reliability, I spend a lot of time evolving and revising the solutions, not only in terms of
@@ -13,10 +13,9 @@ content, but also in terms of terminology, wording, and typography.
 I pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
 operations and examples with accurate pictures, consistent with the style of the textbook.
 
-It should be noted that the textbook's authors also provide selected solutions &mdash; the document can be downloaded
-from the [textbook's website](http://mitpress.mit.edu/algorithms4).
-Additionally, other authors publicly host their solutions on the web, though majority of those that I found are for the
-third edition of the textbook:
+It should be noted that the textbook's authors also provide the official [Selected Solutions](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf),
+which cover about 7% of all exercises and problems contained in the book. Additionally, other authors publicly host their
+solutions on the web, though majority of those that I found are for the third edition of the textbook:
 
 * [solutions by Michelle Bodnar and Andrew Lohr](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html),
 * [solutions by Stefan Kanev](https://ita.skanev.com),
