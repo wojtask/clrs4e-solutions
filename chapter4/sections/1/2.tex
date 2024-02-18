@@ -1,1 +1,40 @@
-\workinprogress % TODO
+Let $A_1$, $A_2$, \dots, $A_k$ and $B_1$, $B_2$, \dots, $B_k$ be $n\times n$ matrices.
+Then
+\[
+    A = \PARENS{
+        \begin{matrix}
+            A_1 \\
+            A_2 \\
+            \vdots \\
+            A_k
+        \end{matrix}
+    }
+\]
+is a $kn\times n$ matrix,
+\[
+    B = \PARENS{
+        \begin{matrix}
+            B_1 & B_2 & \cdots & B_k
+        \end{matrix}
+    }
+\]
+is an $n\times kn$ matrix, and
+\[
+    AB = \PARENS{
+        \begin{matrix}
+            A_1B_1 & A_1B_2 & \cdots & A_1B_k \\
+            A_2B_1 & A_2B_2 & \cdots & A_2B_k \\
+            \vdots & \vdots & \ddots & \vdots \\
+            A_kB_1 & A_kB_2 & \cdots & A_kB_k
+        \end{matrix}
+    }.
+\]
+Each submatrix product $A_iB_j$ in the right-hand side matrix can be computed in $\Theta(n^3)$ time using \proc{Matrix-Multiply-Recursive}, so the overall time to multiply $A$ by $B$ is $\Theta(k^2n^3)$.
+
+On the other hand,
+\[
+    BA = \sum_{i=1}^kB_iA_i,
+\]
+and we can compute it by computing the $k$ products $B_iA_i$ in total time of $\Theta(kn^3)$, then adding them together in $\Theta(kn^2)$ time.
+
+Therefore, multiplying an $n\times kn$ matrix by a $kn\times n$ matrix is asymptotically faster than multiplying these matrices in reverse order, by a factor of $k$.
