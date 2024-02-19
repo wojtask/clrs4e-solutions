@@ -8,14 +8,14 @@ The goal of this project is to provide solutions to all exercises and problems f
 Edition*](http://mitpress.mit.edu/algorithms4) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
 My intention is to ensure, first and foremost, the rock solid correctness and completeness of the provided content, its
 technical elegance, as well as its consistency with the textbook material.
-In order to achieve such reliability, I spend a lot of time evolving and revising the solutions, not only in terms of
-content, but also in terms of terminology, wording, and typography.
-I pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
+In order to achieve such reliability, I put a lot of effort into evolving and revising the solutions, not only in terms of
+accuracy and content-related correctness, but also in terms of terminology, wording, and typography.
+I also pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
 operations and examples with accurate pictures, consistent with the style of the textbook.
 
-It should be noted that the textbook's authors also provide the official [Selected Solutions](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf),
-which cover about 7% of all exercises and problems contained in the book. Additionally, other authors publicly host their
-solutions on the web, though majority of those that I found are for the third edition of the textbook:
+It should be noted that the textbook authors also provide the official [Selected Solutions](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf),
+which cover about 7% of all exercises and problems. Additionally, other researchers publicly host their solutions on the web,
+though majority of those that I found are for the third edition of the textbook:
 
 * [solutions by Michelle Bodnar and Andrew Lohr](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html),
 * [solutions by Stefan Kanev](https://ita.skanev.com),
@@ -23,16 +23,16 @@ solutions on the web, though majority of those that I found are for the third ed
 * [crowdsourced solutions coordinated by Peng-Yu Chen](https://walkccc.github.io/CLRS),
 * [the textbook's page on Quizlet](https://quizlet.com/explanations/textbook-solutions/introduction-to-algorithms-4th-edition-9780262046305).
 
-However, none of the above sources cover all exercises, especially when compared to the fourth edition that adds
+However, none of the above sources cover all exercises, especially when compared to the fourth edition that adds a
 significant number of new exercises.
-Also, I noticed that certain solutions are not of the highest quality, e.g., some of them are incorrect, incomplete, or
-just far from elegance.
+Also, I noticed that some solutions are not of the highest quality, with defects ranging from incorrectness or incompleteness
+to the lack of technical elegance.
 Nevertheless, these pieces of work were sources of inspiration for me, and showed different approaches and perspectives.
-When relying on the ideas from them, I always aimed to rework the solutions by introducing necessary fixes and
-improvements, or just polishing them.
+When borrowing on the ideas presented there, I always aimed to rework the solutions by introducing necessary fixes and
+improvements, and refine to improve consistency with the book.
 
-The solutions here often refer to the material presented in the textbook, so familiarity on at least a current chapter
-is required.
+The solutions here often refer to the material presented in the textbook, so familiarity on at least the corresponding
+chapter is required.
 In many solutions, you will also find references to other tasks, especially when a given task uses the result of another
 in its own solution.
 In general, later solutions sometimes rely on the earlier ones by referencing the relevant exercises.
@@ -40,10 +40,10 @@ Thus, in early chapters one can observe a somewhat greater focus on details, and
 to exercises where those details have already been discussed.
 
 I keep an eye on errors or inaccuracies in exercises and problems or the material they directly rely on, and highlight
-them in short notes before the solution of the affected exercise.
-On the other hand, I refer to the
+them in brief notes just before the solution of the affected exercise.
+At the same time I refer to the
 textbook's [errata](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/e4-bugs.html) &mdash;
-if it includes a certain correction, I assume that the bug has already been fixed.
+if it includes a certain correction, I assume that the bug has already been fixed in a subsequent printing.
 
 As I stressed earlier, I pay special attention to ensuring the correctness of the algorithms and data structures
 operations.
@@ -58,7 +58,7 @@ The counterpart project with implementations is available [here](https://github.
 
 ### History
 
-The origins of the project date back to 2005, when I started solving exercises by pen and paper, during studying
+The origins of the project date back to 2005, when I started solving exercises by pen and paper, while studying
 algorithms as a preparation for participating in the Polish Olympiad in Informatics.
 I was relying on the Polish translation of the textbook's second edition, titled *Wprowadzenie do algorytmów*, and my
 solutions were in Polish as well.
@@ -295,7 +295,7 @@ script:
 chmod +x util/install_fonts.sh && sudo util/install_fonts.sh
 ```
 
-Once the environment is prepared, you can compile the document to PDF by running the following command:
+Once the environment has been prepared, you can compile the document to PDF by running the following command:
 
 ```shell
 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
