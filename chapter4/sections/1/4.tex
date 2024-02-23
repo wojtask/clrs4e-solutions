@@ -1,1 +1,44 @@
-\workinprogress % TODO
+We'll assume that $n$ is an exact power of 2.
+The procedure \proc{Matrix-Add-Recursive} takes three $n\times n$ matrices $A$, $B$ and $C$, and computes $C=A+B$.
+Like \proc{Matrix-Multiply-Recursive}, in the divide step it partitions the matrices as in equation (4.2).
+But in the conquer step it adds each submatrix of $A$ to the corresponding submatrix of $B$ and places the sum in a corresponding submatrix of $C$:
+\begin{align*}
+    C_{11} &= A_{11}+B_{11}, \\
+    C_{12} &= A_{12}+B_{12}, \\
+    C_{21} &= A_{21}+B_{21}, \\
+    C_{22} &= A_{22}+B_{22},
+\end{align*}
+which involves four recursive calls.
+
+\begin{codebox}
+\Procname{$\proc{Matrix-Add-Recursive}(A,B,C,n)$}
+\li \If $n\isequal1$
+\li     \Then \Comment{Base case.}
+\li         $c_{11}\gets a_{11}+b_{11}$
+\li         \Return
+    \End
+\li \Comment{Divide.}
+\li partition $A$, $B$, and $C$ into $n/2\times n/2$ submatrices
+    \Indentmore
+\zi     $A_{11}$, $A_{12}$, $A_{21}$, $A_{22}$; $B_{11}$, $B_{12}$, $B_{21}$, $B_{22}$;
+\zi     and $C_{11}$, $C_{12}$, $C_{21}$, $C_{22}$; respectively
+    \End \label{li:matrix-add-recursive-partition}
+\li \Comment{Conquer.}
+\li $\proc{Matrix-Add-Recursive}(A_{11},B_{11},C_{11},n/2)$ \label{li:matrix-add-recursive-recursive-begin}
+\li $\proc{Matrix-Add-Recursive}(A_{12},B_{12},C_{12},n/2)$
+\li $\proc{Matrix-Add-Recursive}(A_{21},B_{21},C_{21},n/2)$
+\li $\proc{Matrix-Add-Recursive}(A_{22},B_{22},C_{22},n/2)$ \label{li:matrix-add-recursive-recursive-end}
+\end{codebox}
+
+Let $T(n)$ be the worst-case time required by this algorithm to add two $n\times n$ matrices.
+Each recursive call in lines \ref{li:matrix-add-recursive-recursive-begin}--\ref{li:matrix-add-recursive-recursive-end} adds two $n/2\times n/2$ matrices contributing $T(n/2)$ to the overall running time, so all four recursive calls take $4T(n/2)$ time.
+If we assume that the algorithm uses index calculations to partition the matrices in line \ref{li:matrix-add-recursive-partition}, the recurrence for its running time is
+\[
+    T(n) = 4T(n/2)+\Theta(1).
+\]
+Applying case~1 of the master theorem, we obtain the solution $T(n)=\Theta(n^2)$.
+However, if the matrices are partitioned by copying, then the recurrence changes to
+\[
+    T(n) = 4T(n/2)+\Theta(n^2),
+\]
+which, by case~2 of the master theorem, has the solution $T(n)=\Theta(n^2\lg n)$.
