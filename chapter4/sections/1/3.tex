@@ -1,1 +1,6 @@
-\workinprogress % TODO
+At each recursive step the time spent on partitioning the matrices and copying the results is $\Theta(n^2)$, so the recurrence (4.9) changes to
+\[
+    T(n) = 8T(n/2)+\Theta(n^2).
+\]
+To show its has the same solution as the original recurrence, let's use the master method from Section 4.5.
+There exists a constant $\epsilon>0$ such that $n^2=O(n^{\log_28-\epsilon})$, so by the master theorem, $T(n)=\Theta(n^3)$.
