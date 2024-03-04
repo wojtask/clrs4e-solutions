@@ -1,1 +1,41 @@
-\workinprogress % TODO
+The pseudocode below calls two auxiliary procedures $\proc{Matrix-Add}(A,B,C,n)$ and $\proc{Matrix-Subtract}(A,B,C,n)$.
+The former implements matrix addition on two $n\times n$ matrices $A$ and $B$, and accumulates the result into the third matrix: $C=C+(A+B)$.
+The latter subtracts the second matrix from the first in a similar fashion to compute $C=C+(A-B)$.
+
+\begin{codebox}
+\Procname{$\proc{Strassen}(A,B,C,n)$}
+\li \If $n\isequal1$
+\li     \Then $c_{11}\gets c_{11}+a_{11}\cdot b_{11}$
+\li         \Return
+        \End
+\li partition $A$, $B$, and $C$ into $n/2\times n/2$ submatrices
+    \Indentmore
+\zi     $A_{11}$, $A_{12}$, $A_{21}$, $A_{22}$; $B_{11}$, $B_{12}$, $B_{21}$, $B_{22}$;
+\zi     and $C_{11}$, $C_{12}$, $C_{21}$, $C_{22}$; respectively
+    \End
+\li create $n/2\times n/2$ matrices $S_1$, $S_2$, \dots, $S_{10}$
+\li create and zero the entries of $n/2\times n/2$ matrices $P_1$, $P_2$, \dots, $P_7$
+\li $\proc{Matrix-Subtract}(B_{12},B_{22},S_1,n/2)$
+\li $\proc{Matrix-Add}(A_{11},A_{12},S_2,n/2)$
+\li $\proc{Matrix-Add}(A_{21},A_{22},S_3,n/2)$
+\li $\proc{Matrix-Subtract}(B_{21},B_{11},S_4,n/2)$
+\li $\proc{Matrix-Add}(A_{11},A_{22},S_5,n/2)$
+\li $\proc{Matrix-Add}(B_{11},B_{22},S_6,n/2)$
+\li $\proc{Matrix-Subtract}(A_{12},A_{22},S_7,n/2)$
+\li $\proc{Matrix-Add}(B_{21},B_{22},S_8,n/2)$
+\li $\proc{Matrix-Subtract}(A_{11},A_{21},S_9,n/2)$
+\li $\proc{Matrix-Add}(B_{11},B_{12},S_{10},n/2)$
+\li $\proc{Strassen}(A_{11},S_1,P_1,n/2)$
+\li $\proc{Strassen}(S_2,B_{22},P_2,n/2)$
+\li $\proc{Strassen}(S_3,B_{11},P_3,n/2)$
+\li $\proc{Strassen}(A_{22},S_4,P_4,n/2)$
+\li $\proc{Strassen}(S_5,S_6,P_5,n/2)$
+\li $\proc{Strassen}(S_7,S_8,P_6,n/2)$
+\li $\proc{Strassen}(S_9,S_{10},P_7,n/2)$
+\li $\proc{Matrix-Add}(P_5,P_4,C_{11},n/2)$
+\li $\proc{Matrix-Subtract}(P_6,P_2,C_{11},n/2)$
+\li $\proc{Matrix-Add}(P_1,P_2,C_{12},n/2)$
+\li $\proc{Matrix-Add}(P_3,P_4,C_{21},n/2)$
+\li $\proc{Matrix-Subtract}(P_5,P_3,C_{22},n/2)$
+\li $\proc{Matrix-Subtract}(P_1,P_7,C_{22},n/2)$
+\end{codebox}
