@@ -1,1 +1,54 @@
-\workinprogress % TODO
+To simplify the notation we'll omit the parentheses surrounding the single entry of $1\times1$ matrices and effectively treat such matrices as scalars.
+
+We run Strassen's algorithm on the given $2\times2$ input matrices $A$ and $B$, and the $2\times2$ output matrix $C$, initialized to 0.
+In step~1 the algorithm partitions the input matrices into the submatrices:
+\begin{align*}
+    A_{11} &= 1, \\
+    A_{12} &= 3, \\
+    A_{21} &= 7, \\
+    A_{22} &= 5, \\
+    B_{11} &= 6, \\
+    B_{12} &= 8, \\
+    B_{21} &= 4, \\
+    B_{22} &= 2.
+\end{align*}
+Then, in step~2 the following matrices are created:
+\begin{align*}
+    S_{1\phantom{0}} &= 8-2 = 6, \\
+    S_{2\phantom{0}} &= 1+3 = 4, \\
+    S_{3\phantom{0}} &= 7+5 = 12, \\
+    S_{4\phantom{0}} &= 4-6 = -2, \\
+    S_{5\phantom{0}} &= 1+5 = 6, \\
+    S_{6\phantom{0}} &= 6+2 = 8, \\
+    S_{7\phantom{0}} &= 3-5 = -2, \\
+    S_{8\phantom{0}} &= 4+2 = 6, \\
+    S_{9\phantom{0}} &= 1-7 = -6, \\
+    S_{10} &= 6+8 = 14.
+\end{align*}
+In step~3 the algorithm calls itself recursively to compute the matrices $P_1$, $P_2$, \dots, $P_7$.
+They are all products of two $1\times1$ matrices, so each recursive call will return right after step~1:
+\begin{align*}
+    P_1 &= 1\cdot6 = 6, \\
+    P_2 &= 4\cdot2 = 8, \\
+    P_3 &= 12\cdot6 = 72, \\
+    P_4 &= 5\cdot(-2) = -10, \\
+    P_5 &= 6\cdot8 = 48, \\
+    P_6 &= (-2)\cdot6 = -12, \\
+    P_7 &= (-6)\cdot14 = -84.
+\end{align*}
+Finally, in step~4 the algorithm updates the four submatrices of the matrix $C$:
+\begin{align*}
+    C_{11} &= 48+(-10)-8+(-12) = 18, \\
+    C_{12} &= 6+8 = 14, \\
+    C_{21} &= 72+(-10) = 62, \\
+    C_{22} &= 48+6-72-(-84) = 66.
+\end{align*}
+The result of calling Strassen's algorithm on the given input is
+\[
+    C = \PARENS{
+        \begin{matrix}
+            18 & 14 \\
+            62 & 66
+        \end{matrix}
+    }.
+\]
