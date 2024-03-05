@@ -1,12 +1,12 @@
 We'll assume that $n$ is an exact power of 2.
-The procedure \proc{Matrix-Add-Recursive} takes three $n\times n$ matrices $A$, $B$ and $C$, and computes $C=A+B$.
+The procedure \proc{Matrix-Add-Recursive} takes three $n\times n$ matrices $A$, $B$ and $C$, and computes $C=C+(A+B)$.
 Like \proc{Matrix-Multiply-Recursive}, in the divide step it partitions the matrices as in equation (4.2).
-But in the conquer step it adds each submatrix of $A$ to the corresponding submatrix of $B$ and places the sum in a corresponding submatrix of $C$:
+But in the conquer step it adds each submatrix of $A$ to the corresponding submatrix of $B$ and adds the sum to the corresponding submatrix of $C$:
 \begin{align*}
-    C_{11} &= A_{11}+B_{11}, \\
-    C_{12} &= A_{12}+B_{12}, \\
-    C_{21} &= A_{21}+B_{21}, \\
-    C_{22} &= A_{22}+B_{22},
+    C_{11} &= C_{11}+A_{11}+B_{11}, \\
+    C_{12} &= C_{12}+A_{12}+B_{12}, \\
+    C_{21} &= C_{21}+A_{21}+B_{21}, \\
+    C_{22} &= C_{22}+A_{22}+B_{22},
 \end{align*}
 which involves four recursive calls.
 
@@ -14,9 +14,9 @@ which involves four recursive calls.
 \Procname{$\proc{Matrix-Add-Recursive}(A,B,C,n)$}
 \li \If $n\isequal1$
 \li     \Then \Comment{Base case.}
-\li         $c_{11}\gets a_{11}+b_{11}$
+\li         $c_{11}\gets c_{11}+a_{11}+b_{11}$
 \li         \Return
-    \End
+        \End
 \li \Comment{Divide.}
 \li partition $A$, $B$, and $C$ into $n/2\times n/2$ submatrices
     \Indentmore
