@@ -1,1 +1,17 @@
-\workinprogress % TODO
+Like in the previous exercise, we can partition the $n\times n$ matrices into either $n/68\times n/68$, $n/70\times n/70$, or $n/72\times n/72$ submatrices, and use a corresponding method to multiply the partitioned matrices as if they were either $68\times68$, $70\times70$, or $72\times72$ matrices.
+Each multiplication of two submatrices made while applying these methods can be performed by invoking the algorithm recursively.
+
+Let $T_{68}(n)$, $T_{70}(n)$, and $T_{72}(n)$ be the worst-case times to multiply two $n\times n$ matrices using this algorithm, when using each given method.
+Then, assuming partitioning is done using index calculations, we get the recurrences:
+\begin{align*}
+    T_{68}(n) &= 132{,}464\cdot T_{68}(n/68)+\Theta(1), \\
+    T_{70}(n) &= 143{,}640\cdot T_{70}(n/70)+\Theta(1), \\
+    T_{72}(n) &= 155{,}424\cdot T_{72}(n/72)+\Theta(1).
+\end{align*}
+By the master method, their solutions are:
+\begin{align*}
+    T_{68}(n) &= \Theta(n^{\log_{68}132{,}464}) = O(n^{2.795128488}), \\
+    T_{70}(n) &= \Theta(n^{\log_{70}143{,}640}) = O(n^{2.795122690}), \\
+    T_{72}(n) &= \Theta(n^{\log_{72}155{,}424}) = O(n^{2.795147392}).
+\end{align*}
+Of all those methods, the one involving multiplying $70\times70$ matrices yields the best asymptotic running time, and with this choice the algorithm performs better than the $O(n^{2.81})$ Strassen's algorithm.
