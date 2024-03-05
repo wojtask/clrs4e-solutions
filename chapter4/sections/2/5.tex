@@ -1,1 +1,14 @@
-\workinprogress % TODO
+The algorithm will compute the three values:
+\begin{align*}
+    \alpha &= ac, \\
+    \beta &= bd, \\
+    \gamma &= (a+b)(c+d),
+\end{align*}
+each requiring one multiplication of real numbers.
+Then,
+\begin{align*}
+    (a+bi)(c+di) &= (ac-bd)+(ad+bc)i \\
+    &= (ac-bd)+((a+b)(c+d)-ac-bd)i \\
+    &= (\alpha-\beta)+(\gamma-\alpha-\beta)i,
+\end{align*}
+so the algorithm will produce $\alpha-\beta$ as the real component, and $\gamma-\alpha-\beta$ as the imaginary component.
