@@ -1,1 +1,32 @@
-\workinprogress % TODO
+Given two $n\times n$ matrices, $A$ and $B$, let's create a new $2n\times2n$ matrix
+\[
+    D = \PARENS{
+        \begin{matrix}
+            A & B \\
+            0 & 0
+        \end{matrix}
+    }
+\]
+in $\Theta((2n)^2)=\Theta(n^2)$ time.
+Then we can use the $\Theta(n^\alpha)$-time algorithm for squaring $n\times n$ matrices to compute $D^2$ in $\Theta((2n)^\alpha)=\Theta(n^\alpha)$ time.
+The product $AB$ is the upper right $n\times n$ submatrix of $D^2$:
+\begin{align*}
+    D^2 &= \PARENS{
+        \begin{matrix}
+            A & B \\
+            0 & 0
+        \end{matrix}
+    }\PARENS{
+        \begin{matrix}
+            A & B \\
+            0 & 0
+        \end{matrix}
+    } \\
+    &= \PARENS{
+        \begin{matrix}
+            A^2 & AB \\
+            0 & 0
+        \end{matrix}
+    }.
+\end{align*}
+Since $\alpha\ge2$, the overall running time of the algorithm is $\Theta(n^2+n^\alpha)=\Theta(n^\alpha)$.
