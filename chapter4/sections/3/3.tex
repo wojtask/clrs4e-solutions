@@ -1,1 +1,19 @@
-\workinprogress % TODO
+Our first guess is that $T(n)\le c2^n$ for all $n\ge n_0$, where $c$, $n_0>0$ are constants.
+Letting $n\ge n_0+1$ and substituting the inductive hypothesis applied to $T(n-1)$, yields
+\begin{align*}
+    T(n) &\le 2c2^{n-1}+1 \\
+    &= c2^n+1,
+\end{align*}
+but that does not imply that $T(n)\le c2^n$ for any choice of $c$.
+
+Let's then improve our guess by subtracting a lower-order term: $T(n)\le c2^n-d$, where $d\ge0$ is another constant.
+We now have
+\begin{align*}
+    T(n) &\le 2(c2^{n-1}-d)+1 \\
+    &= c2^n-2d+1 \\
+    &= c2^n-d-(d-1) \\
+    &\le c2^n-d && \text{(as long as $d\ge1$)}.
+\end{align*}
+
+Let's pick $n_0=1$.
+By choosing a sufficiently large $c$, we can satisfy the condition $T(1)\le c\cdot2^1-d$ for any fixed constants $d$ and $T(1)$, so the bound also holds when $n_0\le n<n_0+1$.
