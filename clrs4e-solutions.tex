@@ -86,6 +86,8 @@
 
 \renewcommand{\thefigure}{\thesubsection}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
+\DeclareCaptionLabelFormat{continued}{#1~#2, continued}
+\captionsetup[ContinuedFloat]{labelformat=continued}
 
 \counterwithout{equation}{chapter}
 
