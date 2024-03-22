@@ -1,1 +1,139 @@
-\workinprogress % TODO
+\refFigure{4.4-1} shows the recursion trees for the recurrences solved in this exercise.
+\vspace*{2\baselineskip}
+
+\subexercise
+For simplicity, assume that $n$ is an exact power of 2 and that the base case is $T(1)=\Theta(1)$.
+At each level, the problem is reduced to a subproblem of exactly half the size, until the problem size hits $n=1$, so the height of the recursion tree is $\lg n$.
+Each level of the tree has a single node which, at depth $i=0$, 1, \dots, $\lg n-1$, incurs the cost of $(n/2^i)^3=n^3\!/8^i$, and the leaf at depth $\lg n$ incurs the cost of $\Theta(1)$.
+Therefore, the cost of the whole tree is
+\begin{align*}
+    T(n) &= \sum_{i=0}^{\lg n-1}n^3\!/8^i+\Theta(1) \\
+    &< \sum_{i=0}^\infty n^3\!/8^i+\Theta(1) \\
+    &= \frac{1}{1-(1/8)}\,n^3+\Theta(1) && \text{(by equation (A.7))} \\[1mm]
+    &= (8/7)n^3+\Theta(1) \\
+    &= O(n^3).
+\end{align*}
+
+To prove this result, we'll use the substitution method.
+Let's adopt the inductive hypothesis that $T(n)\le cn^3$ for some constants $c$, $n_0>0$, and assume that the inductive hypothesis holds for all values at least as big as $n_0$ and less than $n$.
+Let $n\ge2n_0$, so that $T(n/2)\le c(n/2)^3$.
+Substituting into the recurrence yields
+\begin{align*}
+    T(n) &\le c(n/2)^3+n^3 \\
+    &= cn^3\!/8+n^3 \\
+    &= (c/8+1)n^3 \\
+    &\le cn^3,
+\end{align*}
+where the last step holds as long as $c/8+1\le c$, or $c\ge8/7$.
+
+Let's pick $n_0=1$.
+Picking $c=\max{T(1),8/7}$ satisfies $T(1)\le c\cdot1^3$, establishing the inductive hypothesis for the base case.
+
+We've shown that $T(n)\le cn^3$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^3)$.
+
+\subexercise
+Assume that $n$ is an exact power of 3 and that $T(1)=\Theta(1)$.
+The subproblem size for a node at depth $i$ is $n/3^i$, and the bottom level of the tree is at depth $i$ such that $n/3^i=1$ or, equivalently, $i=\log_3n$.
+Each level below the top has four times as many nodes as the level above, and so the number of nodes at depth $i$ is $4^i$.
+The total cost of all nodes at a given depth $i$ is $4^i(n/3^i)=(4/3)^in$.
+The bottom level contains $4^{\log_3n}=n^{\log_34}$ leaves, each contributing $\Theta(1)$, leading to a total leaf cost of $\Theta(n^{\log_34})$.
+Therefore, the cost of the entire tree is
+\begin{align*}
+    T(n) &= \sum_{i=0}^{\log_3n-1}(4/3)^in+\Theta(n^{\log_34}) \\[1mm]
+    &= \frac{(4/3)^{\log_3n}-1}{4/3-1}\,n+\Theta(n^{\log_34}) && \text{(by equation (A.6))} \\[1mm]
+    &< 3n(4/3)^{\log_3n}+\Theta(n^{\log_34}) \\[1mm]
+    &= 3n\,\frac{n^{\log_34}}{n^{\log_33}}+\Theta(n^{\log_34}) && \text{(by equation (3.21))} \\[2mm]
+    &= 3n^{\log_34}+\Theta(n^{\log_34}) \\
+    &= O(n^{\log_34}).
+\end{align*}
+
+To verify this bound using the substitution method, we adopt the inductive hypothesis that $T(n)\le cn^{\log_34}-dn$ for some constants $c$, $n_0>0$ and $d\ge0$.
+Assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
+If we let $n\ge3n_0$, we have $T(n/3)\le c(n/3)^{\log_34}-d(n/3)$.
+Substituting into the recurrence yields
+\begin{align*}
+    T(n) &\le 4\left(c(n/3)^{\log_34}-d(n/3)\right)+n \\
+    &= 4cn^{\log_34}\!/3^{\log_34}-4dn/3+n \\
+    &= 4cn^{\log_34}\!/4^{\log_33}-4dn/3+n \\
+    &= cn^{\log_34}-dn+n(1-d/3) \\
+    &\le cn^{\log_34}-dn,
+\end{align*}
+where the last step holds as long as $1-d/3\le0$, or $d\ge3$.
+
+Let's pick $n_0=1$.
+Picking $c=\max{T(1)+d,(T(2)+2d)/2^{\log_34}}$ satisfies both conditions $T(1)\le c\cdot1^{\log_34}-d\cdot1$ and $T(2)\le c\cdot2^{\log_34}-d\cdot2$, establishing the inductive hypothesis for the base cases.
+
+We've shown that $T(n)\le cn^{\log_34}-dn\le cn^{\log_34}$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^{\log_34})$.
+
+\subexercise
+Assume that $n$ is an exact power of 2 and that $T(1)=\Theta(1)$.
+The height of the recursion tree is $\lg n$.
+At depth $i$, for $i=0$, 1, \dots, $\lg n-1$, there are $4^i$ nodes, each contributing $n/2^i$, so the total cost of all nodes at depth $i$ is $4^i(n/2^i)=2^in$.
+The bottom level, at depth $\lg n$, contains $4^{\lg n}=n^2$ leaves, so the total leaf cost is $\Theta(n^2)$.
+Thus, we get
+\begin{align*}
+    T(n) &= \sum_{i=0}^{\lg n-1}2^in+\Theta(n^2) \\
+    &= \frac{2^{\lg n}-1}{2-1}\,n+\Theta(n^2) && \text{(by equation (A.6))} \\[1mm]
+    &< 2^{\lg n}n+\Theta(n^2) \\
+    &= n^2+\Theta(n^2) \\
+    &= O(n^2).
+\end{align*}
+
+To formally prove this bound we adopt the inductive hypothesis that $T(n)\le cn^2-dn$ for some constants $c$, $n_0>0$ and $d\ge0$, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
+When $n\ge2n_0$ it holds that $T(n/2)\le c(n/2)^2-d(n/2)$, so
+\begin{align*}
+    T(n) &\le 4(c(n/2)^2-d(n/2))+n \\
+    &= cn^2-2dn+n \\
+    &= cn^2-dn+n(1-d) \\
+    &\le cn^2-dn && \text{(as long as $d\ge1$)}.
+\end{align*}
+
+If we now let $n_0=1$, we can choose $c=T(1)+d$ to satisfy $T(1)\le c\cdot1^2-d\cdot1$, establishing the bound for the base case.
+
+We've shown that $T(n)\le cn^2-dn\le cn^2$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^2)$.
+
+\subexercise
+Assume that $T(1)=\Theta(1)$.
+The height of the recursion tree is $n$.
+At depth $i$, for $i=0$, 1, \dots, $n-1$, there are $3^i$ nodes incurring a unit cost each, so the total cost of all nodes at depth $i$ is $3^i$.
+The bottom level, at depth $n$, contains $3^n$ leaves, so the total leaf cost is $\Theta(3^n)$.
+Thus, we get
+\begin{align*}
+    T(n) &= \sum_{i=0}^{n-1}3^i+\Theta(3^n) \\[1mm]
+    &= \frac{3^n-1}{3-1}+\Theta(3^n) && \text{(by equation (A.6))} \\[1mm]
+    &< 2\cdot3^n+\Theta(3^n) \\
+    &= O(3^n).
+\end{align*}
+
+To prove this bound we adopt the inductive hypothesis that $T(n)\le c3^n-d$ for some constants $c$, $n_0>0$ and $d\ge0$, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
+When $n\ge n_0+1$ it holds that $T(n-1)\le c3^{n-1}-d$, so
+\begin{align*}
+    T(n) &\le 3(c3^{n-1}-d)+1 \\
+    &= c3^n-3d+1 \\
+    &= c3^n-d+(1-2d) \\
+    &\le c3^n-d && \text{(as long as $d\ge1/2$)}.
+\end{align*}
+
+If we now let $n_0=1$, we can choose $c=T(1)+d$ to satisfy $T(1)\le c\cdot3^1-d$, establishing the bound for the base case.
+
+We've shown that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(3^n)$.
+
+\begin{figure}[!htb]
+    \subcaptionbox{\label{fig:4.4-1a}}[\textwidth]{\input{1a.tikz}}
+    \par\vspace{10mm}
+    \subcaptionbox{\label{fig:4.4-1b}}[\textwidth]{\input{1b.tikz}}
+    \caption{
+        \textbf{(a)}\, A recursion tree for the recurrence $T(n)=T(n/2)+n^3$.\,
+        \textbf{(b)}\, A recursion tree for the recurrence $T(n)=4T(n/3)+n$.
+    } \label{fig:4.4-1}
+\end{figure}
+
+\begin{figure}[htb!]\ContinuedFloat
+    \subcaptionbox{\label{fig:4.4-1c}}[\textwidth]{\input{1c.tikz}}
+    \par\vspace{10mm}
+    \subcaptionbox{\label{fig:4.4-1d}}[\textwidth]{\input{1d.tikz}}
+    \caption{
+        \textbf{(c)}\, A recursion tree for the recurrence $T(n)=4T(n/2)+n$.\,
+        \textbf{(d)}\, A recursion tree for the recurrence $T(n)=3T(n-1)+1$.
+    }
+\end{figure}

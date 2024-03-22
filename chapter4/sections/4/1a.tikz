@@ -1,0 +1,33 @@
+\input{1.tikz}
+\begin{tikzpicture}[total node/.append style={text width=12mm}]
+
+\node (root) {$n^3$}
+	child {node (0) {$\bigl(\frac{n}{2}\bigr)^3$}
+		child {node (00) {$\bigl(\frac{n}{4}\bigr)^3$}
+			child {node (000) {}}
+		}
+	};
+
+\node[below=5mm of 000] (leaf) {$\Theta(1)$};
+\draw[transition edge={draw=none}{very densely dashed}{0.5}] (000) -- (leaf);
+
+\node[total node, right=of leaf] (level h total) {$\Theta(1)$};
+\node[total node] at (level h total |- 00) (level 2 total) {$\bigl(\frac{1}{8}\bigr)^2n^3$};
+\node[total node] at (level h total |- 0) (level 1 total) {$\frac{1}{8}\,n^3$};
+\node[total node] at (level h total |- root) (level 0 total) {$n^3$};
+
+\path (level 2 total.east) -- (level h total.east) node[midway, xshift=-5mm, font=\bfseries] {$\vdots$};
+
+\draw[level arrow, shorten <=2mm] (root) -- (level 0 total);
+\draw[level arrow, shorten <=2mm] (0) -- (level 1 total);
+\draw[level arrow, shorten <=2mm] (00) -- (level 2 total);
+\draw[level arrow, shorten <=2mm] (leaf) -- (level h total);
+
+\coordinate[below=5mm of leaf] (leaves total);
+\coordinate (total line end) at (leaves total -| level h total.east);
+\draw (0 |- total line end) -- (total line end) node[at end, anchor=east, yshift=-4mm] {Total: $O(n^3)$};
+
+\coordinate[left=4mm of leaf] (bottom);
+\draw[<->, orange] (bottom) -- (bottom |- root) node[midway, fill=white, text=black] {$\lg n$};
+
+\end{tikzpicture}

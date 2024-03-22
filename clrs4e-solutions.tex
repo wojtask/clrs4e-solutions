@@ -309,6 +309,7 @@
     arrows.meta,
     bending,
     calc,
+    decorations.pathreplacing,
     matrix,
     positioning,
     topaths}
@@ -326,6 +327,13 @@
     cell/.style = {element, draw, minimum size=\cellsize},
     array/.style = {matrix of nodes, column sep=-\pgflinewidth, row 1/.style={nodes=index}, row 2/.style={nodes=cell}, nodes in empty cells},
     level/.style = {level distance=2\vertexsize, sibling distance=12\vertexsize/2^#1},
+    transition edge/.style n args = {3}{decorate, decoration={show path construction,
+		lineto code={
+			\draw[#1] (\tikzinputsegmentfirst) -- ($(\tikzinputsegmentfirst) ! #3 ! (\tikzinputsegmentlast)$);
+			\draw[#2] ($(\tikzinputsegmentfirst) ! #3 ! (\tikzinputsegmentlast)$) -- (\tikzinputsegmentlast);
+		}
+	}},
+	very densely dashed/.style = {dash pattern=on 1.5pt off 1pt}
 }
 
 
