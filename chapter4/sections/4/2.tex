@@ -1,1 +1,11 @@
-\workinprogress % TODO
+Using the inductive hypothesis $L(n)\ge cn$ for some constant $c>0$, and assuming that the inductive hypothesis holds for all values less than $n$, we have
+\begin{align*}
+    L(n) &= L(n/3)+L(2n/3) \\
+    &\ge c(n/3)+c(2n/3) \\
+    &= cn,
+\end{align*}
+which holds for any $c>0$.
+We can now choose $c=1$ to handle the base case $L(n)=1$ for $0<n<n_0$, thereby completing the substitution method for the lower bound of the recurrence.
+
+We've shown that $L(n)\ge cn$ for all $n>0$, so $L(n)=\Omega(n)$.
+Combining this result with the upper bound shown in the book, we have that $L(n)=\Theta(n)$.
