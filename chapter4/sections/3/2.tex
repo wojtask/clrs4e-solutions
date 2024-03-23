@@ -9,14 +9,16 @@ Letting $n\ge2n_0$ and substituting the inductive hypothesis applied to $T(n/2)$
 but that does not imply that $T(n)\le cn^2$ for any choice of $c$ and for any function represented by the $\Theta(n)$ term.
 
 Let's then improve our guess by subtracting a lower-order term: $T(n)\le cn^2-dn$, where $d\ge0$ is another constant.
-Assuming that $T(n/2)\le c(n/2)^2-d(n/2)$, we now have
+Assume by induction that the bound holds for all values at least as big as $n_0$, but less than $n$.
+For $n\ge2n_0$ we have $T(n/2)\le c(n/2)^2-d(n/2)$, and so
 \begin{align*}
     T(n) &\le 4(c(n/2)^2-d(n/2))+\Theta(n) \\
     &= cn^2-2dn+\Theta(n) \\
     &= cn^2-dn-(dn-\Theta(n)) \\
     &\le cn^2-dn,
 \end{align*}
-where the last step holds as long as for $n\ge2n_0$ the quantity $dn$ dominates the anonymous function hidden by the $\Theta(n)$ term.
+where the last step holds as long as for $n\ge2n_0$, the quantity $dn$ dominates the anonymous function hidden by the $\Theta(n)$ term.
 
+Now let $n_0\le n<2n_0$.
 Let's pick $n_0=1$.
-By choosing a sufficiently large $c$, we can satisfy the condition $T(1)\le c\cdot1^2-d\cdot1$ for any fixed constants $d$ and $T(1)$, so the bound also holds when $n_0\le n<2n_0$.
+Choosing $c=T(1)+d$ satisfies the condition $T(1)\le c\cdot1^2-d\cdot1$, handling the base case and completing the proof.
