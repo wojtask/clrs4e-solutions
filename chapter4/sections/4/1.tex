@@ -15,7 +15,7 @@ Therefore, the cost of the whole tree is
 \end{align*}
 
 To prove this result, we'll use the substitution method.
-Let's adopt the inductive hypothesis that $T(n)\le cn^3$ for some constants $c$, $n_0>0$, and assume that the inductive hypothesis holds for all values at least as big as $n_0$ and less than $n$.
+Let's adopt the inductive hypothesis that $T(n)\le cn^3$ for all $n\ge n_0$, where $c$, $n_0>0$ are constants, and assume that the inductive hypothesis holds for all values at least as big as $n_0$ and less than $n$.
 Let $n\ge2n_0$, so that $T(n/2)\le c(n/2)^3$.
 Substituting into the recurrence yields
 \begin{align*}
@@ -27,7 +27,7 @@ Substituting into the recurrence yields
 where the last step holds as long as $c/8+1\le c$, or $c\ge8/7$.
 
 Let's pick $n_0=1$.
-Picking $c=\max{T(1),8/7}$ satisfies $T(1)\le c\cdot1^3$, establishing the inductive hypothesis for the base case.
+Picking $c=\max{8/7,T(1)}$ satisfies $T(1)\le c\cdot1^3$, establishing the inductive hypothesis for the base case.
 
 We've shown that $T(n)\le cn^3$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^3)$.
 
@@ -47,7 +47,7 @@ Therefore, the cost of the entire tree is
     &= O(n^{\log_34}).
 \end{align*}
 
-To verify this bound using the substitution method, we adopt the inductive hypothesis that $T(n)\le cn^{\log_34}-dn$ for some constants $c$, $n_0>0$ and $d\ge0$.
+To verify this bound using the substitution method, we adopt the inductive hypothesis that $T(n)\le cn^{\log_34}-dn$ for all $n\ge n_0$, where $c$, $n_0>0$ and $d\ge0$ are some constants.
 Assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
 If we let $n\ge3n_0$, we have $T(n/3)\le c(n/3)^{\log_34}-d(n/3)$.
 Substituting into the recurrence yields
@@ -79,7 +79,7 @@ Thus, we get
     &= O(n^2).
 \end{align*}
 
-To formally prove this bound we adopt the inductive hypothesis that $T(n)\le cn^2-dn$ for some constants $c$, $n_0>0$ and $d\ge0$, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
+To formally prove this bound we adopt the inductive hypothesis that $T(n)\le cn^2-dn$ for all $n\ge n_0$, where $c$, $n_0>0$ and $d\ge0$ are constants, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
 When $n\ge2n_0$ it holds that $T(n/2)\le c(n/2)^2-d(n/2)$, so
 \begin{align*}
     T(n) &\le 4(c(n/2)^2-d(n/2))+n \\
@@ -105,7 +105,7 @@ Thus, we get
     &= O(3^n).
 \end{align*}
 
-To prove this bound we adopt the inductive hypothesis that $T(n)\le c3^n-d$ for some constants $c$, $n_0>0$ and $d\ge0$, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
+To prove this bound we adopt the inductive hypothesis that $T(n)\le c3^n-d$ for all $n\ge n_0$, where $c$, $n_0>0$ and $d\ge0$ are constants, and assume that the inductive hypothesis holds for all numbers at least as big as $n_0$ and less than $n$.
 When $n\ge n_0+1$ it holds that $T(n-1)\le c3^{n-1}-d$, so
 \begin{align*}
     T(n) &\le 3(c3^{n-1}-d)+1 \\
@@ -114,7 +114,7 @@ When $n\ge n_0+1$ it holds that $T(n-1)\le c3^{n-1}-d$, so
     &\le c3^n-d && \text{(as long as $d\ge1/2$)}.
 \end{align*}
 
-If we now let $n_0=1$, we can choose $c=T(1)+d$ to satisfy $T(1)\le c\cdot3^1-d$, establishing the bound for the base case.
+If we now let $n_0=1$, we can choose $c=(T(1)+d)/3$ to satisfy $T(1)\le c\cdot3^1-d$, establishing the bound for the base case.
 
 We've shown that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(3^n)$.
 
