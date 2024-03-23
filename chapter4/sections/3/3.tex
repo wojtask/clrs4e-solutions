@@ -7,7 +7,8 @@ Letting $n\ge n_0+1$ and substituting the inductive hypothesis applied to $T(n-1
 but that does not imply that $T(n)\le c2^n$ for any choice of $c$.
 
 Let's then improve our guess by subtracting a lower-order term: $T(n)\le c2^n-d$, where $d\ge0$ is another constant.
-We now have
+Assume by induction that the bound holds for all values at least as big as $n_0$, but less than $n$.
+For $n\ge n_0+1$ we have $T(n-1)\le c2^{n-1}-d$, and so
 \begin{align*}
     T(n) &\le 2(c2^{n-1}-d)+1 \\
     &= c2^n-2d+1 \\
@@ -15,5 +16,6 @@ We now have
     &\le c2^n-d && \text{(as long as $d\ge1$)}.
 \end{align*}
 
+Now let $n_0\le n<n_0+1$.
 Let's pick $n_0=1$.
-By choosing a sufficiently large $c$, we can satisfy the condition $T(1)\le c\cdot2^1-d$ for any fixed constants $d$ and $T(1)$, so the bound also holds when $n_0\le n<n_0+1$.
+Choosing $c=(T(1)+d)/2$ satisfies the condition $T(1)\le c\cdot2^1-d$, handling the base case and completing the proof.
