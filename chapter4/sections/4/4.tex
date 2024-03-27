@@ -1,1 +1,36 @@
-\workinprogress % TODO
+We'll use the recursion-tree method to guess an upper bound on $T(n)$.
+Let's assume that $0<\alpha\le1/2$, because the case when $1/2\le\alpha<1$ is symmetric, and as we'll see, the choice of $\alpha$ doesn't affect the order of growth of an upper bound on $T(n)$.
+\refFigure{4.4-4} shows such a tree.
+\begin{figure}[htb]
+    \input{4.tikz}
+    \caption{A recursion tree for the recurrence $T(n)=T(\alpha n)+T((1-\alpha)n)+cn$, where $0<\alpha\le1/2$.} \label{fig:4.4-4}
+\end{figure}
+
+Let $n_0>0$ be the implicit threshold constant such that $T(n)=\Theta(1)$ for $0<n<n_0$, and let $c$ represent the upper-bound constant hidden by the $\Theta(n)$ term for $n\ge n_0$.
+The root-to-leaf path formed by right-going edges is the longest, where the node at depth $i$ represents a subproblem of size $(1-\alpha)^in$.
+Let $h$ be the height of the tree.
+At depth $h$ the rightmost node is a leaf, so $(1-\alpha)^hn<n_0\le(1-\alpha)^{h-1}n$, which gives $h=\lfloor\log_{1/(1-\alpha)}(n/n_0)\rfloor+1$, and thus $h=\Theta(\lg n)$.
+The recursion divides the problem into two subproblems, whose sizes sum up to the size of the problem.
+Since the cost incurred by a problem of size $m$ is $cm$, the sum of costs incurred by the subproblems is also $cm$.
+Therefore, the total cost of all nodes at any depth is bound by $cn$.
+Summing the costs of internal nodes across each level, we have at most $cn$ per level times $h=\Theta(\lg n)$ for a total cost of $O(n\lg n)$ for all internal nodes.
+
+The number of leaves of the tree is described by the following recurrence:
+\[
+    L(n) =
+    \ccases{
+        1 & \text{if $n<n_0$}, \\
+        L(\alpha n)+L((1-\alpha)n) & \text{if $n\ge n_0$}.
+    }
+\]
+We can apply the substitution method to show it has solution $L(n)=O(n)$ for any $0<\alpha<1$.
+Using the inductive hypothesis $L(n)\le dn$ for some constant $d>0$, and assuming that the inductive hypothesis holds for all values less than $n$, we have
+\begin{align*}
+    L(n) &= L(\alpha n)+L((1-\alpha)n) \\
+    &\le d\alpha n+d(1-\alpha)n \\
+    &= dn,
+\end{align*}
+which holds for any $d>0$ and any $0<\alpha<1$.
+Picking $d=1$ suffices to handle the base case $L(1)=1$ for $0<n<n_0$.
+
+Returning to recurrence $T(n)$, we obtain its upper bound of $O(n\lg n)+O(n)=O(n\lg n)$.

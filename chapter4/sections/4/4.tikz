@@ -1,0 +1,64 @@
+\begin{tikzpicture}[
+	level/.style = {level distance=3\vertexsize, sibling distance=16\vertexsize/2^#1},
+	level 3/.style = {edge from parent/.style = {transition edge={solid}{very densely dashed}{0.7}}},
+	level arrow/.style = {->, thick, blue},
+	total node/.style = {align=right, text width=10mm},
+]
+
+\node (root) {$cn$}
+	child {node (0) {$c\alpha n$}
+		child {node[text depth=0.5ex, text height=1.5ex] (00) {$c\alpha^2n$}
+			child {node (000) {}}
+			child {node (001) {}}
+		}
+		child {node[text depth=0.5ex, text height=1.5ex] (01) {$c\alpha(1-\alpha)n$}
+			child {node (010) {}}
+			child {node (011) {}}
+		}
+	}
+	child {node (1) {$c(1-\alpha)n$}
+		child {node[text depth=0.5ex, text height=1.5ex] (10) {$c\alpha(1-\alpha)n$}
+			child {node (100) {}}
+			child {node (101) {}}
+		}
+		child {node[text depth=0.5ex, text height=1.5ex] (11) {$c(1-\alpha)^2n$}
+			child {node (110) {}}
+			child {node (111) {}}
+		}
+	};
+\node[below=\vertexsize of 000] (leaf 0) {$\Theta(1)$};
+\node[below=2\vertexsize of 001] (leaf 1) {$\Theta(1)$};
+\node[below=1.75\vertexsize of 010] (leaf 2) {$\Theta(1)$};
+\node[below=2.75\vertexsize of 011] (leaf 3) {$\Theta(1)$};
+\node[below=2.5\vertexsize of 100] (leaf 4) {$\Theta(1)$};
+\node[below=3.5\vertexsize of 101] (leaf 5) {$\Theta(1)$};
+\node[below=3.25\vertexsize of 110] (leaf 6) {$\Theta(1)$};
+\node[below=4.25\vertexsize of 111] (leaf 7) {$\Theta(1)$};
+\foreach \x in {0, ..., 7} {
+	\draw[very densely dashed] (leaf \x.north) -- +(0mm, 2.5mm);
+}
+
+\node[total node, right=of leaf 7] (level h total) {$\Theta(1)$};
+\node[total node] at (level h total |- 11) (level 2 total) {$cn$};
+\node[total node] at (level h total |- 1) (level 1 total) {$cn$};
+\node[total node] at (level h total |- root) (level 0 total) {$cn$};
+
+\path (level 2 total.east) -- (level h total.east) node[midway, xshift=-5mm, font=\bfseries] (total ellipsis) {$\vdots$};
+\node[font=\bfseries] at (total ellipsis -| root) {$\vdots$};
+
+\draw[level arrow, shorten <=2mm] (root) -- (level 0 total);
+\draw[level arrow, shorten <=2mm] (1) -- (level 1 total);
+\draw[level arrow, shorten <=2mm] (11) -- (level 2 total);
+\draw[level arrow, shorten <=2mm] (leaf 7) -- (level h total);
+
+\draw[orange, decorate, decoration={brace, amplitude=8pt, mirror}]
+	(leaf 0.south west |- leaf 7.south east) -- (leaf 7.south east) node[midway, yshift=-5mm, text=black] (leaves total) {$O(n)$};
+
+\coordinate (total line end) at (leaves total -| level h total.east);
+\draw (1 |- total line end) -- (total line end) node[at end, anchor=east, yshift=-4mm] {Total: $O(n\lg n)$};
+
+\coordinate (bottom) at (leaf 0.west |- level h total);
+\coordinate[left=14mm of bottom] (bottom shifted);
+\draw[<->, orange] (bottom shifted) -- (bottom shifted |- root) node[pos=0.5, fill=white, text=black] {$\lfloor\log_{1/(1-\alpha)}(n/n_0)\rfloor+1$};
+
+\end{tikzpicture}
