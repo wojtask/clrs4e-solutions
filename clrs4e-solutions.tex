@@ -225,7 +225,7 @@
 \makeatother
 
 \LetLtxMacro{\oldsqrt}{\sqrt}
-\renewcommand{\sqrt}[2][\mkern4mu]{\mkern-4mu\mathop{}\oldsqrt[#1]{#2}}
+\renewcommand{\sqrt}[2][]{\mathop{}\oldsqrt[#1]{#2}}
 
 \DeclareMathOperator{\degree}{degree}
 \renewcommand{\Pr}[1]{\operatorname{Pr}\left\{#1\right\}}

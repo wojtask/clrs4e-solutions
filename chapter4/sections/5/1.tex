@@ -1,1 +1,21 @@
-\workinprogress % TODO
+In all recurrences studied in this exercise we have $a=2$ and $b=4$, so the recurrences share the same watershed function $n^{\log_ba}=n^{\log_42}=n^{1/2}=\sqrt{n}$, but differ in driving functions $f(n)$.
+\vspace*{2\baselineskip}
+
+\subexercise
+Here we have $f(n)=1=O(n^{1/2-\epsilon})$ for any $\epsilon\le1/2$, so we can apply case~1 of the master theorem to conclude that the solution is $T(n)=\Theta(\sqrt{n})$.
+
+\subexercise
+Since $f(n)=\sqrt{n}=\Theta(n^{1/2}\lg^0n)$, we apply case~2 to obtain the solution $T(n)=\Theta(\sqrt{n}\lg n)$.
+
+\subexercise
+Since $f(n)=\sqrt{n}\lg^2n=\Theta(n^{1/2}\lg^2n)$, we apply case~2 to obtain the solution $T(n)=\Theta(\sqrt{n}\lg^3n)$.
+
+\subexercise
+We have $f(n)=n=\Omega(n^{1/2+\epsilon})$ for any $\epsilon\ge1/2$.
+Also, it holds that $2f(n/4)=2(n/4)=n/2\le cf(n)$ for any $c\ge1/2$ and all sufficiently large $n$, satisfying the regularity condition.
+By case~3, the solution to the recurrence is $T(n)=\Theta(n)$.
+
+\subexercise
+We have $f(n)=n^2=\Omega(n^{1/2+\epsilon})$ for any $\epsilon\ge3/2$.
+Also, it holds that $2f(n/4)=2(n/4)^2=n^2\!/8\le cf(n)$ for any $c\ge1/8$ and all $n$, satisfying the regularity condition.
+By case~3, the solution to the recurrence is $T(n)=\Theta(n^2)$.
