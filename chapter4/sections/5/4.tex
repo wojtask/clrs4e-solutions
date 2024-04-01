@@ -1,1 +1,12 @@
-\workinprogress % TODO
+Let $c$ be a constant satisfying the regularity condition for the given constants $a$ and $b$, and the function $f(n)$.
+Then,
+\begin{align*}
+    af(n/b) &= \lg(n/2) \\
+    &= \lg n-1 \\
+    &= (1-1/\!\lg n)\lg n \\
+    &\le c\lg n.
+\end{align*}
+The quantity $1-1/\!\lg n$ is less than 1 for $n>1$, and can be made arbitrarily close to 1 if $n$ is sufficiently large.
+Therefore, $c\ge1$.
+
+Furthermore, by equation (3.24), $\lg n=o(n^\epsilon)$ for any $\epsilon>0$, which means that $\lg n\ne\Omega(n^\epsilon)=\Omega(n^{\log_ba+\epsilon})$.
