@@ -1,1 +1,16 @@
-\workinprogress % TODO
+As long as $b>1$, $0<a<b$, and $\epsilon>0$ is sufficiently small, it holds that
+\begin{align*}
+    f(n) &\ge 2^{\lg n} \\
+    &= n \\
+    &= \Omega(n^{\log_ba+\epsilon}).
+\end{align*}
+Furthermore,
+\begin{align*}
+    af(n/b) &= a2^{\lceil\lg(n/b)\rceil} \\
+    &< a2^{\lg n-\lg b+1} && \text{(by (3.2))} \\
+    &= (2a/b)2^{\lg n} \\
+    &\le (2a/b)f(n),
+\end{align*}
+so the regularity condition isn't satisfied for all sufficiently large $n$, if $2a/b\ge1$.
+
+Therefore, by choosing any constants $a$, $b$ and $\epsilon$, such that $1/2<b/2\le a<b$ and $0<\epsilon\le1-\log_ba$, we satisfy all the conditions in case~3, except the regularity condition.
