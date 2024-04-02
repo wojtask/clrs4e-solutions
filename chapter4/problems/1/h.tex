@@ -1,1 +1,47 @@
-\workinprogress % TODO
+This is not a master recurrence, so we can't apply the master method to it.
+Instead, we'll guess the solution and verify it using the substitution method.
+
+The recurrence adds up the square of the problem size to the total cost, and decreases the problem size by 2.
+The partial costs are therefore $n^2$, $(n-2)^2$, $(n-4)^2$, $\dots$, so the total cost resolves roughly to
+\begin{align*}
+    \sum_{k=0}^n(n-k)^2 &= \sum_{k=0}^nk^2 \\[1mm]
+    &= \frac{n(n+1)(2n+1)}{6} && \text{(by equation (A.4))} \\
+    &= \Theta(n^3).
+\end{align*}
+Let's then adopt an inductive hypothesis that $T(n)\ge c_1n^3$ for all $n\ge n_1$, where $c_1$, $n_1>0$ are constants.
+Assume by induction that the hypothesis holds for all numbers at least as big as $n_1$ and less than $n$.
+Let $n\ge n_1+2$, so that $T(n-2)\ge c_1(n-2)^3$.
+By substitution,
+\begin{align*}
+    T(n) &\ge c_1(n-2)^3+n^2 \\
+    &= c_1(n^3-3\cdot2n^2+3\cdot2^2n-2^3)+n^2 \\
+    &= c_1n^3+(1-6c_1)n^2+12c_1n-8c_1.
+\end{align*}
+Let $f_c(n)=(1-6c)n^2+12cn-8c$, where $c$ is a positive constant.
+We have
+\begin{align*}
+    f_c(n) &> (1-6c)n^2-8c \\
+    &\ge (1-6c)n^2-8cn^2 && \text{(as long as $n\ge1$)} \\
+    &= (1-14c)n^2 \\
+    &\ge 0 && \text{(as long as $c\le1/14$)}.
+\end{align*}
+Thus, we get that for $c_1\le1/14$, $T(n)\ge c_1n^3+f_{c_1}(n)\ge c_1n^3$ for all $n\ge n_1+2$, which proves the inductive hypothesis holds for the inductive case.
+
+Now let $n_1\le n<n_1+2$ and let's pick $n_1=1$.
+Both $T(1)$ and $T(2)$ are constants, and picking $c_1=\min{1/14,T(1),T(2)/8}$ satisfies both inequalities $T(1)\ge c_1\cdot1^3$ and $T(2)\ge c_1\cdot2^3$, handling the base cases.
+
+To show the upper bound on $T(n)$ we follow a similar reasoning as above, adopting the inductive hypothesis $T(n)\le c_2n^3$ for all $n\ge n_2$, where $c_2$, $n_2>0$ are constants.
+At some point we'll have that $T(n)\le c_2n^3+f_{c_2}(n)$.
+Since
+\begin{align*}
+    f_c(n) &< (1-6c)n^2+12cn \\
+    &\le (1-6c)n^2+4cn^2 && \text{(as long as $n\ge3$)} \\
+    &= (1-2c)n^2 \\
+    &\le 0 && \text{(as long as $c\ge1/2$)},
+\end{align*}
+we conclude that when $c_2\ge1/2$ and $n_2\ge1$, it holds that $T(n)\le c_2n^3$ for all $n\ge n_2+2$.
+
+Let's choose $n_2=1$.
+We handle both $T(1)\le c_2\cdot1^3$ and $T(2)\le c_2\cdot2^3$ by choosing $c_2=\max{1/2,T(1),T(2)/8}$, which finishes the inductive proof of the upper bound on $T(n)$.
+
+We've proven that $c_1n^3\le T(n)\le c_2n^3$ for all $n\ge1$, and thus $T(n)=\Theta(n^3)$.
