@@ -1,1 +1,6 @@
-\workinprogress % TODO
+\begin{liftalign*}
+    \sum_{j=0}^{\lfloor\log_bn\rfloor}(\log_bn-j)^k &\ge \sum_{j=0}^{\lfloor\log_bn\rfloor}(\lfloor\log_bn\rfloor-j)^k \\
+    &= \sum_{j=0}^{\lfloor\log_bn\rfloor}j^k && \text{(reindexing)} \\
+    &= \Omega(\lfloor\log_bn\rfloor^{k+1}) && \text{(by \refExercise{A.1-5})} \\
+    &= \Omega(\log_b^{k+1}n) && \text{(by \refExercise{3.3-3})}
+\end{liftalign*}
