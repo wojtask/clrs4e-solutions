@@ -1,1 +1,19 @@
-\workinprogress % TODO
+The recurrence describing the worst-case running time of the professor's algorithm is
+\[
+    T(n) = aT(n/4)+\Theta(n^2).
+\]
+For this algorithm to run asymptotically faster than Strassen's algorithm, it should be $T(n)=o(n^{\lg7})$.
+Observe that neither case~2 nor 3 of the master theorem can't resolve $T(n)$ to be asymptotically less than the driving function $f(n)$.
+Since $f(n)=\Theta(n^2)$, neither of those cases is interesting for us.
+
+That leaves us with case~1, for which to apply there should be $\Theta(n^2)=O(n^{\log_4a-\epsilon})$ for some $\epsilon>0$, which holds for $a>16$.
+Then the solution to the recurrence is $T(n)=\Theta(n^{\log_4a})$, so
+\begin{align*}
+    \log_4a &= \frac{\lg a}{\lg4} \\[1mm]
+    &= \frac{\lg a}{2} \\
+    &= \lg\sqrt{a} \\
+    &< \lg7,
+\end{align*}
+holds when $a<49$.
+
+The largest integer $a$ we are looking for, is $a=48$.
