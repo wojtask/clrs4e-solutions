@@ -6,8 +6,10 @@ Each of those is in fact a multiplication of two $n/3\times n/3$ matrices and ca
 Let $T(n)$ be the worst-case time to multiply two $n\times n$ matrices by this algorithm.
 If we did the partitioning using index calculations, then we get the recurrence
 \[
-    T(n) = kT(n/3)+\Theta(1)
+    T(n) = kT(n/3)+\Theta(1).
 \]
-which, by the master method, has the solution $T(n)=\Theta(n^{\log_3k})$.
+To solve it, we'll use the master method.
+We have $a=k$, $b=3$, and driving function $f(n)=\Theta(1)$.
+Since $n^{\log_ba}=n^{\log_3k}$ and $f(n)=O(n^{\log_3k-\epsilon})$ for $0<\epsilon\le\log_3k$, we apply case~1 of the master theorem to get $T(n)=\Theta(n^{\log_3k})$.
 According to \refProblem{3-1}(d), $T(n)=o(n^{\lg7})$ if $\log_3k<\lg7$, which gives us $k<3^{\lg7}\approx21.85$.
 Hence, the largest integer value for $k$ is 21 and then the running time of the algorithm is $T(n)=\Theta(n^{\log_321})=O(n^{2.78})$.
