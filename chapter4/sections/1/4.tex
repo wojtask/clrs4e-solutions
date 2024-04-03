@@ -36,9 +36,14 @@ If we assume that the algorithm uses index calculations to partition the matrice
 \[
     T(n) = 4T(n/2)+\Theta(1).
 \]
+This is a master recurrence with $a=4$, $b=2$, and driving function $f(n)=\Theta(1)$.
+We have $n^{\log_ba}=n^{\lg4}=n^2$, and $f(n)=O(n^{2-\epsilon})$, where $0<\epsilon\le2$.
 Applying case~1 of the master theorem, we obtain the solution $T(n)=\Theta(n^2)$.
-However, if the matrices are partitioned by copying, then the recurrence changes to
+
+However, if the matrices are partitioned by copying, the recurrence changes to
 \[
-    T(n) = 4T(n/2)+\Theta(n^2),
+    T(n) = 4T(n/2)+\Theta(n^2).
 \]
-which, by case~2 of the master theorem, has the solution $T(n)=\Theta(n^2\lg n)$.
+The watershed function remains unchanged, but the driving function is different.
+Since $f(n)=\Theta(n^2)=\Theta(n^2\lg^0n)$, case~2 of the master theorem applies here.
+The solution to the recurrence is $T(n)=\Theta(n^2\lg n)$.
