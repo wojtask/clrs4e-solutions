@@ -1,1 +1,24 @@
-\workinprogress % TODO
+Choose any $\phi\ge1$.
+Let $1\le\psi\le\phi$, and thus $1^2\le\psi^2\le\phi^2$.
+Multiplying all sides by $n^2$, where $n>0$, yields
+\[
+    n^2 \le \psi^2n^2 \le \phi^2n^2
+\]
+for all $n>0$.
+Since $n^2/(\phi^2+1)<n^2$ and $\phi^2n^2<(\phi^2+1)n^2$, we can let $d=\phi^2+1>1$ to get
+\[
+    f(n)/d < f(\psi n) < df(n).
+\]
+Thus, the function $f(n)=n^2$ satisfies the polynomial-growth condition.
+
+Now for $f(n)=2^n$ let $\phi=\psi=2$.
+We have
+\begin{align*}
+    f(\psi n) &= 2^{\psi n} \\
+    &= 2^{2n} \\
+    &= 2^n\cdot2^n \\
+    &\le d2^n \\
+    &= df(n),
+\end{align*}
+as long as $d\ge2^n$, so there is no suitable constant $d$ for the second to last step to hold for all sufficiently large $n$.
+We conclude that $f(n)=2^n$ doesn't satisfy the polynomial-growth condition.
