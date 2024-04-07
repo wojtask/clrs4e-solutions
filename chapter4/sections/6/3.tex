@@ -1,1 +1,59 @@
-\workinprogress % TODO
+\starred
+The statement can be included into Lemma 4.3 as an extension to case~2:
+\begin{enumerate}[start=2,label=\arabic*$'$.]
+    \item If $f(n)=\Theta(n^{\log_ba}/\lg n)$, then $g(n)=\Theta(n^{\log_ba}\lg\lg n)$.
+\end{enumerate}
+We'll prove it similarly as the original case~2.
+
+Since $f(n)=\Theta(n^{\log_ba}/\lg n)$, we have that $f(n/b^j)=\Theta((n/b^j)^{\log_ba}/\lg(n/b^j))$.
+However, to avoid zero from appearing in the denominator, in equation (4.19) we'll substitute the equivalent bound $f(n/b^j)=\Theta((n/b^j)^{\log_ba}/\lg(n/b^{j-1}))$, since $b>1$ is a constant:
+\begin{align*}
+    g(n) &= \sum_{j=0}^{\lfloor\log_bn\rfloor}a^j\Theta\left(\left(\frac{n}{b^j}\right)^{\log_ba}\!\!\Bigm/\lg\left(\frac{n}{b^{j-1}}\right)\right) \\
+    &= \Theta\left(\sum_{j=0}^{\lfloor\log_bn\rfloor}a^j\left(\frac{n}{b^j}\right)^{\log_ba}\!\!\Bigm/\lg\left(\frac{n}{b^{j-1}}\right)\right) && \text{(by \refProblem{3-5}(c), repeatedly)} \\
+    &= \Theta\left(n^{\log_ba}\sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{a^j}{b^{j\log_ba}\lg(n/b^{j-1})}\right) \\
+    &= \Theta\left(n^{\log_ba}\sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\lg(n/b^{j-1})}\right) && \text{(by equation (3.21))} \\
+    &= \Theta\left(n^{\log_ba}\sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{\log_b2}{\log_b(n/b^{j-1})}\right) && \text{(by equation (3.19))} \\
+    &= \Theta\left(n^{\log_ba}\log_b2\sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\log_bn-(j-1)}\right) && \text{(by equations (3.18) and (3.20))} \\
+    &= \Theta\left(n^{\log_ba}\sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\log_bn-j+1}\right) && \text{($\log_b2>0$ is a constant)}.
+\end{align*}
+The summation within the $\Theta$-notation can be bounded from above as follows:
+\begin{align*}
+    \sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\log_bn-j+1} &\le \sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\lfloor\log_bn\rfloor-j+1} \\
+    &= \sum_{j=1}^{\lfloor\log_bn\rfloor+1}\frac{1}{j} && \text{(reindexing)} \\
+    &= \ln(\lfloor\log_bn\rfloor+1)+O(1) && \text{(by equation (A.9))} \\
+    &\le \ln(2\log_bn)+O(1) && \text{(as long as $n\ge b$)} \\
+    &= \frac{\lg(\lg n/\lg b)}{\lg e}+\ln2+O(1) && \begin{minipage}{1.5in}(by equations (3.18)\\\null\quad and (3.19) (twice))\end{minipage} \\
+    &= \frac{\lg\lg n}{\lg e}-\frac{\lg\lg b}{\lg e}+\ln2+O(1) && \begin{minipage}{1.5in}(by equations (3.18)\\\null\quad and (3.20))\end{minipage} \\
+    &= O(\lg\lg n) && \text{(after ignoring constants)},
+\end{align*}
+and from below as follows:
+\begin{align*}
+    \sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\log_bn-j+1} &\ge \sum_{j=0}^{\lfloor\log_bn\rfloor}\frac{1}{\lfloor\log_bn\rfloor+1-j+1} \\
+    &= \sum_{j=2}^{\lfloor\log_bn\rfloor+2}\frac{1}{j} && \text{(reindexing)} \\
+    &= \left(\sum_{j=1}^{\lfloor\log_bn\rfloor+2}\frac{1}{j}\right)-1 \\
+    &= \ln(\lfloor\log_bn\rfloor+2)+O(1)-1 && \text{(by equation (A.9))} \\
+    &> \ln(\log_bn)+O(1)-1 \\
+    &= \frac{\lg(\lg n/\lg b)}{\lg e}+O(1)-1 && \text{(by equation (3.19) (twice))} \\
+    &= \frac{\lg\lg n}{\lg e}-\frac{\lg\lg b}{\lg e}+O(1)-1 && \begin{minipage}{1.5in}(by equations (3.18)\\\null\quad and (3.20))\end{minipage} \\
+    &= \Omega(\lg\lg n) && \text{(after ignoring constants)}.
+\end{align*}
+Hence, we can conclude that $g(n)=\Theta(n^{\log_ba}\lg\lg n)$, thereby completing the proof of case 2$'$ of Lemma~4.3.
+
+In a similar fashion we can define an extension to case~2 in Theorem~4.4:
+\begin{enumerate}[start=2,label=\arabic*$'$.]
+    \item If $f(n)=\Theta(n^{\log_ba}/\lg n)$, then $T(n)=\Theta(n^{\log_ba}\lg\lg n)$.
+\end{enumerate}
+For the same functions $f'(n)$ and $T'(n)$ defined in the proof of Theorem~4.4, we have
+\begin{align*}
+    f'(n) &= f(n_0n) \\
+    &= \Theta((n_0n)^{\log_ba}/\lg(n_0n)) \\
+    &= \Theta(n^{\log_ba}/\lg n),
+\end{align*}
+since $a$, $b$, and $n_0$ are all constants.
+Thus, by case 2$'$ of Lemma~4.3 shown earlier, we have that the summation in equation~(4.18) of Lemma~4.2 is $\Theta(n^{\log_ba}\lg\lg n)$, yielding
+\begin{align*}
+    T(n) &= T'(n/n_0) \\
+    &= \Theta((n/n_0)^{\log_ba})+\Theta((n/n_0)^{\log_ba}\lg\lg(n/n_0)) \\
+    &= \Theta(n^{\log_ba})+\Theta(n^{\log_ba}\lg\lg n) \\
+    &= \Theta(n^{\log_ba}\lg\lg n) && \text{(by \refProblem{3-5}(c))}.
+\end{align*}
