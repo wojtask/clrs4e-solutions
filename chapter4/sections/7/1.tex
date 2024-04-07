@@ -1,1 +1,10 @@
-\workinprogress % TODO
+\starred
+Let $n_0>0$ be the threshold constant for recurrence $T'(n)$, such that $T'(n)=\Theta(1)$ for all $n<n_0$.
+For $n>0$, define $T''(n)=T'(n)/c$.
+Then, for all $n\ge n_0$,
+\begin{align*}
+    T''(n) &= \frac{cf(n)}{c}+\sum_{i=1}^k\frac{a_iT'(n/b_i)}{c} \\
+    &= f(n)+\sum_{i=1}^ka_iT''(n/b_i).
+\end{align*}
+Now, if we let $T'(n)=cT(n)$ for any $n<n_0$, we have that recurrences $T(n)$ and $T''(n)$ are identical for all $n>0$.
+Therefore, whatever the solution $\Theta(g(n))$ to $T(n)$ is, the solution to $T'(n)$ is $c\cdot\Theta(g(n))=\Theta(g(n))$, and so any constant multiplier of the driving function in any Akra-Bazzi recurrence doesn't affect its asymptotic solution.
