@@ -159,11 +159,12 @@
 \newcommand{\subproblem}{\subsubsection{}\label{sol:\thesubsection\thesubsubsection}}
 
 \newcommand{\clarification}[2][0]{%
-    \emph{#2%
+    {\itshape#2%
     \ifnum#1>0%
         \ Corrected in \ordinalstringnum{#1} printing.
     \fi}%
     \bigskip%
+    \par\noindent\ignorespaces
 }
 \newcommand{\customstar}{{\Large$\star$}}
 \newcommand{\starred}{%
@@ -174,7 +175,7 @@
 \setlength{\logowidth}{15pt}
 \newcommand{\workinprogress}{%
     \vspace*{20pt}\marginpar{\bcpanchant}\vspace{-20pt}%
-    \emph{Work in progress.}}
+    {\itshape Work in progress.}}
 
 \newcommand{\bignegskip}{\vspace{-\bigskipamount}}
 

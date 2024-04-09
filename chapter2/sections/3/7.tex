@@ -1,6 +1,5 @@
 \clarification[3]{Instead of $A[1\subarr j-1]$ there should be $A[1\subarr i-1]$.}
-
-\noindent Using a binary search we can determine the target position in the subarray $A[1\subarr i-1]$ for the element initially occupying the position $i$.
+Using a binary search we can determine the target position in the subarray $A[1\subarr i-1]$ for the element initially occupying the position $i$.
 To be able to use here the \proc{Binary-Search} procedure presented in \refExercise{2.3-6}, we need to modify it first so it returns $p$ instead of \nil\ in line \ref{li:binary-search-not-found}.
 However, moving $A[i]$ on its target position requires shifting a part of the array to the right, which in the worst case takes the time proportional to the length of the sorted subarray.
 This approach is therefore no better than running a linear search in the \proc{Insertion-Sort} procedure, and would not improve the worst-case running time of insertion sort.
