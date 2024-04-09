@@ -1,1 +1,48 @@
-\workinprogress % TODO
+\starred
+\clarification{Note that the function $f(n)=0$ satisfies the regularity condition for any constants $a>0$, $b>1$, and $c<1$, but it's not true that $f(n)=\Omega(n^{\log_ba+\epsilon})$ for any $\epsilon>0$.
+Hence, we need to additionally assume that $f(n)$ is asymptotically positive.}
+Let $f(n)$ be a driving function and let $a>0$, $b>1$, and $n_0>0$ be constants, such that $f(n)>0$ for all $n\ge n_0$, and that $af(n/b)\le cf(n)$ for some constant $c<1$ and all $n\ge bn_0$.
+Let $j=\lfloor\log_b(n/n_0)\rfloor$, so that $n/b^{j-1}\ge bn_0$ and $n/b^j<bn_0$.
+Then, for $n\ge n_0$,
+\begin{align*}
+    f(n) &\ge (a/c)f(n/b) \\
+    &\ge (a/c)(a/c)f((n/b)/b) \\
+    &\hspace{2cm}\vdots \\
+    &\ge (a/c)^jf(n/b^j) \\
+    &= (a/c)^{\lfloor\log_b(n/n_0)\rfloor}f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr).
+\end{align*}
+By inequality (3.2),
+\begin{align*}
+    \frac{n}{b^{\lfloor\log_b(n/n_0)\rfloor}} &\ge \frac{n}{b^{\log_b(n/n_0)}} \\[1mm]
+    &= \frac{n}{n/n_0} \\
+    &= n_0,
+\intertext{and}
+    \frac{n}{b^{\lfloor\log_b(n/n_0)\rfloor}} &\le \frac{n}{b^{\log_b(n/n_0)-1}} \\[1mm]
+    &= \frac{bn}{n/n_0} \\
+    &= bn_0,
+\end{align*}
+so the quantity $f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr)$ belongs to the image of the interval $[n_0,bn_0]$ under function $f$.
+Let $\mu$ be any positive lower bound of the image $f([n_0,bn_0])$; such a lower bound exists, by our assumption on $f(n)$, e.g., $\mu=\inf f([n_0,bn_0])$.
+Depending on the values of $a$ and $c$, the ratio $a/c$ may be either less or no less than 1.
+If $a/c<1$, we have $(a/c)^{\lfloor\log_b(n/n_0)\rfloor}\ge(a/c)^{\log_b(n/n_0)}$, and thus
+\begin{align*}
+    f(n) &\ge (a/c)^{\lfloor\log_b(n/n_0)\rfloor}f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr) \\
+    &\ge (a/c)^{\log_b(n/n_0)}\mu \\
+	&= \frac{(n/n_0)^{\log_ba}}{(n/n_0)^{\log_bc}}\,\mu && \hspace{-1em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
+	&= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot\mu.
+\end{align*}
+In case that $a/c\ge1$, it holds $(a/c)^{\lfloor\log_b(n/n_0)\rfloor}\ge(a/c)^{\log_b(n/n_0)-1}$, so
+\begin{align*}
+    f(n) &\ge (a/c)^{\lfloor\log_b(n/n_0)\rfloor}f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr) \\
+    &\ge (a/c)^{\log_b(n/n_0)-1}\mu \\
+	&= \frac{c(n/n_0)^{\log_ba}}{a(n/n_0)^{\log_bc}}\,\mu && \hspace{-2em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
+	&= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot(c/a)\cdot\mu.
+\end{align*}
+Regardless of the relation between $a$ and $c$, we can define a constant $d>0$ to hide all factors independent on $n$ in the above bounds.
+Also, since $0<c<1$ and $b>1$, $\log_bc<0$, so let $\epsilon=-\log_bc>0$.
+Then, the lower bound simplifies to
+\[
+    f(n) \ge n^{\log_ba+\epsilon}\cdot d,
+\]
+which holds for all $n\ge n_0$.
+Hence $f(n)=\Omega(n^{\log_ba+\epsilon})$.
