@@ -1,1 +1,76 @@
+In this exercise, when calculating integrals we ignore the constant of integration, since in all cases it is swallowed by the $\Theta$-notation in equation (4.23).
+\vspace*{2\baselineskip}
+
+\subexercise
+This is an Akra-Bazzi recurrence with $a_1=a_2=a_3=1$, $b_1=2$, $b_2=3$, $b_3=6$, and $f(n)=n\lg n$.
+Note that $1/2+1/3+1/6=1$, so $p=1$.
+We'll also need the following integral:
+\begin{align*}
+    I &= \int\frac{\lg x}{x}\,dx \\
+    &= \int\lg x(\ln x)'\,dx \\
+    &= \lg x\ln x-\int\frac{\ln x}{x\ln2}\,dx && \text{(integrating by parts)} \\
+    &= \frac{\lg^2x}{\lg e}-\int\frac{\lg x}{x}\,dx && \text{(by equation (3.19))} \\[1mm]
+    &= \frac{\lg^2x}{\lg e}-I,
+\end{align*}
+which gives
+\[
+    I = \frac{\lg^2x}{2\lg e}.
+\]
+Finally, by identity (4.23) we have
+\begin{align*}
+    T(n) &= \Theta\left(n\left(1+\int_1^n\frac{x\lg x}{x^2}\,dx\right)\right) \\
+    &= \Theta\left(n\left(1+\int_1^n\frac{\lg x}{x}\,dx\right)\right) \\
+    &= \Theta\biggl(n\,\biggl(1+\biggl[\frac{\lg^2x}{2\lg e}\biggr]_1^n\biggr)\biggr) \\
+    &= \Theta\biggl(n\,\biggl(1+\frac{\lg^2n}{2\lg e}\biggr)\biggr) \\
+    &= \Theta(n\lg^2n).
+\end{align*}
+
+\subexercise
 \workinprogress % TODO
+%Here we have $a_1=3$, $a_2=8$, $b_1=3$, $b_2=4$, and $f(n)=n^2\!/\lg n$.
+%We need to find a unique $p$ such that
+%\[
+%    \frac{3}{3^p}+\frac{8}{4^p} = 1.
+%\]
+%Observe that $3/3^1+8/4^1=1+2>1$ and $3/3^2+8/4^2=1/3+1/2<1$, and thus $p$ lies in the range $1<p<2$.
+%We can solve the recurrence without knowing the exact value for $p$.
+
+\subexercise
+In this recurrence we have $a_1=2/3$, $a_2=1/3$, $b_1=3$, $b_2=3/2$, and $f(n)=\lg n$.
+Observe that $a_1+a_2=1$, in which case we immediately obtain $p=0$.
+Then,
+\begin{align*}
+    T(n) &= \Theta\left(n^0\left(1+\int_1^n\frac{\lg x}{x}\,dx\right)\right) \\
+    &= \Theta\biggl(1+\biggl[\frac{\lg^2x}{2\lg e}\biggr]_1^n\biggr) && \text{(we calculated this integral in part (a))} \\
+    &= \Theta\biggl(1+\frac{\lg^2n}{2\lg e}\biggr) \\
+    &= \Theta(\lg^2n).
+\end{align*}
+
+\subexercise
+Here, $a_1=1/3$, $b_1=3$, and $f(n)=1/n$.
+The term $\frac{1/3}{3^p}=3^{-p-1}$ equals 1, if $p=-1$.
+We know from calculus that $\int dx/x=\ln x$, and thus, by equation (4.23):
+\begin{align*}
+    T(n) &= \Theta\left(n^{-1}\left(1+\int_1^n\frac{1/x}{x^0}\,dx\right)\right) \\
+    &= \Theta\left((1/n)\left(1+\int_1^n\frac{dx}{x}\right)\right) \\
+    &= \Theta\bigl((1/n)\bigl(1+[\ln x]_1^n\bigr)\bigr) \\
+    &= \Theta\bigl((1/n)(1+\ln n)\bigr) \\
+    &= \Theta((\lg n)/n).
+\end{align*}
+
+\subexercise
+Here, $a_1=a_2=3$, $b_1=3$, $b_2=3/2$, and $f(n)=n^2$.
+We evaluate the sum
+\[
+    \frac{3}{3^p}+\frac{3}{(3/2)^p} = \frac{1+2^p}{3^{p-1}}
+\]
+using different values for $p$, to find that the sum achieves 1 when $p=3$.
+Since $\int dx/x^2=-1/x$, we have
+\begin{align*}
+    T(n) &= \Theta\left(n^3\left(1+\int_1^n\frac{x^2}{x^4}\,dx\right)\right) \\
+    &= \Theta\left(n^3\left(1+\int_1^n\frac{dx}{x^2}\right)\right) \\
+    &= \Theta\bigl(n^3\bigl(1+[-1/x]_1^n\bigr)\bigr) \\
+    &= \Theta\bigl(n^3\bigl(1+(-1/n+1)\bigr)\bigr) \\
+    &= \Theta(n^3(2-1/n)) \\
+    &= \Theta(n^3).
+\end{align*}
