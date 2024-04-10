@@ -1,1 +1,10 @@
-\workinprogress % TODO
+For this recurrence we use the same substitution $m=\lg n$ as in part (a), to get
+\[
+    T(2^m) = 2T(2^{m/2})+\Theta(1).
+\]
+Defining $S(m)=T(2^m)$ yields
+\[
+    S(m) = 2S(m/2)+\Theta(1),
+\]
+which is identical to recurrence (4.12), and has solution $S(m)=\Theta(m)$.
+Hence, $T(n)=T(2^m)=S(m)=\Theta(m)=\Theta(\lg n)$.
