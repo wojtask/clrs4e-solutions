@@ -1,1 +1,25 @@
-\workinprogress % TODO
+The first equality follows by the identity from part (a):
+\begin{align*}
+	\mathcal{F}(z) &= z+z\mathcal{F}(z)+z^2\mathcal{F}(z), \\
+	(1-z-z^2)\mathcal{F}(z) &= z, \\
+	\mathcal{F}(z) &= \frac{z}{1-z-z^2}.
+\end{align*}
+The denominator of the last fraction is a quadratic function that zeroes if $z=-\phi$ or $z=-\widehat\phi$, so we can express it in the factored form:
+\begin{align*}
+    1-z-z^2 &= -(z+\phi)(z+\widehat\phi) \\
+    &= -\phi\widehat\phi-\phi z-\widehat\phi z-z^2 \\
+    &= 1-\phi z-\widehat\phi z+\phi\widehat\phi z^2 && \text{(since $\phi\widehat\phi=-1$)} \\
+    &= (1-\phi z)(1-\widehat\phi z),
+\end{align*}
+thereby proving the second equality.
+We get the last equality, by observing that
+\begin{align*}
+    \frac{1}{1-\phi z}-\frac{1}{1-\widehat\phi z} &= \frac{1-\widehat\phi z-1+\phi z}{(1-\phi z)(1-\widehat\phi z)} \\[1mm]
+    &= \frac{z(\phi-\widehat\phi)}{(1-\phi z)(1-\widehat\phi z)} \\[1mm]
+    &= \frac{z\sqrt{5}}{(1-\phi z)(1-\widehat\phi z)} && \text{(since $\phi-\widehat\phi=\sqrt{5}$)},
+\end{align*}
+and therefore,
+\begin{align*}
+    \frac{z}{(1-\phi z)(1-\widehat\phi z)} &= \frac{1}{\sqrt{5}}\cdot\frac{z\sqrt{5}}{(1-\phi z)(1-\widehat\phi z)} \\[1mm]
+    &= \frac{1}{\sqrt{5}}\biggl(\frac{1}{1-\phi z}-\frac{1}{1-\widehat\phi z}\biggr).
+\end{align*}
