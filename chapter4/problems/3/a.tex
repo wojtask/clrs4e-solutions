@@ -1,1 +1,9 @@
-\workinprogress % TODO
+Let $m=\lg n$.
+Then, $n=2^m$, and thus
+\[
+    T(2^m) = 2T(2^{m/2})+\Theta(m).
+\]
+Now, letting $S(m)=T(2^m)$ produces the new recurrence
+\[
+    S(m) = 2S(m/2)+\Theta(m).
+\]
