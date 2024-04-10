@@ -91,166 +91,166 @@ The work on the current project began on January 1, 2023.
   <tr>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/3">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?color=green" alt="Chapter 1">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/3?color=limegreen" alt="Chapter 1">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/4">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?color=green" alt="Chapter 2">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/4?color=limegreen" alt="Chapter 2">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/5">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5?color=green" alt="Chapter 3">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/5?color=limegreen" alt="Chapter 3">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/6">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6" alt="Chapter 4">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/6?color=gold" alt="Chapter 4">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/7">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7" alt="Chapter 5">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/7?color=lightgray" alt="Chapter 5">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/8">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8" alt="Chapter 6">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?color=lightgray" alt="Chapter 6">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/9">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9" alt="Chapter 7">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/9?color=lightgray" alt="Chapter 7">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/10">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10" alt="Chapter 8">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/10?color=lightgray" alt="Chapter 8">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/11">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11" alt="Chapter 9">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/11?color=lightgray" alt="Chapter 9">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/12">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12" alt="Chapter 10">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/12?color=lightgray" alt="Chapter 10">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/13">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13" alt="Chapter 11">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/13?color=lightgray" alt="Chapter 11">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/14">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14" alt="Chapter 12">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/14?color=lightgray" alt="Chapter 12">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/15">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15" alt="Chapter 13">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/15?color=lightgray" alt="Chapter 13">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/16">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16" alt="Chapter 14">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/16?color=lightgray" alt="Chapter 14">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/17">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17" alt="Chapter 15">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/17?color=lightgray" alt="Chapter 15">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/18">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18" alt="Chapter 16">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/18?color=lightgray" alt="Chapter 16">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/19">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19" alt="Chapter 17">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/19?color=lightgray" alt="Chapter 17">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/20">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20" alt="Chapter 18">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/20?color=lightgray" alt="Chapter 18">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/21">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21" alt="Chapter 19">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/21?color=lightgray" alt="Chapter 19">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/22">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22" alt="Chapter 20">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/22?color=lightgray" alt="Chapter 20">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/23">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23" alt="Chapter 21">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/23?color=lightgray" alt="Chapter 21">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/24">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24" alt="Chapter 22">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/24?color=lightgray" alt="Chapter 22">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/25">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25" alt="Chapter 23">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/25?color=lightgray" alt="Chapter 23">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/26">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26" alt="Chapter 24">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/26?color=lightgray" alt="Chapter 24">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/27">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27" alt="Chapter 25">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/27?color=lightgray" alt="Chapter 25">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/28">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28" alt="Chapter 26">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/28?color=lightgray" alt="Chapter 26">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/29">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29" alt="Chapter 27">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/29?color=lightgray" alt="Chapter 27">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/30">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30" alt="Chapter 28">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/30?color=lightgray" alt="Chapter 28">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/31">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31" alt="Chapter 29">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/31?color=lightgray" alt="Chapter 29">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/32">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32" alt="Chapter 30">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/32?color=lightgray" alt="Chapter 30">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/33">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33" alt="Chapter 31">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/33?color=lightgray" alt="Chapter 31">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/34">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34" alt="Chapter 32">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/34?color=lightgray" alt="Chapter 32">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/35">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35" alt="Chapter 33">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/35?color=lightgray" alt="Chapter 33">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/36">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36" alt="Chapter 34">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/36?color=lightgray" alt="Chapter 34">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/37">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37" alt="Chapter 35">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/37?color=lightgray" alt="Chapter 35">
       </a>
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/38">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?color=green" alt="Appendix A">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/38?color=limegreen" alt="Appendix A">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/39">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?color=green" alt="Appendix B">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/39?color=limegreen" alt="Appendix B">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/40">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?color=green" alt="Appendix C">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/40?color=limegreen" alt="Appendix C">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/41">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?color=green" alt="Appendix D">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/41?color=limegreen" alt="Appendix D">
       </a>
     </td>
   </tr>
