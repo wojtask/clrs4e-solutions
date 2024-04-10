@@ -1,1 +1,3 @@
-\workinprogress % TODO
+Using the master method, we have $a=8$ and $b=2$, which means that $n^{\log_ba}=n^{\log_28}=n^3$, and $f(n)=n^3\!\sqrt{n}=n^{7/2}=\Omega(n^{\log_ba+\epsilon})$ for $\epsilon\le1/2$.
+Also, it holds that $8f(n/2)=8(n/2)^{7/2}=8n^{7/2}/(2^3\!\sqrt{2})\le cf(n)$ for any $c\ge1/\!\sqrt{2}$, satisfying the regularity condition.
+By case~3, the solution to the recurrence is $T(n)=\Theta(n^{7/2})$.
