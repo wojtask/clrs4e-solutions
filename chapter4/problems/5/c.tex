@@ -1,1 +1,9 @@
-\workinprogress % TODO
+We'll prove the formula in two ways.
+In one approach we follow the hint to get
+\begin{align*}
+    \mathcal{F}(z) &= \frac{1}{\sqrt{5}}\biggl(\frac{1}{1-\phi z}-\frac{1}{1-\widehat\phi z}\biggr) \\
+    &= \frac{1}{\sqrt{5}}\left(\sum_{i=0}^\infty(\phi z)^i-\sum_{i=0}^\infty(\widehat\phi z)^i\right) && \begin{minipage}{2.75in}(by the generating-function version\\\null\quad of equation (A.7) for $x=\phi z$ and $x=\widehat\phi z$)\end{minipage}\\
+    &= \sum_{i=0}^\infty\frac{1}{\sqrt{5}}(\phi^i-\widehat\phi^i)z^i.
+\end{align*}
+
+In another approach we can obtain the equality immediately, if we substitute $F_i=\bigl(\phi^i-\widehat\phi^i\bigr)/\!\sqrt{5}$ (as shown in \refExercise{3.3-8}) in the definition of $\mathcal{F}(z)$.
