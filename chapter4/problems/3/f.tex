@@ -1,1 +1,22 @@
-\workinprogress % TODO
+Define $m=\log_3n$, so that $n=3^m$.
+By changing the variable in $T(n)$ we get
+\[
+    T(3^m) = 3T(3^{m/3})+\Theta(3^m),
+\]
+and by substituting $S(m)=T(3^m)$ we get
+\[
+    S(m) = 3S(m/3)+\Theta(3^m).
+\]
+$S(m)$ is a master recurrence with $a=b=3$ and $f(m)=\Theta(3^m)$, that we can solve by the master method.
+We have $m^{\log_ba}=m$, and $f(m)=\Omega(m^{1+\epsilon})$ for any $\epsilon>0$.
+To verify that the regularity condition holds, we need to show that there exists a constant $c<1$ such that
+\begin{align*}
+    af(m/b) &= 3\cdot3^{m/3} \\
+    &= 3^{-2m/3+1}\cdot3^m \\
+    &\le cf(m)
+\end{align*}
+for all sufficiently large $m$.
+The quantity $h(m)=3^{-2m/3+1}$ is an exponential function with the exponent that decreases as $m$ increases, and so $h(m)$ decreases as well.
+For $m\ge3$, $h(m)\le1/3$, so we can pick $c=1/3$ to satisfy the above inequality.
+We then apply case~3 of the master theorem to get the solution $S(m)=\Theta(3^m)$.
+Finally, we obtain $T(n)=T(3^m)=S(m)=\Theta(3^m)=\Theta(n)$.
