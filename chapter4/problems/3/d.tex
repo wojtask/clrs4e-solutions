@@ -1,1 +1,24 @@
-\workinprogress % TODO
+Let's assume that the base case is $T(n)=\Theta(1)$ for $n<2$ and let $c$ represent the upper-bound constant hidden by the $\Theta(\lg n)$ term for $n\ge2$.
+\refFigure{4-3} shows the recursion tree for the recurrence $T(n)=2T\bigl(\sqrt{n}\bigr)+c\lg n$.
+\begin{figure}[htb]
+    \input{d.tikz}
+    \caption{A recursion tree for the recurrence $T(n)=2T\bigl(\sqrt{n}\bigr)+c\lg n$.} \label{fig:4-3}
+\end{figure}
+
+Let $h$ be the height of the tree.
+The cost of the root is $c\lg n$.
+The recurrence breaks down a problem of size $n$ into two subproblems, each of size $\sqrt{n}$, and each incurring the cost of $c\lg\sqrt{n}=c\lg n^{1/2}=(c\lg n)/2$.
+In general, at depth $i$, where $i=0$, 1, \dots, $h-1$, there are $2^i$ subproblems, each of size $n^{1/2^i}$\!, and the total level cost is $2^ic\lg\bigl(n^{1/2^i}\!\bigr)=(2^ic\lg n)/2^i=c\lg n$.
+The bottom level contains leaves representing subproblems of size less than 2, so we have $n^{1/2^{h-1}}\!\ge2$ and $n^{1/2^h}\!<2$.
+From there we get $\lg\lg n<h\le\lg\lg n+1$, or $h=\lfloor\lg\lg n\rfloor+1$ (by inequality (3.2)), leading to a total leaf cost of $2^h\cdot\Theta(1)=\Theta(\lg n)$.
+
+Adding up the costs of all internal nodes and the costs of all leaves yields
+\begin{align*}
+    T(n) &= \sum_{i=0}^{h-1}c\lg n+\Theta(\lg n) \\
+    &= c\lg n\cdot h+\Theta(\lg n) \\
+    &= c\lg n(\lfloor\lg\lg n\rfloor+1)+\Theta(\lg n) \\
+    &\le c\lg n(\lg\lg n+1)+\Theta(\lg n) \\
+    &= O(\lg n\lg\lg n).
+\end{align*}
+
+We follow a similar reasoning for $c$ representing the lower-bound constant hidden by the $\Theta(\lg n)$ term in recurrence (4.25), to obtain $T(n)=\Omega(\lg n\lg\lg n)$.

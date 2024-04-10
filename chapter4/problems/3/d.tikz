@@ -1,0 +1,62 @@
+\begin{tikzpicture}[
+    level/.style = {level distance=3\vertexsize, sibling distance=16\vertexsize/2^#1},
+	level 3/.style = {edge from parent/.style = {transition edge={solid}{very densely dashed}{0.7}}},
+	level arrow/.style = {->, thick, blue},
+	total node/.style = {align=right, text width=10mm},
+]
+
+\node (root) {$c\lg n$}
+	child {node (0) {$\frac{c\lg n}{2}$}
+		child {node (00) {$\frac{c\lg n}{4}$}
+			child {node (000) {}}
+			child {node {}}
+		}
+		child {node (01) {$\frac{c\lg n}{4}$}
+			child {node {}}
+			child {node {}}
+		}
+	}
+	child {node (1) {$\frac{c\lg n}{2}$}
+		child {node (10) {$\frac{c\lg n}{4}$}
+			child {node {}}
+			child {node {}}
+		}
+		child {node (11) {$\frac{c\lg n}{4}$}
+			child {node {}}
+			child {node (111) {}}
+		}
+	};
+
+\node[below=5mm of 000] (leaf 0) {$\Theta(1)$};
+\foreach[count=\i] \x in {0, ..., 4} {
+	\node[right=0pt of leaf \x] (leaf \i) {$\Theta(1)$};
+}
+\node[below=5mm of 111] (leaf m) {$\Theta(1)$};
+\node[left=0pt of leaf m] (leaf m minus 1) {$\Theta(1)$};
+\path (leaf 5) -- (leaf m minus 1) node[midway, font=\bfseries] {$\dots$};
+\foreach \x in {0, ..., 5, m minus 1, m} {
+	\draw[transition edge={draw=none}{very densely dashed}{0.5}] (leaf \x |- 000) -- (leaf \x.north);
+}
+
+\node[total node, right=of leaf m] (level h total) {$\Theta(\lg n)$};
+\node[total node] at (level h total |- 22) (level 2 total) {$c\lg n$};
+\node[total node] at (level h total |- 2) (level 1 total) {$c\lg n$};
+\node[total node] at (level h total |- root) (level 0 total) {$c\lg n$};
+
+\path (level 2 total.east) -- (level h total.east) node[midway, xshift=-5mm, font=\bfseries] {$\vdots$};
+
+\draw[level arrow, shorten <=5mm] (root) -- (level 0 total);
+\draw[level arrow, shorten <=5mm] (1) -- (level 1 total);
+\draw[level arrow, shorten <=5mm] (11) -- (level 2 total);
+\draw[level arrow, shorten <=2mm] (leaf m) -- (level h total);
+
+\draw[orange, decorate, decoration={brace, amplitude=8pt, mirror}]
+	(leaf 0.south west) -- (leaf m.south east) node[midway, yshift=-5mm, text=black] (leaves total) {$2^{\lfloor\lg\lg n\rfloor+1}=\Theta(\lg n)$};
+
+\coordinate (total line end) at (leaves total -| level h total.east);
+\draw (11 |- total line end) -- (total line end) node[at end, anchor=east, yshift=-4mm] {Total: $\Theta(\lg n\lg\lg n)$};
+
+\coordinate[left=6mm of leaf 0] (bottom);
+\draw[<->, orange] (bottom) -- (bottom |- root) node[midway, fill=white, text=black] {$\lfloor\lg\lg n\rfloor+1$};
+
+\end{tikzpicture}
