@@ -1,1 +1,8 @@
-\workinprogress % TODO
+Observe that the function $f(n)=n/2$ satisfies the polynomial-growth condition, because for any $\phi$ and $\psi$, where $1\le\psi\le\phi$, it's true that $1/\phi\le\psi$, so we can let $d=\phi+1>1$ to get $n/2d<n/2\phi\le\psi n/2\le\phi n/2<dn/2$ for any $n$.
+
+Now let $h(n)=-2$.
+Then $|h(n)|=O(n/\lg^{1+\epsilon}n)$ for any $\epsilon>0$, so by the fact stated in the book on page 117, we can replace $T(n/2+h(n))$ by $T(n/2)$ in the definition of $T(n)$ to obtain a recurrence with the same asymptotic solution.
+
+Consider $T'(n)=2T'(n/2)+n/2$.
+Using the master method, we have $a=b=2$, and $f(n)=n/2=\Theta(n)=\Theta(n^{\log_ba})$, so applying case~2 of the master theorem gives solution $T'(n)=\Theta(n\lg n)$.
+Therefore, $T(n)=\Theta(n\lg n)$ as well.
