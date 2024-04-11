@@ -1,1 +1,8 @@
-\workinprogress % TODO
+This is an Akra-Bazzi recurrence with $a_1=a_2=a_3=1$, $b_1=2$, $b_2=4$, $b_3=8$, and $f(n)=n$.
+Let $p$ be a unique real number such that
+\[
+    \left(\frac{1}{2}\right)^p+\left(\frac{1}{4}\right)^p+\left(\frac{1}{8}\right)^p = 1.
+\]
+Since $(1/2)^0+(1/4)^0+(1/8)^0>1$ and $(1/2)^1+(1/4)^1+(1/8)^1<1$, $p$ lies in the range $0<p<1$, as for recurrence (4.24).
+Also, both recurrences share the same driving function $f(n)=n$.
+This means that the Akra-Bazzi method applied to the studied recurrence gives the same solution as for recurrence (4.24): $T(n)=\Theta(n)$.
