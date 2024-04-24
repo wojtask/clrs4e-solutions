@@ -1,1 +1,17 @@
-\workinprogress % TODO
+By recursively carrying out the process described in part (b), we maintain the invariant about the set of remaining chips, while reducing the size of that set.
+We can finish that process once we obtain a set of size at most 2, which\dash by the invariant\dash contains only good chips.
+
+The number of pairwise tests needed to find one good chip in the worst case (i.e., when every test results in $(\text{``good''},\text{``good''})$) is given by the recurrence
+\[
+    T(n) = T(\lceil n/2\rceil)+\lfloor n/2\rfloor.
+\]
+We can solve it using the master method, after ignoring the ceilings in the argument to $T$ on the right-hand side.
+We have $a=1$, $b=2$, and $f(n)=\lfloor n/2\rfloor$.
+Since $f(n)=\Omega(n^\epsilon)=\Omega(n^{\log_ba+\epsilon})$ for any $\epsilon\le1$, and
+\begin{align*}
+    af(n/b) &= \lfloor n/4\rfloor \\
+    &= \lfloor\lfloor n/2\rfloor/2\rfloor && \text{(by equation (3.6))} \\
+    &\le \lfloor n/2\rfloor/2 \\
+    &\le cf(n)
+\end{align*}
+for any $c\ge1/2$, case~3 of the master theorem applies, and the solution is $T(n)=\Theta(n)$.
