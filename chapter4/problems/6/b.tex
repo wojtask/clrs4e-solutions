@@ -1,1 +1,15 @@
-\workinprogress % TODO
+We can view the result of each pairwise test as an ordered pair from the Cartesian product $\{\text{``good''},\text{``bad''}\}\times\{\text{``good''},\text{``bad''}\}$.
+The first element of such a pair is the verdict of the first chip about the second chip, and the second element is the verdict of the second chip about the first chip.
+
+Let's pair up the $n$ chips and test each of the $\lfloor n/2\rfloor$ pairs.
+Note that if a test outcome is other than $(\text{``good''},\text{``good''})$, we can discard both chips in that pair, because at least one of these chips is bad and among the remaining chips there will still be more good chips than bad chips.
+The pairs that report $(\text{``good''},\text{``good''})$ consist of either both good or both bad chips, so we can safely discard one chip from each such pair.
+
+Now we need to figure out, whether we should keep or eliminate the unpaired chip $u$ that wasn't tested in this round, in case that $n$ is odd.
+As it turns out, this depends on the number $m$ of the $(\text{``good''},\text{``good''})$ outcomes we've seen.
+If $m$ is odd, among those $m$ pairs that reported this outcome there were more consisting of good chips than of bad chips, so the set of the $m$ kept chips already has the required property, and we discard $u$.
+If $m$ is even, the number of pairs of good chips could be the same as the number of pairs of bad chips, in which case if we eliminated $u$, we would end up with a set of exactly half of good chips.
+By the assumption about the amount of good chips in the initial set, if among the $m$ pairs that reported $(\text{``good''},\text{``good''})$ exactly half of them consisted of good chips, $u$ has to be good.
+Therefore, we must keep $u$.
+
+As $m$ can be at most $\lfloor n/2\rfloor$, we've shown how to reduce the set of size $n$ to a set of size at most $m=\lfloor n/2\rfloor=\lceil n/2\rceil$ for even $n$, and at most $m+1=\lfloor n/2\rfloor+1=\lceil n/2\rceil$ for odd $n$.
