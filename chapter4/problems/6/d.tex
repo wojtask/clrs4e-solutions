@@ -1,1 +1,5 @@
-\workinprogress % TODO
+Now that we've identified a good chip $c_0$, we'll use it to identify the remaining ones.
+Let's run $n-1$ pairwise tests with $c_0$ and each of the other chips.
+If we get $(\text{``good''},\text{``good''})$ then both tested chips are good, and so we've identified a new good chip.
+Obtaining any other outcome means that at least one of the tested chips is bad, so it has to be the other one, since $c_0$ is good.
+It follows that after performing all those additional $\Theta(n)$ tests, we'll identify all the remaining good chips.
