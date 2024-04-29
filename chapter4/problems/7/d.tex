@@ -1,1 +1,13 @@
-\workinprogress % TODO
+To determine the leftmost minimum of row $i$, for an odd $i$, we need the locations of the leftmost minimums of the adjacent rows, $i-1$ and $i+1$.
+The algorithm has already computed these values.
+From part (c), $f(i-1)\le f(i)\le f(i+1)$, so we only need to look through the subarray $A[i,f(i-1)\subarr f(i+1)]$ to find its minimum.
+We can define $f(0)=1$ and $f(m+1)=n$ to simplify the procedure when processing the first row, or the last row in case $m$ is odd.
+
+When looking for the leftmost minimum element of row $i$, we examine exactly $f(i+1)-f(i-1)+1$ cells, so the total number of examined cells in the worst case is
+\begin{align*}
+    \sum_{\substack{1\le i\le m\\\text{$i$ is odd}}}(f(i+1)&-f(i-1)+1) = \sum_{k=0}^{\lceil m/2\rceil-1}(f(2k+2)-f(2k)+1) \\[-4mm]
+    &= \lceil m/2\rceil+\sum_{k=0}^{\lceil m/2\rceil-1}(f(2k+2)-f(2k)) \\[1mm]
+    &= \lceil m/2\rceil+f(2\lceil m/2\rceil)-f(0) && \hspace{-7em}\text{(because the sum telescopes)} \\[2mm]
+    &\le \lceil m/2\rceil+n-1 \\
+    &= O(m+n).
+\end{align*}
