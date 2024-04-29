@@ -1,1 +1,38 @@
-\workinprogress % TODO
+Let $T(m,n)$ be the worst-case running time of the algorithm for an $m\times n$ Monge array.
+Computing the leftmost minimum in a Monge array $A$ with just one row requires checking $O(n)$ cells, so $T(1,n)=O(n)$.
+
+If $A$ has more than one row, we construct a submatrix $A'$ consisting of the even-numbered rows of $A$.
+Instead of copying the contents of these rows to a newly allocated storage, we can follow a similar approach as when partitioning matrices in \proc{Matrix-Multiply-Recursive}\dash index calculations.
+This way we can keep the same elements for both matrices and only involve arithmetic when accessing the even-numbered rows of $A$.
+In fact, any method of constructing $A'$ that takes time at most proportional to the number of rows or the number of columns of $A$ won't affect the asymptotic upper bound of $T(m,n)$.
+
+The conquer step involves running the algorithm recursively on a $\lfloor m/2\rfloor\times n$ Monge array $A'$, taking $T(\lfloor m/2\rfloor,n)$ time.
+Finally, by part (d), the combine step requires checking $O(m+n)$ cells.
+Therefore, we obtain the following recurrence:
+\[
+    T(m,n) =
+    \ccases{
+        O(n), & \text{if $m=1$}, \\
+        T(\lfloor m/2\rfloor,n)+O(m+n), & \text{if $m>1$}.
+    }
+\]
+
+Let $c>0$ represent larger of the upper-bound constants, and let $n_0$ be the larger of the threshold constants hidden by the $O$-notations above.
+Let $n\ge n_0$.
+We'll use the substitution method on $m$ to show that $T(m,n)\le c(2m+n\lg(2m))$.
+For $m=1$,
+\begin{align*}
+    T(1,n) &\le cn \\
+    &< c(2+n\lg2),
+\end{align*}
+so the base step holds.
+Let $m\ge2$ and let's adopt the inductive hypothesis that $T(\lfloor m/2\rfloor,n)\le c(2\lfloor m/2\rfloor+n\lg(2\lfloor m/2\rfloor))$.
+We have
+\begin{align*}
+    T(m,n) &\le c(2\lfloor m/2\rfloor+n\lg(2\lfloor m/2\rfloor))+c(m+n) \\
+    &\le c(m+n\lg m)+c(m+n) \\
+    &= c(2m+n(\lg m+1)) \\
+    &= c(2m+n\lg(2m)),
+\end{align*}
+which handles the inductive step.
+Hence, $T(n)=O(m+n\lg m)$.
