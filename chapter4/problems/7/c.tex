@@ -1,1 +1,15 @@
-\workinprogress % TODO
+The proof is by contradiction.
+Suppose that in a Monge array $A$ there exists $1\le i<m$ such that $f(i)>f(i+1)$.
+By the definition of $f$,
+\[
+    A[i,f(i+1)] > A[i,f(i)]
+\]
+and
+\[
+    A[i+1,f(i)] \ge A[i+1,f(i+1)],
+\]
+and thus
+\[
+    A[i,f(i+1)]+A[i+1,f(i)] > A[i,f(i)]+A[i+1,f(i+1)].
+\]
+However, the above inequality contradicts the condition from the Monge array definition, for $j=f(i+1)$, $k=i+1$, and $l=f(i)$.
