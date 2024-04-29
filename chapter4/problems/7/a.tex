@@ -1,1 +1,43 @@
-\workinprogress % TODO
+The elements of a Monge array $A$ satisfy the inequality
+\[
+    A[i,j]+A[k,l] \le A[i,l]+A[k,j],
+\]
+where $1\le i<k\le m$ and $1\le j<l\le n$.
+In particular, it can be $k=i+1$ and $l=j+1$, and thus the ``only if'' part holds.
+
+Now suppose that
+\begin{equation} \label{eq:monge-condition-local}
+    A[i,j]+A[i+1,j+1] \le A[i,j+1]+A[i+1,j]
+\end{equation}
+for all $i=1$, 2, \dots, $m-1$ and all $j=1$, 2, \dots, $n-1$.
+Fix $i$ and $j$, and let $r\ge0$.
+We'll show by induction on $r$ that
+\begin{equation} \label{eq:monge-condition-consecutive-columns}
+    A[i,j]+A[i+r,j+1] \le A[i,j+1]+A[i+r,j].
+\end{equation}
+When $r=0$, the inequality holds trivially, establishing the base case.
+Now let $r\ge1$ and suppose that \eqref{eq:monge-condition-consecutive-columns} holds for $r-1$.
+By the inductive hypothesis and by \eqref{eq:monge-condition-local}, we have
+\begin{align*}
+    A[i,j]+A[i+r,j+1] &\le A[i,j+1]+A[i+r-1,j]-A[i+r-1,j+1] \\
+    &\quad {}+A[i+r-1,j+1]+A[i+r,j]-A[i+r-1,j] \\
+    &= A[i,j+1]+A[i+r,j].
+\end{align*}
+
+Next we induct on $l$ to show that
+\begin{equation} \label{eq:monge-condition}
+    A[i,j]+A[k,l] \le A[i,l]+A[k,j]
+\end{equation}
+holds for all $i$, $j$, $k$, and $l$ such that $1\le i<k\le m$ and $1\le j<l\le n$.
+Let's fix $i$, $j$, and $k$.
+When $l=j+1$ the inequality reduces to \eqref{eq:monge-condition-consecutive-columns} for $r=k-i$, so let $l>j+1$.
+Suppose that \eqref{eq:monge-condition} holds for $l-1$.
+Then we have
+\begin{align*}
+    A[i,j]+A[k,l] &\le (A[i,l-1]+A[k,j]-A[k,l-1])+A[k,l] \\
+    &\le (A[i,l-1]+A[k,j]-A[k,l-1]) \\
+    &\quad {}+(A[k-1,l]+A[k,l-1]-A[k-1,l-1]) && \text{(by (1))} \\
+    &= (A[i,l-1]+A[k-1,l])+A[k,j]-A[k-1,l-1] \\
+    &\le A[i,l]+A[k-1,l-1]+A[k,j]-A[k-1,l-1] && \text{(by (2))} \\
+    &= A[i,l]+A[k,j].
+\end{align*}
