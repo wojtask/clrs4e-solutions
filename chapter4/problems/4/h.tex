@@ -1,1 +1,31 @@
-\workinprogress % TODO
+Let $n_0>0$ be the implicit threshold constant, and let $d>0$ be another constant such that $T(n)\le d$ for all $n<n_0$.
+We'll prove by induction that
+\[
+    \lg(n!)-\lg(n_0!) < T(n) \le \lg(n!)+d
+\]
+for all $n>0$.
+
+Let $0<n<n_0$.
+It follows that $0\le\lg(n!)<\lg(n_0!)$, and thus $\lg(n!)-\lg(n_0!)<0\le T(n)\le d\le\lg(n!)+d$.
+
+For the inductive case let $n\ge n_0$ and suppose that
+\[
+    \lg((n-1)!)-\lg(n_0!) < T(n-1) \le \lg((n-1)!)+d.
+\]
+We have
+\begin{align*}
+    T(n) &= T(n-1)+\lg n \\
+    &> \lg((n-1)!)-\lg(n_0!)+\lg n \\
+    &= \lg((n-1)!\cdot n)-\lg(n_0!) \\
+    &= \lg(n!)-\lg(n_0!)
+\end{align*}
+and
+\begin{align*}
+    T(n) &= T(n-1)+\lg n \\
+    &\le \lg((n-1)!)+d+\lg n \\
+    &= \lg((n-1)!\cdot n)+d \\
+    &= \lg(n!)+d,
+\end{align*}
+thereby completing the inductive proof.
+
+By the bounds shown above and by equation (3.28), we obtain $T(n)=\Theta(\lg(n!))=\Theta(n\lg n)$.
