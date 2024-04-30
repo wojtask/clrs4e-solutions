@@ -1,1 +1,30 @@
-\workinprogress % TODO
+Let $n_0>0$ be the implicit threshold constant, and let $d>0$ be another constant such that $T(n)\le d$ for all $n<n_0$.
+We'll prove by induction that $H_n-H_{n_0}<T(n)<H_n+d$ for all $n>0$.
+
+First, let $0<n<n_0$.
+Since the harmonic series strictly increases and consists of positive terms, $H_n-H_{n_0}<0\le T(n)\le d<H_n+d$.
+
+For the inductive case let $n\ge n_0$ and suppose that
+\[
+    H_{n-1}-H_{n_0} < T(n-1) < H_{n-1}+d.
+\]
+We have
+\begin{align*}
+    T(n) &= T(n-1)+1/n \\
+    &> H_{n-1}-H_{n_0}+1/n \\
+    &= H_n-H_{n_0},
+\end{align*}
+and
+\begin{align*}
+    T(n) &= T(n-1)+1/n \\
+    &< H_{n-1}+d+1/n \\
+    &= H_n+d,
+\end{align*}
+thereby completing the inductive proof.
+
+By the bounds shown above we obtain
+\begin{align*}
+    T(n) &= \Theta(H_n) \\
+    &= \Theta(\ln n+O(1)) && \text{(by equation (A.9))} \\
+    &= \Theta(\lg n).
+\end{align*}
