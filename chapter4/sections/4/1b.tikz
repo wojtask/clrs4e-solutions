@@ -1,125 +1,125 @@
 \input{1.tikz}
 \begin{tikzpicture}[
-	level/.append style = {sibling distance=18\vertexsize/4^#1},
-	total node/.append style={text width=15mm}
+    level/.append style = {sibling distance=18\vertexsize/4^#1},
+    total node/.append style={text width=15mm}
 ]
 
 \node (root) {$n$}
-	child {node (0) {$\frac{n}{3}$}
-		child {node (00) {$\frac{n}{9}$}
-			child {node (000) {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (01) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}	
-		}
-		child {node (02) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (03) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-	}
-	child {node (1) {$\frac{n}{3}$}
-		child {node (10) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (11) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (12) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (13) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-	}
-	child {node (2) {$\frac{n}{3}$}
-		child {node (20) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (21) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (22) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (23) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-	}
-	child {node (3) {$\frac{n}{3}$}
-		child {node (30) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (31) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (32) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (33) {$\frac{n}{9}$}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-			child {node (333) {}}
-		}
-	};
-	
+    child {node (0) {$\frac{n}{3}$}
+        child {node (00) {$\frac{n}{9}$}
+            child {node (000) {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (01) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (02) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (03) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+    }
+    child {node (1) {$\frac{n}{3}$}
+        child {node (10) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (11) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (12) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (13) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+    }
+    child {node (2) {$\frac{n}{3}$}
+        child {node (20) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (21) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (22) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (23) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+    }
+    child {node (3) {$\frac{n}{3}$}
+        child {node (30) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (31) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (32) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (33) {$\frac{n}{9}$}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+            child {node (333) {}}
+        }
+    };
+
 \node[below=5mm of 000] (leaf 0) {$\Theta(1)$};
 \foreach[count=\i] \x in {0, ..., 5} {
-	\node[right=0pt of leaf \x] (leaf \i) {$\Theta(1)$};
+    \node[right=0pt of leaf \x] (leaf \i) {$\Theta(1)$};
 }
 \node[below=5mm of 333] (leaf m) {$\Theta(1)$};
 \node[left=0pt of leaf m] (leaf m minus 1) {$\Theta(1)$};
 \node[left=0pt of leaf m minus 1] (leaf m minus 2) {$\Theta(1)$};
 \path (leaf 6) -- (leaf m minus 2) node[midway, font=\bfseries] {$\dots$};
 \foreach \x in {0, ..., 6, m minus 2, m minus 1, m} {
-	\draw[transition edge={draw=none}{very densely dashed}{0.5}] (leaf \x |- 000) -- (leaf \x.north);
+    \draw[transition edge={draw=none}{very densely dashed}{0.5}] (leaf \x |- 000) -- (leaf \x.north);
 }
 
 \node[total node, right=of leaf m] (level h total) {$\Theta(n^{\log_34})$};
@@ -135,7 +135,7 @@
 \draw[level arrow, shorten <=2mm] (leaf m) -- (level h total);
 
 \draw[orange, decorate, decoration={brace, amplitude=8pt, mirror}]
-	(leaf 0.south west) -- (leaf m.south east) node[midway, yshift=-5mm, text=black] (leaves total) {$4^{\log_3n}=n^{\log_34}$};
+    (leaf 0.south west) -- (leaf m.south east) node[midway, yshift=-5mm, text=black] (leaves total) {$4^{\log_3n}=n^{\log_34}$};
 
 \coordinate (total line end) at (leaves total -| level h total.east);
 \draw (3 |- total line end) -- (total line end) node[at end, anchor=east, yshift=-4mm] {Total: $O(n^{\log_34})$};

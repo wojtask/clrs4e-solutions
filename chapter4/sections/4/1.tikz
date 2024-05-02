@@ -1,6 +1,6 @@
 \tikzset{
-	level/.style = {level distance=3\vertexsize},
-	level 3/.style = {edge from parent/.style = {transition edge={solid}{very densely dashed}{0.7}}},
-	level arrow/.style = {->, thick, blue},
-	total node/.style = {align=right},
+    level/.style = {level distance=3\vertexsize},
+    level 3/.style = {edge from parent/.style = {transition edge={solid}{very densely dashed}{0.7}}},
+    level arrow/.style = {->, thick, blue},
+    total node/.style = {align=right},
 }

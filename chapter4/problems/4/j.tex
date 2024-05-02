@@ -1,17 +1,17 @@
 Dividing $T(n)$ by $n$ yields
 \[
-	\frac{T(n)}{n} = \frac{T\bigl(\sqrt{n}\bigr)}{\sqrt{n}}+1,
+    \frac{T(n)}{n} = \frac{T\bigl(\sqrt{n}\bigr)}{\sqrt{n}}+1,
 \]
 and substituting $S(n)=T(n)/n$ yields
 \[
-	S(n) = S\bigl(\sqrt{n}\bigr)+1.
+    S(n) = S\bigl(\sqrt{n}\bigr)+1.
 \]
 If we now define $m=\lg n$ and substitute $R(m)=S(2^m)$, we get
 \[
-	R(m) = R(m/2)+1.
+    R(m) = R(m/2)+1.
 \]
 Recurrence $R(m)$ is a special case of the recurrence describing the running time of binary search, and we've already solved it in \refExercise{4.5-3}, so $R(m)=\Theta(\lg m)$.
 Going back to the original recurrence, we finally obtain
 \[
-	T(n) = nS(n) = nR(\lg n) = n\cdot\Theta(\lg\lg n) = \Theta(n\lg\lg n).
+    T(n) = nS(n) = nR(\lg n) = n\cdot\Theta(\lg\lg n) = \Theta(n\lg\lg n).
 \]

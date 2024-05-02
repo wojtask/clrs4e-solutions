@@ -1,7 +1,7 @@
 \begin{align*}
-	\mathcal{F}(z) &= \sum_{i=0}^\infty F_iz^i \\
-	&= F_0+zF_1+\sum_{i=2}^\infty(F_{i-1}+F_{i-2})z^i && \text{(by recurrence (3.31))} \\
-	&= z+\sum_{i=2}^\infty F_{i-1}z^i+\sum_{i=2}^\infty F_{i-2}z^i \\
-	&= z+\sum_{i=1}^\infty F_iz^{i+1}+\sum_{i=0}^\infty F_iz^{i+2} && \text{(reindexing)} \\[1mm]
-	&= z+z\mathcal{F}(z)+z^2\mathcal{F}(z)
+    \mathcal{F}(z) &= \sum_{i=0}^\infty F_iz^i \\
+    &= F_0+zF_1+\sum_{i=2}^\infty(F_{i-1}+F_{i-2})z^i && \text{(by recurrence (3.31))} \\
+    &= z+\sum_{i=2}^\infty F_{i-1}z^i+\sum_{i=2}^\infty F_{i-2}z^i \\
+    &= z+\sum_{i=1}^\infty F_iz^{i+1}+\sum_{i=0}^\infty F_iz^{i+2} && \text{(reindexing)} \\[1mm]
+    &= z+z\mathcal{F}(z)+z^2\mathcal{F}(z)
 \end{align*}

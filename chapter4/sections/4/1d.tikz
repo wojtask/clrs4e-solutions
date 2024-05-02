@@ -1,71 +1,71 @@
 \input{1.tikz}
 \begin{tikzpicture}[
-	level/.append style = {sibling distance=18\vertexsize/3^#1},
-	total node/.append style={text width=8mm}
+    level/.append style = {sibling distance=18\vertexsize/3^#1},
+    total node/.append style={text width=8mm}
 ]
 
 \node (root) {1}
-	child {node (0) {1}
-		child {node (00) {1}
-			child {node (000) {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (01) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (02) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-	}
-	child {node (1) {1}
-		child {node (10) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (11) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (12) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-	}
-	child {node (2) {1}
-		child {node (20) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (21) {1}
-			child {node {}}
-			child {node {}}
-			child {node {}}
-		}
-		child {node (22) {1}
-			child {node {}}
-			child {node {}}
-			child {node (222) {}}
-		}
-	};
+    child {node (0) {1}
+        child {node (00) {1}
+            child {node (000) {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (01) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (02) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+    }
+    child {node (1) {1}
+        child {node (10) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (11) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (12) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+    }
+    child {node (2) {1}
+        child {node (20) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (21) {1}
+            child {node {}}
+            child {node {}}
+            child {node {}}
+        }
+        child {node (22) {1}
+            child {node {}}
+            child {node {}}
+            child {node (222) {}}
+        }
+    };
 
 \node[below=5mm of 000] (leaf 0) {$\Theta(1)$};
 \foreach[count=\i] \x in {0, ..., 5} {
-	\node[right=0pt of leaf \x] (leaf \i) {$\Theta(1)$};
+    \node[right=0pt of leaf \x] (leaf \i) {$\Theta(1)$};
 }
 \node[below=5mm of 222] (leaf m) {$\Theta(1)$};
 \node[left=0pt of leaf m] (leaf m minus 1) {$\Theta(1)$};
 \path (leaf 6) -- (leaf m minus 1) node[midway, font=\bfseries] {$\dots$};
 \foreach \x in {0, ..., 6, m minus 1, m} {
-	\draw[transition edge={draw=none}{very densely dashed}{0.5}] (leaf \x |- 000) -- (leaf \x.north);
+    \draw[transition edge={draw=none}{very densely dashed}{0.5}] (leaf \x |- 000) -- (leaf \x.north);
 }
 
 \node[total node, right=of leaf m] (level h total) {$\Theta(3^n)$};
@@ -81,7 +81,7 @@
 \draw[level arrow, shorten <=2mm] (leaf m) -- (level h total);
 
 \draw[orange, decorate, decoration={brace, amplitude=8pt, mirror}]
-	(leaf 0.south west) -- (leaf m.south east) node[midway, yshift=-6mm, text=black] (leaves total) {$3^n$};
+    (leaf 0.south west) -- (leaf m.south east) node[midway, yshift=-6mm, text=black] (leaves total) {$3^n$};
 
 \coordinate (total line end) at (leaves total -| level h total.east);
 \draw (2 |- total line end) -- (total line end) node[at end, anchor=east, yshift=-4mm] {Total: $O(3^n)$};

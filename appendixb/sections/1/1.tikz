@@ -5,7 +5,7 @@
 \def\circleC{(-60:5mm) circle (7mm) node[index, below=3mm] (C) {$C$}}
 
 \begin{scope}
-   	\draw[fill=lightblue] \circleA;
+    \draw[fill=lightblue] \circleA;
     \draw \circleB;
     \draw \circleC +(0, -12mm) node[index] (label 1) {$A$};
 \end{scope}
@@ -20,35 +20,34 @@
 \node (center 2) at (barycentric cs:A=1,B=1,C=1) {};
 
 \begin{scope}[xshift=56mm]
-	\begin{scope}
-       	\clip \circleB;
-       	\draw[fill=lightblue] \circleA;
-   	\end{scope}
+    \begin{scope}\clip \circleB;
+        \draw[fill=lightblue] \circleA;
+    \end{scope}
     \begin{scope}
-       	\clip \circleC;
-       	\draw[fill=lightblue] \circleA;
-   	\end{scope}
-	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 3) {$A\cap(B\cup C)$};
+        \clip \circleC;
+        \draw[fill=lightblue] \circleA;
+    \end{scope}
+    \draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 3) {$A\cap(B\cup C)$};
 \end{scope}
 
 \node (center 3) at (barycentric cs:A=1,B=1,C=1) {};
 
 \begin{scope}[xshift=84mm]
-	\begin{scope}
-       	\clip \circleB;
-       	\draw[fill=lightblue] \circleA;
-   	\end{scope}
-	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 4) {$(A\cap B)$};
+    \begin{scope}
+        \clip \circleB;
+        \draw[fill=lightblue] \circleA;
+    \end{scope}
+    \draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 4) {$(A\cap B)$};
 \end{scope}
 
 \node (center 4) at (barycentric cs:A=1,B=1,C=1) {};
 
 \begin{scope}[xshift=112mm]
-	\begin{scope}
-       	\clip \circleC;
-       	\draw[fill=lightblue] \circleA;
+    \begin{scope}
+        \clip \circleC;
+        \draw[fill=lightblue] \circleA;
     \end{scope}
-	\draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 5) {$(A\cap C)$};
+    \draw \circleA \circleB \circleC +(0, -12mm) node[index] (label 5) {$(A\cap C)$};
 \end{scope}
 
 \node (center 5) at (barycentric cs:A=1,B=1,C=1) {};

@@ -28,15 +28,15 @@ If $a/c<1$, we have $(a/c)^{\lfloor\log_b(n/n_0)\rfloor}\ge(a/c)^{\log_b(n/n_0)}
 \begin{align*}
     f(n) &\ge (a/c)^{\lfloor\log_b(n/n_0)\rfloor}f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr) \\
     &\ge (a/c)^{\log_b(n/n_0)}\mu \\
-	&= \frac{(n/n_0)^{\log_ba}}{(n/n_0)^{\log_bc}}\,\mu && \hspace{-1em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
-	&= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot\mu.
+    &= \frac{(n/n_0)^{\log_ba}}{(n/n_0)^{\log_bc}}\,\mu && \hspace{-1em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
+    &= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot\mu.
 \end{align*}
 In case that $a/c\ge1$, it holds $(a/c)^{\lfloor\log_b(n/n_0)\rfloor}\ge(a/c)^{\log_b(n/n_0)-1}$, so
 \begin{align*}
     f(n) &\ge (a/c)^{\lfloor\log_b(n/n_0)\rfloor}f\bigl(n/b^{\lfloor\log_b(n/n_0)\rfloor}\bigr) \\
     &\ge (a/c)^{\log_b(n/n_0)-1}\mu \\
-	&= \frac{c(n/n_0)^{\log_ba}}{a(n/n_0)^{\log_bc}}\,\mu && \hspace{-2em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
-	&= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot(c/a)\cdot\mu.
+    &= \frac{c(n/n_0)^{\log_ba}}{a(n/n_0)^{\log_bc}}\,\mu && \hspace{-2em}\text{(by equations (3.18), (3.20), and (3.21))} \\[1mm]
+    &= n^{\log_ba-\log_bc}\cdot n_0^{\log_bc-\log_ba}\cdot(c/a)\cdot\mu.
 \end{align*}
 Regardless of the relation between $a$ and $c$, we can define a constant $d>0$ to hide all factors independent on $n$ in the above bounds.
 Also, since $0<c<1$ and $b>1$, $\log_bc<0$, so let $\epsilon=-\log_bc>0$.

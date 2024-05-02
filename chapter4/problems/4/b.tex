@@ -6,11 +6,11 @@ We'll use a different approach for $T(n)$, instead considering a family of recur
 Let's use the change-of-variables method from \refProblem{4-3}, letting $m=\log_bn$.
 Then, $n=b^m$, and we obtain
 \[
-	T_b(b^m) = bT_b(b^{m-1})+\frac{b^m}{m\lg b}.
+    T_b(b^m) = bT_b(b^{m-1})+\frac{b^m}{m\lg b}.
 \]
 Defining $S_b(m)=T_b(b^m)$ produces the new recurrence
 \[
-	S_b(m) = bS_b(m-1)+\frac{b^m}{m\lg b}.
+    S_b(m) = bS_b(m-1)+\frac{b^m}{m\lg b}.
 \]
 
 Assume that $T_b(n)=\Theta(1)$ for $n<b$, which means that $S_b(m)=\Theta(1)$ for $m<1$.
@@ -18,17 +18,17 @@ We'll show by induction on $m\ge1$ that $S_b(m)=b^m(H_m+\Theta(1))/\lg b$, where
 For $m=1$,
 \begin{align*}
     S_b(1) &= bS_b(0)+\frac{b}{\lg b} \\[1mm]
-	&= b\cdot\Theta(1)+\frac{bH_1}{\lg b} \\[1mm]
-	&= \frac{b^1(H_1+\Theta(1))}{\lg b} && \text{(because $\lg b\cdot\Theta(1)=\Theta(1)$)},
+    &= b\cdot\Theta(1)+\frac{bH_1}{\lg b} \\[1mm]
+    &= \frac{b^1(H_1+\Theta(1))}{\lg b} && \text{(because $\lg b\cdot\Theta(1)=\Theta(1)$)},
 \end{align*}
 so the base case holds.
 For the inductive step, let $m\ge2$, and adopt the inductive hypothesis $S_b(m-1)=b^{m-1}(H_{m-1}+\Theta(1))/\lg b$ to get
 \begin{align*}
     S_b(m) &= b\cdot\frac{b^{m-1}(H_{m-1}+\Theta(1))}{\lg b}+\frac{b^m}{m\lg b} \\[1mm]
-	&= \frac{b^m(H_{m-1}+\Theta(1))+b^m\!/m}{\lg b} \\[1mm]
-	&= \frac{b^m(H_m+\Theta(1))}{\lg b} && \text{(because $\Theta(1)+1/m=\Theta(1)$)} \\[1mm]
-	&= \frac{b^m\ln m+\Theta(1)}{\lg b} && \begin{minipage}{2.25in}(by equation (A.9),\\\null\quad and because $b^m\cdot\Theta(1)=\Theta(1)$)\end{minipage} \\[1mm]
-	&= \Theta(b^m\lg m).
+    &= \frac{b^m(H_{m-1}+\Theta(1))+b^m\!/m}{\lg b} \\[1mm]
+    &= \frac{b^m(H_m+\Theta(1))}{\lg b} && \text{(because $\Theta(1)+1/m=\Theta(1)$)} \\[1mm]
+    &= \frac{b^m\ln m+\Theta(1)}{\lg b} && \begin{minipage}{2.25in}(by equation (A.9),\\\null\quad and because $b^m\cdot\Theta(1)=\Theta(1)$)\end{minipage} \\[1mm]
+    &= \Theta(b^m\lg m).
 \end{align*}
 Changing back from $S_b(m)$ to $T_b(n)$, we obtain $T_b(n)=T_b(b^m)=S_b(m)=\Theta(b^m\lg m)=\Theta(n\lg\log_b n)=\Theta(n\lg\lg n)$.
 

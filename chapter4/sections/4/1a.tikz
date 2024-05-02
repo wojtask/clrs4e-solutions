@@ -2,11 +2,11 @@
 \begin{tikzpicture}[total node/.append style={text width=12mm}]
 
 \node (root) {$n^3$}
-	child {node (0) {$\bigl(\frac{n}{2}\bigr)^3$}
-		child {node (00) {$\bigl(\frac{n}{4}\bigr)^3$}
-			child {node (000) {}}
-		}
-	};
+    child {node (0) {$\bigl(\frac{n}{2}\bigr)^3$}
+        child {node (00) {$\bigl(\frac{n}{4}\bigr)^3$}
+            child {node (000) {}}
+        }
+    };
 
 \node[below=5mm of 000] (leaf) {$\Theta(1)$};
 \draw[transition edge={draw=none}{very densely dashed}{0.5}] (000) -- (leaf);
