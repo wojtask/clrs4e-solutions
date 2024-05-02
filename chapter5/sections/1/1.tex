@@ -1,1 +1,16 @@
-\workinprogress % TODO
+Let $\prec$ be the relation on the set of the ranks of the candidates, which we use in line 4 of procedure \proc{Hire-Assistant} to determine which candidate is best.
+In other words, if $\id{rank}(i)\prec\id{rank}(j)$, then candidate $j$ is better qualified than candidate $i$.
+Let $\preceq$ be the \concept{weak variant} of relation $\prec$: $\id{rank}(i)\preceq\id{rank}(j)$ whenever $\id{rank}(i)\prec\id{rank}(j)$ or $\id{rank}(i)=\id{rank}(j)$.
+We'll show that $\preceq$ is a total order on the ranks of the candidates.
+
+By definition, it immediately follows that relation $\preceq$ is reflexive.
+
+As any permutation of the candidates may appear as input to \proc{Hire-Assistant}, we should be able to compare any pair of different candidates using $\prec$, which proves that $\preceq$ is a total relation.
+
+Suppose that $\prec$ is not antisymmetric, and let $i\ne j$ be two candidates for which $\id{rank}(i)\prec\id{rank}(j)$ and $\id{rank}(j)\prec\id{rank}(i)$.
+Then, depending on which of the two candidates $i$ and $j$ will appear right after the other, the latter will be hired, which contradicts the assumption that we are always able to determine which candidate is best.
+Therefore, $\prec$ is antisymmetric, and so is $\preceq$.
+
+Finally, suppose that $\prec$ is not transitive, and let $i$, $j$, and $k$ be candidates for which $\id{rank}(i)\prec\id{rank}(j)$, $\id{rank}(j)\prec\id{rank}(k)$, and $\id{rank}(k)\prec\id{rank}(i)$.
+If the algorithm received candidate $i$, then $j$, then $k$, it will hire $k$, but if it received candidate $i$, then $k$, then $j$, it will hire $j$\dash a contradiction.
+Therefore, $\prec$ is transitive, and so is $\preceq$.
