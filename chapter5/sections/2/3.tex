@@ -1,1 +1,18 @@
-\workinprogress % TODO
+First we'll calculate the expected value of one die.
+For $j=1$, 2, \dots, 6, let $X_j$ be the indicator random variable of a die coming up $j$.
+Assuming that each die is fair, we have $\Pr{X_j=1}=1/6$ for each $j=1$, 2, \dots, 6.
+Let $X$ be the random variable of the value of a single die roll.
+Then,
+\begin{align*}
+    \E{X} &= \sum_{j=1}^6j\Pr{X=j} \\
+    &= \sum_{j=1}^6j\Pr{X_j=1} \\
+    &= (1/6)\cdot(1+2+3+4+5+6) \\
+    &= 21/6 \\
+    &= 3.5.
+\end{align*}
+
+The expected sum of the values of $n$ dice is therefore
+\begin{align*}
+    \E{nX} &= n\E{X} && \text{(by equation (C.25))} \\
+    &= 3.5n.
+\end{align*}
