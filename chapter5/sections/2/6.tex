@@ -1,1 +1,18 @@
-\workinprogress % TODO
+Let $X_{ij}$, for $1\le i<j\le n$, be an indicator random variable associated with the event that the array $A[1\subarr n]$ has inversion $(i,j)$.
+For any pair $(i,j)$, where $1\le i<j\le n$, there are equal chances for $A[i]<A[j]$ and for $A[i]>A[j]$, so
+\begin{equation} \label{eq:probability-of-inversion}
+    \Pr{\text{pair $(i,j)$ is an inversion of $A$}} = 1/2.
+\end{equation}
+Consider the random variable $X=\sum_{i=1}^{n-1}\sum_{j=i+1}^nX_{ij}$ representing the total number of inversions of $A$.
+We have
+\begin{align*}
+    \E{X} &= \E{\sum_{i=1}^{n-1}\sum_{j=i+1}^nX_{ij}} \\
+    &= \sum_{i=1}^{n-1}\sum_{j=i+1}^n\E{X_{ij}} && \text{(by equation (C.24))} \\
+    &= \sum_{i=1}^{n-1}\sum_{j=i+1}^n\Pr{\text{pair $(i,j)$ is an inversion of $A$}} && \text{(by Lemma 5.1)} \\[1mm]
+    &= \sum_{i=1}^{n-1}\sum_{j=i+1}^n\frac{1}{2} && \text{(by equation \eqref{eq:probability-of-inversion})} \\
+    &= \frac{1}{2}\sum_{i=1}^{n-1}(n-i) \\
+    &= \frac{1}{2}\sum_{i=1}^{n-1}i \\[1mm]
+    &= \frac{n(n-1)}{4} \\
+    &= \frac{\binom{n}{2}}{2},
+\end{align*}
+which means that on average half of all pairs $(i,j)$, where $1\le i<j\le n$, are inversions of $A$.
