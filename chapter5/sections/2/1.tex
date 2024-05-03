@@ -1,1 +1,6 @@
-\workinprogress % TODO
+Note that the first candidate is hired in any call to \proc{Hire-Assistant}, so hiring exactly one time happens when no other candidate is hired.
+In this case, candidate 1 is the most qualified in the set of all $n$ candidates (i.e., $\id{rank}(1)=n$).
+The candidate ranked highest can appear at any of the $n$ positions in the input sequence, so the probability that they will occupy the first position is $1/n$.
+
+To hire all $n$ candidates, we must interview them in ascending rank order.
+There is only one such input permutation, so the probability of this event is $1/n!$.
