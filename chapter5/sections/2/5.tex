@@ -1,1 +1,12 @@
-\workinprogress % TODO
+Let $X_i$, for $i=1$, 2, \dots, $n$, be the indicator random variable associated with the event in which the $i$th customer received his or her hat.
+Also, let $X=X_1+X_2+\dots+X_n$, so $X$ represents the number of customers who got back their own hats.
+The hat-check person distributes the $n$ hats to all $n$ customers at random, so the chances that a particular customer will get their own hat are $1/n$.
+We have
+\begin{align*}
+    \E{X} &= \E{\sum_{i=1}^nX_i} \\
+    &= \sum_{i=1}^n\E{X_i} && \text{(by equation (C.24))} \\
+    &= \sum_{i=1}^n\Pr{\text{customer $i$ got back their own hat}} && \text{(by Lemma 5.1)} \\
+    &= \sum_{i=1}^n\frac{1}{n} \\[1mm]
+    &= 1,
+\end{align*}
+so on average only one customer will get their hat back.
