@@ -1,1 +1,19 @@
-\workinprogress % TODO
+\starred
+Note that the event of getting first 0 and then 1, and the event of getting first 1 and then 0 in two subsequent calls to \proc{Biased-Random} have the same probability of $p(1-p)$.
+We'll call \proc{Biased-Random} twice until obtaining different results, and once that happens we'll return one of those results.
+
+The following algorithm implements the described process:
+
+\begin{codebox}
+\Procname{\proc{Unbiased-Random}}
+\li \Repeat
+\li     $x\gets\proc{Biased-Random}$
+\li     $y\gets\proc{Biased-Random}$
+\li \Until $x\ne y$ \label{li:unbiased-random-repeat-end}
+\li \Return $x$
+\end{codebox}
+
+Let's assume that each call to \proc{Biased-Random} takes constant time, which means that each iteration of the \kw{repeat} loop also takes constant time.
+Subsequent iterations create a sequence of Bernoulli trials, where success means obtaining different results from both calls to \proc{Biased-Random} (i.e., the condition from line \ref{li:unbiased-random-repeat-end}), that occurs with probability $2p(1-p)$.
+The expected number of trials before obtaining a success is given by (C.36) and equals $1/(2p(1-p))$.
+Hence, we conclude that the expected running time of the algorithm is $\Theta(1/(p(1-p)))$.
