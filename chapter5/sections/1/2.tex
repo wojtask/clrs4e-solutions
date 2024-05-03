@@ -1,1 +1,18 @@
-\workinprogress % TODO
+\starred
+\indent\begin{codebox}
+\Procname{$\proc{Random}(a,b)$}
+\li \While $a<b$
+\li     \Do $\id{mid}\gets\lfloor(a+b)/2\rfloor$
+\li         \If $\proc{Random}(0,1)\isequal0$ \label{li:random-coin-flip}
+\li             \Then $a\gets\id{mid}+1$
+\li             \Else $b\gets\id{mid}$
+                \End
+        \End
+\li \Return $a$
+\end{codebox}
+
+The procedure generates a random integer from the range $[a,b]$.
+Each iteration of the \kw{while} loop splits this range approximately in half and randomly discards one part of the split, until the range becomes a single point.
+Observe that the problem is reduced similarly as in binary search.
+If we assume that each call to $\proc{Random}(0,1)$ in line \ref{li:random-coin-flip} takes constant time, we have that the expected running time of $\proc{Random}(a,b)$ and the worst-case running time $T(n)$ of \proc{Binary-Search} ran on an array of size $n=b-a+1$ match asymptotically.
+According to \refExercise{4.5-3}, $T(n)=\Theta(\lg n)$, so the expected running time of $\proc{Random}(a,b)$ is $\Theta(\lg(b-a))$.
