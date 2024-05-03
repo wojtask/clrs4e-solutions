@@ -1,16 +1,12 @@
-Define the random variable $X$ to be the sum of the two values showing.
-Then
-\begin{align*}
-    \E{X} &= \sum_{x=2}^{12}x\Pr{X=x} \\
-    &= (1/36)\cdot(2\cdot1+3\cdot2+4\cdot3+5\cdot4+6\cdot5+7\cdot6 \\
-    &\quad\quad\quad\quad\quad {}+8\cdot5+9\cdot4+10\cdot3+11\cdot2+12\cdot1) \\
-    &= 7.
-\end{align*}
+The expected sum of the two values showing on two 6-sided dice has already been calculated in \refExercise{5.2-4} and equals 7.
 
 Define the random variable $Y$ to be the maximum of the values showing.
-Then
+For each $y=1$, 2, \dots, 6, the value $y$ is the maximum of the values on both dice, when one die has value $y$, and the other die has value at most $y$.
+This happens for exactly $2y-1$ outcomes.
+Thus,
 \begin{align*}
-    \E{Y} &= \sum_{y=1}^{6}y\Pr{Y=y} \\
+    \E{Y} &= \sum_{y=1}^6y\Pr{Y=y} \\
     &= (1/36)\cdot(1\cdot1+2\cdot3+3\cdot5+4\cdot7+5\cdot9+6\cdot11) \\
+    &= 161/36 \\
     &\approx 4.47.
 \end{align*}
