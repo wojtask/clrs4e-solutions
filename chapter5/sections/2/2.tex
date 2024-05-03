@@ -1,1 +1,30 @@
-\workinprogress % TODO
+Note that we always hire the first candidate that appears at input, and the one with the highest rank.
+If the \proc{Hire-Assistant} procedure is to hire exactly twice, then candidate~1 should have rank $i\le n-1$, and candidates with ranks $i+1$, $i+2$, \dots, $n-1$ should appear after the candidate with rank $n$.
+
+Denote by $E_i$ the event that $\id{rank}(1)=i$.
+Of course, $\Pr{E_i}=1/n$ for every $i=1$, 2, \dots, $n$.
+Let $b$ be the position of the highest qualified candidate in the input sequence, and let $F$ be the event that $\id{rank}(1)>\id{rank}(j)$ for all $j=2$, 3, \dots, $b-1$.
+If $E_i$ occurs, then $F$ occurs only if $i\ne n$, and among the $n-i$ candidates whose ranks are greater than $i$, the one with the rank of $n$ is interviewed earliest.
+Hence we have $\Pr{F\mid E_i}=1/(n-i)$, if $i\ne n$.
+Finally, let $A$ denote the event that exactly two applicants are hired in \proc{Hire-Assistant}.
+We have
+\begin{align*}
+    A &= F\cap(E_1\cup E_2\cup\dots\cup E_{n-1}) \\
+    &= (F\cap E_1)\cup(F\cap E_2)\cup\dots\cup(F\cap E_{n-1}),
+\end{align*}
+and since the events $E_1$, $E_2$, \dots, $E_n$ are mutually exclusive,
+\[
+    \Pr{A} = \sum_{i=1}^{n-1}\Pr{F\cap E_i}.
+\]
+By the definition (C.16) of conditional probability,
+\begin{align*}
+    \Pr{F\cap E_i} &= \Pr{F\mid E_i}\Pr{E_i} \\
+    &= \frac{1}{n-i}\cdot\frac{1}{n},
+\end{align*}
+and therefore
+\begin{align*}
+    \Pr{A} &= \sum_{i=1}^{n-1}\frac{1}{n-i}\cdot\frac{1}{n} \\
+    &= \frac{1}{n}\sum_{i=1}^{n-1}\frac{1}{n-i} \\
+    &= \frac{1}{n}\sum_{i=1}^{n-1}\frac{1}{i} \\[1mm]
+    &= \frac{H_{n-1}}{n}.
+\end{align*}
