@@ -1,1 +1,18 @@
-\workinprogress % TODO
+Below is the modified procedure \proc{Randomly-Permute}:
+
+\begin{codebox}
+\Procname{$\proc{Randomly-Permute}'(A,n)$}
+\li swap $A[1]$ with $A[\proc{Random}(1,n)]$ \label{li:randomly-permute-initial-swap}
+\li \For $i\gets2$ \To $n$
+\li     \Do swap $A[i]$ with $A[\proc{Random}(i,n)]$
+        \End
+\end{codebox}
+
+In Lemma 5.4, the loop invariant remains unchanged (except for the numbers of lines of code containing the \kw{for} loop), and the only change is required in the proof of the invariant initial state.
+
+\begin{description}
+    \item[Initialization:] Consider the situation just before the first loop iteration, so that $i=2$.
+    The loop invariant says that for each possible 1-permutation, the subarray $A[1\subarr1]$ contains this 1-permutation with probability $(n-1)!/n!=1/n$.
+    The subarray $A[1\subarr1]$ consists of just one element $A[1]$, which has already been exchanged with a randomly chosen element of $A$ in line \ref{li:randomly-permute-initial-swap}.
+    Thus, $A[1\subarr1]$ contains any 1-permutation with probability $1/n$, and the loop invariant holds prior to the first iteration.
+\end{description}
