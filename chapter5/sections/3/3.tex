@@ -1,1 +1,15 @@
-\workinprogress % TODO
+Note that the sequence of $n$ calls to the random number generator in \proc{Permute-With-All} can generate $n^n$ possible sequences of positions of $A$, while the procedure can produce one of the $n!$ possible permutations of $A$.
+Suppose that $n>2$ and that the procedure generates each permutation with equal probability.
+Therefore, each output permutation corresponds to the same number $c$ of index sequences, i.e., $n^n=cn!$.
+In this equation, $n-1$ divides the right-hand side, so it should also divide the left-hand side.
+By equation (A.6) for $x=n$ we have
+\[
+    \sum_{k=0}^{n-1}n^k = \frac{n^n-1}{n-1},
+\]
+which gives
+\[
+    n^n = (n-1)\sum_{k=0}^{n-1}n^k+1.
+\]
+This means that the remainder of $n^n$ when divided by $n-1$ is 1\dash a contradiction.
+
+Therefore, we conclude that the procedure \proc{Permute-With-All} can't produce uniform random permutations.
