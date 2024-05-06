@@ -1,1 +1,8 @@
-\workinprogress % TODO
+Let $1\le i$, $j\le n$ be two indices.
+The element $A[i]$ winds up in $B[j]$ when $\id{dest}=j$.
+If $i+\id{offset}\le n$, then $\id{dest}=i+\id{offset}$ can take any value between $i+1$ and $n$.
+If, on the other hand, $i+\id{offset}>n$, then $\id{dest}=i+\id{offset}-n$ can take any value between $(n+1)-n=1$ and $(i+n)-n=i$.
+Therefore, $j$ can be any index between 1 and $n$, so the probability that $A[i]=B[j]$, for a particular $j$, is $1/n$.
+
+Note that the algorithm cyclically shifts the whole permutation, without changing the relative positions of the elements, and picking \id{offset} solely determines the resulting permutation.
+Since \id{offset} can take one of the $n$ possible values, for a given input array of size $n$ the algorithm is capable of producing only $n$ different outputs, which for $n>2$ is fewer than $n!$, and so the resulting permutation is not uniformly random.
