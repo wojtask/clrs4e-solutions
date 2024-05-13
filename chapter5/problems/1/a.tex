@@ -1,1 +1,16 @@
-\workinprogress % TODO
+Let $X_j$, for $j=1$, 2, \dots, $n$, denote the increase of the value represented by the counter after the $j$th call to the \proc{Increment} operation.
+Furthermore, let $X=\sum_{j=1}^nX_j$ denote the value represented by the counter after $n$ \proc{Increment} operations have been performed.
+Now suppose that right before the $j$th \proc{Increment} operation is performed, the counter is set to $i$, and as such represents a count of $n_i$.
+Upon success of the $j$th call\dash occurring with the probability of $1/(n_{i+1}-n_i)$\dash the represented count increases by $n_{i+1}-n_i$.
+For every $j=1$, 2, \dots, $n$ we have
+\begin{align*}
+    \E{X_j} &= 0\cdot\left(1-\frac{1}{n_{i+1}-n_i}\right)+(n_{i+1}-n_i)\cdot\frac{1}{n_{i+1}-n_i} \\
+    &= 1,
+\end{align*}
+and therefore
+\begin{align*}
+    \E{X} &= \E{\sum_{j=1}^nX_j} \\
+    &= \sum_{j=1}^n\E{X_j} \\
+    &= \sum_{j=1}^n1 \\
+    &= n.
+\end{align*}
