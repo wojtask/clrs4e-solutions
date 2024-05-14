@@ -1,1 +1,15 @@
-\workinprogress % TODO
+Let $X_j$ for $j=1$, 2, \dots, $n$, and $X$ be the random variables defined in the previous part.
+For $n_i=100i$ the value represented by the counter will increase by $n_{i+1}-n_i=100$ after a call to \proc{Increment}, with the probability of $1/(n_{i+1}-n_i)=1/100$.
+For all $j=1$, 2, \dots, $n$ we get
+\begin{align*}
+    \Var{X_j} &= \E{X_j^2}-\Esquared{X_j} && \text{(by equation (C.31))} \\
+    &= 0^2\cdot\left(1-\frac{1}{100}\right)+100^2\cdot\frac{1}{100}-1^2 \\
+    &= 99,
+\end{align*}
+and since $X_1$, $X_2$, \dots, $X_n$ are pairwise independent, we obtain
+\begin{align*}
+    \Var{X} &= \Var{\sum_{j=1}^nX_j} \\
+    &= \sum_{j=1}^n\Var{X_j} && \text{(by equation (C.33))} \\
+    &= \sum_{j=1}^n99 \\
+    &= 99n.
+\end{align*}
