@@ -1,1 +1,25 @@
-\workinprogress % TODO
+\begin{codebox}
+\Procname{$\proc{Random-Search}(A,n,x)$}
+\li let $\id{picked}[1\subarr n]$ be a new array
+\li \For $i\gets1$ \To $n$
+\li     \Do $\id{picked}[i]\gets\const{false}$
+        \End
+\li $k\gets0$
+\li \While $k<n$ \label{li:random-search-while-begin}
+\li     \Do $i\gets\proc{Random}(1,n)$
+\li         \If $A[i]\isequal x$
+\li             \Then \Return $i$
+                \End
+\li         \If not $\id{picked}[i]$
+\li             \Then $\id{picked}[i]\gets\const{true}$
+\li                 $k\gets k+1$
+                \End
+        \End \label{li:random-search-while-end}
+\li \Return \nil
+\end{codebox}
+
+The algorithm uses the auxiliary array $\id{picked}[1\subarr n]$ of boolean values for keeping track of the information whether it has already picked a given index, and the variable $k$ for the number of picked indices so far.
+In each iteration of the \kw{while} loop in lines \ref{li:random-search-while-begin}--\ref{li:random-search-while-end} the algorithm picks a random index into $A$ and compares $A[i]$ with $x$.
+If $x$ is found at position $i$, the algorithm immediately returns that position.
+Otherwise, if $A[i]$ hasn't been examined in previous iterations, the algorithm increments $k$.
+If array $A$ doesn't contain the element $x$, then after checking all $n$ indices at least once, the algorithm terminates by returning the special value \nil.
