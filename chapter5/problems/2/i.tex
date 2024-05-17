@@ -1,1 +1,4 @@
-\workinprogress % TODO
+When there are $k\ge1$ copies of the searched element in the input array the running times of all three algorithms are of the same order.
+However, if the input array does not contain the searched element (i.e., when $k=0$), the running times of \proc{Deterministic-Search} and \proc{Scramble-Search} are asymptotically smaller than the running time of \proc{Random-Search}.
+Moreover, \proc{Deterministic-Search} does not introduce the overhead of permuting the array, thus running faster by a constant factor than \proc{Scramble-Search}.
+Therefore, \proc{Deterministic-Search} seems to be most practical one to use.
