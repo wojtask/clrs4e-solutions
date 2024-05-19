@@ -1,1 +1,41 @@
-\workinprogress % TODO
+Let $X$ denote the number of indices of array $A$ picked before $x$ is found.
+For $i=1$, 2, \dots, $n-k+1$, let $B_i$ be the event in which index $i$ is picked in \proc{Deterministic-Search}, and let $X_i$ be an indicator random variable associated with $B_i$.
+Event $B_i$ occurs as long as all instances of $x$ contained in the array $A$ occupy the subarray $A[i\subarr n]$, so we have
+\[
+    \Pr{B_i} = \frac{\binom{n-i+1}{k}}{\binom{n}{k}}.
+\]
+Of course $X=\sum_{i=1}^{n-k+1}X_i$, so taking expectations of both sides and applying linearity of expectation, we obtain
+\begin{align*}
+    \E{X} &= \sum_{i=1}^{n-k+1}\E{X_i} \\
+    &= \sum_{i=1}^{n-k+1}\Pr{B_i} && \text{(by Lemma 5.1)} \\
+    &= \sum_{i=1}^{n-k+1}\frac{\binom{n-i+1}{k}}{\binom{n}{k}} \\
+    &= \frac{\sum_{i=k}^n\binom{i}{k}}{\binom{n}{k}} && \text{(reindexing)}.
+\end{align*}
+
+To simplify the last expression, we'll show that
+\begin{equation} \label{eq:sum-of-binomials}
+    \sum_{i=k}^n\binom{i}{k} = \binom{n+1}{k+1}
+\end{equation}
+for all $k=1$, $2$, \dots, $n$.
+If $n=1$, then $k=1$ and both sides of \eqref{eq:sum-of-binomials} reduce to 1.
+Now suppose that $n>1$ and assume by induction that for all $k=1$, 2, \dots, $n-1$ it holds
+\[
+    \sum_{i=k}^{n-1}\binom{i}{k} = \binom{n}{k+1}.
+\]
+We have
+\begin{align*}
+    \sum_{i=k}^n\binom{i}{k} &= \sum_{i=k}^{n-1}\binom{i}{k}+\binom{n}{k} \\
+    &= \binom{n}{k+1}+\binom{n}{k} && \text{(by the inductive hypothesis)} \\
+    &= \binom{n+1}{k+1} && \text{(by \refExercise{C.1-7})}.
+\end{align*}
+If $k=n$, then \eqref{eq:sum-of-binomials} reduces to $\binom{n}{n}=\binom{n+1}{n+1}$, and so trivially holds.
+
+Finally, we obtain the number of indices picked by \proc{Deterministic-Search} in the average case to be
+\begin{align*}
+    \E{X} &= \frac{\sum_{i=k}^n\binom{i}{k}}{\binom{n}{k}} \\[1mm]
+    &= \frac{\binom{n+1}{k+1}}{\binom{n}{k}} && \text{(by equation \eqref{eq:sum-of-binomials})} \\[1mm]
+    &= \frac{n+1}{k+1} && \text{(by equation (C.9))}.
+\end{align*}
+
+The worst case for \proc{Deterministic-Search} is when all instances of $x$ occupy the $k$ rightmost positions of the array.
+The algorithm will then check exactly $n-k+1$ indices before $x$ is found and the algorithm terminates.
