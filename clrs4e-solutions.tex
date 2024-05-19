@@ -303,10 +303,10 @@
                 \subproblem
                 \import{\Chapter/problems/\Problem/}{\SubProblem}
             }{}%
+            \IfFileExists{\Chapter/problems/\Problem/post_\SubProblem}{%
+                \bigskip\par\noindent\import{\Chapter/problems/\Problem/}{post_\SubProblem}
+            }{}%
         }%
-        \IfFileExists{\Chapter/problems/\Problem/main_end}{%
-            \par\bigskip\import{\Chapter/problems/\Problem/}{main_end}
-        }{}%
     }%
 }
 
