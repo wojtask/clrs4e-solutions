@@ -5,17 +5,20 @@
 ### Overview
 
 The goal of this project is to provide solutions to all exercises and problems from [*Introduction to Algorithms, Fourth
-Edition*](http://mitpress.mit.edu/algorithms4) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
+Edition*](http://mitpress.mit.edu/algorithms4) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford
+Stein.
 My intention is to ensure, first and foremost, the rock solid correctness and completeness of the provided content, its
 technical elegance, as well as its consistency with the textbook material.
-In order to achieve such reliability, I put a lot of effort into evolving and revising the solutions, not only in terms of
-accuracy and content-related correctness, but also in terms of terminology, wording, and typography.
-I also pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to illustrate
-operations and examples with accurate pictures, consistent with the style of the textbook.
+In order to achieve such reliability, I put a lot of effort into evolving and revising the solutions, not only in terms
+of accuracy and content-related correctness, but also in terms of terminology, wording, and typography.
+I also pay attention to providing optimal algorithms, which are then implemented and thoroughly tested, and to
+illustrate operations and examples with accurate pictures, consistent with the style of the textbook.
 
-It should be noted that the textbook authors also provide the official [Selected Solutions](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf),
-which cover about 7% of all exercises and problems. Additionally, other researchers publicly host their solutions on the web,
-though majority of those that I found are for the third edition of the textbook:
+It should be noted that the textbook authors also provide the
+official [Selected Solutions](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf),
+which cover about 7% of all exercises and problems.
+Additionally, other researchers publicly host their solutions on the web, though majority of those that I found are for
+the third edition of the textbook:
 
 * [solutions by Michelle Bodnar and Andrew Lohr](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html),
 * [solutions by Stefan Kanev](https://ita.skanev.com),
@@ -25,8 +28,8 @@ though majority of those that I found are for the third edition of the textbook:
 
 However, none of the above sources cover all exercises, especially when compared to the fourth edition that adds a
 significant number of new exercises.
-Also, I noticed that some solutions are not of the highest quality, with defects ranging from incorrectness or incompleteness
-to the lack of technical elegance.
+Also, I noticed that some solutions are not of the highest quality, with defects ranging from incorrectness or
+incompleteness to the lack of technical elegance.
 Nevertheless, these pieces of work were sources of inspiration for me, and showed different approaches and perspectives.
 When borrowing on the ideas presented there, I always aimed to rework the solutions by introducing necessary fixes and
 improvements, and refine to improve consistency with the book.
@@ -260,8 +263,8 @@ The work on the current project began on January 1, 2023.
 
 - [x] Add project's documentation (you are reading it now), create issues and milestones, setup document's stub, suggest
   page layout and styling.
-- [x] Migrate the CormenSol solutions from Appendices A-C. Add solutions to the modified and new exercises and problems
-  along the way.
+- [x] Migrate the CormenSol solutions from Appendices A-C.
+  Add solutions to the modified and new exercises and problems along the way.
 - [x] Add solutions to Appendix D, previously missing in the second edition, completing Part
   VIII ([release 0.1](https://github.com/wojtask/clrs4e-solutions/releases/tag/0.1)).
 - [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
@@ -280,16 +283,22 @@ The work on the current project began on January 1, 2023.
 
 ### Building
 
-To compile the project locally you need TeXLive 2021 or newer.
-On Ubuntu the minimal required set of packages can be installed with:
+To compile the project locally you need a relatively fresh LaTeX distro, like TeX Live 2023 or newer.
+Using older versions may produce an error with unrecognized option `twoside` of the package `fancyhdr`.
+The support of this option was added in fancyhdr v4.1 dated 2022-11-09.
+As a workaround, the option can be manually removed before compiling the document.
+This will change the way page headers are displayed; they will have the same format on left-hand pages and right-hand
+pages, but it shouldn't have a dramatic effect on the output.
+
+On Debian/Ubuntu the minimal required set of TeX Live packages can be installed with:
 
 ```shell
 sudo apt install texlive-pstricks texlive-latex-extra texlive-fonts-extra latexmk
 ```
 
 Additionally, you need to install the MathTime Professional II Lite fonts.
-Since the fonts are not available in the standard TeXLive distribution, you will need to install them using the provided
-script:
+Since the fonts are not available in the standard TeX Live distribution, you will need to install them using the
+provided script:
 
 ```shell
 chmod +x util/install_fonts.sh && sudo util/install_fonts.sh
