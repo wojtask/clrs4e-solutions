@@ -1,23 +1,21 @@
-We'll instead consider the recurrence $T(n)=4T(n/2)+\Theta(n)$, of which the original recurrence is a special case, and we'll show that $T(n)=O(n^2)$.
-
 Our first guess is that $T(n)\le cn^2$ for all $n\ge n_0$, where $c$, $n_0>0$ are constants.
 Letting $n\ge2n_0$ and substituting the inductive hypothesis applied to $T(n/2)$, yields
 \begin{align*}
-    T(n) &\le 4c(n/2)^2+\Theta(n) \\
-    &= cn^2+\Theta(n),
+    T(n) &\le 4c(n/2)^2+n \\
+    &= cn^2+n,
 \end{align*}
-but that does not imply that $T(n)\le cn^2$ for any choice of $c$ and for any function represented by the $\Theta(n)$ term.
+but that does not imply that $T(n)\le cn^2$ for any choice of $c$.
 
 Let's then improve our guess by subtracting a lower-order term: $T(n)\le cn^2-dn$, where $d\ge0$ is another constant.
 Assume by induction that the bound holds for all values at least as big as $n_0$, but less than $n$.
 For $n\ge2n_0$ we have $T(n/2)\le c(n/2)^2-d(n/2)$, and so
 \begin{align*}
-    T(n) &\le 4(c(n/2)^2-d(n/2))+\Theta(n) \\
-    &= cn^2-2dn+\Theta(n) \\
-    &= cn^2-dn-(dn-\Theta(n)) \\
+    T(n) &\le 4(c(n/2)^2-d(n/2))+n \\
+    &= cn^2-2dn+n \\
+    &= cn^2-dn-n(d-1) \\
     &\le cn^2-dn,
 \end{align*}
-where the last step holds as long as for $n\ge2n_0$, the quantity $dn$ dominates the anonymous function hidden by the $\Theta(n)$ term.
+where the last step holds as long as $d\ge1$.
 
 Now let $n_0\le n<2n_0$.
 Let's pick $n_0=1$.
