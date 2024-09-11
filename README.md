@@ -283,8 +283,8 @@ The work on the current project began on January 1, 2023.
 
 ### Building
 
-To compile the project locally you need a relatively fresh LaTeX distro, like TeX Live 2023 or newer.
-Using older versions may produce an error with unrecognized option `twoside` of the package `fancyhdr`.
+To compile the project locally at least TeX Live 2023 is required.
+Older versions may produce an error with unrecognized option `twoside` of the package `fancyhdr`.
 The support of this option was added in fancyhdr v4.1 dated 2022-11-09.
 As a workaround, the option can be manually removed before compiling the document.
 This will change the way page headers are displayed; they will have the same format on left-hand pages and right-hand
@@ -309,6 +309,9 @@ Once the environment has been prepared, you can compile the document to PDF by r
 ```shell
 latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 ```
+
+Using other LaTeX distributions or other operating systems may require adapting the above commands or performing
+additional actions before compiling the document.
 
 ### Contributions
 
