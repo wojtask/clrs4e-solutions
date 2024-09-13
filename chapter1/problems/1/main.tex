@@ -1,15 +1,14 @@
 The results are collected in the table in \refFigure{1-1}.
-Numbers greater than $10^6$ are approximate.
+Values above $10^6$ are approximate.
 A month is assumed to have 30 days and a year is assumed to have 365 days.
 
 \begin{figure}[htb]
     \[
-        \newcommand{\headercell}[1]{\begin{tabular}[c]{c}1\\[-2mm]\text{#1}\end{tabular}}
         \renewcommand{\arraystretch}{1.3}
         \begin{array}{c|c|c|c|c|c|c|c|}
-            & \headercell{second} & \headercell{minute} & \headercell{hour} & \headercell{day} & \headercell{month} & \headercell{year} & \headercell{century} \\
+            & \text{1 second} & \text{1 minute} & \text{1 hour} & \text{1 day} & \text{1 month} & \text{1 year} & \text{1 century} \\
             \hline
-            \lg n & 2^{10^6} & 2^{6\cdot10^7} & 2^{3.6\cdot10^9} & 2^{8.64\cdot10^{10}} & 2^{2.59\cdot10^{12}} & 2^{3.15\cdot10^{13}} & 2^{3.15\cdot10^{15}} \\
+            \lg n & 10^{301{,}030} & 10^{1.81\cdot10^7} & 10^{1.08\cdot10^9} & 10^{2.6\cdot10^{10}} & 10^{7.8\cdot10^{11}} & 10^{9.49\cdot10^{12}} & 10^{9.49\cdot10^{14}} \\
             \hline
             \sqrt{n} & 10^{12} & 3.6\cdot10^{15} & 1.3\cdot10^{19} & 7.46\cdot10^{21} & 6.72\cdot10^{24} & 9.95\cdot10^{26} & 9.95\cdot10^{30} \\
             \hline
