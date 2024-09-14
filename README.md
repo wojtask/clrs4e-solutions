@@ -301,7 +301,7 @@ Since the fonts are not available in the standard TeX Live distribution, you wil
 provided script:
 
 ```shell
-chmod +x util/install_fonts.sh && sudo util/install_fonts.sh
+chmod +x scripts/install_fonts.sh && sudo scripts/install_fonts.sh
 ```
 
 Once the environment has been prepared, you can compile the document to PDF by running the following command:
