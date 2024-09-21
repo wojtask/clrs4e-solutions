@@ -1,1 +1,4 @@
-\workinprogress % TODO
+A heap node at index $i$ is not a leaf if and only if it has a left child.
+Therefore, in a heap of $n$ nodes the internal nodes have indices $i$ such that $\proc{Left}(i)\le n$.
+Because $\proc{Left}(i)=2i$ and because $i$ is integer, we get $i\le\lfloor n/2\rfloor$.
+The remaining nodes of the heap are leaves and occupy positions $\lfloor n/2\rfloor+1$, $\lfloor n/2\rfloor+2$, \dots, $n$.
