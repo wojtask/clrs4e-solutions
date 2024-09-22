@@ -1,8 +1,10 @@
 See \refFigure{B.5-1}.
-\begin{figure}[htb]
-    \subcaptionbox{\label{fig:B.5-1a}}[0.15\textwidth]{\subimport{figures/1/}{a.tikz}}
-    \subcaptionbox{\label{fig:B.5-1b}}[0.25\textwidth]{\subimport{figures/1/}{b.tikz}}
-    \subcaptionbox{\label{fig:B.5-1c}}[0.35\textwidth]{\subimport{figures/1/}{c.tikz}}
+\begin{figure}[!htb]
+    \subcaptionbox{\label{fig:B.5-1a}}[0.5\textwidth]{\subimport{figures/1/}{a.tikz}}
+    \subcaptionbox{\label{fig:B.5-1b}}[0.5\textwidth]{\subimport{figures/1/}{b.tikz}}
+    \par\vspace{10mm}
+    \subcaptionbox{\label{fig:B.5-1c}}[\textwidth]{\subimport{figures/1/}{c.tikz}}
+    \par\vspace{10mm}
     \subcaptionbox{\label{fig:B.5-1d}}[\textwidth]{\subimport{figures/1/}{d.tikz}}
     \caption{\textbf{(a)}\, All the free trees with vertices $x$, $y$, and $z$.\,
     \textbf{(b)}\, All the rooted trees with nodes $x$, $y$, and $z$ with $x$ as the root.\,

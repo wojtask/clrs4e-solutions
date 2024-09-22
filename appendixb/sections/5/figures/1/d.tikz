@@ -5,43 +5,43 @@
         child {node {$y$}
             child[missing]
             child {node {$z$}}};
-    \node[right=15mm of root1] (root2) {$x$}
+    \node[right=3\vertexsize of root1] (root2) {$x$}
         child[missing]
         child {node {$y$}
             child {node {$z$}}
             child[missing]};
-    \node[right=20mm of root2] (root3) {$x$}
+    \node[right=4\vertexsize of root2] (root3) {$x$}
         child {node {$y$}}
         child {node {$z$}};
-    \node[right=20mm of root3] (root4) {$x$}
+    \node[right=4\vertexsize of root3] (root4) {$x$}
         child {node {$y$}
             child[missing]
             child {node {$z$}}}
             child[missing];
-    \node[right=15mm of root4] (root5) {$x$}
+    \node[right=3\vertexsize of root4] (root5) {$x$}
         child {node {$y$}
             child {node {$z$}}
             child[missing]}
         child[missing];
-    \node[below=25mm of root1] (root6) {$x$}
+    \node[below=5\vertexsize of root1] (root6) {$x$}
         child[missing]
         child {node {$z$}
             child[missing]
             child {node {$y$}}};
-    \node[right=15mm of root6] (root7) {$x$}
+    \node[right=3\vertexsize of root6] (root7) {$x$}
         child[missing]
         child {node {$z$}
             child {node {$y$}}
         child[missing]};
-    \node[right=20mm of root7] (root8) {$x$}
+    \node[right=4\vertexsize of root7] (root8) {$x$}
         child {node {$z$}}
         child {node {$y$}};
-    \node[right=20mm of root8] (root9) {$x$}
+    \node[right=4\vertexsize of root8] (root9) {$x$}
         child {node {$z$}
             child[missing]
             child {node {$y$}}}
         child[missing];
-    \node[right=15mm of root9] {$x$}
+    \node[right=3\vertexsize of root9] {$x$}
         child {node {$z$}
             child {node {$y$}}
             child[missing]}

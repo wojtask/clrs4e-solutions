@@ -1,6 +1,6 @@
 \begin{tikzpicture}[
     every node/.style = {tan vertex},
-    level/.append style = {sibling distance=30mm/2^#1}
+    level/.append style = {sibling distance=6\vertexsize/2^#1}
 ]
 \node {}
     child {node {}
