@@ -1,5 +1,5 @@
 \begin{tikzpicture}[
-    level/.style = {level distance=3\vertexsize, sibling distance=16\vertexsize/2^#1},
+    level/.style = {level distance=2\vertexsize, sibling distance=14\vertexsize/2^#1},
     level 3/.style = {edge from parent/.style = {transition edge={solid}{very densely dashed}{0.7}}},
     level arrow/.style = {->, thick, blue},
     total node/.style = {align=right, text width=10mm},
@@ -39,8 +39,8 @@
 }
 
 \node[total node, right=of leaf m] (level h total) {$\Theta(\lg n)$};
-\node[total node] at (level h total |- 22) (level 2 total) {$c\lg n$};
-\node[total node] at (level h total |- 2) (level 1 total) {$c\lg n$};
+\node[total node] at (level h total |- 11) (level 2 total) {$c\lg n$};
+\node[total node] at (level h total |- 1) (level 1 total) {$c\lg n$};
 \node[total node] at (level h total |- root) (level 0 total) {$c\lg n$};
 
 \path (level 2 total.east) -- (level h total.east) node[midway, xshift=-5mm, font=\bfseries] {$\vdots$};
