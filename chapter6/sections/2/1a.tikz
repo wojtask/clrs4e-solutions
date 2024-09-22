@@ -1,0 +1,24 @@
+\input{1.tikz}
+\begin{tikzpicture}
+    \node[label=1] {27}
+        child {node[label=2] {17}
+            child {node[label=4] {16}
+                child {node[label=8] {5}}
+                child {node[label=9] {7}}
+            }
+            child {node[label=5] {13}
+                child {node[label=10] {12}}
+                child {node[label=11] {4}}
+            }
+        }
+        child {node[active, label=3, label=right:{$i$}] {3}
+            child {node[label=6] {10}
+                child {node[label=12] {8}}
+                child {node[label=13] {9}}
+            }
+            child {node[label=7] {1}
+                child {node[label=14] {0}}
+                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
+            }
+        };
+\end{tikzpicture}
