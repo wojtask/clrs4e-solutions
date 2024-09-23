@@ -1,1 +1,21 @@
-\workinprogress % TODO
+The following pseudocode shows the procedure for restoring the min-heap property.
+It is similar to the \proc{Max-Heapify} procedure, but with the reversed comparisons between the heap elements in lines \ref{li:min-heapify-compare-left} and \ref{li:min-heapify-compare-right}.
+
+\begin{codebox}
+\Procname{$\proc{Min-Heapify}(A,i)$}
+\li $l\gets\proc{Left}(i)$
+\li $r\gets\proc{Right}(i)$
+\li \If $l\le\attrib{A}{heap-size}$ and $A[l]<A[i]$ \label{li:min-heapify-compare-left}
+\li     \Then $\id{smallest}\gets l$
+\li     \Else $\id{smallest}\gets i$
+        \End
+\li \If $r\le\attrib{A}{heap-size}$ and $A[r]<A[\id{smallest}]$ \label{li:min-heapify-compare-right}
+\li     \Then $\id{smallest}\gets r$
+        \End
+\li \If $\id{smallest}\ne i$
+\li     \Then exchange $A[i]$ with $A[\id{smallest}]$
+\li         $\proc{Min-Heapify}(A,\id{smallest})$
+        \End
+\end{codebox}
+
+As with the analysis of \proc{Max-Heapify} in the book, we can argue similarly that the worst-case running time $T(n)$ of \proc{Min-Heapify} is described by the recurrence (6.1), which means that the running times of both procedures are asymptotically the same.
