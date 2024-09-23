@@ -1,1 +1,5 @@
-\workinprogress % TODO
+The worst case for \proc{Max-Heapify} occurs when the procedure is called for the root of the heap (i.e., for $i=1$), and when the test in line 8 comes up true in every recursive call but the last, causing the procedure to descend to the lowest level of the heap.
+By \refExercise{6.1-2}, in an $n$-element heap the longest simple path from the root down to a leaf consists of $h=\lfloor\lg n\rfloor$ edges and this is how many times the procedure is called recursively in the worst case.
+The cost incurred at each level of the recursion is $\Theta(1)$, so the worst-case running time is $\Omega(\lg n)$.
+
+An example heap $A$ for which the call $\proc{Max-Heapify}(A,1)$ performs the operations described above is one in which the root has value 0 and every other node has value 1.
