@@ -1,1 +1,3 @@
-\workinprogress % TODO
+By \refExercise{6.1-8} we have that a heap node indexed with $i>\attrib{A}{heap-size}/2$ is a leaf.
+In the call to $\proc{Max-Heapify}(A,i)$, where $i>\attrib{A}{heap-size}/2$, both $l$ and $r$ take values larger than \attrib{A}{heap-size}, so \id{largest} is set to $i$ in line 5.
+The condition in line 8 comes up false, and the procedure terminates immediately.
