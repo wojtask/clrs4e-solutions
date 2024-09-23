@@ -115,7 +115,7 @@ The work on the current project began on January 1, 2023.
     </td>
     <td>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/8">
-        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?color=lightgray" alt="Chapter 6">
+        <img src="https://img.shields.io/github/milestones/progress-percent/wojtask/clrs4e-solutions/8?color=gold" alt="Chapter 6">
       </a>
       <br>
       <a href="https://github.com/wojtask/clrs4e-solutions/milestone/9">
