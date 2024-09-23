@@ -1,1 +1,23 @@
-\workinprogress % TODO
+\indent\begin{codebox}
+\Procname{$\proc{Iterative-Max-Heapify}(A,i)$}
+\li \While \const{true}
+\li     \Do $l\gets\proc{Left}(i)$ \label{li:iterative-max-heapify-begin}
+\li         $r\gets\proc{Right}(i)$
+\li         \If $l\le\attrib{A}{heap-size}$ and $A[l]>A[i]$
+\li             \Then $\id{largest}\gets l$
+\li             \Else $\id{largest}\gets i$
+                \End
+\li         \If $r\le\attrib{A}{heap-size}$ and $A[r]>A[\id{largest}]$
+\li             \Then $\id{largest}\gets r$
+                \End \label{li:iterative-max-heapify-end}
+\li         \If $\id{largest}\isequal i$ \label{li:iterative-max-heapify-test}
+\li             \Then \Return
+                \End
+\li         exchange $A[i]$ with $A[\id{largest}]$
+\li         $i\gets\id{largest}$
+        \End
+\end{codebox}
+
+The actions performed in lines \ref{li:iterative-max-heapify-begin}--\ref{li:iterative-max-heapify-end} are identical to those performed by the recursive variant of the procedure in lines 1--7.
+Depending on the result of the test in the line~\ref{li:iterative-max-heapify-test}, the procedure either terminates or swaps the elements $A[i]$ and $A[\id{largest}]$.
+After the swap it simulates the recursive call by updating the value of $i$ and running another iteration of the \kw{while} loop.
