@@ -1,76 +1,76 @@
 \begin{tikzpicture}[
-    array/.append style = {row 2/.append style={nodes={fill=tan}}},
+    every matrix/.style = {indexed array, row 2/.append style={nodes={fill=tan}}},
     node distance=2\cellsize,
     pqr/.style = {element, node distance=.75\cellsize},
     transition/.style = {->, thick, orange!60, shorten >=2\cellsize, shorten <=\cellsize, font={\itshape\footnotesize}, text=black},
 ]
-    \matrix[array] (arr-1-1) {
+    \matrix (arr-1-1) {
         1 & 2  & 3  & 4  & 5  & 6  & 7 & 8  \\
         3 & 41 & 52 & 26 & 38 & 57 & 9 & 49 \\};
     \path[pqr] node[above=of arr-1-1-2-1] {$p$}
         node[above=of arr-1-1-2-4] {$q$}
         node[above=of arr-1-1-2-8] {$r$};
 
-    \matrix[array, below=of arr-1-1-2-1.south west] (arr-2-1) {
+    \matrix[below=of arr-1-1-2-1.south west] (arr-2-1) {
         1 & 2  & 3  & 4  \\
         3 & 41 & 52 & 26 \\};
     \path[pqr] node[above=of arr-2-1-2-1] {$p$}
         node[above=of arr-2-1-2-2] {$q$}
         node[above=of arr-2-1-2-4] {$r$};
 
-    \matrix[array, below=of arr-1-1-2-8.south east] (arr-2-2) {
+    \matrix[below=of arr-1-1-2-8.south east] (arr-2-2) {
         5  & 6  & 7 & 8  \\
         38 & 57 & 9 & 49 \\};
     \path[pqr] node[above=of arr-2-2-2-1] {$p$}
         node[above=of arr-2-2-2-2] {$q$}
         node[above=of arr-2-2-2-4] {$r$};
 
-    \matrix[array, below=of arr-2-1-2-1.south west] (arr-3-1) {
+    \matrix[below=of arr-2-1-2-1.south west] (arr-3-1) {
         1 & 2  \\
         3 & 41 \\};
     \path[pqr] node[above=of arr-3-1-2-1] {$p,q$}
         node[above=of arr-3-1-2-2] {$r$};
 
-    \matrix[array, below=of arr-2-1-2-4.south east] (arr-3-2) {
+    \matrix[below=of arr-2-1-2-4.south east] (arr-3-2) {
         3  & 4  \\
         52 & 26 \\};
     \path[pqr] node[above=of arr-3-2-2-1] {$p,q$}
         node[above=of arr-3-2-2-2] {$r$};
 
-    \matrix[array, below=of arr-2-2-2-1.south west] (arr-3-3) {
+    \matrix[below=of arr-2-2-2-1.south west] (arr-3-3) {
         5  & 6  \\
         38 & 57 \\};
     \path[pqr] node[above=of arr-3-3-2-1] {$p,q$}
         node[above=of arr-3-3-2-2] {$r$};
 
-    \matrix[array, below=of arr-2-2-2-4.south east] (arr-3-4) {
+    \matrix[below=of arr-2-2-2-4.south east] (arr-3-4) {
         7 & 8  \\
         9 & 49 \\};
     \path[pqr] node[above=of arr-3-4-2-1] {$p,q$}
         node[above=of arr-3-4-2-2] {$r$};
 
-    \matrix[array, below=of arr-3-1-2-1.south west] (arr-4-1) {1\\3\\};
+    \matrix[below=of arr-3-1-2-1.south west] (arr-4-1) {1\\3\\};
     \path[pqr] node[above=of arr-4-1-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-1-2-2.south east] (arr-4-2) {2\\41\\};
+    \matrix[below=of arr-3-1-2-2.south east] (arr-4-2) {2\\41\\};
     \path[pqr] node[above=of arr-4-2-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-2-2-1.south west] (arr-4-3) {3\\52\\};
+    \matrix[below=of arr-3-2-2-1.south west] (arr-4-3) {3\\52\\};
     \path[pqr] node[above=of arr-4-3-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-2-2-2.south east] (arr-4-4) {4\\26\\};
+    \matrix[below=of arr-3-2-2-2.south east] (arr-4-4) {4\\26\\};
     \path[pqr] node[above=of arr-4-4-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-3-2-1.south west] (arr-4-5) {5\\38\\};
+    \matrix[below=of arr-3-3-2-1.south west] (arr-4-5) {5\\38\\};
     \path[pqr] node[above=of arr-4-5-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-3-2-2.south east] (arr-4-6) {6\\57\\};
+    \matrix[below=of arr-3-3-2-2.south east] (arr-4-6) {6\\57\\};
     \path[pqr] node[above=of arr-4-6-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-4-2-1.south west] (arr-4-7) {7\\9\\};
+    \matrix[below=of arr-3-4-2-1.south west] (arr-4-7) {7\\9\\};
     \path[pqr] node[above=of arr-4-7-2-1] {$p,r$};
 
-    \matrix[array, below=of arr-3-4-2-2.south east] (arr-4-8) {8\\49\\};
+    \matrix[below=of arr-3-4-2-2.south east] (arr-4-8) {8\\49\\};
     \path[pqr] node[above=of arr-4-8-2-1] {$p,r$};
 
     \coordinate (mid4-1-2) at ($(arr-4-1-2-1.south east)!.5!(arr-4-2-2-1.south west)$);
@@ -78,25 +78,25 @@
     \coordinate (mid4-5-6) at ($(arr-4-5-2-1.south east)!.5!(arr-4-6-2-1.south west)$);
     \coordinate (mid4-7-8) at ($(arr-4-7-2-1.south east)!.5!(arr-4-8-2-1.south west)$);
 
-    \matrix[array, below=of mid4-1-2] (arr-5-1) {
+    \matrix[below=of mid4-1-2] (arr-5-1) {
         1 & 2  \\
         3 & 41 \\};
     \path[pqr] node[above=of arr-5-1-2-1] {$p,q$}
         node[above=of arr-5-1-2-2] {$r$};
 
-    \matrix[array, below=of mid4-3-4] (arr-5-2) {
+    \matrix[below=of mid4-3-4] (arr-5-2) {
         3  & 4  \\
         26 & 52 \\};
     \path[pqr] node[above=of arr-5-2-2-1] {$p,q$}
         node[above=of arr-5-2-2-2] {$r$};
 
-    \matrix[array, below=of mid4-5-6] (arr-5-3) {
+    \matrix[below=of mid4-5-6] (arr-5-3) {
         5  & 6  \\
         38 & 57 \\};
     \path[pqr] node[above=of arr-5-3-2-1] {$p,q$}
         node[above=of arr-5-3-2-2] {$r$};
 
-    \matrix[array, below=of mid4-7-8] (arr-5-4) {
+    \matrix[below=of mid4-7-8] (arr-5-4) {
         7 & 8  \\
         9 & 49 \\};
     \path[pqr] node[above=of arr-5-4-2-1] {$p,q$}
@@ -105,14 +105,14 @@
     \coordinate (mid5-1-2) at ($(arr-5-1-2-2.south east)!.5!(arr-5-2-2-1.south west)$);
     \coordinate (mid5-3-4) at ($(arr-5-3-2-2.south east)!.5!(arr-5-4-2-1.south west)$);
 
-    \matrix[array, below=of mid5-1-2] (arr-6-1) {
+    \matrix[below=of mid5-1-2] (arr-6-1) {
         1 & 2  & 3  & 4  \\
         3 & 26 & 41 & 52 \\};
     \path[pqr] node[above=of arr-6-1-2-1] {$p$}
         node[above=of arr-6-1-2-2] {$q$}
         node[above=of arr-6-1-2-4] {$r$};
 
-    \matrix[array, below=of mid5-3-4] (arr-6-2) {
+    \matrix[below=of mid5-3-4] (arr-6-2) {
         5 & 6  & 7  & 8  \\
         9 & 38 & 49 & 57 \\};
     \path[pqr] node[above=of arr-6-2-2-1] {$p$}
@@ -121,7 +121,7 @@
 
     \coordinate (mid6-1-2) at ($(arr-6-1-2-4.south east)!.5!(arr-6-2-2-1.south west)$);
 
-    \matrix[array, below=of mid6-1-2] (arr-7-1) {
+    \matrix[below=of mid6-1-2] (arr-7-1) {
         1 & 2 & 3  & 4  & 5  & 6  & 7  & 8  \\
         3 & 9 & 26 & 38 & 41 & 49 & 52 & 57 \\};
     \path[pqr] node[above=of arr-7-1-2-1] {$p$}
