@@ -2,7 +2,6 @@
 \begin{tikzpicture}
     \path[use as bounding box] (-3\cellsize, -2\cellsize) rectangle +(6\cellsize, 3\cellsize);
     \matrix[
-        array,
         shifted cell/.list = {1},
         moved cell/.list = {2},
     ] (arr) {
