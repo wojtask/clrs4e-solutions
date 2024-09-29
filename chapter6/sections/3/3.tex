@@ -1,1 +1,3 @@
-\workinprogress % TODO
+To call $\proc{Max-Heapify}(A,i)$ we need to make sure that in the binary tree represented by the array $A$, subtrees rooted at $\proc{Left}(i)$ and $\proc{Right}(i)$ are max-heaps.
+If the procedure \proc{Max-Heapify} were called in \proc{Build-Max-Heap} for increasing values for $i$, we could not guarantee that this condition would be met.
+For instance, if $A$ is an array of at least 4 elements in sorted order, that condition fails before the call to $\proc{Max-Heapify}(A,1)$.
