@@ -1,0 +1,18 @@
+\input{1.tikz}
+\begin{tikzpicture}
+    \node[label=1] {84}
+        child {node[label=2] {22}
+            child {node[label=4] {10}
+                child {node[label=8] {5}}
+                child {node[label=9] {9}}
+            }
+            child {node[label=5] {3}}
+        }
+        child {node[label=3] {19}
+            child {node[label=6] {17}}
+            child {node[label=7] {6}
+                child[missing]
+                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
+            }
+        };
+\end{tikzpicture}
