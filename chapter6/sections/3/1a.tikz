@@ -1,0 +1,25 @@
+\input{1.tikz}
+\begin{tikzpicture}
+    \begin{scope}[
+        every node/.style = {},
+    ]
+        \matrix[array, row 1/.append style={nodes={fill=tan}}, label=left:{$A$}] (arr) {
+            5 & 3 & 17 & 10 & 84 & 19 & 6 & 22 & 9 \\};
+    \end{scope}
+
+    \node[below=1.5\cellsize of arr-1-5, label=1] {5}
+        child {node[label=2] {3}
+            child {node[active, label=4, label=left:{$i$}] {10}
+                child {node[label=8] {22}}
+                child {node[label=9] {9}}
+            }
+            child {node[label=5] {84}}
+        }
+        child {node[label=3] {17}
+            child {node[label=6] {19}}
+            child {node[label=7] {6}
+                child[missing]
+                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
+            }
+        };
+\end{tikzpicture}

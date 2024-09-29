@@ -1,1 +1,15 @@
-\workinprogress % TODO
+See \refFigure{6.3-1}.
+\begin{figure}[htb]
+    \captionsetup[subfigure]{}
+    \subcaptionbox{\label{fig:6.3-1a}}[0.5\textwidth]{\input{1a.tikz}}
+    \subcaptionbox{\label{fig:6.3-1b}}[0.5\textwidth]{\input{1b.tikz}}
+    \par\vspace{7mm}
+    \subcaptionbox{\label{fig:6.3-1c}}[0.5\textwidth]{\input{1c.tikz}}
+    \subcaptionbox{\label{fig:6.3-1d}}[0.5\textwidth]{\input{1d.tikz}}
+    \par\vspace{7mm}
+    \subcaptionbox{\label{fig:6.3-1e}}[0.5\textwidth]{\input{1e.tikz}}
+    \caption{The operation of \proc{Build-Max-Heap} on the array $A=\langle$5, 3, 17, 10, 84, 19, 6, 22, 9$\rangle$.\,
+    \textbf{(a)}\, The array $A$ and the binary tree it represents before the first call to \proc{Max-Heapify} in line 3.\,
+    \textbf{(b)--(d)}\, The data structure before each subsequent call to \proc{Max-Heapify}.\,
+    \textbf{(e)}\, The resulting max-heap after \proc{Build-Max-Heap} finishes.} \label{fig:6.3-1}
+\end{figure}
