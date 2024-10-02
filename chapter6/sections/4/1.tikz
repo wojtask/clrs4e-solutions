@@ -1,0 +1,7 @@
+\setlength{\vertexsize}{1.1em}
+\tikzset{
+    every node/.style = {light blue vertex},
+    discarded/.style = {tan vertex},
+    every label/.style = {index},
+    level/.append style = {sibling distance=5\vertexsize/#1},
+}

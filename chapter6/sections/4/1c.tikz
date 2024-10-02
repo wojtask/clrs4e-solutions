@@ -1,0 +1,18 @@
+\input{1.tikz}
+\begin{tikzpicture}
+    \node {17}
+        child {node {13}
+            child {node {8}
+                child {node[discarded, label=left:{$i$}] {20} edge from parent[draw=none]}
+                child {node[discarded] {25} edge from parent[draw=none]}
+            }
+            child {node {7}}
+        }
+        child {node {5}
+            child {node {4}}
+            child {node {2}
+                child[missing]
+                child {node[draw=none, fill=none, label=right:{}] {} edge from parent[draw=none]}
+            }
+        };
+\end{tikzpicture}
