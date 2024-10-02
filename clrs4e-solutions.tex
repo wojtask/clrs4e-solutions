@@ -322,7 +322,7 @@
 \tikzset{
     font=\footnotesize,
     >={Stealth[scale length=1.5, scale width=1.25]},
-    element/.style = {text height=1ex, text depth=.1ex, inner sep=1pt},
+    element/.style = {text height=1ex, text depth=0ex, inner sep=0pt},
     index/.style = {font=\scriptsize, rectangle, draw=none, fill=none, inner sep=0pt, minimum size=1ex},
     vertex/.style = {element, circle, minimum size=\vertexsize, label distance=1pt},
     tan vertex/.style = {vertex, fill=tan, draw=orange},
@@ -332,7 +332,7 @@
     cell/.style = {element, draw, minimum size=\cellsize},
     array/.style = {matrix of nodes, column sep=-\pgflinewidth, row 1/.style={nodes=cell}, nodes in empty cells},
     indexed array/.style = {matrix of nodes, column sep=-\pgflinewidth, row 1/.style={nodes=index, row sep=.5ex}, row 2/.style={nodes=cell}, nodes in empty cells},
-    level/.style = {level distance=1.7\vertexsize, sibling distance=12\vertexsize/2^#1},
+    level/.style = {level distance=1.7\vertexsize, sibling distance=11\vertexsize/2^#1},
     transition edge/.style n args = {3}{decorate, decoration={show path construction,
         lineto code={
             \draw[#1] (\tikzinputsegmentfirst) -- ($(\tikzinputsegmentfirst) ! #3 ! (\tikzinputsegmentlast)$);
