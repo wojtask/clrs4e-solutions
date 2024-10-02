@@ -1,1 +1,13 @@
-\workinprogress % TODO
+We prove the fact by induction on $h$.
+Let $n_h$ denote the number of nodes of height $h$ in an $n$-element heap.
+By \refExercise{6.1-8}, the leaves, which are the nodes of height $h=0$, occupy positions $\lfloor n/2\rfloor+1$, $\lfloor n/2\rfloor+2$, \dots, $n$, so the heap has $n_0=n-\lfloor n/2\rfloor=\lceil n/2\rceil$ leaves in total, and the base case holds.
+
+Now suppose that $h>0$ and that $n_{h-1}\le\bigl\lceil n/2^h\bigr\rceil$.
+Note that when $n_{h-1}$ is even, then each node of height $h$ has exactly two children and $n_h=n_{h-1}/2=\lceil n_{h-1}/2\rceil$.
+Conversely, when $n_{h-1}$ is odd, then one of the nodes of height $h$ has exactly one child, while other nodes have two children each, so $n_h=(n_{h-1}-1)/2+1=(n_{h-1}+1)/2=\lceil n_{h-1}/2\rceil$.
+Therefore, regardless of the parity of $n_{h-1}$ we get
+\begin{align*}
+    n_h &= \lceil n_{h-1}/2\rceil \\
+    &\le \bigl\lceil\bigl\lceil n/2^h\bigr\rceil/2\bigr\rceil && \text{(by the inductive hypothesis)} \\
+    &= \bigl\lceil n/2^{h+1}\bigr\rceil && \text{(by equation (3.5))}.
+\end{align*}
