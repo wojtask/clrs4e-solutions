@@ -1,1 +1,24 @@
-\workinprogress % TODO
+See \refFigure{6.4-1}.
+\begin{figure}[htb]
+    \hspace*{-1.5cm}
+    \begin{minipage}{\textwidth + 1.5cm}
+        \captionsetup[subfigure]{}
+        \subcaptionbox{\label{fig:6.4-1a}}[0.33\textwidth]{\input{1a.tikz}}
+        \subcaptionbox{\label{fig:6.4-1b}}[0.33\textwidth]{\input{1b.tikz}}
+        \subcaptionbox{\label{fig:6.4-1c}}[0.33\textwidth]{\input{1c.tikz}}
+        \par\vspace{3ex}
+        \subcaptionbox{\label{fig:6.4-1d}}[0.33\textwidth]{\input{1d.tikz}}
+        \subcaptionbox{\label{fig:6.4-1e}}[0.33\textwidth]{\input{1e.tikz}}
+        \subcaptionbox{\label{fig:6.4-1f}}[0.33\textwidth]{\input{1f.tikz}}
+        \par\vspace{3ex}
+        \subcaptionbox{\label{fig:6.4-1g}}[0.33\textwidth]{\input{1g.tikz}}
+        \subcaptionbox{\label{fig:6.4-1h}}[0.33\textwidth]{\input{1h.tikz}}
+        \subcaptionbox{\label{fig:6.4-1i}}[0.33\textwidth]{\input{1i.tikz}}
+        \par\vspace{3ex}
+        \subcaptionbox{\label{fig:6.4-1j}}[0.33\textwidth]{\input{1j.tikz}}
+    \end{minipage}
+    \caption{The operation of \proc{Heapsort} on the array $A=\langle$5, 13, 2, 25, 7, 17, 20, 8, 4$\rangle$.\,
+    \textbf{(a)}\, The max-heap built by \proc{Build-Max-Heap} in line 1.\,
+    \textbf{(b)--(i)}\, The max-heap and the nodes removed from it after each call to \proc{Max-Heapify} in line 5.\,
+    \textbf{(j)}\, The resulting sorted array $A$.} \label{fig:6.4-1}
+\end{figure}
