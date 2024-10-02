@@ -350,7 +350,12 @@
 
     \frontmatter
 
-    \import{./}{title}
+    \import{./}{frontcover.tex}
+    \pagebreak
+    \import{./}{disclaimer.tex}
+    \vspace*{5ex}
+    \import{./}{acknowledgements.tex}
+    \vfill
 
     \ifpdf
         \addtocontents{toc}{\protect\pdfbookmark{Contents}{toc}}
