@@ -10,9 +10,6 @@
         }
         child {node[active, label=3, label=left:{$i$}] {17}
             child {node[label=6] {19}}
-            child {node[label=7] {6}
-                child[missing]
-                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
-            }
+            child {node[label=7] {6}}
         };
 \end{tikzpicture}
