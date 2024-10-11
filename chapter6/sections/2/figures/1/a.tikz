@@ -18,7 +18,7 @@
             }
             child {node[label=7] {1}
                 child {node[label=14] {0}}
-                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
+                child[missing]
             }
         };
 \end{tikzpicture}
