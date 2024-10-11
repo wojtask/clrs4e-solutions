@@ -10,9 +10,6 @@
         }
         child {node {20}
             child {node {17}}
-            child {node {2}
-                child[missing]
-                child {node[draw=none, fill=none] {} edge from parent[draw=none]}
-            }
+            child {node {2}}
         };
 \end{tikzpicture}
