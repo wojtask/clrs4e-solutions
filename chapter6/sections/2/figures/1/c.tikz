@@ -1,4 +1,4 @@
-\input{1.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}
     \node[label=1] {27}
         child {node[label=2] {17}

@@ -1,4 +1,4 @@
-\input{1.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}
     \node[label=1] {5}
         child {node[active, label=2, label=left:{$i$}] {3}

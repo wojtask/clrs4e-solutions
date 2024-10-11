@@ -3,19 +3,19 @@ See \refFigure{6.4-1}.
     \hspace*{-1.5cm}
     \newlength{\figurewidth}\setlength{\figurewidth}{\textwidth+1.5cm}
     \begin{minipage}{\figurewidth}
-        \subcaptionbox{\label{fig:6.4-1a}}[0.33\figurewidth]{\input{1a.tikz}}
-        \subcaptionbox{\label{fig:6.4-1b}}[0.33\figurewidth]{\input{1b.tikz}}
-        \subcaptionbox{\label{fig:6.4-1c}}[0.33\figurewidth]{\input{1c.tikz}}
+        \subcaptionbox{\label{fig:6.4-1a}}[0.33\figurewidth]{\subimport{figures/1/}{a.tikz}}
+        \subcaptionbox{\label{fig:6.4-1b}}[0.33\figurewidth]{\subimport{figures/1/}{b.tikz}}
+        \subcaptionbox{\label{fig:6.4-1c}}[0.33\figurewidth]{\subimport{figures/1/}{c.tikz}}
         \par\vspace{4ex}
-        \subcaptionbox{\label{fig:6.4-1d}}[0.33\figurewidth]{\input{1d.tikz}}
-        \subcaptionbox{\label{fig:6.4-1e}}[0.33\figurewidth]{\input{1e.tikz}}
-        \subcaptionbox{\label{fig:6.4-1f}}[0.33\figurewidth]{\input{1f.tikz}}
+        \subcaptionbox{\label{fig:6.4-1d}}[0.33\figurewidth]{\subimport{figures/1/}{d.tikz}}
+        \subcaptionbox{\label{fig:6.4-1e}}[0.33\figurewidth]{\subimport{figures/1/}{e.tikz}}
+        \subcaptionbox{\label{fig:6.4-1f}}[0.33\figurewidth]{\subimport{figures/1/}{f.tikz}}
         \par\vspace{4ex}
-        \subcaptionbox{\label{fig:6.4-1g}}[0.33\figurewidth]{\input{1g.tikz}}
-        \subcaptionbox{\label{fig:6.4-1h}}[0.33\figurewidth]{\input{1h.tikz}}
-        \subcaptionbox{\label{fig:6.4-1i}}[0.33\figurewidth]{\input{1i.tikz}}
+        \subcaptionbox{\label{fig:6.4-1g}}[0.33\figurewidth]{\subimport{figures/1/}{g.tikz}}
+        \subcaptionbox{\label{fig:6.4-1h}}[0.33\figurewidth]{\subimport{figures/1/}{h.tikz}}
+        \subcaptionbox{\label{fig:6.4-1i}}[0.33\figurewidth]{\subimport{figures/1/}{i.tikz}}
         \par\vspace{4ex}
-        \subcaptionbox{\label{fig:6.4-1j}}[0.33\figurewidth]{\input{1j.tikz}}
+        \subcaptionbox{\label{fig:6.4-1j}}[0.33\figurewidth]{\subimport{figures/1/}{j.tikz}}
     \end{minipage}
     \caption{The operation of \proc{Heapsort} on the array $A=\langle$5, 13, 2, 25, 7, 17, 20, 8, 4$\rangle$.\,
     \textbf{(a)}\, The max-heap built by \proc{Build-Max-Heap} in line 1.\,
