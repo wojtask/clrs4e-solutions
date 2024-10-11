@@ -5,6 +5,7 @@
 
 gh auth login
 
+# 35 chapters + 4 appendices
 chapters_count=$((35+4))
 
 issues_total=0
@@ -19,30 +20,37 @@ print_progress() {
 
 fetch_issues_count() {
   local query="repo:wojtask/clrs4e-solutions+is:issue"
-  local mq="-label:migratable"
-  local fq="-label:figure"
-  local iq="-label:implementation"
-  local sq="-label:starred"
   for param in "$@"; do
     case $param in
       "c")
         query+="+is:closed"
         ;;
-      "m")
-        mq=${mq:1} # remove the '-' at the beginning
+      "+m")
+        query+="+label:migratable"
         ;;
-      "f")
-        fq=${fq:1}
+      "-m")
+        query+="+-label:migratable"
         ;;
-      "i")
-        iq=${iq:1}
+      "+f")
+        query+="+label:figure"
         ;;
-      "s")
-        sq=${sq:1}
+      "-f")
+        query+="+-label:figure"
+        ;;
+      "+i")
+        query+="+label:implementation"
+        ;;
+      "-i")
+        query+="+-label:implementation"
+        ;;
+      "+s")
+        query+="+label:starred"
+        ;;
+      "-s")
+        query+="+-label:starred"
         ;;
     esac
   done
-  query+="+${mq}+${fq}+${iq}+${sq}"
 
   local result
   result="$(gh api \
@@ -74,20 +82,20 @@ done
 
 printf '\n'
 
-m_total=$(fetch_issues_count m)
-m_closed=$(fetch_issues_count m c)
+m_total=$(fetch_issues_count +m)
+m_closed=$(fetch_issues_count c +m)
 print_progress "Migratable " "$m_closed" "$m_total"
 
-f_total=$(fetch_issues_count f)
-f_closed=$(fetch_issues_count f c)
+f_total=$(fetch_issues_count +f)
+f_closed=$(fetch_issues_count c +f)
 print_progress "Figures " "$f_closed" "$f_total"
 
-i_total=$(fetch_issues_count i)
-i_closed=$(fetch_issues_count i c)
+i_total=$(fetch_issues_count +i)
+i_closed=$(fetch_issues_count c +i)
 print_progress "Implementations" "$i_closed" "$i_total"
 
-s_total=$(fetch_issues_count s)
-s_closed=$(fetch_issues_count s c)
+s_total=$(fetch_issues_count +s)
+s_closed=$(fetch_issues_count c +s)
 print_progress "Starred " "$s_closed" "$s_total"
 
 printf '\n'
@@ -129,40 +137,40 @@ rfis_weight=$((r_weight + f_weight + i_weight + s_weight))
 mfis_weight=$mfi_weight
 
 weighted_total=0
-((weighted_total=weighted_total+$(($(fetch_issues_count) * r_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count -m -f -i -s) * r_weight))))
 ((weighted_total=weighted_total+$((m_total * m_weight))))
 ((weighted_total=weighted_total+$((f_total * rf_weight))))
 ((weighted_total=weighted_total+$((i_total * ri_weight))))
 ((weighted_total=weighted_total+$((s_total * rs_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m f) * mf_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m i) * mi_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m s) * ms_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count f i) * rfi_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count f s) * rfs_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count i s) * ris_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m f i) * mfi_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m f s) * mfs_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m i s) * mis_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count f i s) * rfis_weight))))
-((weighted_total=weighted_total+$(($(fetch_issues_count m f i s) * mfis_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m +f -i -s) * mf_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m -f +i -s) * mi_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m -f -i +s) * ms_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count -m +f +i -s) * rfi_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count -m +f -i +s) * rfs_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count -m -f +i +s) * ris_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m +f +i -s) * mfi_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m +f -i +s) * mfs_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m -f +i +s) * mis_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count -m +f +i +s) * rfis_weight))))
+((weighted_total=weighted_total+$(($(fetch_issues_count +m +f +i +s) * mfis_weight))))
 
 weighted_closed=0
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c) * r_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c -m -f -i -s) * r_weight))))
 ((weighted_closed=weighted_closed+$((m_closed * m_weight))))
 ((weighted_closed=weighted_closed+$((f_closed * rf_weight))))
 ((weighted_closed=weighted_closed+$((i_closed * ri_weight))))
 ((weighted_closed=weighted_closed+$((s_closed * rs_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m f) * mf_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m i) * mi_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m s) * ms_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c f i) * rfi_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c f s) * rfs_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c i s) * ris_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m f i) * mfi_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m f s) * mfs_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m i s) * mis_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c f i s) * rfis_weight))))
-((weighted_closed=weighted_closed+$(($(fetch_issues_count c m f i s) * mfis_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m +f -i -s) * mf_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m -f +i -s) * mi_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m -f -i +s) * ms_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c -m +f +i -s) * rfi_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c -m +f -i +s) * rfs_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c -m -f +i +s) * ris_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m +f +i -s) * mfi_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m +f -i +s) * mfs_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m -f +i +s) * mis_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c -m +f +i +s) * rfis_weight))))
+((weighted_closed=weighted_closed+$(($(fetch_issues_count c +m +f +i +s) * mfis_weight))))
 
 printf '\n'
 print_progress "Weighted" "$weighted_closed" "$weighted_total"
