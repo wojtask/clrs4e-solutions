@@ -1,4 +1,4 @@
-\input{1.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}
     \node (root1) {$x$}
         child {node {$y$}
@@ -6,7 +6,7 @@
     \node[right=5mm of root1] (root2) {$x$}
         child {node {$z$}
             child {node {$y$}}};
-    \node[right=12mm of root2] {$x$}
-        child {node {$y$}}
-        child {node {$z$}};
+    \node[right=5mm of root2] {$y$}
+        child {node {$x$}
+            child {node {$z$}}};
 \end{tikzpicture}

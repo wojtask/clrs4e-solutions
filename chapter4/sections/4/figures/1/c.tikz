@@ -1,4 +1,4 @@
-\input{1.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}[
     level/.append style = {sibling distance=18\vertexsize/4^#1},
     total node/.append style={text width=10mm}

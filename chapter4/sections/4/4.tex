@@ -2,7 +2,7 @@ We'll use the recursion-tree method to guess an upper bound on $T(n)$.
 Let's assume that $0<\alpha\le1/2$, because the case when $1/2\le\alpha<1$ is symmetric, and as we'll see, the choice of $\alpha$ doesn't affect the order of growth of an upper bound on $T(n)$.
 \refFigure{4.4-4} shows such a tree.
 \begin{figure}[htb]
-    \input{4.tikz}
+    \subimport{figures/}{4.tikz}
     \caption{A recursion tree for the recurrence $T(n)=T(\alpha n)+T((1-\alpha)n)+cn$, where $0<\alpha\le1/2$.} \label{fig:4.4-4}
 \end{figure}
 

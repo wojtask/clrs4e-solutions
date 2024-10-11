@@ -1,4 +1,4 @@
-\input{5.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}
     \node (1) {1};
     \node[right=15mm of 1] (2) {2};

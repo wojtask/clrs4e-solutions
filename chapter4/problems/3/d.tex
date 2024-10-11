@@ -1,7 +1,7 @@
 Let's assume that the base case is $T(n)=\Theta(1)$ for $n<2$ and let $c$ represent the upper-bound constant hidden by the $\Theta(\lg n)$ term for $n\ge2$.
 \refFigure{4-3} shows the recursion tree for the recurrence $T(n)=2T\bigl(\sqrt{n}\bigr)+c\lg n$.
 \begin{figure}[htb]
-    \input{d.tikz}
+    \subimport{figures/}{d.tikz}
     \caption{A recursion tree for the recurrence $T(n)=2T\bigl(\sqrt{n}\bigr)+c\lg n$.} \label{fig:4-3}
 \end{figure}
 

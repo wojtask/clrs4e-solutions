@@ -1,4 +1,4 @@
-\input{1.tikz}
+\subimport{}{main.tikz}
 \begin{tikzpicture}[total node/.append style={text width=12mm}]
 
 \node (root) {$n^3$}

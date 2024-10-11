@@ -119,9 +119,9 @@ If we now let $n_0=1$, we can choose $c=(T(1)+d)/3$ to satisfy $T(1)\le c\cdot3^
 We've shown that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(3^n)$.
 
 \begin{figure}[!htb]
-    \subcaptionbox{\label{fig:4.4-1a}}[\textwidth]{\input{1a.tikz}}
+    \subcaptionbox{\label{fig:4.4-1a}}[\textwidth]{\subimport{figures/1/}{a.tikz}}
     \par\vspace{10mm}
-    \subcaptionbox{\label{fig:4.4-1b}}[\textwidth]{\input{1b.tikz}}
+    \subcaptionbox{\label{fig:4.4-1b}}[\textwidth]{\subimport{figures/1/}{b.tikz}}
     \caption{
         \textbf{(a)}\, A recursion tree for the recurrence $T(n)=T(n/2)+n^3$.\,
         \textbf{(b)}\, A recursion tree for the recurrence $T(n)=4T(n/3)+n$.
@@ -129,9 +129,9 @@ We've shown that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that th
 \end{figure}
 
 \begin{figure}[htb!]\ContinuedFloat
-    \subcaptionbox{\label{fig:4.4-1c}}[\textwidth]{\input{1c.tikz}}
+    \subcaptionbox{\label{fig:4.4-1c}}[\textwidth]{\subimport{figures/1/}{c.tikz}}
     \par\vspace{10mm}
-    \subcaptionbox{\label{fig:4.4-1d}}[\textwidth]{\input{1d.tikz}}
+    \subcaptionbox{\label{fig:4.4-1d}}[\textwidth]{\subimport{figures/1/}{d.tikz}}
     \caption{
         \textbf{(c)}\, A recursion tree for the recurrence $T(n)=4T(n/2)+n$.\,
         \textbf{(d)}\, A recursion tree for the recurrence $T(n)=3T(n-1)+1$.
