@@ -1,1 +1,60 @@
-\workinprogress % TODO
+Let $n_0>0$ be the implicit threshold constant, and let $d>0$ be another constant such that $T(n)\le d$ for all $n<n_0$.
+We'll use mathematical induction to show that
+\[
+    \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{1+\lg i} \le T(n) \le d+\sum_{i=1}^{\lfloor n/2\rfloor}\frac{1}{1+\lg i}
+\]
+for all $n>0$.
+
+Let $0<n<n_0$.
+Because $\lceil n/2\rceil<\lfloor n_0/2\rfloor+1$,
+\begin{align*}
+    T(n) &\ge 0 \\
+    &= \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{1+\lg i}.
+\end{align*}
+Also,
+\begin{align*}
+    T(n) &\le d \\
+    &\le d+\sum_{i=1}^{\lfloor n/2\rfloor}\frac{1}{1+\lg i},
+\end{align*}
+so the base case holds.
+
+For the inductive case let $n\ge n_0$ and suppose that
+\[
+    \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil(n-2)/2\rceil}\frac{1}{1+\lg i} \le T(n-2) \le d+\sum_{i=1}^{\lfloor(n-2)/2\rfloor}\frac{1}{1+\lg i}.
+\]
+By the inductive hypothesis, we have
+\begin{align*}
+    T(n) &= T(n-2)+\frac{1}{\lg n} \\
+    &\ge \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil(n-2)/2\rceil}\frac{1}{1+\lg i}+\frac{1}{\lg n} \\[1mm]
+    &= \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2-1\rceil}\frac{1}{1+\lg i}+\frac{1}{\lg(2n/2)} \\[1mm]
+    &\ge \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil-1}\frac{1}{1+\lg i}+\frac{1}{1+\lg\lceil n/2\rceil} \\[1mm]
+    &= \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{1+\lg i}.
+\end{align*}
+Similarly,
+\begin{align*}
+    T(n) &= T(n-2)+\frac{1}{\lg n} \\
+    &\le d+\sum_{i=1}^{\lfloor(n-2)/2\rfloor}\frac{1}{1+\lg i}+\frac{1}{\lg n} \\[1mm]
+    &= d+\sum_{i=1}^{\lfloor n/2-1\rfloor}\frac{1}{1+\lg i}+\frac{1}{\lg(2n/2)} \\[1mm]
+    &\le d+\sum_{i=1}^{\lfloor n/2\rfloor-1}\frac{1}{1+\lg i}+\frac{1}{1+\lg\lfloor n/2\rfloor} \\[1mm]
+    &= d+\sum_{i=1}^{\lfloor n/2\rfloor}\frac{1}{1+\lg i}.
+\end{align*}
+
+For the proven bounds for $T(n)$, it follows that
+\begin{align*}
+    T(n) &\ge \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{1+\lg i} \\[1mm]
+    &\ge \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{1+\lg((n+1)/2)} \\[1mm]
+    &= \sum_{i=\lfloor n_0/2\rfloor+1}^{\lceil n/2\rceil}\frac{1}{\lg(n+1)} \\[1mm]
+    &= \frac{\lceil n/2\rceil-\lfloor n_0/2\rfloor}{\lg(n+1)} \\
+    &= \Omega(n/\lg n)
+\end{align*}
+and
+\begin{align*}
+    T(n) &\le d+\sum_{i=1}^{\lfloor n/2\rfloor}\frac{1}{1+\lg i} \\
+    &\le d+\frac{1}{1+\lg1}+\sum_{i=2}^{\lfloor n/2\rfloor}\frac{1}{\lg i} \\
+    &= d+1+\sum_{i=2}^{\left\lceil\sqrt{n}\right\rceil-1}\frac{1}{\lg i}+\sum_{i=\left\lceil\sqrt{n}\right\rceil}^{\lfloor n/2\rfloor}\frac{1}{\lg i} \\
+    &\le d+1+\sum_{i=2}^{\left\lceil\sqrt{n}\right\rceil-1}\frac{1}{\lg2}+\sum_{i=\left\lceil\sqrt{n}\right\rceil}^{\lfloor n/2\rfloor}\frac{1}{\lg\sqrt{n}} \\
+    &= d+1+\left(\left\lceil\sqrt{n}\right\rceil-2\right)+\left(\lfloor n/2\rfloor-\left\lceil\sqrt{n}\right\rceil+1\right)\frac{2}{\lg n} \\
+    &< d+\left\lceil\sqrt{n}\right\rceil+\frac{n}{\lg n} \\
+    &= O(n/\lg n).
+\end{align*}
+Hence, $T(n)=\Theta(n/\lg n)$.
