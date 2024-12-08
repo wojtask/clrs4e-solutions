@@ -1,17 +1,17 @@
-The fact trivially holds for binary trees with at most three nodes, so in the rest of the proof we will assume that $n\ge4$.
-We define a \concept{branch} of a binary tree as a path $\langle x_0$, $x_1$, \dots, $x_k\rangle$, where $x_0$ is the root, $x_k$ is a leaf, and for $i=1$, 2, \dots, $k$, $x_i$ is the root of the subtree of $x_{i-1}$ with more nodes.
+The fact trivially holds for binary trees with at most three nodes, so suppose that $n\ge4$.
+We define a \concept{branch} of a binary tree as a path $\langle x_0$, $x_1$, \dots, $x_k\rangle$, where $x_0$ is the root, $x_k$ is a leaf, and for $i=0$, 1, \dots, $k-1$, $x_{i+1}$ is the root of the subtree of $x_i$ with more nodes.
 Note that a tree may have more than one branch.
 Let's denote by $s(x)$ the number of nodes in the subtree rooted at $x$.
 For every $i=0$, 1, \dots, $k-1$,
 \begin{equation} \label{eq:subtree-sizes-on-branch}
     s(x_i) \le 2s(x_{i+1})+1.
 \end{equation}
-Of course, the sequence $\langle s(x_0)$, $s(x_1)$, \dots, $s(x_k)\rangle$ decreases from $n$ to 1, so there must be $j$, such that $s(x_j)>n/4$ and $s(x_{j+1})\le n/4$.
+Of course, the sequence $\langle s(x_0)$, $s(x_1)$, \dots, $s(x_k)\rangle$ decreases from $n$ to 1, so there exists an integer $j$, where $0<j<k$, such that $s(x_j)>n/4$ and $s(x_{j+1})\le n/4$.
 Thus, by removing edge $(x_{j-1},x_j)$, we partition the nodes of the tree into two sets of sizes
 \begin{align*}
     s(x_j) &\le 2s(x_{j+1})+1 && \text{(by inequality \eqref{eq:subtree-sizes-on-branch})} \\
-    &= 2n/4+1 \\
-    &\le 3n/4
+    &\le 2n/4+1 \\
+    &\le 3n/4 && \text{(since $n\ge4$)}
 \end{align*}
 and
 \begin{align*}
