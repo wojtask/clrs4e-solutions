@@ -1,1 +1,35 @@
-\workinprogress % TODO
+Similarly to the analysis of the birthday paradox, let $n$ be the number of days in a year and suppose we indexed the people in the room with the integers 1, 2, \dots, $k$.
+For $i=1$, 2, \dots, $k$, let $A_i$ be the event that person $i$ has a different birthday than I do.
+Then
+\[
+    B_k = \bigcap_{i=1}^kA_i
+\]
+is the event that none of the $k$ people has the same birthday as I do.
+Since for every $i=1$, 2, \dots, $k$, $\Pr{A_i}=1-1/n$, and since the events $A_1$, $A_2$, \dots, $A_k$ are mutually independent, we have
+\begin{align*}
+    \Pr{B_k} &= \Pr{\bigcap_{i=1}^kA_i} \\
+    &= \prod_{i=1}^k\Pr{A_i} \\
+    &= \prod_{i=1}^k\left(1-\frac{1}{n}\right) \\
+    &= \left(1-\frac{1}{n}\right)^k.
+\end{align*}
+We need to find $k$, such that the probability of the event complementary to $B_k$ is at least $1/2$ or, equivalently, such that
+\[
+    \left(1-\frac{1}{n}\right)^k < \frac{1}{2},
+\]
+which gives $k>\log_{1-1/n}(1/2)$.
+By taking $n=365$, we get that the smallest such integer $k$ is 253.
+
+For the second part of the problem we'll stick to the previous meaning of the symbols $n$ and $k$.
+Let's consider an event complementary to the one we are looking for, occurring when at most one person's birthday falls on July~4.
+The probability that out of the $k$ people exactly $i$ have a birthday on a given day of the year is
+\begin{align*}
+    p_i &= \binom{k}{i}\left(\frac{1}{n}\right)^i\left(1-\frac{1}{n}\right)^{k-i} \\
+    &= \binom{k}{i}\frac{(n-1)^{k-i}}{n^k}.
+\end{align*}
+In particular,
+\begin{align*}
+    p_0+p_1 &= \frac{(n-1)^k}{n^k}+k\,\frac{(n-1)^{k-1}}{n^k} \\
+    &= \frac{(n-1)^{k-1}(n-1+k)}{n^k}.
+\end{align*}
+The value we are looking for is the smallest integer $k$ for which $p_0+p_1\le1/2$.
+For $n=365$, such a value is 613.
