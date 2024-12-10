@@ -1,1 +1,15 @@
-\workinprogress % TODO
+Let $B_k$ be the event that $k$ people have distinct birthdays, as defined in the book on page 141.
+The probability that at least two of the birthdays match is 1 minus the probability that all the birthdays are different.
+Therefore, we need to find $k$ such that $\Pr{B_k}\le1-0.99=0.01$, and following reasoning similar to that in the book we have that
+\[
+    k \ge \frac{1+\sqrt{1+8n\ln100}}{2}.
+\]
+For $n=365$, the smallest such integer $k$ is 59.
+Note, however, that this result may not be exact, meaning that even fewer people can in fact suffice, but we can't obtain the smallest possible number of people using the method presented in the book.
+
+To answer the second question let's use the random variable $X$ defined in the book on page 142.
+For $n=365$ and $k=59$, the expected number of pairs of people with the same birthday is
+\begin{align*}
+    \E{X} &= \frac{k(k-1)}{2n} \\
+    &\approx 4.6877.
+\end{align*}
