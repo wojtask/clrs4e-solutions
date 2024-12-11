@@ -1,1 +1,38 @@
-\workinprogress % TODO
+Let $X$ denote the number of tosses until some bin contains two balls.
+Assume that after $k$ tosses, where $1\le k\le b$, no bin contained more than one ball, and let's calculate the chances that after the $(k+1)$st toss that condition holds.
+After the $k$ tosses, exactly $k$ bins are occupied and the $(k+1)$st ball falls in an empty bin with a probability
+\begin{align*}
+    p_{k+1} &= \Pr{X>k+1\mid X>k} \\
+    &= \frac{b-k}{b}.
+\end{align*}
+More than $k$ tosses is required, when none of the first $k-1$ balls ended up in an occupied bin, so
+\begin{align*}
+    \Pr{X>k} &= \prod_{i=1}^kp_i \\
+    &= \frac{b}{b}\cdot\frac{b-1}{b}\cdot\frac{b-2}{b}\cdots\frac{b-k+1}{b} \\[1mm]
+    &= \frac{(b-1)(b-2)\cdots(b-k+1)}{b^{k-1}}.
+\end{align*}
+For $k=1$, 2, \dots, $b$, we have
+\begin{align*}
+    \Pr{X=k+1} &= \Pr{X>k}-\Pr{X>k+1} \\
+    &= \frac{(b-1)(b-2)\cdots(b-k+1)}{b^{k-1}}-\frac{(b-1)(b-2)\cdots(b-k)}{b^k} \\[1mm]
+    &= \frac{b(b-1)\cdots(b-k+1)-(b-1)\cdots(b-k+1)(b-k)}{b^k} \\[1mm]
+    &= \frac{(b-1)\cdots(b-k+1)(b-(b-k))}{b^k} \\
+    &= \frac{b!\,k}{(b-k)!\,b^{k+1}}.
+\end{align*}
+Then, the expected value of $X$ is
+\begin{align*}
+    \E{X} &= \sum_{k=0}^b(k+1)\Pr{X=k+1} \\
+    &= \frac{b!}{b^b}\sum_{k=0}^b\frac{b^{b-k}k}{(b-k)!\,b}\,(k+1) \\
+    &= \frac{b!}{b^b}\sum_{k=0}^b\frac{b^k(b-k)}{k!\,b}\,(b-k+1) \\
+    &= \frac{b!}{b^b}\left(\sum_{k=0}^b\frac{b^kb}{k!\,b}\,(b-k+1)-\sum_{k=0}^b\frac{b^kk}{k!\,b}\,(b-k+1)\right) \\
+    &= \frac{b!}{b^b}\left(\sum_{k=0}^b\frac{b^k}{k!}\,(b-k+1)-\sum_{k=1}^b\frac{b^{k-1}}{(k-1)!}\,(b-k+1)\right) \\
+    &= \frac{b!}{b^b}\left(\sum_{k=0}^b\frac{b^k}{k!}\,(b-k+1)-\sum_{k=0}^{b-1}\frac{b^k}{k!}\,(b-k)\right) \\
+    &= \frac{b!}{b^b}\left(\sum_{k=0}^b\frac{b^k}{k!}\,(b-k+1)-\sum_{k=0}^b\frac{b^k}{k!}\,(b-k)\right) \\
+    &= \frac{b!}{b^b}\sum_{k=0}^b\frac{b^k}{k!}.
+\end{align*}
+Note that the summation in the last step is a partial sum of the Maclaurin series of $e^b$ (see page 65 of the book), and as $b$ grows, that approximation is more accurate.
+We can therefore bound the summation by $\Theta(e^b)$, and after applying Stirling's approximation (3.25) to $b!$ we get
+\begin{align*}
+    \E{X} &= \Theta\left(\frac{\sqrt{2\pi b}\,\bigl(b^b\!/e^b\bigr)}{b^b}\right)\cdot\Theta(e^b) \\
+    &= \Theta\bigl(\sqrt{b}\bigr) && \text{(by \refProblem{3-5}(d))}.
+\end{align*}
