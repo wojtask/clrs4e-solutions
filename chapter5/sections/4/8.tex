@@ -1,1 +1,23 @@
-\workinprogress % TODO
+\starred
+\clarification{We assume that $n>16$, because only then the expression $\lg n-2\lg\lg n$ is positive.
+Moreover, to simplify the calculations we do not care if numbers are not integers.}
+
+Let $A_{ik}$ be the event that a streak of heads of length $k$ begins with the $i$th coin flip.
+Then,
+\begin{align*}
+    1-\Pr{A_{i,\,\lg n-2\lg\lg n}} &= 1-\frac{1}{2^{\lg n-2\lg\lg n}} && \text{(by equation (5.9))} \\[1mm]
+    &= 1-\frac{2^{2\lg\lg n}}{2^{\lg n}} \\[1mm]
+    &= 1-\frac{\lg^2n}{n}
+\end{align*}
+is the probability that the $\lg n-2\lg\lg n$ consecutive coin flips beginning with the $i$th flip do not yield only heads.
+
+Let us partition a sequence of $n$ flips into $n/(\lg n-2\lg\lg n)$ groups of $\lg n-2\lg\lg n$ consecutive flips each.
+Each of these groups is composed of distinct and mutually independent flips, so the probability that none of the groups is a streak of heads of length $\lg n-2\lg\lg n$ is at most
+\begin{align*}
+    \left(1-\frac{\lg^2n}{n}\right)^{n/(\lg n-2\lg\lg n)} &\le \left(e^{-(\lg^2n)/n}\right)^{n/(\lg n-2\lg\lg n)} && \text{(by inequality (3.14))} \\
+    &= e^{-(\lg^2n)/(\lg n-2\lg\lg n)} \\
+    &< e^{-(\lg^2n)/\lg n} && \text{(since $n>16$)} \\
+    &= e^{-\lg n} \\
+    &= 1/n.
+\end{align*}
+Therefore, a streak of length $\lg n-2\lg\lg n$ of consecutive heads occurs with the probability of at least $1-1/n$.
