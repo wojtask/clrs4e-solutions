@@ -1,1 +1,9 @@
-\workinprogress % TODO
+\starred
+There are $n^k$ possible $k$-strings over a set of size $n$.
+Any $k$-string with distinct elements forms a $k$-permutation.
+By equation (C.1), there are $n(n-1)\cdots(n-k+1)$ possible $k$-permutations, so the probability that a given $k$-string is one of them is equal to
+\[
+    \frac{n(n-1)\cdots(n-k+1)}{n^k} = \left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots\left(1-\frac{k-1}{n}\right).
+\]
+
+This question we've just answered is analogous to that about the probability of the event that among $k$ people there are no two who were born on the same day of the year, where $n$ is the number of days in a year.
