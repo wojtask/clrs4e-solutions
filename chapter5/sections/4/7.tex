@@ -1,1 +1,34 @@
-\workinprogress % TODO
+\starred
+Let $S_i$, for $i=1$, 2, \dots, $n$, be the event that after $n$ tosses the $i$th bin remains empty.
+If we view the ball-tossing process as a sequence of Bernoulli trials, where success means that the ball falls in the $i$th bin, then each trial has a probability $1/n$ of success.
+For the $i$th bin to remain empty, no successes should occur during these trials, so
+\begin{align*}
+    \Pr{S_i} &= b(0;n,1/n) \\
+    &= \binom{n}{0}\left(\frac{1}{n}\right)^0\left(1-\frac{1}{n}\right)^n \\
+    &= \left(1-\frac{1}{n}\right)^n.
+\end{align*}
+Let $X_i=\I{S_i}$ be the indicator random variable associated with $S_i$ and let $X=\sum_{i=1}^n\I{S_i}$.
+Then, the expected number of empty bins is
+\begin{align*}
+    \E{X} &= \E{\sum_{i=1}^nX_i} \\
+    &= \sum_{i=1}^n\E{X_i} \\
+    &= \sum_{i=1}^n\Pr{S_i} && \text{(by Lemma 5.1)} \\
+    &= \sum_{i=1}^n\left(1-\frac{1}{n}\right)^n \\
+    &= n\left(1-\frac{1}{n}\right)^n.
+\end{align*}
+
+Now let us determine the expected number of bins with exactly one ball.
+For $i=1$, 2, \dots, $n$, let $S_i'$ be the event such that after $n$ throws the $i$th bin contains exactly one ball.
+In the same sequence of $n$ Bernoulli trials as before, one success and $n-1$ failures should occur, in order for the $i$th bin to contain exactly one ball, so
+\begin{align*}
+    \Pr{S_i'} &= b(1;n,1/n) \\
+    &= \binom{n}{1}\left(\frac{1}{n}\right)^1\left(1-\frac{1}{n}\right)^{n-1} \\
+    &= \left(1-\frac{1}{n}\right)^{n-1}.
+\end{align*}
+The random variable $X'=\sum_{i=1}^n\I{S_i'}$ denotes the number of bins with exactly one ball, with the expected value of
+\begin{align*}
+    \E{X'} &= \E{\sum_{i=1}^n\I{S_i'}} \\
+    &= \sum_{i=1}^n\Pr{S_i'} && \text{(by Lemma 5.1)} \\
+    &= \sum_{i=1}^n\left(1-\frac{1}{n}\right)^{n-1} \\
+    &= n\left(1-\frac{1}{n}\right)^{n-1}.
+\end{align*}
