@@ -1,1 +1,24 @@
-\workinprogress % TODO
+Here we adapt recurrence (4.9) by adding $N$ as an additional parameter:
+\[
+    T_{c1}(N,n) = 8T_{c1}(N,n/2)+\Theta(1).
+\]
+Recurrence (4.9) was solved on page 105, and both recurrences share the same solution $T_{c1}(N,n)=\Theta(n^3)$.
+
+Passing an $N\times N$ matrix by copying requires an additional cost of $\Theta(N^2)$:
+\[
+    T_{c2}(N,n) = 8T_{c2}(N,n/2)+\Theta(1)+\Theta(N^2).
+\]
+The recursion has $\Theta(\lg n)$ levels, and a problem at each level breaks down to eight subproblems, so the total number of subproblems is $\Theta(8^{\lg n})=\Theta(n^3)$.
+The cost incurred by the term $\Theta(N^2)$ is independent of the size of a subproblem, so the total cost that this term introduces is $\Theta(N^2n^3)$, and we get
+\begin{align*}
+    T_{c2}(N,n) &= T_{c1}(N,n)+\Theta(N^2n^3) \\
+    &= \Theta(n^3)+\Theta(N^2n^3) \\
+    &= \Theta(N^2n^3).
+\end{align*}
+
+The last strategy for this problem was studied in \refExercise{4.1-3}, where we formulated and solved the recurrence describing the worst-case running time of matrix multiplication when the relevant submatrices are copied.
+Hence the recurrence
+\[
+    T_{c3}(N,n) = 8T_{c3}(N,n/2)+\Theta(n^2),
+\]
+which has the solution $T_{c3}(N,n)=\Theta(n^3)$.
