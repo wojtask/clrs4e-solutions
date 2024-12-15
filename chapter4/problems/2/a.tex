@@ -1,1 +1,29 @@
-\workinprogress % TODO
+We studied recursive binary-search in \refExercise{2.3-6}, where we gave the recurrence for its worst-case running time, and in \refExercise{4.5-3} we found the solution to that recurrence.
+Hence the recurrence
+\[
+    T_{a1}(N,n) = T_{a1}(N,n/2)+\Theta(1)
+\]
+which has the solution $T_{a1}(N,n)=\Theta(\lg n)$.
+
+If arrays are passed by copying, the worst-case running time changes to
+\[
+    T_{a2}(N,n) = T_{a2}(N,n/2)+\Theta(N).
+\]
+Note that at each level of the recursion the problem reduces to one subproblem of half the size, so the recursion has $\Theta(\lg n)$ levels.
+The driving function is independent of the size of the subproblem, so the cost incurred at each level is constant.
+Therefore, $T_{a2}(N,n)=\Theta(N)\cdot\Theta(\lg n)=\Theta(N\lg n)$.
+
+In the third strategy the driving function is $\Theta(n)$ and
+\[
+    T_{a3}(N,n) = T_{a3}(N,n/2)+\Theta(n).
+\]
+Since the parameter $N$ does not affect the cost represented by the recurrence, we can ignore it in the analysis and view $T_{a3}(N,n)$ as a master recurrence, where $a=1$, $b=2$, and $f(n)=\Theta(n)$.
+It holds that $f(n)=\Omega(n^\epsilon)=\Omega(n^{\log_ba+\epsilon})$ for any $\epsilon\le1$.
+Let $c_1$, $c_2>0$ be constants such that $c_1n\le f(n)\le c_2n$ for sufficiently large $n$.
+Then,
+\begin{align*}
+    af(n/b) &\le ac_2(n/b) \\
+    &= (c_2/2)n \\
+    &\le (c_2/2c_1)f(n).
+\end{align*}
+As long as $c_1>c_2/2$, the regularity condition holds, so applying case~3 of the master theorem gives the solution $T_{a3}(N,n)=\Theta(n)$.
