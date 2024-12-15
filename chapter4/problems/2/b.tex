@@ -1,1 +1,23 @@
-\workinprogress % TODO
+The worst-case running time of merge sort is described by recurrence (2.3), so we have
+\[
+    T_{b1}(N,n) = 2T_{b1}(N,n/2)+\Theta(n),
+\]
+and the solution is $T_{b1}(N,n)=\Theta(n\lg n)$.
+
+Passing arrays by copying adds the term $\Theta(N)$ to the driving function of the previous recurrence:
+\[
+    T_{b2}(N,n) = 2T_{b2}(N,n/2)+\Theta(n)+\Theta(N).
+\]
+Note that the term $\Theta(N)$ only adds a constant per each level of recursion, and since the recursion has $\Theta(\lg n)$ levels, the term introduces $\Theta(N\lg n)$ in total.
+Hence,
+\begin{align*}
+    T_{b2}(N,n) &= T_{b1}(N,n)+\Theta(N\lg n) \\
+    &= \Theta(n\lg n)+\Theta(N\lg n) \\
+    &= \Theta((n+N)\lg n).
+\end{align*}
+
+The recurrence for the worst-case running time of merge sort when passing only the relevant fragment of an array is
+\[
+    T_{b3}(N,n) = 2T_{b3}(N,n/2)+\Theta(n),
+\]
+which is identical to $T_{b1}(N,n)$, and thus $T_{b3}(N,n)=\Theta(n\lg n)$.
