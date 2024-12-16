@@ -1,1 +1,21 @@
-\workinprogress % TODO
+\starred
+Let $n$ be the number of days of the year.
+For $k\ge1$ and $i=0$, 1, \dots, $\lfloor k/2\rfloor$, let $A_{ik}$ be the event that among $k$ people exactly $i$ pairs of people have matching birthdays, and there are no three people of matching birthdays.
+The probability $p_k$ that among $k$ people there are three with the same birthday, is equal to
+\[
+    p_k = 1-\sum_{i=0}^{\lfloor k/2\rfloor}\Pr{A_{ik}}.
+\]
+
+Let's determine $\Pr{A_{ik}}$.
+To do this, we'll find the number of ways to assign birthdays to $k$ people, so that no three of them were born on the same day of the year.
+Let's choose $i$ days of the year, which we can do in $\binom{n}{i}$ ways, and assign each such day to exactly two people that don't have an assignment so far.
+Then let's choose other $k-2i$ days and assign each such day to one of the remaining people, which can be done in $\binom{n-i}{k-2i}$ ways.
+Since we distinguish individual people, we multiply the number of such arrangements by the number $k!$ of permutations of the people, and divide it by $2^i$, because each of the $i$ pairs of people born on the same day is unordered.
+On the other hand, the number of ways to assign any birthdays to $k$ people is $n^k$.
+This description leads to the formula
+\[
+    \Pr{A_{ik}} = \frac{k!}{2^in^k}\binom{n}{i}\binom{n-i}{k-2i}.
+\]
+
+To find the solution to the problem, we can keep evaluating the probabilities $p_k$ for increasing values of $k$, until we find such a value, for which $p_k\ge1/2$.
+The solution for $n=365$ is $k=88$.
