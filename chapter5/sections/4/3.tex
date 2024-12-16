@@ -30,8 +30,8 @@ Then, the expected value of $X$ is
     &= \frac{b!}{b^b}\left(\sum_{k=0}^b\frac{b^k}{k!}\,(b-k+1)-\sum_{k=0}^b\frac{b^k}{k!}\,(b-k)\right) \\
     &= \frac{b!}{b^b}\sum_{k=0}^b\frac{b^k}{k!}.
 \end{align*}
-Note that the summation in the last step is a partial sum of the Maclaurin series of $e^b$ (see page 65 of the book), and as $b$ grows, that approximation is more accurate.
-We can therefore bound the summation by $\Theta(e^b)$, and after applying Stirling's approximation (3.25) to $b!$ we get
+Note that the summation in the last step is a partial sum of the Maclaurin series of $e^b$ (see page 65 of the book), and as $b$ grows, that approximation is getting more accurate.
+We can therefore bound the summation by $e^b+O(1)=\Theta(e^b)$, and after applying Stirling's approximation (3.25) to $b!$ we get
 \begin{align*}
     \E{X} &= \Theta\left(\frac{\sqrt{2\pi b}\,\bigl(b^b\!/e^b\bigr)}{b^b}\right)\cdot\Theta(e^b) \\
     &= \Theta\bigl(\sqrt{b}\bigr) && \text{(by \refProblem{3-5}(d))}.
