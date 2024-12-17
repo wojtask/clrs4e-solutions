@@ -1,1 +1,38 @@
-\workinprogress % TODO
+Let's prove the following loop invariant:
+\begin{quote}
+    Let $r=k-n+m$.
+    At the start of each iteration of the \kw{for} loop of lines 2--6, for $j=1$, 2, \dots, $k-1$, $\Pr{j\in S}=(r-1)/(k-1)$.
+\end{quote}
+
+\begin{description}
+    \item[Initialization:] Before the first loop iteration, $k=n-m+1$ and $S=\emptyset$, so $r=1$ and the invariant trivially holds.
+    \item[Maintenance:] Suppose that the invariant holds before the next iteration of the loop.
+    During this iteration $S$ gets a new element, $i$ or $k$.
+    Let $S'$ be the set $S$ with that element included.
+    Note that $k\in S'$, when in line 3 the \proc{Random} procedure returns either $k$, or one of the elements already belonging to $S$.
+    Therefore,
+    \begin{align*}
+        \Pr{k\in S'} &= \Pr{i=k}+\Pr{i<k\;\text{and}\;i\in S} \\
+        &= \Pr{i=k}+\Pr{i<k}\Pr{i\in S} \\
+        &= \frac{1}{k}+\frac{k-1}{k}\cdot\frac{r-1}{k-1} && \text{(by the loop invariant)} \\[1mm]
+        &= \frac{r}{k}.
+    \end{align*}
+
+    Now let's find the probability that other elements belong to $S'$.
+    If we let $j$ be any integer such that $1\le j\le k-1$, we have
+    \begin{align*}
+        \Pr{j\in S'} &= \Pr{j\in S}+\Pr{j\notin S\;\text{and}\;i=j} \\
+        &= \Pr{j\in S}+\Pr{j\notin S}\Pr{i=j} \\
+        &= \frac{r-1}{k-1}+\left(1-\frac{r-1}{k-1}\right)\cdot\frac{1}{k} && \text{(by the loop invariant)} \\
+        &= \frac{(r-1)k+k-r}{(k-1)k} \\
+        &= \frac{rk-r}{(k-1)k} \\[1mm]
+        &= \frac{r}{k}.
+    \end{align*}
+
+    For the next iteration, both $k$ and $r$ are incremented, and $S$ is updated to be $S'$.
+    Therefore, the loop invariant is maintained.
+
+    \item[Termination:] The loop terminates, since it is a \kw{for} loop iterating $m$ times.
+    At termination, $k=n+1$, so $r=m$, and for $j=1$, 2, \dots, $n$, $\Pr{j\in S}=m/n$.
+    In other words, each of the elements of the set $\{1$, 2, \dots, $n\}$ is equally likely to show up in the returned $m$-subset, and so each $m$-subset of $\{1$, 2, \dots, $n\}$ is equally likely to be returned.
+\end{description}
