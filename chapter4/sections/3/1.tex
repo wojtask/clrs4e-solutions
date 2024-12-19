@@ -14,9 +14,9 @@ If we further constrain $n_0$ to be no less than 1 (so that $n\ge2$), we can sat
 
 The inductive hypothesis holds for the inductive case, and now we'll establish it for the base case, i.e., when $n_0\le n<n_0+1$.
 Let's pick $n_0=1$.
-By our convention, $T(n)$ is algorithmic, so $T(1)$ is constant, and choosing $c=\max{2/3,T(1)}$ satisfies the inequality $T(1)\le c\cdot1^2$, completing the proof.
+By our convention, $T(n)$ is algorithmic, so $T(1)$ is constant, and letting $c=T(1)$ satisfies the inequality $T(1)\le c\cdot1^2$, completing the proof.
 
-We've shown that $T(n)\le cn^2$ for all $n\ge1$, which implies that the recurrence has the solution $T(n)=O(n^2)$.
+We've shown that for sufficiently large constant $c>0$, $T(n)\le cn^2$ and for all $n\ge1$, which implies that the recurrence has the solution $T(n)=O(n^2)$.
 
 \subexercise
 We adopt the inductive hypothesis that $T(n)\le c\lg n$ for all $n\ge n_0$, where $c$, $n_0>0$ are constants.
@@ -32,9 +32,9 @@ Then $T(n/2)\le c\lg(n/2)$, and substituting it into the formula for $T(n)$ yiel
 where the last step holds if we constrain the constant $c$ to be sufficiently large that for $n\ge2n_0$, $c$ dominates the anonymous constant hidden by the $\Theta(1)$ term.
 
 Now let's pick $n_0=2$, so that $\lg n>0$ for all $n\ge n_0$.
-Both $T(2)$ and $T(3)$ are constants, so we can choose $c$ large enough to satisfy the inequalities $T(2)\le c\lg2$ and $T(3)\le c\lg3$, establishing the inductive hypothesis for the base cases, when $n_0\le n<2n_0$.
+Both $T(2)$ and $T(3)$ are constants, so we can let $c=\max{T(2),T(3)}$ to satisfy the inequalities $T(2)\le c\lg2$ and $T(3)\le c\lg3$, establishing the inductive hypothesis for the base cases, when $n_0\le n<2n_0$.
 
-We've proven that $T(n)\le c\lg n$ for all $n\ge2$, so $T(n)=O(\lg n)$.
+We've proven that there exists a sufficiently large $c>0$ such that $T(n)\le c\lg n$ for all $n\ge2$, so $T(n)=O(\lg n)$.
 
 \subexercise
 We'll prove each bound separately, starting from the lower bound.
@@ -49,7 +49,7 @@ Then $T(n/2)\ge c_1(n/2)\lg(n/2)$, and we get
 
 Now it suffices to show that the bound holds when $n_1\le n<2n_1$.
 Let's pick $n_1=2$, so that $\lg n>0$ for all $n\ge n_1$.
-Both $T(2)$ and $T(3)$ are constants, so both inequalities $T(2)\ge c_1(2\lg2)$ and $T(3)\ge c_1(3\lg3)$ can be satisfied by picking $c_1=\min{1,T(2)/2,T(3)/(3\lg3)}$, establishing the inductive hypothesis for the base cases.
+Both $T(2)$ and $T(3)$ are constants, so both inequalities $T(2)\ge c_1(2\lg2)$ and $T(3)\ge c_1(3\lg3)$ can be satisfied by picking $c_1=\min{T(2)/(2\lg2),T(3)/(3\lg3)}$, establishing the inductive hypothesis for the base cases.
 
 We proceed similarly for the upper bound, by considering the inductive hypothesis $T(n)\le c_2n\lg n$ for all $n\ge n_2$, where $c_2$, $n_2>0$ are constants.
 Assume that the bound holds for all numbers no less than $n_2$ and less than $n$.
@@ -61,9 +61,9 @@ If we let $n\ge2n_2$, we have $T(n/2)\le c_2(n/2)\lg(n/2)$, and by substitution 
 \end{align*}
 
 Let's pick $n_2=2$ so we only need to verify that the bound holds when $n=2$ or $n=3$.
-Letting $c_2=\max{1,T(2)/2,T(3)/(3\lg3)}$ handles the base cases, as it satisfies both $T(2)\le c_2(2\lg2)$ and $T(3)\le c_2(3\lg3)$.
+Letting $c_2=\max{T(2)/(2\lg2),T(3)/(3\lg3)}$ handles the base cases, as it satisfies both $T(2)\le c_2(2\lg2)$ and $T(3)\le c_2(3\lg3)$.
 
-We've proven that $c_1n\lg n\le T(n)\le c_2n\lg n$ for all $n\ge2$, so $T(n)=\Theta(n\lg n)$.
+We've proven that there exist $c_1$, $c_2>0$ such that $c_1n\lg n\le T(n)\le c_2n\lg n$ for all $n\ge2$, so $T(n)=\Theta(n\lg n)$.
 
 \subexercise
 We adopt the inductive hypothesis that $T(n)\le c(n-34)\lg(n-34)$ for all $n\ge n_0$, where $c>0$, $n_0>34$ are constants.
@@ -81,15 +81,15 @@ If $n\ge35$, then $n/(n-34)\le35$, so there must be $c\ge35$.
 
 Now let $n_0\le n<2n_0-34$.
 The expression $c(n-34)\lg(n-34)$ is positive for all $n>35$, so let's pick $n_0=36$.
-We satisfy the inequalities $T(36)\le c(2\lg2)$ and $T(37)\le c(3\lg3)$ by letting $c=\max{35,T(36)/2,T(37)/(3\lg3)}$, establishing the inductive hypothesis for the base cases.
+We satisfy the inequalities $T(36)\le c(2\lg2)$ and $T(37)\le c(3\lg3)$ by letting $c=\max{T(36)/(2\lg2),T(37)/(3\lg3)}$, establishing the inductive hypothesis for the base cases.
 
 Given the fact that the function $f(n)=n\lg n$ defined over $n\ge1$ is strictly increasing, we have in particular that for $n>34$, $f(n-34)<f(n)$.
-By this observation and by the upper bound shown above, we get that for all $n\ge36$,
+By this observation and by the upper bound shown above, we get that for a sufficiently large $c>0$,
 \begin{align*}
     T(n) &\le c(n-34)\lg(n-34) \\
-    &< cn\lg n,
+    &< cn\lg n
 \end{align*}
-so $T(n)=O(n\lg n)$.
+for all $n\ge36$, so $T(n)=O(n\lg n)$.
 
 \subexercise
 In the proof of the lower bound we adopt the inductive hypothesis that $T(n)\ge c_1n$ for all $n\ge n_1$, where $c_1$, $n_1>0$ are constants.
@@ -105,7 +105,7 @@ where the last step holds if we let $c_1$ be small enough that for $n\ge3n_1$, t
 
 Now let $n_1\le n<3n_1$.
 If we pick $n_1=1$, we only need to prove the bound for $n=1$ and $n=2$.
-By further decreasing $c_1$ we can satisfy both $T(1)\ge c_1\cdot1$ and $T(2)\ge c_1\cdot2$, handling the base cases.
+By picking $c_1$ small enough, we can satisfy both $T(1)\ge c_1\cdot1$ and $T(2)\ge c_1\cdot2$, handling the base cases.
 
 We can show the upper bound in a similar manner.
 Our inductive hypothesis is that $T(n)\le c_2n$ for all $n\ge n_2$, where $c_2$, $n_2>0$ are constants.
@@ -120,9 +120,9 @@ Then,
 where for the last step to hold we must choose $c_2$ large enough, so that for all $n\ge3n_2$, the quantity $(c_2/3)n$ dominates the anonymous function hidden by the $\Theta(n)$ term.
 
 Pick $n_2=1$.
-We can now increase $c_2$ sufficiently in order to satisfy $T(1)\le c_2\cdot1$ and $T(2)\le c_2\cdot2$, handling the base cases.
+We can now pick $c_2$ sufficiently large so it satisfies $T(1)\le c_2\cdot1$ and $T(2)\le c_2\cdot2$, handling the base cases.
 
-We've proven that $c_1n\le T(n)\le c_2n$ for all $n\ge1$, so $T(n)=\Theta(n)$.
+We've proven that there are constants $c_1$, $c_2>0$, such that $c_1n\le T(n)\le c_2n$ for all $n\ge1$, so $T(n)=\Theta(n)$.
 
 \subexercise
 \clarification{Removed in fourth printing.}
