@@ -26,14 +26,77 @@ Finally, by identity (4.23) we have
 \end{align*}
 
 \subexercise
-\workinprogress % TODO
-%Here we have $a_1=3$, $a_2=8$, $b_1=3$, $b_2=4$, and $f(n)=n^2\!/\lg n$.
-%We need to find a unique $p$ such that
-%\[
-%    \frac{3}{3^p}+\frac{8}{4^p} = 1.
-%\]
-%Observe that $3/3^1+8/4^1=1+2>1$ and $3/3^2+8/4^2=1/3+1/2<1$, and thus $p$ lies in the range $1<p<2$.
-%We can solve the recurrence without knowing the exact value for $p$.
+Here we have $a_1=3$, $a_2=8$, $b_1=3$, $b_2=4$, and $f(n)=n^2/\lg n$.
+We need to find $p$ such that
+\[
+    \frac{3}{3^p}+\frac{8}{4^p} = 1.
+\]
+Observe that $3/3^1+8/4^1=1+2>1$ and $3/3^2+8/4^2=1/3+1/2<1$, thus it has to be $1<p<2$.
+
+If we used the Akra-Bazzi method directly to solve $T(n)$, we would need to determine
+\[
+    I = \int_1^n\frac{x^{1-p}}{\lg x}\,dx.
+\]
+However, the function being integrated is undefined for $x=1$, making $I$ an improper integral, and as it turns out,
+\[
+    \lim_{t\to1^+}\int_t^n\frac{x^{1-p}}{\lg x}\,dx = \infty,
+\]
+making $I$ divergent.
+As such, $I$ can't be used in equation (4.23) to determine the solution to the recurrence.
+
+Instead, we will calculate a (finite) lower bound on $I$ and will use it in equation (4.23) to find an asymptotic lower bound on $T(n)$.
+Since $\lg x\le\lg n$ in the entire interval of integration, we have
+\begin{align*}
+    I &\ge \int_1^n\frac{x^{1-p}}{\lg n}\,dx \\[1mm]
+    &= \frac{1}{\lg n}\int_1^nx^{1-p}\,dx \\[1mm]
+    &= \frac{1}{\lg n}\left[\frac{x^{2-p}}{2-p}\right]_1^n \\[1mm]
+    &= \frac{(n^{2-p}-1)}{(2-p)\lg n}.
+\end{align*}
+Then,
+\begin{align*}
+    T(n) &= \Theta(n^p(1+I)) \\
+    &= \Omega\left(n^p\left(1+\frac{(n^{2-p}-1)}{(2-p)\lg n}\right)\right) \\
+    &= \Omega\left(n^p+\frac{(n^2-n^p)}{(2-p)\lg n}\right) \\
+    &= \Omega(n^2/\lg n) && \text{(since $n^p=o(n^2/\lg n)$)}.
+\end{align*}
+
+Hinted by the asymptotic lower bound we've just obtained, we'll prove that this bound is tight, using the substitution method.
+Assume by induction that
+\[
+    T(m) \le cm^2/\lg m
+\]
+for all $n_0\le m<n$, where $c$, $n_0>0$ are constants that we'll determine later.
+In particular, if $n\ge4n_0$, then the induction hypothesis holds for $n/3$ and $n/4$, so substituting it into the formula for $T(n)$ yields
+\begin{align*}
+    T(n) &= 3T(n/3)+8T(n/4)+\frac{n^2}{\lg n} \\
+    &\le \frac{3c(n/3)^2}{\lg(n/3)}+\frac{8c(n/4)^2}{\lg(n/4)}+\frac{n^2}{\lg n} \\
+    &= \frac{cn^2}{3(\lg n-\lg3)}+\frac{cn^2}{2(\lg n-2)}+\frac{n^2}{\lg n}.
+\end{align*}
+Note that
+\[
+    3(\lg n-\lg3) \ge (8/3)\lg n
+\]
+as long as $n\ge2^{3\cdot3\lg3}=3^9=19{,}683$, and
+\[
+    2(\lg n-2) \ge (5/3)\lg n
+\]
+as long as $n\ge2^{3\cdot2\cdot2}=2^{12}=4{,}096$.
+
+Thus, if we let $n_0\ge\lceil3^9\!/4\rceil$, so that $n\ge3^9$, we have
+\begin{align*}
+    T(n) &\le \frac{cn^2}{(8/3)\lg n}+\frac{cn^2}{(5/3)\lg n}+\frac{n^2}{\lg n} \\
+    &= ((3/8)c+(3/5)c+1)\cdot\frac{n^2}{\lg n} \\
+    &= ((39/40)c+1)\cdot\frac{n^2}{\lg n} \\
+    &\le \frac{cn^2}{\lg n},
+\end{align*}
+where the last step holds if $39c/40+1\le c$, or $c\ge40$.
+
+Now we need to prove that the inductive hypothesis holds for the base cases, that is $T(n)\le cn^2/\lg n$ when $n_0\le n<4n_0$.
+Pick $n_0=\lceil3^9\!/4\rceil$, according to the earlier constraint.
+By our convention, $T(n)$ is algorithmic, so we can view all $T(n)$, where $n<3^9$, as constants.
+Picking $c=\max{T(\lceil3^9\!/4\rceil),T(\lceil3^9\!/4\rceil+1),\dots,T(3^9-1)}$ yields $T(n)\le c<cn^2/\lg n$ for all $\lceil3^9\!/4\rceil\le n<3^9$, which completes the proof that $T(n)=O(n^2/\lg n)$.
+
+Combining this result with the asymptotic lower bound, we have that $T(n)=\Theta(n^2/\lg n)$.
 
 \subexercise
 In this recurrence we have $a_1=2/3$, $a_2=1/3$, $b_1=3$, $b_2=3/2$, and $f(n)=\lg n$.
