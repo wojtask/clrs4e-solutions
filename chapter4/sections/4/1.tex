@@ -27,9 +27,9 @@ Substituting into the recurrence yields
 where the last step holds as long as $c/8+1\le c$, or $c\ge8/7$.
 
 Let's pick $n_0=1$.
-Picking $c=\max{8/7,T(1)}$ satisfies $T(1)\le c\cdot1^3$, establishing the inductive hypothesis for the base case.
+Letting $c=T(1)$ satisfies $T(1)\le c\cdot1^3$, establishing the inductive hypothesis for the base case.
 
-We've shown that $T(n)\le cn^3$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^3)$.
+We've shown that $T(n)\le cn^3$ for all $n\ge1$, where $c=\max{8/7,T(1)}$, which implies that the solution to the recurrence is $T(n)=O(n^3)$.
 
 \subexercise
 Assume that $n$ is an exact power of 3 and that $T(1)=\Theta(1)$.
@@ -63,7 +63,7 @@ where the last step holds as long as $1-d/3\le0$, or $d\ge3$.
 Let's pick $n_0=1$.
 Picking $c=\max{T(1)+d,(T(2)+2d)/2^{\log_34}}$ satisfies both conditions $T(1)\le c\cdot1^{\log_34}-d\cdot1$ and $T(2)\le c\cdot2^{\log_34}-d\cdot2$, establishing the inductive hypothesis for the base cases.
 
-We've shown that $T(n)\le cn^{\log_34}-dn\le cn^{\log_34}$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^{\log_34})$.
+We've shown that there exist $c>0$, $d\ge0$, such that $T(n)\le cn^{\log_34}-dn\le cn^{\log_34}$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^{\log_34})$.
 
 \subexercise
 Assume that $n$ is an exact power of 2 and that $T(1)=\Theta(1)$.
@@ -90,7 +90,7 @@ When $n\ge2n_0$ it holds that $T(n/2)\le c(n/2)^2-d(n/2)$, so
 
 If we now let $n_0=1$, we can choose $c=T(1)+d$ to satisfy $T(1)\le c\cdot1^2-d\cdot1$, establishing the bound for the base case.
 
-We've shown that $T(n)\le cn^2-dn\le cn^2$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^2)$.
+We've shown that there exist $c>0$, $d\ge0$, such that $T(n)\le cn^2-dn\le cn^2$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(n^2)$.
 
 \subexercise
 Assume that $T(1)=\Theta(1)$.
@@ -116,7 +116,7 @@ When $n\ge n_0+1$ it holds that $T(n-1)\le c3^{n-1}-d$, so
 
 If we now let $n_0=1$, we can choose $c=(T(1)+d)/3$ to satisfy $T(1)\le c\cdot3^1-d$, establishing the bound for the base case.
 
-We've shown that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(3^n)$.
+We've shown that there exist $c>0$, $d\ge0$, such that $T(n)\le c3^n-d\le c3^n$ for all $n\ge1$, which implies that the solution to the recurrence is $T(n)=O(3^n)$.
 
 \begin{figure}[!htb]
     \subcaptionbox{\label{fig:4.4-1a}}[\textwidth]{\subimport{figures/1/}{a.tikz}}
