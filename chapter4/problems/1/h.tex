@@ -28,7 +28,7 @@ We have
 Thus, we get that for $c_1\le1/14$, $T(n)\ge c_1n^3+f_{c_1}(n)\ge c_1n^3$ for all $n\ge n_1+2$, which proves the inductive hypothesis holds for the inductive case.
 
 Now let $n_1\le n<n_1+2$ and let's pick $n_1=1$.
-Both $T(1)$ and $T(2)$ are constants, and picking $c_1=\min{1/14,T(1),T(2)/8}$ satisfies both inequalities $T(1)\ge c_1\cdot1^3$ and $T(2)\ge c_1\cdot2^3$, handling the base cases.
+Both $T(1)$ and $T(2)$ are constants, and picking $c_1=\min{T(1),T(2)/8}$ satisfies both inequalities $T(1)\ge c_1\cdot1^3$ and $T(2)\ge c_1\cdot2^3$, handling the base cases.
 
 To show the upper bound on $T(n)$ we follow a similar reasoning as above, adopting the inductive hypothesis $T(n)\le c_2n^3$ for all $n\ge n_2$, where $c_2$, $n_2>0$ are constants.
 At some point we'll have that $T(n)\le c_2n^3+f_{c_2}(n)$.
@@ -42,6 +42,6 @@ Since
 we conclude that when $c_2\ge1/2$ and $n_2\ge1$, it holds that $T(n)\le c_2n^3$ for all $n\ge n_2+2$.
 
 Let's choose $n_2=1$.
-We handle both $T(1)\le c_2\cdot1^3$ and $T(2)\le c_2\cdot2^3$ by choosing $c_2=\max{1/2,T(1),T(2)/8}$, which finishes the inductive proof of the upper bound on $T(n)$.
+We handle both $T(1)\le c_2\cdot1^3$ and $T(2)\le c_2\cdot2^3$ by choosing $c_2=\max{T(1),T(2)/8}$, which finishes the inductive proof of the upper bound on $T(n)$.
 
-We've proven that $c_1n^3\le T(n)\le c_2n^3$ for all $n\ge1$, and thus $T(n)=\Theta(n^3)$.
+We've proven that $c_1n^3\le T(n)\le c_2n^3$ for some constants $c_1$, $c_2>0$ and for all $n\ge1$, and thus $T(n)=\Theta(n^3)$.
