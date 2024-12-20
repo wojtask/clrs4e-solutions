@@ -13,7 +13,7 @@ Substituting into the recurrence yields
 The last step holds if we constrain the constant $d$ to be sufficiently small that for $n\ge3n_0$, the anonymous function hidden by the $\Theta(n)$ term dominates the quantity $(\lg3-2/3)dn$.
 
 Let's pick $n_0=2$, so that $\lg n>0$ for all $n\ge n_0$.
-We can decrease $d$ enough, so to satisfy both $T(2)\ge d(2\lg2)$ and $T(3)\ge d(3\lg3)$, establishing the inductive hypothesis for the base cases.
+We can choose $d$ small enough to satisfy both $T(2)\ge d(2\lg2)$ and $T(3)\ge d(3\lg3)$, establishing the inductive hypothesis for the base cases.
 
-We've shown that $T(n)\ge dn\lg n$ for all $n\ge2$, so $T(n)=\Omega(n\lg n)$.
+We've shown that there exists a constant $d>0$, such that $T(n)\ge dn\lg n$ for all $n\ge2$, so $T(n)=\Omega(n\lg n)$.
 Combining this result with the upper bound shown in the book, we get $T(n)=\Theta(n\lg n)$.
