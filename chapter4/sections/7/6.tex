@@ -1,1 +1,95 @@
-\workinprogress % TODO
+\clarification{The Akra-Bazzi method is insufficient to prove the third case of the continuous master theorem, specifically the asymptotic upper bound on $T(n)$.
+It is because in the Akra-Bazzi method the driving function satisfies the polynomial-growth condition, while the master method does not have this restriction.
+There exist driving functions that fall into case~3 of the master theorem, while not satisfying the polynomial-growth condition.
+The Akra-Bazzi method may provide incorrect asymptotic bounds on recurrences with such driving functions.
+
+As an example consider $T(n)=T(n/2)+n2^n$.
+The master method gives the accurate solution $T(n)=\Theta(n2^n)$, while from the Akra-Bazzi method, $T(n)=\Theta(2^n)$.
+
+Below we prove case~1, case~2, and partially case~3 of the master theorem, where that additional requirement of the driving function is not required.
+}
+
+Observe that a master recurrence (4.16) is a special case of an Akra-Bazzi recurrence (4.22), where $k=1$, $a_1=a$, and $b_1=b$.
+Here, $a/b^p=1$, which yields $p=\log_ba$.
+We'll study the asymptotic behavior of the integral
+\[
+    I = \int_1^n\frac{f(x)}{x^{p+1}}\,dx
+\]
+by looking at the asymptotic behavior of $f(x)$ in three cases that correspond to those in the continuous master theorem.
+In the entire proof let $\widehat{n}\ge1$ denote the constant such that $f(n)$ is defined (and nonnegative) for all $n\ge\widehat{n}$.
+
+In case~1 suppose that $f(n)=O(n^{p-\epsilon})$ for some constant $\epsilon>0$.
+Let $c_2>0$, $n_0\ge\widehat{n}$ be constants such that $f(n)\le c_2n^{p-\epsilon}$ for all $n\ge n_0$.
+
+For an asymptotic lower bound on $T(n)$, note that the function being integrated in $I$ is nonnegative, so $I\ge0$, and by equation (4.23), $T(n)=\Theta(n^p(1+I))=\Omega(n^p)$.
+
+To obtain an asymptotic upper bound on $T(n)$, observe that regardless of the value of $p$, the integral
+\[
+    I_0 = \int_1^{n_0}\frac{f(x)}{x^{p+1}}\,dx
+\]
+converges to a nonnegative constant, as it does not depend on $n$, and because within the limits of integration, the function being integrated is bounded.
+Then,
+\begin{align*}
+    I &= I_0+\int_{n_0}^n\frac{f(x)}{x^{p+1}}\,dx \\[1mm]
+    &\le I_0+\int_{n_0}^n\frac{c_2x^{p-\epsilon}}{x^{p+1}}\,dx \\[1mm]
+    &= I_0+c_2\int_{n_0}^nx^{-\epsilon-1}\,dx \\[1mm]
+    &= I_0+c_2\left[\frac{x^{-\epsilon}}{-\epsilon}\right]_{n_0}^n \\[1mm]
+    &= I_0+(c_2/\epsilon)(n_0^{-\epsilon}-n^{-\epsilon}) \\
+    &< I_0+(c_2/\epsilon)n_0^{-\epsilon} \\
+    &= O(1),
+\end{align*}
+and equation (4.23) gives $T(n)=\Theta(n^p(1+I))=O(n^p)$.
+Combining this result with the lower asymptotic bound, we get $T(n)=\Theta(n^p)=\Theta(n^{\log_ba})$.
+
+In case~2 suppose there exists a constant $k\ge0$ such that $f(n)=\Theta(n^p\lg^kn)$, and let $c_1$, $c_2>0$, and $n_0\ge\widehat{n}$ be constants such that $c_1n^p\lg^kn\le f(n)\le c_2n^p\lg^kn$ for all $n\ge n_0$.
+
+Before we proceed, let's solve the indefinite integral $\int\frac{\lg^kx}{x}\,dx$.
+We can rewrite the logarithm using the change of base formula (3.19):
+\begin{align*}
+    \int\frac{\lg^kx}{x}\,dx &= \int\frac{(\ln x/\ln2)^k}{x}\,dx \\
+    &= \frac{1}{\ln^k2}\int\frac{\ln^kx}{x}\,dx.
+\end{align*}
+Now, let's use the substitution $u=\ln x$.
+Then, $du=dx/x$, and the integral becomes
+\begin{align*}
+    \frac{1}{\ln^k2}\int u^k\,du &= \frac{1}{\ln^k2}\cdot\frac{u^{k+1}}{k+1}+C && \text{(where $C$ is the constant of integration)} \\[1mm]
+    &= \frac{1}{\ln^k2}\cdot\frac{\ln^{k+1}x}{k+1}+C \\[1mm]
+    &= \frac{(\ln2)\lg^{k+1}x}{k+1}+C && \text{(again, by (3.19))}.
+\end{align*}
+
+The lower bound on $I$ is
+\begin{align*}
+    I &= I_0+\int_{n_0}^n\frac{f(x)}{x^{p+1}}\,dx \\[1mm]
+    &\ge I_0+\int_{n_0}^n\frac{c_1x^p\lg^kx}{x^{p+1}}\,dx \\[1mm]
+    &= I_0+c_1\int_{n_0}^n\frac{\lg^kx}{x}\,dx \\[1mm]
+    &= I_0+c_1\left[\frac{(\ln2)\lg^{k+1}x}{k+1}\right]_{n_0}^n \\[1mm]
+    &= I_0+\frac{c_1(\ln2)}{k+1}\cdot(\lg^{k+1}n-\lg^{k+1}n_0) \\[1mm]
+    &= \Omega(\lg^{k+1}n).
+\end{align*}
+We obtain $O(\lg^{k+1}n)$ as an upper bound on $I$ by repeating the above calculations after replacing $c_1$ by $c_2$ and reversing the inequality sign.
+Thus, by equation (4.23),
+\begin{align*}
+    T(n) &= \Theta(n^p(1+I)) \\
+    &= \Theta(n^p(1+\lg^{k+1}n)) \\
+    &= \Theta(n^p\lg^{k+1}n) \\
+    &= \Theta(n^{\log_ba}\lg^{k+1}n).
+\end{align*}
+
+Finally, in case~3 suppose that $f(n)=\Omega(n^{p+\epsilon})$ for a constant $\epsilon>0$.
+Let $c_1>0$, $n_0\ge\widehat{n}$ be constants such that $c_1n^{p+\epsilon}\le f(n)$ for all $n\ge n_0$.
+We have
+\begin{align*}
+    I &= I_0+\int_{n_0}^n\frac{f(x)}{x^{p+1}}\,dx \\[1mm]
+    &\ge I_0+\int_{n_0}^n\frac{c_1x^{p+\epsilon}}{x^{p+1}}\,dx \\[1mm]
+    &= I_0+c_1\int_{n_0}^nx^{-1+\epsilon}\,dx \\[1mm]
+    &= I_0+c_1\left[\frac{x^\epsilon}{\epsilon}\right]_{n_0}^n \\[1mm]
+    &= I_0+(c_1/\epsilon)(n^\epsilon-1) \\
+    &= \Omega(n^\epsilon),
+\end{align*}
+so applying equation (4.23) yields
+\begin{align*}
+    T(n) &= \Theta(n^p(1+I)) \\
+    &= \Omega(n^p(1+n^\epsilon)) \\
+    &= \Omega(n^{p+\epsilon}) \\
+    &= \Omega(f(n)).
+\end{align*}
