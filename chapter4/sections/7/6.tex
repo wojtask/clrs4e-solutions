@@ -1,3 +1,4 @@
+\starred
 \clarification{The Akra-Bazzi method is insufficient to prove the third case of the continuous master theorem, specifically the asymptotic upper bound on $T(n)$.
 It is because in the Akra-Bazzi method the driving function satisfies the polynomial-growth condition, while the master method does not have this restriction.
 There exist driving functions that fall into case~3 of the master theorem, while not satisfying the polynomial-growth condition.
@@ -8,7 +9,6 @@ The master method gives the accurate solution $T(n)=\Theta(n2^n)$, while from th
 
 Below we prove case~1, case~2, and partially case~3 of the master theorem, where that additional requirement of the driving function is not required.
 }
-
 Observe that a master recurrence (4.16) is a special case of an Akra-Bazzi recurrence (4.22), where $k=1$, $a_1=a$, and $b_1=b$.
 Here, $a/b^p=1$, which yields $p=\log_ba$.
 We'll study the asymptotic behavior of the integral
