@@ -1,1 +1,17 @@
-\workinprogress % TODO
+\starred
+\clarification{Most likely no such function exists under the definition of the polynomial-growth condition found in the book.
+So instead of a proper solution, we give a sketch of a proof that there are no functions that do not satisfy the polynomial-growth condition, while also preserving $\Theta$-notation.
+
+A function $f(n)$ does not satisfy the polynomial-growth condition, if for all $\widehat n>0$ the following holds: there exists a constant $\phi\ge1$ such that for every constant $d>1$ there exist $1\le\psi\le\phi$ and $n\ge\widehat n$ such that $df(\psi n)<f(n)$ or $f(\psi n)/d>f(n)$.
+Suppose we picked $\phi\ge1$.
+Then no matter how big $d>1$ we'll choose, we'll be able to find an interval $i=[n,\phi n]$, such that for some $\psi n\in i$, $f(\psi n)$ dominates $f(n)$ by more than a factor of $d$, or the other way round, $f(n)$ dominates $f(\psi n)$ by more than a factor of $d$.
+Thus, this local dominance of $f(\psi n)$ over $f(n)$ should be either $o(1)$ or $\omega(1)$, not $\Theta(1)$.
+And such a dominance should hold consistently across the function domain, perhaps except for some small numbers less than an arbitrary $\widehat n$.
+
+On the other hand, $f(\Theta(n))=\Theta(f(n))$ requires that for any function $g(n)=\Theta(n)$ there exist constants $c_1$, $c_2$, $n_0>0$ such that $f(g(n))$ is defined and
+\[
+    0 \le c_1f(n) \le f(g(n)) \le c_2f(n)
+\]
+for all $n\ge n_0$.
+But we can't have a function that preserves $\Theta$-notation and simultaneously not meets the polynomial-growth condition.
+This is because $\psi n=\Theta(n)$ for any constant $\psi\ge1$, so for sufficiently large $n$, $f(\psi n)$ is bounded from below and above by $f(n)$ multiplied by constants, not by $o(1)$ or $\omega(1)$ as mentioned earlier.}
