@@ -269,7 +269,7 @@ The work on the current project began on January 1, 2023.
   VIII ([release 0.1](https://github.com/wojtask/clrs4e-solutions/releases/tag/0.1)).
 - [ ] Migrate the CormenSol solutions from Chapters 1-17 and the corresponding CormenPy implementations.
   Add solutions and implementations to modified and new exercises and problems along the way.
-    - [x] Complete Part I (release 0.2).
+    - [x] Complete Part I ([release 0.2](https://github.com/wojtask/clrs4e-solutions/releases/tag/0.2)).
     - [ ] Complete Part II (release 0.3).
     - [ ] Complete Part III (release 0.4).
     - [ ] Complete Part IV (release 0.5).
