@@ -1,0 +1,21 @@
+\subimport{}{main.tikz}
+\begin{tikzpicture}
+    \node {15}
+        child {node {13}
+            child {node {5}
+                child {node {4}}
+                child {node {0}}
+            }
+            child {node {12}
+                child {node {6}}
+                child {node {2}}
+            }
+        }
+        child {node {9}
+            child {node[active, label=right:{$i$}] {10}
+                child {node {1}}
+                child {node {8}}
+            }
+            child {node {7}}
+        };
+\end{tikzpicture}

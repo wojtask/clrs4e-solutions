@@ -1,1 +1,17 @@
-\workinprogress % TODO
+See \refFigure{6.5-2}.
+\begin{figure}[htb]
+    \captionsetup[subfigure]{}
+    \subcaptionbox{\label{fig:6.5-2a}}[0.5\textwidth]{\subimport{figures/2/}{a.tikz}}
+    \subcaptionbox{\label{fig:6.5-2b}}[0.5\textwidth]{\subimport{figures/2/}{b.tikz}}
+    \par\vspace{4ex}
+    \subcaptionbox{\label{fig:6.5-2c}}[0.5\textwidth]{\subimport{figures/2/}{c.tikz}}
+    \subcaptionbox{\label{fig:6.5-2d}}[0.5\textwidth]{\subimport{figures/2/}{d.tikz}}
+    \caption{The operation of $\proc{Max-Heap-Insert}(A,10,15)$ on the heap $A=\langle$15, 13, 9, 5, 12, 8, 7, 4, 0, 6, 2, 1$\rangle$.\,
+    The initial max-heap is identical to the one of \refFigure{6.5-1a}.
+    The procedure starts by extending the heap with the new element, whose key is temporarily set to $-\infty$.
+    \textbf{(a)}\, The heap with the new node shown in blue.\,
+    \textbf{(b)}\, The key of the node is then increased to 10 when \proc{Max-Heap-Increase-Key} is called in line~8.\,
+    \textbf{(c)}\, While that procedure is running, right after the first iteration of the \kw{while} loop, the new node has been swapped with its parent.\,
+    \textbf{(d)}\, After the second iteration another such exchange has been made.
+    The max-heap property is now restored and the procedure terminates.} \label{fig:6.5-2}
+\end{figure}

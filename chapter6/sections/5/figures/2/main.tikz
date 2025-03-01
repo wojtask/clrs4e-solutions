@@ -1,0 +1,5 @@
+\tikzset{
+    every node/.style = {tan vertex},
+    active/.style = {light blue vertex},
+    every label/.style = {index},
+}
