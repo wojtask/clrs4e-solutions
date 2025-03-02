@@ -1,0 +1,6 @@
+\subimport{}{main.tikz}
+\begin{tikzpicture}
+    \node {3}
+        child {node {2}}
+        child {node {1}};
+\end{tikzpicture}
