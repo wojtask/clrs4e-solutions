@@ -7,10 +7,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup TeXLive and compile document
-        uses: xu-cheng/texlive-action/full@v1
+        uses: xu-cheng/texlive-action@v2
         with:
           run: |
             apk add file sudo coreutils
