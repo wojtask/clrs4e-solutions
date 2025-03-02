@@ -1,1 +1,9 @@
-\workinprogress % TODO
+The input that leads to the worst case for \proc{Build-Max-Heap}$'$ for a given $n$ is an array of $n$ objects sorted by their keys.
+When the procedure runs for such an array, in each of the $n-1$ calls to \proc{Max-Heap-Insert} from line~3, the inserted node is transported all the way to the root of the heap, which requires $\Theta(\lg i)$ operations when the heap has size $i$.
+
+Thus, to build an $n$-element heap \proc{Build-Max-Heap}$'$ requires time of
+\begin{align*}
+    \sum_{i=2}^n\Theta(\lg i) &= \Theta\left(\sum_{i=2}^n\lg i\right) \\
+    &= \Theta(\lg(n!)) \\
+    &= \Theta(n\lg n).
+\end{align*}
