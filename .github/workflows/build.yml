@@ -12,6 +12,7 @@ jobs:
       - name: Setup TeXLive and compile document
         uses: xu-cheng/texlive-action@v2
         with:
+          texlive_version: 2023
           run: |
             apk add file sudo coreutils
             chmod +x scripts/install_fonts.sh
