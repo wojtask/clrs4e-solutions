@@ -1,1 +1,19 @@
-\workinprogress % TODO
+The procedure below shows the modification inspired by the inner loop of \proc{Insertion-Sort}.
+Here, the \kw{while} loop moves some of the nodes on the path from $x$ toward the root down by 1 level to find a proper position where it can place $x$.
+That proper position is determined by comparing the key of the next node on the path with the new key of $x$.
+
+\begin{codebox}
+\Procname{$\proc{Max-Heap-Increase-Key}'(A,x,k)$}
+\li \If $k<\attrib{x}{key}$
+\li     \Then \Error ``new key is smaller than current key''
+        \End
+\li $\attrib{x}{key}\gets k$
+\li find the index $i$ in array $A$ where object $x$ occurs
+\li \While $i>1$ and $\attrib{A[\proc{Parent}(i)]}{key}<k$
+\li     \Do $A[i]\gets A[\proc{Parent}(i)]$
+\li         map $A[i]$ to index $i$ in the array
+\li         $i\gets\proc{Parent}(i)$
+        \End
+\li $A[i]\gets x$
+\li map $x$ to index $i$ in the array
+\end{codebox}
