@@ -1,1 +1,19 @@
-\workinprogress % TODO
+\indent\begin{codebox}
+\Procname{$\proc{Max-Heap-Decrease-Key}(A,x,k)$}
+\li \If $k>\attrib{x}{key}$
+\li     \Then \Error ``new key is larger than current key''
+        \End
+\li $\attrib{x}{key}\gets k$
+\li find the index $i$ in array $A$ where object $x$ occurs
+\li $\proc{Max-Heapify}(A,i)$ \label{li:max-heap-decrease-key-max-heapify}
+\end{codebox}
+
+The key of the object $x$ is updated to the new key $k$, after verifying that this change will not increase the key of $x$.
+The procedure then finds the index $i$ such that $A[i]$ is $x$.
+Decreasing the key of $A[i]$ might have violated the max-heap property.
+Contrary to when the key would be increased, the violation can only happen with respect to $A[i]$'s children.
+Therefore, instead of updating the nodes while traversing a path from $A[i]$ toward the root as in \proc{Max-Heap-Increase-Key}, we need to update the nodes on a path from this node toward the leaves.
+To get this done, we call \proc{Max-Heapify} in line~\ref{li:max-heap-decrease-key-max-heapify}.
+Like before, we assume that with each exchange of the elements in the array, \proc{Max-Heapify} updates the mapping between these objects and their positions in the array.
+
+The running time of \proc{Max-Heap-Decrease-Key} is $O(\lg n)$, because it performs only a constant amount of work on top of the $O(\lg n)$ time for \proc{Max-Heapify}, plus the overhead for mapping priority queue objects to array indices.
