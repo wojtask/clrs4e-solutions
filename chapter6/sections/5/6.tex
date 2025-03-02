@@ -1,1 +1,4 @@
-\workinprogress % TODO
+As noted in \refExercise{6.5-4}, increasing the key of a node $x$ in a max-heap cannot violate the max-heap property between $x$ and its children, but can lead to the situation where the key of the parent of $x$ is smaller than the key of $x$.
+Because of that we need to traverse the path upward in the tree and ``bubble'' up the node $x$ so it ends up in a correct position.
+This task is realized by the \kw{while} loop in \proc{Max-Heap-Increase-Key}.
+Replacing the loop by a call to \proc{Max-Heapify} will not work, because \proc{Max-Heapify} can only traverse a path downward in the tree.
