@@ -1,1 +1,42 @@
-\workinprogress % TODO
+The following procedures implement the min-priority queue and work similarly to the corresponding procedures for the max-priority queue.
+Each of these procedures take as input an array $A$ implementing a min-heap, among other parameters.
+\begin{codebox}
+\Procname{$\proc{Min-Heap-Minimum}(A)$}
+\li \If $\attrib{A}{heap-size}<1$
+\li     \Then \Error ``heap underflow''
+        \End
+\li \Return $A[1]$
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Min-Heap-Extract-Min}(A)$}
+\li $\id{min}\gets\proc{Min-Heap-Minimum}(A)$
+\li $A[1]\gets A[\attrib{A}{heap-size}]$
+\li $\attrib{A}{heap-size}\gets\attrib{A}{heap-size}-1$
+\li $\proc{Min-Heapify}(A,1)$
+\li \Return \id{min}
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Min-Heap-Decrease-Key}(A,x,k)$}
+\li \If $k>\attrib{x}{key}$
+\li     \Then \Error ``new key is larger than current key''
+        \End
+\li $\attrib{x}{key}\gets k$
+\li find the index $i$ in array $A$ where object $x$ occurs
+\li \While $i>1$ and $\attrib{A[\proc{Parent}(i)]}{key}>\attrib{A[i]}{key}$
+\li     \Do exchange $A[i]$ with $A[\proc{Parent}(i)]$, updating the information that maps
+\zi         \>priority queue objects to array indices
+\li         $i\gets\proc{Parent}(i)$
+        \End
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Min-Heap-Insert}(A,x,n)$}
+\li \If $\attrib{A}{heap-size}\isequal n$
+\li     \Then \Error ``heap overflow''
+        \End
+\li $\attrib{A}{heap-size}\gets\attrib{A}{heap-size}+1$
+\li $k\gets\attrib{x}{key}$
+\li $\attrib{x}{key}\gets\infty$
+\li $A[\attrib{A}{heap-size}]\gets x$
+\li map $x$ to index \id{heap-size} in the array
+\li $\proc{Min-Heap-Decrease-Key}(A,x,k)$
+\end{codebox}
