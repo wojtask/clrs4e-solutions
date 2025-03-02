@@ -16,6 +16,7 @@ jobs:
             apk add file sudo coreutils
             chmod +x scripts/install_fonts.sh
             scripts/install_fonts.sh
+            cat mtpro2-texlive.sh.log
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 
       - name: Release
