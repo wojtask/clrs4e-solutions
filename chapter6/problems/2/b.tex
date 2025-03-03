@@ -1,1 +1,18 @@
-\workinprogress % TODO
+Let's generalize the reasoning from \refExercise{6.1-1} for $d$-ary heaps, where $d\ge2$.
+If the tree that models the $d$-ary heap has $n$ nodes and is of height $h$, at the $i$-th level, where $i=0$, 1, \dots, $h-1$, it has $d^i$ nodes, and at the $h$-th level it has between 1 and $d^h$ nodes.
+Thus,
+\begin{align*}
+    n &\ge \sum_{i=0}^{h-1}d^i+1 \\[1mm]
+    &= \frac{d^h-1}{d-1}+1 && \text{(by equation (A.6))} \\[1mm]
+    &> \frac{d^h-1}{d} \\[1mm]
+    &= d^{h-1}-1/d \\
+    &> d^{h-1}-1
+\end{align*}
+and
+\begin{align*}
+    n &\le \sum_{i=0}^hd^i \\[1mm]
+    &= \frac{d^{h+1}-1}{d-1} && \text{(by equation (A.6))} \\[1mm]
+    &< \frac{d^{h+1}}{d/2} \\[1mm]
+    &= 2d^h.
+\end{align*}
+Solving for $h$, we obtain $\log_d(n/2)<h<\log_d(n+1)+1$, which gives $h=\Theta(\log_dn)$.
