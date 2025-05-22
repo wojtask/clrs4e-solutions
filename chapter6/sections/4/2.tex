@@ -1,1 +1,22 @@
-\workinprogress % TODO
+We prove the given loop invariant by showing initialization, maintenance, and termination properties.
+\begin{description}
+    \item[Initialization:] Before the first iteration of the loop, $i=n$.
+    Line~1 of \proc{Heapsort} calls \proc{Build-Max-Heap} to build a max-heap out of the entire array $A[1\subarr n]$.
+    Thus, at $i=n$, the subarray $A[1\subarr i]$ is indeed a max-heap, and the subarray $A[i+1\subarr n]$ is empty, and therefore trivially sorted.
+    \item[Maintenance:] Assume that the loop invariant is true at the start of an iteration for a particular value of $i\ge2$.
+    It follows that the subarray $A[1\subarr i]$ is a max-heap, so $A[1]$ is the largest element in $A[1\subarr i]$.
+    After exchanging elements in line~3, $A[i]$ now holds this largest element from $A[1\subarr i]$, and the element originally in $A[i]$ is moved to $A[1]$.
+    The operation from line~4 effectively removes $A[i]$ from the heap.
+    The exchange in line~3 might have violated the max-heap property for $A[1\subarr i-1]$ because now $A[1]$ might be smaller than its children.
+    It is fixed in line~5 where the procedure \proc{Max-Heapify} is called.
+
+    By the invariant, at the start of the current iteration, the subarray $A[i+1\subarr n]$ contained the $n-i$ largest elements of $A[1\subarr n]$, sorted.
+    By including $A[i]$ we can now say that $A[i\subarr n]$ contains the $n-i+1$ largest elements of $A[1\subarr n]$, sorted.
+
+    Updating $i$ restores the invariant.
+    \item[Termination:] The loop terminates when $i$ becomes 1.
+    At this point, the subarray $A[1\subarr i]$ contains a single element, which is the smallest element of $A[1\subarr n]$.
+    Furthermore, the $n-1$ remaining elements are arranged in sorted order in the subarray $A[2\subarr n]$.
+    Therefore, $A[1]\le A[2]$, and the entire array $A[1\subarr n]$ is sorted.
+    Hence, \proc{Heapsort} works correctly.
+\end{description}
