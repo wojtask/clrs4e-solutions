@@ -1,1 +1,9 @@
-\workinprogress % TODO
+The worst-case behavior for \proc{Heapsort} occurs when each call in line~5 triggers the worst-case behavior for \proc{Max-Heapify}.
+By \refExercise{6.2-7}, the worst-case running time of \proc{Max-Heapify} on a heap of size $i$ is $\Omega(\lg i)$.
+To get the worst-case running time $T(n)$ of \proc{Heapsort} we need to sum up the running times of every call to \proc{Max-Heapify} over all iterations of the \kw{for} loop:
+\begin{align*}
+    T(n) &= \sum_{i=2}^n\Omega(\lg i) \\
+    &= \Omega\left(\sum_{i=2}^n\lg i\right) \\
+    &= \Omega(\lg(n!)) \\
+    &= \Omega(n\lg n) && \text{(by equation (3.28))}.
+\end{align*}
