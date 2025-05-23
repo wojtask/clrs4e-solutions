@@ -1,1 +1,12 @@
-\workinprogress % TODO
+The following brief pseudocode implements one possible approach to delete an object from a max-heap:
+
+\begin{codebox}
+\Procname{$\proc{Max-Heap-Delete}(A,x)$}
+\li $\proc{Max-Heap-Increase-Key}(A,x,\infty)$
+\li $\proc{Max-Heap-Extract-Max}(A)$
+\end{codebox}
+
+In the first step, the key in the object $x$ is increased to $\infty$, which makes $x$ the object with the largest key in the heap.
+The object $x$ is then extracted from the heap in the second step.
+
+For an $n$-element max-heap $A$, each step takes $O(\lg n)$ plus the overhead for mapping priority queue objects to array indices, and so this is the running time of \proc{Max-Heap-Delete}.
