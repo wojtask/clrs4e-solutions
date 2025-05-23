@@ -1,1 +1,41 @@
-\workinprogress % TODO
+\starred
+We'll show the lower bound $\Omega(n\lg n)$ for the running time of \proc{Heapsort} by proving that it holds for arrays of size $n=2^{h+1}-1$, where $h\ge4$.
+The max-heaps that are formed from such arrays are based on complete binary trees.
+
+Let $L$ be the set of nodes (represented by their indices) that contain the $2^h$ largest elements of the heap built in line~1.
+Note that the values in these nodes are discarded from the heap before the rest, so after the first $2^h$ iterations of the \kw{for} loop in lines 2--5 the heap is again based on a complete binary tree, but is one level shorter.
+In the original heap, the nodes in $L$ form a binary subtree, because if $j\in L$, then $\proc{Parent}(j)\in L$, which follows from the max-heap property.
+Now let $L'=\{j\in L:j<2^h\}$, i.e., $L'$ contains the nodes from $L$ that occupy levels 0, 1, \dots, $h-1$ in the original heap.
+The elements stored in the nodes of $L'$ can only be discarded from the heap after they have been transported to the root as a result of performing a sequence of swaps in line~9 of the \proc{Max-Heapify} procedure.
+To find a lower bound on the running time of \proc{Heapsort}, we will estimate the total number $s$ of these swaps involving nodes from $L'$.
+
+Let's begin by estimating the size of the set $L'$.
+Suppose that there are at least $2^{h-1}+1$ nodes from $L$ at level $h$.
+The parent of each such node at level $h-1$ also belongs to $L$, so there are at least $2^{h-2}+1$ nodes at level $h-1$ in $L$.
+This in turn means that at level $h-2$ there are at least $2^{h-3}+1$ nodes in $L$, and so on.
+Summing up the nodes in $L$ over all levels, we have $2^{h-1}+2^{h-2}+2^{h-3}+\dots+2^0+(h+1)=2^h+h>2^h$.
+This, however, contradicts the definition of $L$.
+Thus, at level $h$ there are at most $2^{h-1}$ nodes, and so $|L'|\ge|L|-2^{h-1}=2^{h-1}$.
+
+To elevate the element at node $j$, that occupies level $d_j$, to level 0, \proc{Max-Heapify} needs to perform exactly $d_j$ swaps.
+The total number of swaps for elements from $L'$ is therefore $s=\sum_{j\in L'}d_j$.
+This sum is minimized, when $L'$ contains the $2^{h-1}$ nodes that are as close to the root as possible, which occurs when $L'$ covers the $h-2$ top levels of the heap.
+Thus,
+\[
+    s \ge \sum_{k=0}^{h-2}k2^k.
+\]
+On the right we have a geometric series which we calculate using equation (A.6):
+\begin{align*}
+    \sum_{k=0}^{h-2}kx^k &= x\cdot\frac{d}{dx}\left(\sum_{k=0}^{h-2}x^k\right) \\
+    &= x\cdot\frac{d}{dx}\left(\frac{x^{h-1}-1}{x-1}\right) \\
+    &= x\cdot\frac{(h-1)x^{h-2}(x-1)-(x^{h-1}-1)}{(x-1)^2}.
+\end{align*}
+Now letting $x=2$, we finally obtain
+\begin{align*}
+    s &\ge \sum_{k=0}^{h-2}k2^k \\
+    &= (h-1)2^{h-1}-2^h+2 \\
+    &> (h-3)2^{h-1} \\
+    &> (\lg n-4)2^{\lg n-2} && \text{(since $h=\lg(n+1)-1>\lg n-1$)} \\[1mm]
+    &= \frac{n\lg n}{4}-n \\[1mm]
+    &= \Omega(n\lg n).
+\end{align*}
