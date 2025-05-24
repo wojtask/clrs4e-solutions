@@ -1,1 +1,30 @@
-\workinprogress % TODO
+We implement a first-in, first-out queue using a min-priority queue, that controls what priorities its elements have.
+To enable this mechanism, we'll augment the standard min-priority queue with an additional attribute \id{priority}.
+This new attribute will be initialized to 1 upon creating the queue, and will be incremented upon inserting a new element to the queue.
+By doing so, we can ensure that the earlier an element is enqueued (first-in), the earlier it will be dequeued (first-out).
+
+The procedures below implement the operations \proc{Enqueue} and \proc{Dequeue} using a min-heap representation of a min-priority queue:
+
+\begin{codebox}
+\Procname{$\proc{Min-Heap-Enqueue}(A,x,n)$}
+\li $\attrib{x}{key}\gets\attrib{A}{priority}$
+\li $\proc{Min-Heap-Insert}(A,x,n)$
+\li $\attrib{A}{priority}\gets\attrib{A}{priority}+1$
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Min-Heap-Dequeue}(A)$}
+\li \Return $\proc{Min-Heap-Extract-Min}(A)$
+\end{codebox}
+
+Symmetrically, if we replace the min-priority queue by the max-priority queue, together with the corresponding operations for inserting and extracting elements, we will get the implementation of stack operations \proc{Push} and \proc{Pop}:
+
+\begin{codebox}
+\Procname{$\proc{Max-Heap-Push}(A,x,n)$}
+\li $\attrib{x}{key}\gets\attrib{A}{priority}$
+\li $\proc{Max-Heap-Insert}(A,x,n)$
+\li $\attrib{A}{priority}\gets\attrib{A}{priority}+1$
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Max-Heap-Pop}(A)$}
+\li \Return $\proc{Max-Heap-Extract-Max}(A)$
+\end{codebox}
