@@ -1,1 +1,20 @@
-\workinprogress % TODO
+Let's follow the hint and use a min-priority queue implemented with a min-heap to temporarily store elements before placing them in the merged list.
+In the beginning, we remove the heads of each input list and insert them into the priority queue.
+Then we repeat the following steps until the priority queue becomes empty:
+\begin{enumerate}
+    \item Extract the smallest element from the priority queue and insert it at the end of the merged list.
+    \item Find the input list where this element belonged to originally.
+    \item If this list is not empty, remove its head and insert it in the priority queue.
+\end{enumerate}
+Right before step~1 the smallest element of those not yet moved to the merged list is in the priority queue.
+After moving the element, the algorithm searches for the next element in order.
+It is either already in the priority queue or at the head of the list that the previous element belonged to.
+Thus, the algorithm performs steps~2--3 and moves to the next iteration.
+
+Over the entire execution of the algorithm, the min-priority queue contains at most $k$ elements.
+Each of the $n$ elements in the input lists is exactly once deleted from its list, exactly once inserted into the priority queue, exactly once extracted from the priority queue, and exactly once inserted into the merged list.
+The list operations for insertion and deletion take $O(1)$ time\footnote{(See pages 260--261 of the text.)}, so the total time the algorithm spends on the list operations is $O(n)$.
+The priority queue operations \proc{Min-Heap-Insert} and \proc{Min-Heap-Extract-Min} run in $O(\lg k)$ time, so the total time spent on the priority queue operations is $O(n\lg k)$.
+It is possible to perform step~2 in $O(1)$ time, if the algorithm saved the pointer to the element's list in the priority queue node and then used this pointer when deleting that element from the priority queue.
+
+Hence, the algorithm merges lists in $O(n\lg k)$ time.
