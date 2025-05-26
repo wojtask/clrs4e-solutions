@@ -1,1 +1,9 @@
-\workinprogress % TODO
+Suppose that $Y[1,1]=\infty$ and that the Young tableau $Y$ is not empty.
+Then there exist $i$, $j$ such that $1\le i\le m$ and $1\le j\le n$, and that $Y[i,j]<\infty$.
+However, by the properties of Young tableaus, $\infty=Y[1,1]\le Y[1,j]\le Y[i,j]<\infty$, yielding a contradiction.
+Therefore, a Young tableau $Y$, where $Y[1,1]=\infty$, must be empty.
+
+Similarly, suppose that $Y[m,n]<\infty$ and that the Young tableau $Y$ is not full.
+It means that there exist $i$, $j$ such that $1\le i\le m$ and $1\le j\le n$, and that $Y[i,j]=\infty$.
+We have $\infty=Y[i,j]\le Y[i,n]\le Y[m,n]<\infty$, which is a contradiction.
+Therefore, an $m\times n$ Young tableau $Y$, where $Y[m,n]<\infty$, must be full.
