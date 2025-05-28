@@ -1,1 +1,40 @@
-\workinprogress % TODO
+Before we get to the algorithm, let's devise an auxiliary recursive procedure \proc{Youngify}, similar to \proc{Min-Heapify} from \refExercise{6.2-3}, for restoring the order of the matrix entries, so the matrix becomes a Young tableau.
+
+Consider an $m\times n$ matrix $Y$ in which the entries are sorted within rows and within columns, except that there might be a unique pair $\langle i,j\rangle$, where $1\le i\le m$ and $1\le j\le n$, such that $Y[i,j]>Y[i+1,j]$ (for $i\ne m$) or $Y[i,j]>Y[i,j+1]$ (for $j\ne n$).
+The procedure restores the property in the submatrix $Y[i\subarr m,j\subarr n]$ by moving the value at $Y[i,j]$ downward or rightward, then restoring the property in either $Y[i+1\subarr m,j\subarr n]$ or $Y[i\subarr m,j+1\subarr n]$ submatrix.
+Each step determines the smallest of the elements $Y[i,j]$, $Y[i+1,j]$, and $Y[i,j+1]$ and stores the indices of the smallest element as a pair $\langle i',j'\rangle$.
+If $Y[i,j]$ is smallest, then the submatrix $Y[i\subarr m,j\subarr n]$ is already a Young tableau, and nothing else needs to be done.
+Otherwise, $Y[i,j]$ is swapped with $Y[i',j']$.
+Now, the entry $Y[i',j']$ just had its value increased, and thus it might violate the Young tableau property in the submatrix $Y[i'\subarr m,j'\subarr n]$.
+Consequently, \proc{Youngify} calls itself recursively on that submatrix.
+
+\begin{codebox}
+\Procname{$\proc{Youngify}(Y,i,j,m,n)$}
+\li $\langle i',j'\rangle\gets\langle i,j\rangle$
+\li \If $i<m$ and $Y[i+1,j]<Y[i',j']$
+\li     \Then $\langle i',j'\rangle\gets\langle i+1,j\rangle$
+        \End
+\li \If $j<n$ and $Y[i,j+1]<Y[i',j']$
+\li     \Then $\langle i',j'\rangle\gets\langle i,j+1\rangle$
+        \End
+\li \If $\langle i',j'\rangle\ne\langle i,j\rangle$
+\li     \Then exchange $Y[i,j]$ with $Y[i',j']$
+\li         $\proc{Youngify}(Y,i',j',m,n)$
+        \End
+\end{codebox}
+
+In a nonempty $m\times n$ Young tableau $Y$ the smallest element is $y=Y[1,1]$.
+The \proc{Young-Extract-Min} algorithm extracts $y$ after moving the value at $Y[m,n]$ to $Y[1,1]$ and restoring the Young tableau property that might be violated after this operation.
+
+\begin{codebox}
+\Procname{$\proc{Young-Extract-Min}(Y,m,n)$}
+\li $y\gets Y[1,1]$
+\li $Y[1,1]\gets Y[m,n]$
+\li $Y[m,n]\gets\infty$
+\li $\proc{Youngify}(Y,1,1,m,n)$ \label{li:young-extract-min-youngify}
+\li \Return $y$
+\end{codebox}
+
+The running time of \proc{Young-Extract-Min} is dominated by the time spent in the \proc{Youngify} procedure called in line~\ref{li:young-extract-min-youngify}.
+This call restores the Young tableau property in the $m\times n$ matrix, by performing $O(1)$ operations and restoring the Young tableau property in either an $(m-1)\times n$ or an $m\times(n-1)$ submatrix.
+Over the entire execution at most $m+n$ subproblems are solved, so the call in line~\ref{li:young-extract-min-youngify} works in $O(m+n)$ time.
