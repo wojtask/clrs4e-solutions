@@ -1,1 +1,25 @@
-\workinprogress % TODO
+Let $A[1\subarr n^2]$ be an array of numbers to sort.
+The following algorithm creates an $n\times n$ empty Young tableau $Y$, then fills in the entries of $Y$ with the numbers from $A$, by performing a series of $n^2$ calls to \proc{Young-Insert}.
+Next, it extracts the entries of $Y$ in sorted order by performing a series of $n^2$ calls to \proc{Young-Extract-Min} and puts these entries in sorted order in the array $A$.
+
+\begin{codebox}
+\Procname{$\proc{Young-Sort}(A,n)$}
+\li let $Y[1\subarr n,1\subarr n]$ be a new table \label{li:young-sort-create-empty-tableau-begin}
+\li \For $i\gets1$ \To $n$
+\li     \Do \For $j\gets1$ \To $n$
+\li             \Do $Y[i,j]\gets\infty$
+                \End
+        \End \label{li:young-sort-create-empty-tableau-end}
+\li \For $i\gets1$ \To $n^2$
+\li     \Do $\proc{Young-Insert}(Y,n,n,A[i])$ \label{li:young-sort-insert-element}
+        \End
+\li \For $i\gets1$ \To $n^2$
+\li     \Do $A[i]\gets\proc{Young-Extract-Min}(Y,n,n)$ \label{li:young-sort-extract-minimum}
+        \End
+\end{codebox}
+
+Creating an empty Young tableau in lines~\ref{li:young-sort-create-empty-tableau-begin}--\ref{li:young-sort-create-empty-tableau-end} takes $O(n^2)$ time.
+Each call in lines \ref{li:young-sort-insert-element} and \ref{li:young-sort-extract-minimum} takes $O(n)$ time, and is executed exactly $n^2$ times.
+Thus, the overall running time of \proc{Young-Sort} is $O(n^3)$.
+To put it another way, this algorithm sorts $m=n^2$ numbers in $O(m^{3/2})$ time.
+This is faster than quadratic time of \proc{Insertion-Sort}, but worse than linear-logarithmic time of \proc{Heapsort}.
