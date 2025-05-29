@@ -1,1 +1,31 @@
-\workinprogress % TODO
+The idea behind the \proc{Young-Search} algorithm is to keep shrinking the submatrix where the searched number might potentially be stored, depending on how it relates to the top right entry in that submatrix.
+
+The algorithm will find out if a number $k$ is stored in an $m\times n$ Young tableau $Y$.
+In the beginning, the submatrix to search through is the whole $Y[1\subarr m,1\subarr n]$.
+If $k$ equals $Y[1,n]$, then of course the entry of value $k$ has been found in $Y$, so we can terminate.
+Now suppose that $k>Y[1,n]$.
+The element $Y[1,n]$ is the largest in row~1, so it is clear that $k$ is nowhere in row~1.
+We can therefore eliminate row~1 from further consideration and keep looking for $k$ in the submatrix $Y[2\subarr m,1\subarr n]$.
+Similarly, if $k<Y[1,n]$, then $k$ is smaller than the smallest element in column $n$.
+Thus, $k$ can't be in column $n$, so let's resume searching in the submatrix $Y[1\subarr m,1\subarr n-1]$.
+Once the submatrix becomes empty, it is clear that $k$ is nowhere in $Y$.
+
+\begin{codebox}
+\Procname{$\proc{Young-Search}(Y,m,n,k)$}
+\li $i\gets1$
+\li $j\gets n$
+\li \While $i\le m$ and $j\ge1$
+\li     \Do \If $k\isequal Y[i,j]$
+\li             \Then \Return \const{true}
+                \End
+\li         \If $k>Y[i,j]$
+\li             \Then $i\gets i+1$
+\li             \Else $j\gets j-1$
+                \End
+        \End
+\li \Return \const{false}
+\end{codebox}
+
+In each iteration of the \kw{while} loop, the algorithm decrements the number of columns or the number of rows in the submatrix left to be searched through.
+The \kw{while} loop will therefore make at most $m+n$ iterations.
+Since each iteration takes constant time, the total running time of the algorithm is $O(m+n)$.
