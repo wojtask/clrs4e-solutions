@@ -13,7 +13,7 @@ Thus, the algorithm performs steps~2--3 and moves to the next iteration.
 
 Over the entire execution of the algorithm, the min-priority queue contains at most $k$ elements.
 Each of the $n$ elements in the input lists is exactly once deleted from its list, exactly once inserted into the priority queue, exactly once extracted from the priority queue, and exactly once inserted into the merged list.
-The list operations for insertion and deletion take $O(1)$ time\footnote{(See pages 260--261 of the text.)}, so the total time the algorithm spends on the list operations is $O(n)$.
+The list operations for insertion and deletion take $O(1)$ time\footnote{See pages 260--261 of the book.}, so the total time the algorithm spends on the list operations is $O(n)$.
 The priority queue operations \proc{Min-Heap-Insert} and \proc{Min-Heap-Extract-Min} run in $O(\lg k)$ time, so the total time spent on the priority queue operations is $O(n\lg k)$.
 It is possible to perform step~2 in $O(1)$ time, if the algorithm saved the pointer to the element's list in the priority queue node and then used this pointer when deleting that element from the priority queue.
 
