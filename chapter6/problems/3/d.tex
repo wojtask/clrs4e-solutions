@@ -1,1 +1,29 @@
-\workinprogress % TODO
+From part~(b) we know that in a nonfull $m\times n$ Young tableau $Y$, $Y[m,n]=\infty$.
+To insert a new element $k$ into $Y$, let's first place it in $Y[m,n]$.
+Now there might be $Y[m,n]<Y[m-1,n]$ or $Y[m,n]<Y[m,n-1]$, so we need to restore the Young tableau property.
+The \proc{Youngify} procedure from the previous part isn't suitable here, because it moves the violating element only down or right in the matrix.
+Instead, we'll use a symmetric version of \proc{Youngify} where the violating element is moved up or left.
+
+\begin{codebox}
+\Procname{$\proc{Reversed-Youngify}(Y,i,j)$}
+\li $\langle i',j'\rangle\gets\langle i,j\rangle$
+\li \If $i>1$ and $Y[i-1,j]>Y[i',j']$
+\li     \Then $\langle i',j'\rangle\gets\langle i-1,j\rangle$
+        \End
+\li \If $j>1$ and $Y[i,j-1]>Y[i',j']$
+\li     \Then $\langle i',j'\rangle\gets\langle i,j-1\rangle$
+        \End
+\li \If $\langle i',j'\rangle\ne\langle i,j\rangle$
+\li     \Then exchange $Y[i,j]$ with $Y[i',j']$
+\li         $\proc{Reversed-Youngify}(Y,i',j')$
+        \End
+\end{innercodebox}
+\begin{innercodebox}
+\Procname{$\proc{Young-Insert}(Y,m,n,k)$}
+\li $Y[m,n]\gets k$
+\li $\proc{Reversed-Youngify}(Y,m,n)$ \label{li:young-insert-reversed-youngify}
+\end{codebox}
+
+The running time of \proc{Young-Insert} is dominated by the time spent in the \proc{Reversed-Youngify} procedure.
+As in part~(c), we argue that to restore the Young tableau property in the $m\times n$ matrix, \proc{Reversed-Youngify} performs $O(1)$ operations at each step, where the number of steps is at most $m+n$.
+Thus, its overall running time is $O(m+n)$.
