@@ -1,1 +1,17 @@
-\workinprogress % TODO
+First, observe that the assignments in lines~4--5 of \proc{Max-Heap-Insert} are in fact redundant (see the note in \refExercise{6.5-5}).
+If we hadn't made these assignments, calling $\proc{Max-Heap-Increase-Key}(A,x,\attrib{x}{key})$ in line~8 wouldn't have modified $x$'s key, but would have still correctly placed $x$ in the max-heap $A[1\subarr\attrib{A}{heap-size}]$ with respect to the max-heap property.
+
+A similar improvement can be applied to the implementation of \proc{Insert} in a $d$-ary max-heap:
+
+\begin{codebox}
+\Procname{$\proc{Multiary-Max-Heap-Insert}(A,d,x,n)$}
+\li \If $\attrib{A}{heap-size}\isequal n$
+\li     \Then \Error ``heap overflow''
+        \End
+\li $\attrib{A}{heap-size}\gets\attrib{A}{heap-size}+1$
+\li $A[\attrib{A}{heap-size}]\gets x$
+\li map $x$ to index $\id{heap-size}$ in the array
+\li $\proc{Multiary-Max-Heap-Increase-Key}(A,d,x,\attrib{x}{key})$ \label{li:multiary-max-heap-insert-increase-key}
+\end{codebox}
+
+The running time of \proc{Multiary-Max-Heap-Insert} is dominated by the time spent in the \proc{Multiary-Max-Heap-Increase-Key} procedure called in line~\ref{li:multiary-max-heap-insert-increase-key}, which by part~(d), is $O(\log_dn)$.
