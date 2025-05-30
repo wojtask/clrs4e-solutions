@@ -1,1 +1,18 @@
-\workinprogress % TODO
+The implementation of \proc{Increase-Key} in a $d$-ary max-heap looks identical to the implementation of \proc{Increase-Key} in a binary max-heap, except that it uses \proc{Multiary-Parent} instead of \proc{Parent}:
+
+\begin{codebox}
+\Procname{$\proc{Multiary-Max-Heap-Increase-Key}(A,d,x,k)$}
+\li \If $k<\attrib{x}{key}$
+\li     \Then \Error ``new key is smaller than current key''
+        \End
+\li $\attrib{x}{key}\gets k$ \label{li:multiary-max-heap-increase-key-update-key}
+\li find the index $i$ in array $A$ where object $x$ occurs
+\li \While $i>1$ and $\attrib{A[\proc{Multiary-Parent}(d,i)]}{key}<\attrib{A[i]}{key}$
+\li     \Do exchange $A[i]$ with $A[\proc{Multiary-Parent}(d,i)]$,
+\zi         \>updating the mapping between objects and heap elements
+\li         $i\gets\proc{Multiary-Parent}(d,i)$
+        \End
+\end{codebox}
+
+As with \proc{Max-Heap-Increase-Key}, the running time of \proc{Multiary-Max-Heap-Increase-Key} is $O(h)$, including the overhead for mapping objects to heap indices, where $h$ is the height of the heap that the procedure is running on.
+From part~(b), $h=\Theta(\log_dn)$, so \proc{Multiary-Max-Heap-Increase-Key} runs in $O(\log_dn)$ time.
