@@ -1,1 +1,47 @@
-\workinprogress % TODO
+At first, we'll devise an auxiliary procedure for restoring the max-heap property in a $d$-ary max-heap, as we'll need this procedure in the \proc{Extract-Min} implementation.
+The procedure \proc{Multiary-Max-Heapify} is a generalization of \proc{Max-Heapify} that works for max-priority queues using binary max-heaps.
+The inputs to \proc{Multiary-Max-Heapify} are an array $A$ with the \id{heap-size} attribute, the arity $d$, and an index $i$ into the array.
+When the procedure is called, it assumes that the $d$-ary trees rooted at each child of node $i$ are $d$-ary max-heaps, but that $A[i]$ might be smaller than its children, thus violating the max-heap property.
+To restore it, the procedure determines the largest of the elements $A[i]$ and all children of $A[i]$.
+Only if a child of $A[i]$ is largest, $A[i]$ and this child exchange their contents, and \proc{Multiary-Max-Heapify} calls itself recursively on the subtree rooted at this child.
+
+\begin{codebox}
+\Procname{$\proc{Multiary-Max-Heapify}(A,d,i)$}
+\li $\id{largest}\gets i$
+\li $l\gets\proc{Multiary-Child}(d,i,1)$ \label{li:multiary-max-heapify-leftmost-child}
+\li $j\gets0$
+\li \While $j<d$ and $l+j\le\attrib{A}{heap-size}$ \label{li:multiary-max-heapify-while-begin}
+\li     \Do \If $\attrib{A[l+j]}{key}>\attrib{A[\id{largest}]}{key}$
+\li             \Then $\id{largest}\gets l+j$
+                \End
+\li         $j\gets j+1$
+        \End \label{li:multiary-max-heapify-while-end}
+\li \If $\id{largest}\ne i$
+\li     \Then exchange $A[i]$ with $A[\id{largest}]$,
+\zi         \>updating the mapping between objects and heap elements
+\li         $\proc{Multiary-Max-Heapify}(A,d,\id{largest})$
+        \End
+\end{codebox}
+
+At each level of recursion, \proc{Multiary-Max-Heapify} visits all children of $A[i]$.
+The children occupy positions $l$, $l+1$, $l+2$, \dots, $\min{l+d-1,\attrib{A}{heap-size}}$ in $A$, where $l=\proc{Multiary-Child}(d,i,1)$ is the index of the leftmost child of $A[i]$.
+Thus, in line~\ref{li:multiary-max-heapify-leftmost-child} $l$ is obtained, and the procedure iterates through the children of $A[i]$ in the \kw{while} loop in lines~\ref{li:multiary-max-heapify-while-begin}--\ref{li:multiary-max-heapify-while-end}, by incrementing the offset $j$.
+
+The \kw{while} loop makes at most $d$ iterations.
+Each iteration takes constant time, because the mapping between an object and a heap element is updated in $O(1)$.
+We can therefore characterize the running time of \proc{Multiary-Max-Heapify} on a node of height $h$ as $O(dh)$.
+By part (b), we can express this in terms of $d$ and $n$ as $O(d\log_dn)$.
+
+The implementation of \proc{Extract-Max} in a $d$-ary max-heap is almost identical to \proc{Max-Heap-Extract-Max} for binary max-heaps, except for line~\ref{li:multiary-max-heap-extract-max-heapify}, where instead of \proc{Max-Heapify}, \proc{Multiary-Max-Heapify} is called:
+
+\begin{codebox}
+\Procname{$\proc{Multiary-Max-Heap-Extract-Max}(A,d)$}
+\li $\id{max}\gets\proc{Max-Heap-Maximum}(A)$ \label{li:multiary-max-heap-extract-max-maximum}
+\li $A[1]\gets A[\attrib{A}{heap-size}]$
+\li $\attrib{A}{heap-size}\gets\attrib{A}{heap-size}-1$
+\li $\proc{Multiary-Max-Heapify}(A,d,1)$ \label{li:multiary-max-heap-extract-max-heapify}
+\li \Return \id{max}
+\end{codebox}
+
+The largest key in the $d$-ary max-heap $A$ is at its root $A[1]$, so \proc{Max-Heap-Maximum} works for $d$-ary max-heaps as well, and so it is called in line~\ref{li:multiary-max-heap-extract-max-maximum}.
+The running time of \proc{Multiary-Max-Heap-Extract-Max} is $O(d\log_dn)$, since it performs only a constant amount of work on top of the $O(d\log_dn)$ time for \proc{Multiary-Max-Heapify}.

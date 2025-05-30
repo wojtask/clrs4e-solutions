@@ -1,6 +1,6 @@
 As with the binary heap, we can view the $d$-ary heap data structure as a nearly complete $d$-ary tree in which all levels except possibly the lowest are filled.
 The nodes of such a tree can be stored in an array, and for that we'll use an array $A[1\subarr n]$ with an attribute \attrib{A}{heap-size}, which determines how many elements of the $d$-ary heap are stored within array $A$.
-In such a representation the valid elements of the $d$-ary heap occupy $A[1\subarr\attrib{A}{heap-size}]$, where $0\le\attrib{A}{heap-size}\le n$.
+In such a representation, the valid elements of the $d$-ary heap occupy $A[1\subarr\attrib{A}{heap-size}]$, where $0\le\attrib{A}{heap-size}\le n$.
 The root of the tree is $A[1]$, and given the index $i$ of a node, we can compute the indices of its parent and children using the following procedures, which generalize the original \proc{Parent}, \proc{Left}, and \proc{Right}:
 
 \begin{codebox}
