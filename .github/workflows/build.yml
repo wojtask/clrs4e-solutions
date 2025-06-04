@@ -12,7 +12,6 @@ jobs:
       - name: Setup TeXLive and compile document
         uses: xu-cheng/texlive-action@v2
         with:
-          texlive_version: 2023
           run: |
             apk add file sudo coreutils
             chmod +x scripts/install_fonts.sh
@@ -21,8 +20,8 @@ jobs:
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
 
       - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
         with:
           files: clrs4e-solutions.pdf
           prerelease: true
