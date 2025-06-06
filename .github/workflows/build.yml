@@ -15,6 +15,7 @@ jobs:
           run: |
             apk add file sudo coreutils
             chmod +x scripts/install_fonts.sh
+            sed -i -E '/^Defaults[[:space:]]+secure_path/s/^/# /' /etc/sudoers
             scripts/install_fonts.sh
             cat mtpro2-texlive.sh.log
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode clrs4e-solutions.tex
