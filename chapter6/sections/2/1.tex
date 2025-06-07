@@ -5,8 +5,8 @@ See \refFigure{6.2-1}.
     \par\vspace{\vertexsize}
     \subcaptionbox{\label{fig:6.2-1c}}[0.5\textwidth]{\subimport{figures/1/}{c.tikz}}
     \caption{The operation of $\proc{Max-Heapify}(A,3)$ on the array $A=\langle$27, 17, 3, 16, 13, 10, 1, 5, 7, 12, 4, 8, 9, 0$\rangle$, where $\attrib{A}{heap-size}=14$.\,
-    \textbf{(a)}\, The element $A[3]$ at node $i=3$ violates the max-heap property, since it is not larger than its left child $A[6]$.
-    \textbf{(b)}\, After exchanging $A[3]$ with $A[6]$ the max-heap property is restored for node 3, but is destroyed for node 6, because now $A[6]$ is not larger than both children.
+    \textbf{(a)}\,~The element $A[3]$ at node $i=3$ violates the max-heap property, since it is not larger than its left child $A[6]$.
+    \textbf{(b)}\,~After exchanging $A[3]$ with $A[6]$ the max-heap property is restored for node 3, but is destroyed for node 6, because now $A[6]$ is not larger than both children.
     In the recursive call $\proc{Max-Heapify}(A,6)$ the elements $A[6]$ and $A[13]$ are swapped, as shown in \textbf{(c)}.
     The next recursive call $\proc{Max-Heapify}(A,13)$ just returns without making any further changes to the heap.} \label{fig:6.2-1}
 \end{figure}
