@@ -1,0 +1,17 @@
+\subimport{}{main.tikz}
+\begin{tikzpicture}
+    \path[use as bounding box] (-8\cellsize, -.5\cellsize) rectangle +(14\cellsize, 2\cellsize);
+    \matrix[
+        low side cell/.list = {1, 2, 3, 4, 5},
+        high side cell/.list = {6, 7, 8},
+        pivot cell/.list = {12}
+    ] (arr) {9 & 5 & 8 & 7 & 4 & 13 & 19 & 12 & 21 & 2 & 6 & 11 \\};
+    \path[index row]
+        node[above=of arr-1-1] {$p$}
+        node[above=of arr-1-5] {$i$}
+        node[above=of arr-1-9] {$j$}
+        node[above=of arr-1-12] {$r$};
+    \draw[partition line] (arr-1-6.north west) -- (arr-1-6.south west);
+    \draw[partition line] (arr-1-9.north west) -- (arr-1-9.south west);
+    \draw[partition line] (arr-1-12.north west) -- (arr-1-12.south west);
+\end{tikzpicture}
