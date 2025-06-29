@@ -1,0 +1,8 @@
+\tikzset{
+    every matrix/.style = {array},
+    cell/.append style = {fill=lightgray},
+    low side cell/.style = {row 1 column #1/.style={nodes={fill=tan}}},
+    high side cell/.style = {row 1 column #1/.style={nodes={fill=lightblue}}},
+    partition line/.style = {line width=1.5pt, line cap=rect, red},
+    index row/.style = {element, node distance=.3\cellsize and .3\cellsize},
+}

@@ -1,1 +1,18 @@
-\workinprogress % TODO
+See \refFigure{7-1}.
+\begin{figure}[htb]
+    \captionsetup[subfigure]{skip=-.8\cellsize, slc=off}
+    \subcaptionbox{\label{fig:7-1a}}{\subimport{figures/a/}{a.tikz}}
+    \par\vspace{.5\cellsize}
+    \subcaptionbox{\label{fig:7-1b}}{\subimport{figures/a/}{b.tikz}}
+    \par\vspace{.5\cellsize}
+    \subcaptionbox{\label{fig:7-1c}}{\subimport{figures/a/}{c.tikz}}
+    \par\vspace{.5\cellsize}
+    \subcaptionbox{\label{fig:7-1d}}{\subimport{figures/a/}{d.tikz}}
+    \caption{The operation of \proc{Hoare-Partition} on the array $A=\langle$13, 19, 9, 5, 12, 8, 7, 4, 11, 2, 6, 21$\rangle$.
+    Array entry $A[p]$ becomes the pivot $x$.\,
+    \textbf{(a)}\,~The initial array and indices settings.
+    None of the elements have been placed into either side of the partition.\,
+    \textbf{(b)}\,~The first iteration of the \kw{while} loop in lines~4--13 swaps the values 6 and 13, with 6 placed in the low side, and 13 placed in the high side.\,
+    \textbf{(c)}\,~In the second iteration, the values 2 and 19 are swapped, and increase both sides of the partition.\,
+    \textbf{(d)}\,~Both sides grow, until the indices $i$ and $j$ met.} \label{fig:7-1}
+\end{figure}

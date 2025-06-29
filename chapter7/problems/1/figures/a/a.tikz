@@ -1,0 +1,12 @@
+\subimport{}{main.tikz}
+\begin{tikzpicture}
+    \path[use as bounding box] (-8\cellsize, -.5\cellsize) rectangle +(14\cellsize, 2\cellsize);
+    \matrix (arr) {13 & 19 & 9 & 5 & 12 & 8 & 7 & 4 & 11 & 2 & 6 & 21 \\};
+    \path[index row]
+        node[above left=of arr-1-1] {$i$}
+        node[above=of arr-1-1] {$p$}
+        node[above=of arr-1-12] {$r$}
+        node[above right=of arr-1-12] {$j$};
+    \draw[partition line] (arr-1-1.north west) -- (arr-1-1.south west);
+    \draw[partition line] (arr-1-12.north east) -- (arr-1-12.south east);
+\end{tikzpicture}
