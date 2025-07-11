@@ -1,1 +1,39 @@
-\workinprogress % TODO
+When all elements in the subarray $A[p\subarr r]$ have the same value, the condition in line~4 of \proc{Partition} is met in each iteration of the \kw{for} loop.
+This means that once the loop terminates, $i=r-1$ and the procedure returns $q=i+1=r$.
+
+We can make \proc{Partition} fair in this regard by letting it distribute the elements equal to the pivot value evenly between the low side and the high side of the partition.
+To do that, we'll use a boolean flag \id{low} to determine whether the next encountered element $A[j]$ equal to $x$ should end up in the low side or in the high side.
+When such an element is found, we'll flip the value of the flag, so the next element equal to the pivot will be placed in the other side of the partition.
+At the end of \proc{Partition}, the pivot $x=A[r]$ is placed in the low side, so we initialize \id{low} to \const{false} to balance that exchange by choosing the right side first.
+
+This idea is implemented as \proc{Fair-Partition}.
+
+\begin{codebox}
+\Procname{$\proc{Fair-Partition}(A,p,r)$}
+\li $x\gets A[r]$
+\li $i\gets p-1$
+\li $\id{low}\gets\const{false}$
+\li \For $j\gets p$ \To $r-1$ \label{li:fair-partition-for-begin}
+\li     \Do
+            \If $A[j]<x$
+\li             \Then
+                    $i\gets i+1$
+\li                 exchange $A[i]$ with $A[j]$
+\li             \ElseIf $A[j]\isequal x$ \label{li:fair-partition-equal-to-pivot}
+\li                 \Then
+                        \If $\id{low}$ \label{li:fair-partition-low-side}
+\li                         \Then
+                                $i\gets i+1$
+\li                             exchange $A[i]$ with $A[j]$
+                            \End
+\li                     $\id{low}\gets\text{not }\id{low}$ \>\>\>\>\Comment{Flip the flag.}
+                    \End
+        \End \label{li:fair-partition-for-end}
+\li exchange $A[i+1]$ with $A[r]$
+\li \Return $i+1$
+\end{codebox}
+
+Like the original procedure, \proc{Fair-Partition} initializes $i$ to $p-1$.
+If all elements in $A[p\subarr r]$ have the same value, then each element $A[j]$ examined in the \kw{for} loop in lines \ref{li:fair-partition-for-begin}--\ref{li:fair-partition-for-end} is equal to $x=A[r]$ and the condition in line~\ref{li:fair-partition-equal-to-pivot} holds in each iteration.
+But the condition in line~\ref{li:fair-partition-low-side} holds only in every second iteration, thereby incrementing $i$ exactly $\lfloor(r-p)/2\rfloor$ times in total.
+Then the procedure returns $(p-1+\lfloor(r-p)/2\rfloor)+1=\lfloor(2p+r-p)/2\rfloor=\lfloor(p+r)/2\rfloor$.
